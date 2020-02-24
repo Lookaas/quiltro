@@ -9,6 +9,7 @@ import PetInformation from './PetInformation';
 import SubmitButton from './SubmitButton';
 import TextBlocksCreator from './TextBlocksCreator';
 import { ITextBlocksConfigPanelState } from './TextBlocksCreator/panel';
+import { containerStyle } from './styles'
 
 export interface ILeftSidebarProps {
   canvasRef: RefObject<any>;
@@ -18,6 +19,7 @@ export interface ILeftSidebarProps {
     [id: string]: ITextBlocksConfigPanelState;
   };
   addTextBlock: () => void;
+  addTextBlockWithData: (id: string, value: string) => void;
   onInputChanged: (key: keyof IAdoptionForm, value: any) => void;
   onTextBlockInteracted: (key: string) => void;
   onTextChanged: (key: string, value: string, id: string) => void;
@@ -85,7 +87,14 @@ export default class LeftSidebar extends Component<
   onSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    const { formData, formJson } = this.getFormData();
+    const imgB64 = this.props.canvasRef.current!.toDataURL({ pixelRatio: 2 });
+    let link = document.createElement('a');
+    link.download = "Test.png";
+    link.href = imgB64;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    /*const { formData, formJson } = this.getFormData();
     const response = await fetch('/api/image', {
       body: formData,
       method: 'POST'
@@ -96,7 +105,7 @@ export default class LeftSidebar extends Component<
       category: 'User',
       value: 1,
       ...formJson
-    });
+    });*/
   };
 
   onFormChange = (e: FormEvent<HTMLFormElement>) => {
@@ -114,22 +123,16 @@ export default class LeftSidebar extends Component<
       onTextBlockInteracted,
       selectedTextBlock,
       addTextBlock,
-      textBlocks
+      textBlocks,
+      addTextBlockWithData
     } = this.props;
     return (
-      <form onSubmit={this.onSubmit} onChange={this.onFormChange}>
-        <PetInformation onChange={onInputChanged} formValues={formValues} />
-        <ContactInformation onChange={onInputChanged} formValues={formValues} />
-        <TextBlocksCreator
-          onAddTextBlockClicked={addTextBlock}
-          onTextBlockInteracted={onTextBlockInteracted}
-          onTextChanged={onTextChanged}
-          onChange={onInputChanged}
-          selectedTextBlock={selectedTextBlock}
-          textBlocks={textBlocks}
-          formValues={formValues}
-        />
-        <SubmitButton />
+      <form onSubmit={this.onSubmit} onChange={this.onFormChange} css={containerStyle} method="post">
+        <PetInformation onChange={onInputChanged} formValues={formValues} addText={addTextBlockWithData} />
+        <div>
+          <ContactInformation onChange={onInputChanged} formValues={formValues} />
+          <SubmitButton />
+        </div>
       </form>
     );
   }

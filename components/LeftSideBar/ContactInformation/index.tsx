@@ -70,6 +70,18 @@ export default class ContactInformation extends React.Component<
             />
           </FormGroup>
         </div>
+        <div>
+          <FormGroup label="Ciudad">
+            <InputGroup
+              placeholder="Ciudad"
+              name="ciudad-contacto"
+              value={formValues['ciudad-contacto']}
+              onChange={(e: FormEvent<HTMLInputElement>) : void => {
+                onChange('ciudad-contacto', e.currentTarget.value);
+              }}
+            />
+          </FormGroup>
+        </div>
       </Card>
     );
   }

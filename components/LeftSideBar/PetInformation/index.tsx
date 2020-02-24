@@ -16,6 +16,7 @@ import { fakeRadioGroupStyle, sidebarContainerStyle } from './style';
 
 export interface IPetInformationProps {
   onChange: (key: keyof IAdoptionForm, value: any) => void;
+  addText: (id: string, value: string) => void;
   formValues: IAdoptionForm;
 }
 
@@ -24,20 +25,62 @@ export default class PetInformation extends React.Component<
   any
 > {
   state = {
-    size: undefined
+    size: '',
+    caseOption: '',
+    sex: ''
   };
 
-  onRadioGroupChanged = (e: FormEvent<HTMLInputElement>) => {
+  onSizeChanged = (e: FormEvent<HTMLInputElement>) => {
+    const { onChange } = this.props;
     const size = e.currentTarget.value;
     this.setState({ size });
+    onChange('tamaño-mascota', size);
+  };
+
+  onCaseChanged = (e: FormEvent<HTMLInputElement>) => {
+    const { onChange } = this.props;
+    const caseOption = e.currentTarget.value;
+    this.setState({ caseOption });
+    onChange('caso-mascota', caseOption);
+  };
+
+  onSexChanged = (e: FormEvent<HTMLInputElement>) => {
+    const { onChange } = this.props;
+    const sex = e.currentTarget.value;
+    this.setState({ sex });
+    onChange('caso-mascota', sex);
   };
 
   render() {
-    const { onChange, formValues } = this.props;
-    const { size } = this.state;
+    const { onChange, formValues, addText } = this.props;
+    const { size, caseOption, sex } = this.state;
     return (
       <Card elevation={Elevation.ONE} css={sidebarContainerStyle}>
         <H4>Información</H4>
+        <div>
+          <FormGroup label="Caso *">
+            <Radio
+              name="caso"
+              value={caseOption}
+              onChange={e => onChange('caso-mascota', caseOption)}
+              checked={Boolean(caseOption)}
+              required
+              css={fakeRadioGroupStyle}
+            />
+            <Radio
+              onChange={this.onCaseChanged}
+              checked={caseOption === '1'}
+              label="Mascota en adopción"
+              value="1"
+            />
+            <Radio
+              onChange={this.onCaseChanged}
+              checked={caseOption === '2'}
+              label="Mascota perdida"
+              value="2"
+            />
+          </FormGroup>
+        </div>
         <div>
           <FormGroup label={'Nombre'}>
             <InputGroup
@@ -47,6 +90,7 @@ export default class PetInformation extends React.Component<
               value={formValues['nombre-mascota']}
               onChange={(e: FormEvent<HTMLInputElement>) : void => {
                 onChange('nombre-mascota', e.currentTarget.value);
+                addText('nombre-mascota', 'Me llamo ' + e.currentTarget.value);
               }}
               required
             />
@@ -63,22 +107,46 @@ export default class PetInformation extends React.Component<
               css={fakeRadioGroupStyle}
             />
             <Radio
-              onChange={this.onRadioGroupChanged}
+              onChange={this.onSizeChanged}
               checked={size === 's'}
               label="Pequeño"
               value="s"
             />
             <Radio
-              onChange={this.onRadioGroupChanged}
+              onChange={this.onSizeChanged}
               checked={size === 'm'}
               label="Mediano"
               value="m"
             />
             <Radio
-              onChange={this.onRadioGroupChanged}
+              onChange={this.onSizeChanged}
               checked={size === 'l'}
               label="Grande"
               value="l"
+            />
+          </FormGroup>
+        </div>
+        <div>
+          <FormGroup label="Sexo *">
+            <Radio
+              name="sexo-mascota"
+              value={sex}
+              onChange={e => onChange('sexo-mascota', Boolean(sex))}
+              checked={Boolean(sex)}
+              required
+              css={fakeRadioGroupStyle}
+            />
+            <Radio
+              onChange={this.onSexChanged}
+              checked={sex === '1'}
+              label="Macho"
+              value="1"
+            />
+            <Radio
+              onChange={this.onSexChanged}
+              checked={sex === '2'}
+              label="Hembra"
+              value="2"
             />
           </FormGroup>
         </div>

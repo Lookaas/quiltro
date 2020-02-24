@@ -88,76 +88,10 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "./components/LeftSideBar/ColorSelector/index.tsx":
-/*!********************************************************!*\
-  !*** ./components/LeftSideBar/ColorSelector/index.tsx ***!
-  \********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @blueprintjs/core */ "@blueprintjs/core");
-/* harmony import */ var _blueprintjs_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\LeftSideBar\\ColorSelector\\index.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1__["createElement"];
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-class ColorSelector extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
-  constructor(...args) {
-    super(...args);
-
-    _defineProperty(this, "onClick", () => {
-      const {
-        onColorClicked,
-        color
-      } = this.props;
-      onColorClicked(color);
-    });
-  }
-
-  render() {
-    const {
-      isActive,
-      color
-    } = this.props;
-    return __jsx(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Button"], {
-      large: true,
-      active: isActive,
-      onClick: this.onClick,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 19
-      },
-      __self: this
-    }, __jsx(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Icon"], {
-      iconSize: 24,
-      icon: "symbol-square",
-      color: color,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      },
-      __self: this
-    }));
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (ColorSelector);
-
-/***/ }),
 
 /***/ "./components/LeftSideBar/ContactInformation/index.tsx":
 /*!*************************************************************!*\
@@ -307,6 +241,31 @@ class ContactInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Co
         lineNumber: 62
       },
       __self: this
+    }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 73
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
+      label: "Ciudad",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 74
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
+      placeholder: "Ciudad",
+      name: "ciudad-contacto",
+      value: formValues['ciudad-contacto'],
+      onChange: e => {
+        onChange('ciudad-contacto', e.currentTarget.value);
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 75
+      },
+      __self: this
     }))));
   }
 
@@ -367,50 +326,126 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
     super(...args);
 
     _defineProperty(this, "state", {
-      size: undefined
+      size: '',
+      caseOption: '',
+      sex: ''
     });
 
-    _defineProperty(this, "onRadioGroupChanged", e => {
+    _defineProperty(this, "onSizeChanged", e => {
+      const {
+        onChange
+      } = this.props;
       const size = e.currentTarget.value;
       this.setState({
         size
       });
+      onChange('tamaño-mascota', size);
+    });
+
+    _defineProperty(this, "onCaseChanged", e => {
+      const {
+        onChange
+      } = this.props;
+      const caseOption = e.currentTarget.value;
+      this.setState({
+        caseOption
+      });
+      onChange('caso-mascota', caseOption);
+    });
+
+    _defineProperty(this, "onSexChanged", e => {
+      const {
+        onChange
+      } = this.props;
+      const sex = e.currentTarget.value;
+      this.setState({
+        sex
+      });
+      onChange('caso-mascota', sex);
     });
   }
 
   render() {
     const {
       onChange,
-      formValues
+      formValues,
+      addText
     } = this.props;
     const {
-      size
+      size,
+      caseOption,
+      sex
     } = this.state;
     return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Card"], {
       elevation: _blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Elevation"].ONE,
       css: _style__WEBPACK_IMPORTED_MODULE_3__["sidebarContainerStyle"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 58
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["H4"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 59
       },
       __self: this
     }, "Informaci\xF3n"), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 60
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
+      label: "Caso *",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
+      name: "caso",
+      value: caseOption,
+      onChange: e => onChange('caso-mascota', caseOption),
+      checked: Boolean(caseOption),
+      required: true,
+      css: _style__WEBPACK_IMPORTED_MODULE_3__["fakeRadioGroupStyle"],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 62
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
+      onChange: this.onCaseChanged,
+      checked: caseOption === '1',
+      label: "Mascota en adopci\xF3n",
+      value: "1",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 70
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
+      onChange: this.onCaseChanged,
+      checked: caseOption === '2',
+      label: "Mascota perdida",
+      value: "2",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 76
+      },
+      __self: this
+    }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 84
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
       label: 'Nombre',
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 85
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
@@ -420,24 +455,25 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       value: formValues['nombre-mascota'],
       onChange: e => {
         onChange('nombre-mascota', e.currentTarget.value);
+        addText('nombre-mascota', 'Me llamo ' + e.currentTarget.value);
       },
       required: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 86
       },
       __self: this
     }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 99
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
       label: "Tama\xF1o *",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 100
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -449,43 +485,88 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       css: _style__WEBPACK_IMPORTED_MODULE_3__["fakeRadioGroupStyle"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 101
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
-      onChange: this.onRadioGroupChanged,
+      onChange: this.onSizeChanged,
       checked: size === 's',
       label: "Peque\xF1o",
       value: "s",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
+        lineNumber: 109
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
-      onChange: this.onRadioGroupChanged,
+      onChange: this.onSizeChanged,
       checked: size === 'm',
       label: "Mediano",
       value: "m",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71
+        lineNumber: 115
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
-      onChange: this.onRadioGroupChanged,
+      onChange: this.onSizeChanged,
       checked: size === 'l',
       label: "Grande",
       value: "l",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
+        lineNumber: 121
       },
       __self: this
     }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 129
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
+      label: "Sexo *",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 130
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
+      name: "sexo-mascota",
+      value: sex,
+      onChange: e => onChange('sexo-mascota', Boolean(sex)),
+      checked: Boolean(sex),
+      required: true,
+      css: _style__WEBPACK_IMPORTED_MODULE_3__["fakeRadioGroupStyle"],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 131
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
+      onChange: this.onSexChanged,
+      checked: sex === '1',
+      label: "Macho",
+      value: "1",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 139
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
+      onChange: this.onSexChanged,
+      checked: sex === '2',
+      label: "Hembra",
+      value: "2",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 145
+      },
+      __self: this
+    }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 153
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Checkbox"], {
@@ -497,7 +578,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 154
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Checkbox"], {
@@ -509,7 +590,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 94
+        lineNumber: 162
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Checkbox"], {
@@ -521,20 +602,20 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 102
+        lineNumber: 170
       },
       __self: this
     })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 111
+        lineNumber: 179
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
       label: "Edad",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 112
+        lineNumber: 180
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
@@ -545,20 +626,20 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       required: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 113
+        lineNumber: 181
       },
       __self: this
     }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 122
+        lineNumber: 190
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
       label: "Informaci\xF3n Extra",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 123
+        lineNumber: 191
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["TextArea"], {
@@ -570,7 +651,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       onChange: e => onChange('informacion-extra-mascota', e.currentTarget.value),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 124
+        lineNumber: 192
       },
       __self: this
     }))));
@@ -680,317 +761,6 @@ const sidebarContainerStyle = _emotion_core__WEBPACK_IMPORTED_MODULE_0__["css"]`
 
 /***/ }),
 
-/***/ "./components/LeftSideBar/TextBlocksCreator/index.tsx":
-/*!************************************************************!*\
-  !*** ./components/LeftSideBar/TextBlocksCreator/index.tsx ***!
-  \************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return TextBlocksCreator; });
-/* harmony import */ var _blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @blueprintjs/core */ "@blueprintjs/core");
-/* harmony import */ var _blueprintjs_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/core */ "@emotion/core");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_core__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _panel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./panel */ "./components/LeftSideBar/TextBlocksCreator/panel.tsx");
-/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style */ "./components/LeftSideBar/TextBlocksCreator/style.ts");
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\LeftSideBar\\TextBlocksCreator\\index.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-/** @jsx jsx */
-
-
-
-
-
-class TextBlocksCreator extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
-  constructor(...args) {
-    super(...args);
-
-    _defineProperty(this, "onTextBlockChanged", textBlockId => (key, value) => {
-      const {
-        onTextChanged,
-        onTextBlockInteracted
-      } = this.props;
-      onTextBlockInteracted(key);
-      onTextChanged(key, value, textBlockId);
-    });
-  }
-
-  render() {
-    const {
-      selectedTextBlock,
-      onAddTextBlockClicked,
-      onTextBlockInteracted,
-      textBlocks
-    } = this.props;
-    return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Card"], {
-      elevation: _blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Elevation"].ONE,
-      css: _style__WEBPACK_IMPORTED_MODULE_4__["sidebarContainerStyle"],
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 47
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 48
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["H4"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 49
-      },
-      __self: this
-    }, "Agregar Texto ", Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Button"], {
-      icon: "plus",
-      onClick: onAddTextBlockClicked,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 50
-      },
-      __self: this
-    }))), Object.values(textBlocks).map(textBlock => Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_panel__WEBPACK_IMPORTED_MODULE_3__["default"], _extends({
-      key: textBlock.id
-    }, textBlock, {
-      onMouseDown: () => onTextBlockInteracted(textBlock.id),
-      onChange: this.onTextBlockChanged(textBlock.id),
-      isSelected: selectedTextBlock === textBlock.id,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 54
-      },
-      __self: this
-    }))));
-  }
-
-}
-
-_defineProperty(TextBlocksCreator, "buttonsKeys", ['alignment-top', 'align-center', 'alignment-bottom']);
-
-/***/ }),
-
-/***/ "./components/LeftSideBar/TextBlocksCreator/panel.tsx":
-/*!************************************************************!*\
-  !*** ./components/LeftSideBar/TextBlocksCreator/panel.tsx ***!
-  \************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return TextBlocksConfigPanel; });
-/* harmony import */ var _blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @blueprintjs/core */ "@blueprintjs/core");
-/* harmony import */ var _blueprintjs_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/core */ "@emotion/core");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_core__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _ColorSelector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../ColorSelector */ "./components/LeftSideBar/ColorSelector/index.tsx");
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\LeftSideBar\\TextBlocksCreator\\panel.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-/** @jsx jsx */
-
-
-
-
-class TextBlocksConfigPanel extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
-  constructor(...args) {
-    super(...args);
-
-    _defineProperty(this, "onMainTextChanged", e => {
-      const {
-        onChange
-      } = this.props;
-      onChange('text', e.currentTarget.value);
-    });
-
-    _defineProperty(this, "setHeight", fontSize => {
-      const {
-        onChange
-      } = this.props;
-      onChange('fontSize', fontSize);
-    });
-
-    _defineProperty(this, "setSelectedColor", color => {
-      const {
-        onChange
-      } = this.props;
-      onChange('color', color);
-    });
-  }
-
-  render() {
-    const _this$props = this.props,
-          {
-      fontSize,
-      color,
-      onMouseDown,
-      text
-    } = _this$props,
-          rest = _objectWithoutProperties(_this$props, ["fontSize", "color", "onMouseDown", "text"]);
-
-    return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("section", {
-      onMouseDown: onMouseDown,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 50
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
-      label: "Texto",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 51
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["TextArea"], {
-      fill: true,
-      growVertically: true,
-      name: "Texto",
-      value: text,
-      onChange: this.onMainTextChanged,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 52
-      },
-      __self: this
-    })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
-      label: "Tama\xF1o",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 60
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["ButtonGroup"], {
-      fill: true,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 61
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Button"], {
-      large: true,
-      active: fontSize === 'small',
-      onClick: () => this.setHeight('small'),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 62
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Icon"], {
-      iconSize: 10,
-      icon: "font",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 67
-      },
-      __self: this
-    })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Button"], {
-      large: true,
-      active: fontSize === 'medium',
-      onClick: () => this.setHeight('medium'),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 69
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Icon"], {
-      iconSize: 16,
-      icon: "font",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 74
-      },
-      __self: this
-    })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Button"], {
-      large: true,
-      active: fontSize === 'large',
-      onClick: () => this.setHeight('large'),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 76
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Icon"], {
-      iconSize: 24,
-      icon: "font",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 81
-      },
-      __self: this
-    })))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
-      label: "Color",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 85
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["ButtonGroup"], {
-      fill: true,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 86
-      },
-      __self: this
-    }, TextBlocksConfigPanel.colors.map(el => Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_ColorSelector__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      key: el,
-      color: el,
-      isActive: el === color,
-      onColorClicked: this.setSelectedColor,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 88
-      },
-      __self: this
-    })))));
-  }
-
-}
-
-_defineProperty(TextBlocksConfigPanel, "colors", ['black', 'red', 'green', 'purple', 'yellow', 'white']);
-
-/***/ }),
-
-/***/ "./components/LeftSideBar/TextBlocksCreator/style.ts":
-/*!***********************************************************!*\
-  !*** ./components/LeftSideBar/TextBlocksCreator/style.ts ***!
-  \***********************************************************/
-/*! exports provided: sidebarContainerStyle */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sidebarContainerStyle", function() { return sidebarContainerStyle; });
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @emotion/core */ "@emotion/core");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_core__WEBPACK_IMPORTED_MODULE_0__);
-
-const sidebarContainerStyle = _emotion_core__WEBPACK_IMPORTED_MODULE_0__["css"]`
-  margin: 1rem;
-  min-width: 300px;
-  width: 300px;
-`;
-
-/***/ }),
-
 /***/ "./components/LeftSideBar/index.tsx":
 /*!******************************************!*\
   !*** ./components/LeftSideBar/index.tsx ***!
@@ -1005,24 +775,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/core */ "@emotion/core");
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_core__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_ga__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-ga */ "react-ga");
-/* harmony import */ var react_ga__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_ga__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _ContactInformation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ContactInformation */ "./components/LeftSideBar/ContactInformation/index.tsx");
-/* harmony import */ var _PetInformation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./PetInformation */ "./components/LeftSideBar/PetInformation/index.tsx");
-/* harmony import */ var _SubmitButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./SubmitButton */ "./components/LeftSideBar/SubmitButton/index.tsx");
-/* harmony import */ var _TextBlocksCreator__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./TextBlocksCreator */ "./components/LeftSideBar/TextBlocksCreator/index.tsx");
+/* harmony import */ var _ContactInformation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ContactInformation */ "./components/LeftSideBar/ContactInformation/index.tsx");
+/* harmony import */ var _PetInformation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PetInformation */ "./components/LeftSideBar/PetInformation/index.tsx");
+/* harmony import */ var _SubmitButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SubmitButton */ "./components/LeftSideBar/SubmitButton/index.tsx");
+/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles */ "./components/LeftSideBar/styles.ts");
 var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\LeftSideBar\\index.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /** @jsx jsx */
-
 
 
 
@@ -1094,19 +857,26 @@ class LeftSidebar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
     _defineProperty(this, "onSubmit", async e => {
       e.preventDefault();
-      const {
-        formData,
-        formJson
-      } = this.getFormData();
+      const imgB64 = this.props.canvasRef.current.toDataURL({
+        pixelRatio: 2
+      });
+      let link = document.createElement('a');
+      link.download = "Test.png";
+      link.href = imgB64;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      /*const { formData, formJson } = this.getFormData();
       const response = await fetch('/api/image', {
         body: formData,
         method: 'POST'
       }).then(r => r.json());
-      react_ga__WEBPACK_IMPORTED_MODULE_2___default.a.event(_objectSpread({
+        ReactGA.event({
         action: 'adoption-created',
         category: 'User',
-        value: 1
-      }, formJson));
+        value: 1,
+        ...formJson
+      });*/
     });
 
     _defineProperty(this, "onFormChange", e => {
@@ -1125,55 +895,73 @@ class LeftSidebar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onTextBlockInteracted,
       selectedTextBlock,
       addTextBlock,
-      textBlocks
+      textBlocks,
+      addTextBlockWithData
     } = this.props;
     return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("form", {
       onSubmit: this.onSubmit,
       onChange: this.onFormChange,
+      css: _styles__WEBPACK_IMPORTED_MODULE_5__["containerStyle"],
+      method: "post",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 120
+        lineNumber: 130
       },
       __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_PetInformation__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_PetInformation__WEBPACK_IMPORTED_MODULE_3__["default"], {
       onChange: onInputChanged,
       formValues: formValues,
+      addText: addTextBlockWithData,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 121
+        lineNumber: 131
       },
       __self: this
-    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_ContactInformation__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      onChange: onInputChanged,
-      formValues: formValues,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 122
-      },
-      __self: this
-    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_TextBlocksCreator__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      onAddTextBlockClicked: addTextBlock,
-      onTextBlockInteracted: onTextBlockInteracted,
-      onTextChanged: onTextChanged,
-      onChange: onInputChanged,
-      selectedTextBlock: selectedTextBlock,
-      textBlocks: textBlocks,
-      formValues: formValues,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 123
-      },
-      __self: this
-    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_SubmitButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 132
       },
       __self: this
-    }));
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_ContactInformation__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      onChange: onInputChanged,
+      formValues: formValues,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 133
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_SubmitButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 134
+      },
+      __self: this
+    })));
   }
 
 }
+
+/***/ }),
+
+/***/ "./components/LeftSideBar/styles.ts":
+/*!******************************************!*\
+  !*** ./components/LeftSideBar/styles.ts ***!
+  \******************************************/
+/*! exports provided: containerStyle */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "containerStyle", function() { return containerStyle; });
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @emotion/core */ "@emotion/core");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_core__WEBPACK_IMPORTED_MODULE_0__);
+
+const containerStyle = _emotion_core__WEBPACK_IMPORTED_MODULE_0__["css"]`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+`;
 
 /***/ }),
 
@@ -2231,10 +2019,13 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         'informacion-extra-mascota': '',
         'nombre-contacto': '',
         'nombre-mascota': '',
-        'tamaño-mascota': false,
+        'tamaño-mascota': '',
         'telefono-contacto': '',
         vacunas: false,
-        'whatsapp-contacto': ''
+        'whatsapp-contacto': '',
+        'caso-mascota': '',
+        'ciudad-contacto': '',
+        'sexo-mascota': ''
       }
     });
 
@@ -2325,6 +2116,28 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         })
       });
     });
+
+    _defineProperty(this, "addTextBlockWithData", (id, text) => {
+      const {
+        canvasTexts
+      } = this.state;
+      const {
+        textBlocks
+      } = canvasTexts;
+      const newTextblock = {
+        color: 'black',
+        fontSize: 'medium',
+        id,
+        text
+      };
+      this.setState({
+        canvasTexts: _objectSpread({}, canvasTexts, {
+          textBlocks: _objectSpread({}, textBlocks, {
+            [id]: newTextblock
+          })
+        })
+      });
+    });
   }
 
   componentDidMount() {
@@ -2345,14 +2158,14 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       css: _styles__WEBPACK_IMPORTED_MODULE_6__["pageStyle"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 162
+        lineNumber: 190
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_components_Nav__WEBPACK_IMPORTED_MODULE_5__["default"], {
       onImageUploaded: this.setCanvasImage,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 163
+        lineNumber: 191
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("section", {
@@ -2360,7 +2173,7 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       css: _styles__WEBPACK_IMPORTED_MODULE_6__["containerStyle"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 164
+        lineNumber: 192
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_components_LeftSideBar__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2372,9 +2185,10 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       textBlocks: textBlocks,
       onInputChanged: this.setAdoptionFormField,
       onTextChanged: this.onTextChanged,
+      addTextBlockWithData: this.addTextBlockWithData,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 165
+        lineNumber: 193
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_components_canvas__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -2387,7 +2201,7 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onTextBlockSelected: this.setSelectedTextBlock,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 175
+        lineNumber: 204
       },
       __self: this
     })));
@@ -2431,7 +2245,7 @@ const pageStyle = _emotion_core__WEBPACK_IMPORTED_MODULE_0__["css"]`
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!*******************************!*\
   !*** multi ./pages/index.tsx ***!
   \*******************************/
@@ -2495,17 +2309,6 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom");
-
-/***/ }),
-
-/***/ "react-ga":
-/*!***************************!*\
-  !*** external "react-ga" ***!
-  \***************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-ga");
 
 /***/ }),
 

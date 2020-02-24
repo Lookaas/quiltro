@@ -36,7 +36,10 @@ export interface IAdoptionForm {
   'vacunas': boolean;
   'edad-mascota': string;
   'informacion-extra-mascota'?: string;
-  'tamaño-mascota': boolean;
+  'tamaño-mascota': string;
+  'caso-mascota': string;
+  'ciudad-contacto': string;
+  'sexo-mascota': string;
 }
 
 class Home extends Component<any, IHomeState> {
@@ -54,10 +57,13 @@ class Home extends Component<any, IHomeState> {
       'informacion-extra-mascota': '',
       'nombre-contacto': '',
       'nombre-mascota': '',
-      'tamaño-mascota': false,
+      'tamaño-mascota': '',
       'telefono-contacto': '',
       vacunas: false,
-      'whatsapp-contacto': ''
+      'whatsapp-contacto': '',
+      'caso-mascota': '',
+      'ciudad-contacto': '',
+      'sexo-mascota': ''
     }
   };
 
@@ -154,6 +160,28 @@ class Home extends Component<any, IHomeState> {
     });
   };
 
+  addTextBlockWithData = (id: string, text: string) => {
+    const { canvasTexts } = this.state;
+    const { textBlocks } = canvasTexts;
+
+    const newTextblock: ITextBlocksConfigPanelState = {
+      color: 'black',
+      fontSize: 'medium',
+      id,
+      text
+    };
+
+    this.setState({
+      canvasTexts: {
+        ...canvasTexts,
+        textBlocks: {
+          ...textBlocks,
+          [id]: newTextblock
+        }
+      }
+    });
+  };
+
   render() {
     const { canvasImage, canvasTexts, formValues } = this.state;
     const { selectedTextBlock, textBlocks } = canvasTexts;
@@ -171,6 +199,7 @@ class Home extends Component<any, IHomeState> {
             textBlocks={textBlocks}
             onInputChanged={this.setAdoptionFormField}
             onTextChanged={this.onTextChanged}
+            addTextBlockWithData={this.addTextBlockWithData}
           />
           <Canvas
             canvasRef={this.stageRef}
