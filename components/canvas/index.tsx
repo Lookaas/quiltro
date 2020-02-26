@@ -4,15 +4,17 @@ import { jsx } from '@emotion/core';
 import { KonvaEventObject } from 'konva/types/Node';
 import Konva from 'konva'
 import React, { Component, createRef, RefObject } from 'react';
-import { Layer, Stage } from 'react-konva';
+import { Layer, Stage, Path, Group } from 'react-konva';
+import { Image as ImageKonva } from 'react-konva';
 
-import { ICanvasTexts } from '../../pages';
+import { ICanvasTexts, ITextBlockElement } from '../../pages';
 import { ITextBlocksConfigPanelState } from '../LeftSideBar/TextBlocksCreator/panel';
 import BackgroundImage from './BackgroundImage';
 import EditTextArea from './TextArea';
-import { canvasStyle } from './style';
+import { canvasStyle, testStyle } from './style';
 import CanvasText from './Text';
 import TransformerComponent from './Transformer';
+import CharacteristicsLayer, { ICharacteristicElement } from './CharacteristicsLayer'
 
 interface IAppProps {
   onRef: RefObject<any>;
@@ -21,7 +23,12 @@ interface IAppProps {
   image: HTMLImageElement | null;
   canvasTexts: ICanvasTexts;
   onTextChanged: (arg1: string, arg2: string) => void;
-  currentCanvasText: ITextBlocksConfigPanelState;
+  currentCanvasText: ITextBlockElement;
+  canvasHeight: number;
+  canvasWidth: number;
+  characteristics: {
+    [priority: string] : ICharacteristicElement
+  }
 }
 
 interface IAppState {
@@ -35,8 +42,6 @@ interface IAppState {
 class Canvas extends Component<IAppProps, IAppState> {
   state = {
     backgroundImage: null,
-    canvasHeight: 750,
-    canvasWidth: 500,
     editTextAreaProps: {},
     editTextAreaValue: '',
     onTextAreaClosed: () => null,
@@ -72,7 +77,7 @@ class Canvas extends Component<IAppProps, IAppState> {
 
   getResizedImage = (image: HTMLImageElement) => {
     const { height, width } = image;
-    const { canvasHeight, canvasWidth } = this.state;
+    const { canvasHeight, canvasWidth } = this.props;
     let imageHeight = height;
     let imageWidth = width;
     // Resize to go over the canvas height
@@ -223,14 +228,13 @@ class Canvas extends Component<IAppProps, IAppState> {
   render() {
     const {
       backgroundImage,
-      canvasHeight,
-      canvasWidth,
       showEditTextArea,
       editTextAreaProps,
       onTextAreaClosed
     } = this.state;
-    const { canvasTexts, onRef, onTextChanged } = this.props;
+    const { canvasTexts, onRef, onTextChanged, canvasHeight, canvasWidth, characteristics } = this.props;
     const { textBlocks, selectedTextBlock } = canvasTexts;
+    //const test = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="venus" class="svg-inline--fa fa-venus fa-w-9" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 512"><path fill="currentColor" d="M288 176c0-79.5-64.5-144-144-144S0 96.5 0 176c0 68.5 47.9 125.9 112 140.4V368H76c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h36v36c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-36h36c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-36v-51.6c64.1-14.5 112-71.9 112-140.4zm-224 0c0-44.1 35.9-80 80-80s80 35.9 80 80-35.9 80-80 80-80-35.9-80-80z"></path></svg>'
     return (
       <Card elevation={Elevation.ONE} css={canvasStyle}>
         {process.browser && (
@@ -245,12 +249,11 @@ class Canvas extends Component<IAppProps, IAppState> {
               canvasHeight={canvasHeight}
               canvasWidth={canvasWidth}
             />
-            <Layer>
+            <Layer >
               {Object.values(textBlocks).map(textBlock => (
                 <CanvasText
                   key={textBlock.id}
                   {...textBlock}
-                  position={{ x: 0, y: 0 }}
                   maxHeight={canvasHeight}
                   maxWidth={canvasWidth}
                   onClick={this.onTextClick}
@@ -258,9 +261,12 @@ class Canvas extends Component<IAppProps, IAppState> {
                   onMouseDown={this.onMouseDown}
                 />
               ))}
+
+              <CharacteristicsLayer canvasHeight={canvasHeight} canvasWidth={canvasWidth} characteristics={characteristics} />
+
               <TransformerComponent
                 resizeEnabled
-                rotateEnabled={false}
+                rotateEnabled={true}
                 borderEnabled
                 onMount={this.onMount}
                 selectedShapeName={selectedTextBlock}

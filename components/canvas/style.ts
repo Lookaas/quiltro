@@ -12,3 +12,9 @@ export const canvasStyle = css`
     border: solid 1px lightgray;
   }
 `;
+
+export const testStyle = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`

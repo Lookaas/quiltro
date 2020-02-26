@@ -4,14 +4,11 @@ import { KonvaEventObject } from 'konva/types/Node';
 import React, { createRef } from 'react';
 import { Text } from 'react-konva';
 import { ITextBlocksConfigPanelState } from '../../LeftSideBar/TextBlocksCreator/panel';
+import { ITextBlockElement } from '../../../pages'
 
-interface ICanvasText extends ITextBlocksConfigPanelState {
+interface ICanvasText extends ITextBlockElement {
   maxWidth: number;
   maxHeight: number;
-  position: {
-    x: number;
-    y: number;
-  };
   // width: number;
   // height: number;
   onDoubleClick: (evt: KonvaEventObject<MouseEvent>) => void;
@@ -93,7 +90,10 @@ class CanvasText extends React.Component<ICanvasText, any> {
       onDoubleClick,
       onClick,
       onMouseDown,
-      position
+      position,
+      align,
+      width,
+      style
     } = this.props;
     const { fontSize } = this.state;
     return (
@@ -114,6 +114,9 @@ class CanvasText extends React.Component<ICanvasText, any> {
         onClick={onClick}
         onDblClick={onDoubleClick}
         onMouseDown={onMouseDown}
+        align={align}
+        width={width}
+        fontStyle={style}
         // _useStrictMode
       />
     );

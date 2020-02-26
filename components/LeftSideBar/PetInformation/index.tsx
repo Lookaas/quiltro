@@ -7,16 +7,18 @@ import {
   H4,
   InputGroup,
   Radio,
-  TextArea
+  TextArea,
+  Button
 } from '@blueprintjs/core';
 import { jsx } from '@emotion/core';
-import React, { FormEvent } from 'react';
-import { IAdoptionForm } from '../../../pages';
-import { fakeRadioGroupStyle, sidebarContainerStyle } from './style';
+import React, { FormEvent, createRef } from 'react';
+import { IAdoptionForm, ITextBlockElement } from '../../../pages';
+import { fakeRadioGroupStyle, sidebarContainerStyle, fileUpload } from './style';
 
 export interface IPetInformationProps {
   onChange: (key: keyof IAdoptionForm, value: any) => void;
-  addText: (id: string, value: string) => void;
+  addText: (textBlock: ITextBlockElement) => void;
+  onImageUploaded: (prop1: HTMLImageElement) => void;
   formValues: IAdoptionForm;
 }
 
@@ -27,7 +29,8 @@ export default class PetInformation extends React.Component<
   state = {
     size: '',
     caseOption: '',
-    sex: ''
+    sex: '',
+    inputFileRef: createRef<HTMLInputElement>()
   };
 
   onSizeChanged = (e: FormEvent<HTMLInputElement>) => {
@@ -51,12 +54,64 @@ export default class PetInformation extends React.Component<
     onChange('caso-mascota', sex);
   };
 
+  openFile = () => {
+    this.state.inputFileRef.current!.click();
+  };
+
+  loadImageOntoReader = (event: ProgressEvent<FileReader>) => {
+    const img = new Image();
+    img.src = event.target!.result as string;
+    img.addEventListener('load', () => {
+      this.props.onImageUploaded(img);
+    });
+  };
+
+  onFileUploaded = (e: FormEvent<HTMLInputElement>) => {
+    const reader = new FileReader();
+    reader.onload = this.loadImageOntoReader;
+    const file : File = e.currentTarget.files![0];
+    if (!file) {
+      console.error('!file', file, e);
+    }
+    reader.readAsDataURL(e.currentTarget.files![0]);
+  };
+
   render() {
     const { onChange, formValues, addText } = this.props;
-    const { size, caseOption, sex } = this.state;
+    const { size, caseOption, sex, inputFileRef } = this.state;
     return (
       <Card elevation={Elevation.ONE} css={sidebarContainerStyle}>
         <H4>Información</H4>
+        <div>
+          <FormGroup label="Imagen *">
+            <Button
+              intent="primary"
+              rightIcon="upload"
+              text="Subir Imagen"
+              onClick={this.openFile}
+            />
+            <input
+              ref={inputFileRef}
+              onChange={this.onFileUploaded}
+              type="file"
+              css={fileUpload}
+            />
+          </FormGroup>
+        </div>
+        <div>
+          <FormGroup label={'Nombre'}>
+            <InputGroup
+              name="nombre-mascota"
+              placeholder="Nombre"
+              intent="primary"
+              value={formValues['nombre-mascota']}
+              onChange={(e: FormEvent<HTMLInputElement>) : void => {
+                onChange('nombre-mascota', e.currentTarget.value);
+              }}
+              required
+            />
+          </FormGroup>
+        </div>
         <div>
           <FormGroup label="Caso *">
             <Radio
@@ -82,47 +137,13 @@ export default class PetInformation extends React.Component<
           </FormGroup>
         </div>
         <div>
-          <FormGroup label={'Nombre'}>
+          <FormGroup label="Edad">
             <InputGroup
-              name="nombre-mascota"
-              placeholder="Nombre"
-              intent="primary"
-              value={formValues['nombre-mascota']}
-              onChange={(e: FormEvent<HTMLInputElement>) : void => {
-                onChange('nombre-mascota', e.currentTarget.value);
-                addText('nombre-mascota', 'Me llamo ' + e.currentTarget.value);
-              }}
+              name="edad-mascota"
+              value={formValues['edad-mascota']}
+              onChange={(e: FormEvent<HTMLInputElement>) : void => onChange('edad-mascota', e.currentTarget.value)}
+              placeholder="Años"
               required
-            />
-          </FormGroup>
-        </div>
-        <div>
-          <FormGroup label="Tamaño *">
-            <Radio
-              name="tamaño-mascota"
-              value={size}
-              onChange={e => onChange('tamaño-mascota', Boolean(size))}
-              checked={Boolean(size)}
-              required
-              css={fakeRadioGroupStyle}
-            />
-            <Radio
-              onChange={this.onSizeChanged}
-              checked={size === 's'}
-              label="Pequeño"
-              value="s"
-            />
-            <Radio
-              onChange={this.onSizeChanged}
-              checked={size === 'm'}
-              label="Mediano"
-              value="m"
-            />
-            <Radio
-              onChange={this.onSizeChanged}
-              checked={size === 'l'}
-              label="Grande"
-              value="l"
             />
           </FormGroup>
         </div>
@@ -130,23 +151,53 @@ export default class PetInformation extends React.Component<
           <FormGroup label="Sexo *">
             <Radio
               name="sexo-mascota"
-              value={sex}
+              value={formValues['sexo-mascota']}
               onChange={e => onChange('sexo-mascota', Boolean(sex))}
-              checked={Boolean(sex)}
+              checked={Boolean(formValues['sexo-mascota'])}
               required
               css={fakeRadioGroupStyle}
             />
             <Radio
-              onChange={this.onSexChanged}
-              checked={sex === '1'}
+              onChange={e => onChange('sexo-mascota', '1')}
+              checked={formValues['sexo-mascota'] === '1'}
               label="Macho"
               value="1"
             />
             <Radio
-              onChange={this.onSexChanged}
-              checked={sex === '2'}
+              onChange={e => onChange('sexo-mascota', '2')}
+              checked={formValues['sexo-mascota'] === '2'}
               label="Hembra"
               value="2"
+            />
+          </FormGroup>
+        </div>
+        <div>
+          <FormGroup label="Tamaño *">
+            <Radio
+              name="tamaño-mascota"
+              value={formValues["tamaño-mascota"]}
+              onChange={e => onChange('tamaño-mascota', Boolean(size))}
+              checked={Boolean(formValues["tamaño-mascota"])}
+              required
+              css={fakeRadioGroupStyle}
+            />
+            <Radio
+              onChange={e => onChange('tamaño-mascota', 's')}
+              checked={formValues["tamaño-mascota"] === 's'}
+              label="Pequeño"
+              value="s"
+            />
+            <Radio
+              onChange={e => onChange('tamaño-mascota', 'm')}
+              checked={formValues["tamaño-mascota"] === 'm'}
+              label="Mediano"
+              value="m"
+            />
+            <Radio
+              onChange={e => onChange('tamaño-mascota', 'l')}
+              checked={formValues["tamaño-mascota"] === 'l'}
+              label="Grande"
+              value="l"
             />
           </FormGroup>
         </div>
@@ -175,31 +226,6 @@ export default class PetInformation extends React.Component<
               onChange('vacunas', !formValues.vacunas);
             }}
           />
-        </div>
-        <div>
-          <FormGroup label="Edad">
-            <InputGroup
-              name="edad-mascota"
-              value={formValues['edad-mascota']}
-              onChange={(e: FormEvent<HTMLInputElement>) : void => onChange('edad-mascota', e.currentTarget.value)}
-              placeholder="Años"
-              required
-            />
-          </FormGroup>
-        </div>
-        <div>
-          <FormGroup label="Información Extra">
-            <TextArea
-              fill
-              growVertically
-              name="informacion-extra-mascota"
-              placeholder="Extra"
-              value={formValues['informacion-extra-mascota']}
-              onChange={e =>
-                onChange('informacion-extra-mascota', e.currentTarget.value)
-              }
-            />
-          </FormGroup>
         </div>
       </Card>
     );

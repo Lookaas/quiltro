@@ -20,8 +20,8 @@ export default class BackgroundImage extends React.Component<
       return null;
     }
     const { height, width } = backgroundImage;
-    const medianWidth = -(width - canvasWidth) / 2;
-    const medianHeight = -(height - canvasHeight) / 2;
+    const medianWidth = -((width/2) - canvasWidth) / 2;
+    const medianHeight = -((height/2) - canvasHeight) / 2;
 
     return (
       <Layer>
@@ -30,6 +30,9 @@ export default class BackgroundImage extends React.Component<
             image={backgroundImage}
             x={medianWidth}
             y={medianHeight}
+            scaleX={0.5}
+            scaleY={0.5}
+            draggable
           />
         )}
       </Layer>

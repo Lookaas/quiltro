@@ -11,3 +11,7 @@ export const fakeRadioGroupStyle = css`
   height: 1;
   position: absolute;
 `;
+
+export const fileUpload = css`
+  display: none;
+`;

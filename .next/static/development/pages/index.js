@@ -1,5 +1,31 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\index.js"],{
 
+/***/ "./assets/icons.ts":
+/*!*************************!*\
+  !*** ./assets/icons.ts ***!
+  \*************************/
+/*! exports provided: band_aid, birthday_cake, dog, mars, paw, syringe, venus */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "band_aid", function() { return band_aid; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "birthday_cake", function() { return birthday_cake; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dog", function() { return dog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mars", function() { return mars; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "paw", function() { return paw; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "syringe", function() { return syringe; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "venus", function() { return venus; });
+var band_aid = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="band-aid" class="svg-inline--fa fa-band-aid fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M0 160v192c0 35.3 28.7 64 64 64h96V96H64c-35.3 0-64 28.7-64 64zm576-64h-96v320h96c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64zM192 416h256V96H192v320zm176-232c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm0 96c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm-96-96c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm0 96c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24z"></path></svg>';
+var birthday_cake = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="birthday-cake" class="svg-inline--fa fa-birthday-cake fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M448 384c-28.02 0-31.26-32-74.5-32-43.43 0-46.825 32-74.75 32-27.695 0-31.454-32-74.75-32-42.842 0-47.218 32-74.5 32-28.148 0-31.202-32-74.75-32-43.547 0-46.653 32-74.75 32v-80c0-26.5 21.5-48 48-48h16V112h64v144h64V112h64v144h64V112h64v144h16c26.5 0 48 21.5 48 48v80zm0 128H0v-96c43.356 0 46.767-32 74.75-32 27.951 0 31.253 32 74.75 32 42.843 0 47.217-32 74.5-32 28.148 0 31.201 32 74.75 32 43.357 0 46.767-32 74.75-32 27.488 0 31.252 32 74.5 32v96zM96 96c-17.75 0-32-14.25-32-32 0-31 32-23 32-64 12 0 32 29.5 32 56s-14.25 40-32 40zm128 0c-17.75 0-32-14.25-32-32 0-31 32-23 32-64 12 0 32 29.5 32 56s-14.25 40-32 40zm128 0c-17.75 0-32-14.25-32-32 0-31 32-23 32-64 12 0 32 29.5 32 56s-14.25 40-32 40z"></path></svg>';
+var dog = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="dog" class="svg-inline--fa fa-dog fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M298.06,224,448,277.55V496a16,16,0,0,1-16,16H368a16,16,0,0,1-16-16V384H192V496a16,16,0,0,1-16,16H112a16,16,0,0,1-16-16V282.09C58.84,268.84,32,233.66,32,192a32,32,0,0,1,64,0,32.06,32.06,0,0,0,32,32ZM544,112v32a64,64,0,0,1-64,64H448v35.58L320,197.87V48c0-14.25,17.22-21.39,27.31-11.31L374.59,64h53.63c10.91,0,23.75,7.92,28.62,17.69L464,96h64A16,16,0,0,1,544,112Zm-112,0a16,16,0,1,0-16,16A16,16,0,0,0,432,112Z"></path></svg>';
+var mars = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="mars" class="svg-inline--fa fa-mars fa-w-12" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M372 64h-79c-10.7 0-16 12.9-8.5 20.5l16.9 16.9-80.7 80.7c-22.2-14-48.5-22.1-76.7-22.1C64.5 160 0 224.5 0 304s64.5 144 144 144 144-64.5 144-144c0-28.2-8.1-54.5-22.1-76.7l80.7-80.7 16.9 16.9c7.6 7.6 20.5 2.2 20.5-8.5V76c0-6.6-5.4-12-12-12zM144 384c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"></path></svg>';
+var paw = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="paw" class="svg-inline--fa fa-paw fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z"></path></svg>';
+var syringe = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="syringe" class="svg-inline--fa fa-syringe fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M201.5 174.8l55.7 55.8c3.1 3.1 3.1 8.2 0 11.3l-11.3 11.3c-3.1 3.1-8.2 3.1-11.3 0l-55.7-55.8-45.3 45.3 55.8 55.8c3.1 3.1 3.1 8.2 0 11.3l-11.3 11.3c-3.1 3.1-8.2 3.1-11.3 0L111 265.2l-26.4 26.4c-17.3 17.3-25.6 41.1-23 65.4l7.1 63.6L2.3 487c-3.1 3.1-3.1 8.2 0 11.3l11.3 11.3c3.1 3.1 8.2 3.1 11.3 0l66.3-66.3 63.6 7.1c23.9 2.6 47.9-5.4 65.4-23l181.9-181.9-135.7-135.7-64.9 65zm308.2-93.3L430.5 2.3c-3.1-3.1-8.2-3.1-11.3 0l-11.3 11.3c-3.1 3.1-3.1 8.2 0 11.3l28.3 28.3-45.3 45.3-56.6-56.6-17-17c-3.1-3.1-8.2-3.1-11.3 0l-33.9 33.9c-3.1 3.1-3.1 8.2 0 11.3l17 17L424.8 223l17 17c3.1 3.1 8.2 3.1 11.3 0l33.9-34c3.1-3.1 3.1-8.2 0-11.3l-73.5-73.5 45.3-45.3 28.3 28.3c3.1 3.1 8.2 3.1 11.3 0l11.3-11.3c3.1-3.2 3.1-8.2 0-11.4z"></path></svg>';
+var venus = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="venus" class="svg-inline--fa fa-venus fa-w-9" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 512"><path fill="currentColor" d="M288 176c0-79.5-64.5-144-144-144S0 96.5 0 176c0 68.5 47.9 125.9 112 140.4V368H76c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h36v36c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-36h36c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-36v-51.6c64.1-14.5 112-71.9 112-140.4zm-224 0c0-44.1 35.9-80 80-80s80 35.9 80 80-35.9 80-80 80-80-35.9-80-80z"></path></svg>';
+
+/***/ }),
+
 /***/ "./components/LeftSideBar/ContactInformation/index.tsx":
 /*!*************************************************************!*\
   !*** ./components/LeftSideBar/ContactInformation/index.tsx ***!
@@ -292,7 +318,8 @@ function (_React$Component) {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "state", {
       size: '',
       caseOption: '',
-      sex: ''
+      sex: '',
+      inputFileRef: Object(react__WEBPACK_IMPORTED_MODULE_9__["createRef"])()
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "onSizeChanged", function (e) {
@@ -328,6 +355,30 @@ function (_React$Component) {
       onChange('caso-mascota', sex);
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "openFile", function () {
+      _this.state.inputFileRef.current.click();
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "loadImageOntoReader", function (event) {
+      var img = new Image();
+      img.src = event.target.result;
+      img.addEventListener('load', function () {
+        _this.props.onImageUploaded(img);
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "onFileUploaded", function (e) {
+      var reader = new FileReader();
+      reader.onload = _this.loadImageOntoReader;
+      var file = e.currentTarget.files[0];
+
+      if (!file) {
+        console.error('!file', file, e);
+      }
+
+      reader.readAsDataURL(e.currentTarget.files[0]);
+    });
+
     return _this;
   }
 
@@ -341,32 +392,93 @@ function (_React$Component) {
       var _this$state = this.state,
           size = _this$state.size,
           caseOption = _this$state.caseOption,
-          sex = _this$state.sex;
+          sex = _this$state.sex,
+          inputFileRef = _this$state.inputFileRef;
       return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Card"], {
         elevation: _blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Elevation"].ONE,
         css: _style__WEBPACK_IMPORTED_MODULE_10__["sidebarContainerStyle"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 83
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["H4"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 84
         },
         __self: this
       }, "Informaci\xF3n"), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 85
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
+        label: "Imagen *",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 86
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Button"], {
+        intent: "primary",
+        rightIcon: "upload",
+        text: "Subir Imagen",
+        onClick: this.openFile,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 87
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("input", {
+        ref: inputFileRef,
+        onChange: this.onFileUploaded,
+        type: "file",
+        css: _style__WEBPACK_IMPORTED_MODULE_10__["fileUpload"],
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 93
+        },
+        __self: this
+      }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 101
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
+        label: 'Nombre',
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 102
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["InputGroup"], {
+        name: "nombre-mascota",
+        placeholder: "Nombre",
+        intent: "primary",
+        value: formValues['nombre-mascota'],
+        onChange: function onChange(e) {
+          _onChange('nombre-mascota', e.currentTarget.value);
+        },
+        required: true,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 103
+        },
+        __self: this
+      }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 115
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
         label: "Caso *",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 116
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
@@ -380,7 +492,7 @@ function (_React$Component) {
         css: _style__WEBPACK_IMPORTED_MODULE_10__["fakeRadioGroupStyle"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 117
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
@@ -390,7 +502,7 @@ function (_React$Component) {
         value: "1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 125
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
@@ -400,195 +512,20 @@ function (_React$Component) {
         value: "2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
-        },
-        __self: this
-      }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 84
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
-        label: 'Nombre',
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 85
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["InputGroup"], {
-        name: "nombre-mascota",
-        placeholder: "Nombre",
-        intent: "primary",
-        value: formValues['nombre-mascota'],
-        onChange: function onChange(e) {
-          _onChange('nombre-mascota', e.currentTarget.value);
-
-          addText('nombre-mascota', 'Me llamo ' + e.currentTarget.value);
-        },
-        required: true,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 86
-        },
-        __self: this
-      }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 99
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
-        label: "Tama\xF1o *",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 100
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
-        name: "tama\xF1o-mascota",
-        value: size,
-        onChange: function onChange(e) {
-          return _onChange('tamaño-mascota', Boolean(size));
-        },
-        checked: Boolean(size),
-        required: true,
-        css: _style__WEBPACK_IMPORTED_MODULE_10__["fakeRadioGroupStyle"],
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 101
-        },
-        __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
-        onChange: this.onSizeChanged,
-        checked: size === 's',
-        label: "Peque\xF1o",
-        value: "s",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 109
-        },
-        __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
-        onChange: this.onSizeChanged,
-        checked: size === 'm',
-        label: "Mediano",
-        value: "m",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 115
-        },
-        __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
-        onChange: this.onSizeChanged,
-        checked: size === 'l',
-        label: "Grande",
-        value: "l",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 121
-        },
-        __self: this
-      }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 129
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
-        label: "Sexo *",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 130
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
-        name: "sexo-mascota",
-        value: sex,
-        onChange: function onChange(e) {
-          return _onChange('sexo-mascota', Boolean(sex));
-        },
-        checked: Boolean(sex),
-        required: true,
-        css: _style__WEBPACK_IMPORTED_MODULE_10__["fakeRadioGroupStyle"],
-        __source: {
-          fileName: _jsxFileName,
           lineNumber: 131
         },
         __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
-        onChange: this.onSexChanged,
-        checked: sex === '1',
-        label: "Macho",
-        value: "1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 139
-        },
-        __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
-        onChange: this.onSexChanged,
-        checked: sex === '2',
-        label: "Hembra",
-        value: "2",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 145
-        },
-        __self: this
       }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 153
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Checkbox"], {
-        name: "esterilizado",
-        label: "\xBFEst\xE1 esterilizado?",
-        checked: formValues.esterilizado,
-        onChange: function onChange(e) {
-          _onChange('esterilizado', !formValues.esterilizado);
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 154
-        },
-        __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Checkbox"], {
-        name: "chip",
-        label: "\xBFTiene chip?",
-        checked: formValues.chip,
-        onChange: function onChange(e) {
-          _onChange('chip', !formValues.chip);
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 162
-        },
-        __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Checkbox"], {
-        name: "vacunas",
-        label: "\xBFTiene las vacunas al d\xEDa?",
-        checked: formValues.vacunas,
-        onChange: function onChange(e) {
-          _onChange('vacunas', !formValues.vacunas);
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 170
-        },
-        __self: this
-      })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 179
+          lineNumber: 139
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
         label: "Edad",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 180
+          lineNumber: 140
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["InputGroup"], {
@@ -601,37 +538,166 @@ function (_React$Component) {
         required: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 181
+          lineNumber: 141
         },
         __self: this
       }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 190
+          lineNumber: 150
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
-        label: "Informaci\xF3n Extra",
+        label: "Sexo *",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 191
+          lineNumber: 151
         },
         __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["TextArea"], {
-        fill: true,
-        growVertically: true,
-        name: "informacion-extra-mascota",
-        placeholder: "Extra",
-        value: formValues['informacion-extra-mascota'],
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
+        name: "sexo-mascota",
+        value: formValues['sexo-mascota'],
         onChange: function onChange(e) {
-          return _onChange('informacion-extra-mascota', e.currentTarget.value);
+          return _onChange('sexo-mascota', Boolean(sex));
+        },
+        checked: Boolean(formValues['sexo-mascota']),
+        required: true,
+        css: _style__WEBPACK_IMPORTED_MODULE_10__["fakeRadioGroupStyle"],
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 152
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
+        onChange: function onChange(e) {
+          return _onChange('sexo-mascota', '1');
+        },
+        checked: formValues['sexo-mascota'] === '1',
+        label: "Macho",
+        value: "1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 160
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
+        onChange: function onChange(e) {
+          return _onChange('sexo-mascota', '2');
+        },
+        checked: formValues['sexo-mascota'] === '2',
+        label: "Hembra",
+        value: "2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 166
+        },
+        __self: this
+      }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 174
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
+        label: "Tama\xF1o *",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 175
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
+        name: "tama\xF1o-mascota",
+        value: formValues["tamaño-mascota"],
+        onChange: function onChange(e) {
+          return _onChange('tamaño-mascota', Boolean(size));
+        },
+        checked: Boolean(formValues["tamaño-mascota"]),
+        required: true,
+        css: _style__WEBPACK_IMPORTED_MODULE_10__["fakeRadioGroupStyle"],
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 176
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
+        onChange: function onChange(e) {
+          return _onChange('tamaño-mascota', 's');
+        },
+        checked: formValues["tamaño-mascota"] === 's',
+        label: "Peque\xF1o",
+        value: "s",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 184
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
+        onChange: function onChange(e) {
+          return _onChange('tamaño-mascota', 'm');
+        },
+        checked: formValues["tamaño-mascota"] === 'm',
+        label: "Mediano",
+        value: "m",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 190
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
+        onChange: function onChange(e) {
+          return _onChange('tamaño-mascota', 'l');
+        },
+        checked: formValues["tamaño-mascota"] === 'l',
+        label: "Grande",
+        value: "l",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 196
+        },
+        __self: this
+      }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 204
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Checkbox"], {
+        name: "esterilizado",
+        label: "\xBFEst\xE1 esterilizado?",
+        checked: formValues.esterilizado,
+        onChange: function onChange(e) {
+          _onChange('esterilizado', !formValues.esterilizado);
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 192
+          lineNumber: 205
         },
         __self: this
-      }))));
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Checkbox"], {
+        name: "chip",
+        label: "\xBFTiene chip?",
+        checked: formValues.chip,
+        onChange: function onChange(e) {
+          _onChange('chip', !formValues.chip);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 213
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Checkbox"], {
+        name: "vacunas",
+        label: "\xBFTiene las vacunas al d\xEDa?",
+        checked: formValues.vacunas,
+        onChange: function onChange(e) {
+          _onChange('vacunas', !formValues.vacunas);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 221
+        },
+        __self: this
+      })));
     }
   }]);
 
@@ -646,16 +712,27 @@ function (_React$Component) {
 /*!********************************************************!*\
   !*** ./components/LeftSideBar/PetInformation/style.ts ***!
   \********************************************************/
-/*! exports provided: sidebarContainerStyle, fakeRadioGroupStyle */
+/*! exports provided: sidebarContainerStyle, fakeRadioGroupStyle, fileUpload */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sidebarContainerStyle", function() { return sidebarContainerStyle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fakeRadioGroupStyle", function() { return fakeRadioGroupStyle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fileUpload", function() { return fileUpload; });
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral.js");
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
 
+
+function _templateObject3() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: none;\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
 
 function _templateObject2() {
   var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  opacity: 0;\n  height: 1;\n  position: absolute;\n"]);
@@ -680,6 +757,7 @@ function _templateObject() {
 
 var sidebarContainerStyle = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject());
 var fakeRadioGroupStyle = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject2());
+var fileUpload = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject3());
 
 /***/ }),
 
@@ -967,9 +1045,9 @@ function (_Component) {
           onInputChanged = _this$props.onInputChanged,
           onTextBlockInteracted = _this$props.onTextBlockInteracted,
           selectedTextBlock = _this$props.selectedTextBlock,
-          addTextBlock = _this$props.addTextBlock,
           textBlocks = _this$props.textBlocks,
-          addTextBlockWithData = _this$props.addTextBlockWithData;
+          addTextBlockWithData = _this$props.addTextBlockWithData,
+          onImageUploaded = _this$props.onImageUploaded;
       return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])("form", {
         onSubmit: this.onSubmit,
         onChange: this.onFormChange,
@@ -977,22 +1055,23 @@ function (_Component) {
         method: "post",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130
+          lineNumber: 131
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_PetInformation__WEBPACK_IMPORTED_MODULE_11__["default"], {
         onChange: onInputChanged,
         formValues: formValues,
         addText: addTextBlockWithData,
+        onImageUploaded: onImageUploaded,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131
+          lineNumber: 132
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 132
+          lineNumber: 133
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_ContactInformation__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1000,13 +1079,13 @@ function (_Component) {
         formValues: formValues,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133
+          lineNumber: 134
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_SubmitButton__WEBPACK_IMPORTED_MODULE_12__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 134
+          lineNumber: 135
         },
         __self: this
       })));
@@ -1062,16 +1141,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _blueprintjs_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @blueprintjs/core */ "./node_modules/@blueprintjs/core/lib/esm/index.js");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
-/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./styles */ "./components/Nav/styles.ts");
-
-
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _blueprintjs_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @blueprintjs/core */ "./node_modules/@blueprintjs/core/lib/esm/index.js");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
+/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styles */ "./components/Nav/styles.ts");
 
 
 
@@ -1079,7 +1154,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\Nav\\index.tsx";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 /** @jsx jsx */
 
@@ -1090,110 +1165,41 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 var Nav =
 /*#__PURE__*/
 function (_Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(Nav, _Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Nav, _Component);
 
   function Nav() {
-    var _getPrototypeOf2;
-
-    var _this;
-
     Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Nav);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Nav)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "inputFileRef", Object(react__WEBPACK_IMPORTED_MODULE_7__["createRef"])());
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "openFile", function () {
-      _this.inputFileRef.current.click();
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "loadImageOntoReader", function (event) {
-      var img = new Image();
-      img.src = event.target.result;
-      img.addEventListener('load', function () {
-        _this.props.onImageUploaded(img);
-      });
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "onFileUploaded", function (e) {
-      var reader = new FileReader();
-      reader.onload = _this.loadImageOntoReader;
-      var file = e.currentTarget.files[0];
-
-      if (!file) {
-        console.error('!file', file, e);
-      }
-
-      reader.readAsDataURL(e.currentTarget.files[0]);
-    });
-
-    return _this;
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Nav).apply(this, arguments));
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Nav, [{
     key: "render",
     value: function render() {
-      return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_8__["Navbar"], {
-        css: _styles__WEBPACK_IMPORTED_MODULE_10__["navContainerStyle"],
+      return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_6__["Navbar"], {
+        css: _styles__WEBPACK_IMPORTED_MODULE_8__["navContainerStyle"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 11
         },
         __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_8__["Navbar"].Group, {
-        align: _blueprintjs_core__WEBPACK_IMPORTED_MODULE_8__["Alignment"].LEFT,
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_6__["Navbar"].Group, {
+        align: _blueprintjs_core__WEBPACK_IMPORTED_MODULE_6__["Alignment"].LEFT,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 12
         },
         __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_8__["Navbar"].Heading, {
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_6__["Navbar"].Heading, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 13
         },
         __self: this
-      }, "Quiltro"), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_8__["Navbar"].Divider, {
+      }, "Quiltro"), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_6__["Navbar"].Divider, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
-        },
-        __self: this
-      })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_8__["Navbar"].Group, {
-        align: _blueprintjs_core__WEBPACK_IMPORTED_MODULE_8__["Alignment"].RIGHT,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 42
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_8__["Navbar"].Divider, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 43
-        },
-        __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_8__["Button"], {
-        intent: "primary",
-        rightIcon: "upload",
-        text: "Subir Imagen",
-        onClick: this.openFile,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 44
-        },
-        __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])("input", {
-        ref: this.inputFileRef,
-        onChange: this.onFileUploaded,
-        type: "file",
-        css: _styles__WEBPACK_IMPORTED_MODULE_10__["fileUpload"],
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 14
         },
         __self: this
       })));
@@ -1201,7 +1207,7 @@ function (_Component) {
   }]);
 
   return Nav;
-}(react__WEBPACK_IMPORTED_MODULE_7__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Nav);
 
@@ -1330,8 +1336,8 @@ function (_React$Component) {
 
       var height = backgroundImage.height,
           width = backgroundImage.width;
-      var medianWidth = -(width - canvasWidth) / 2;
-      var medianHeight = -(height - canvasHeight) / 2;
+      var medianWidth = -(width / 2 - canvasWidth) / 2;
+      var medianHeight = -(height / 2 - canvasHeight) / 2;
       return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Layer"], {
         __source: {
           fileName: _jsxFileName,
@@ -1342,6 +1348,9 @@ function (_React$Component) {
         image: backgroundImage,
         x: medianWidth,
         y: medianHeight,
+        scaleX: 0.5,
+        scaleY: 0.5,
+        draggable: true,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 29
@@ -1355,6 +1364,126 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_6___default.a.Component);
 
 
+
+/***/ }),
+
+/***/ "./components/canvas/CharacteristicsLayer/index.tsx":
+/*!**********************************************************!*\
+  !*** ./components/canvas/CharacteristicsLayer/index.tsx ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
+/* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-konva */ "./node_modules/react-konva/lib/ReactKonva.js");
+/* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_konva__WEBPACK_IMPORTED_MODULE_8__);
+
+
+
+
+
+
+var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\canvas\\CharacteristicsLayer\\index.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
+
+/** @jsx jsx */
+
+
+
+
+var CharacteristicsLayer =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(CharacteristicsLayer, _Component);
+
+  function CharacteristicsLayer() {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, CharacteristicsLayer);
+
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(CharacteristicsLayer).apply(this, arguments));
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(CharacteristicsLayer, [{
+    key: "setPosition",
+    value: function setPosition() {}
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          canvasHeight = _this$props.canvasHeight,
+          canvasWidth = _this$props.canvasWidth,
+          characteristics = _this$props.characteristics;
+      var layerWidth = canvasWidth * 0.7;
+      var layerHeigth = canvasHeight * 0.1;
+      console.log(characteristics);
+
+      var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(characteristics);
+
+      console.log(characteristics[keys[0]]);
+      var offsetDelta = 0.08;
+      var xOffset = layerWidth * offsetDelta * (6 - keys.length);
+      return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_8__["Group"], {
+        x: canvasWidth * 0.05,
+        y: canvasHeight * 0.7,
+        height: layerHeigth,
+        width: layerHeigth,
+        visible: true,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37
+        },
+        __self: this
+      }, _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(characteristics).sort().map(function (charKey, index) {
+        return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_8__["Group"], {
+          width: layerWidth * 0.16,
+          height: layerHeigth,
+          x: xOffset + index * layerWidth * 0.16,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 44
+          },
+          __self: this
+        }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_8__["Path"], {
+          data: characteristics[charKey].icon,
+          fill: 'red',
+          scaleX: 0.08,
+          scaleY: 0.08,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 48
+          },
+          __self: this
+        }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_8__["Text"], {
+          width: layerWidth * 0.16,
+          text: characteristics[charKey].text,
+          fontSize: 10,
+          y: layerHeigth - 12,
+          align: 'center',
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 53
+          },
+          __self: this
+        }));
+      }));
+    }
+  }]);
+
+  return CharacteristicsLayer;
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (CharacteristicsLayer);
 
 /***/ }),
 
@@ -1473,7 +1602,10 @@ function (_React$Component) {
           onDoubleClick = _this$props2.onDoubleClick,
           onClick = _this$props2.onClick,
           onMouseDown = _this$props2.onMouseDown,
-          position = _this$props2.position;
+          position = _this$props2.position,
+          align = _this$props2.align,
+          width = _this$props2.width,
+          style = _this$props2.style;
       var fontSize = this.state.fontSize;
       return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_9__["Text"], {
         padding: 10,
@@ -1491,7 +1623,10 @@ function (_React$Component) {
         onTransform: this.onTransform,
         onClick: onClick,
         onDblClick: onDoubleClick,
-        onMouseDown: onMouseDown // _useStrictMode
+        onMouseDown: onMouseDown,
+        align: align,
+        width: width,
+        fontStyle: style // _useStrictMode
         ,
         __source: {
           fileName: _jsxFileName,
@@ -1926,6 +2061,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./style */ "./components/canvas/style.ts");
 /* harmony import */ var _Text__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./Text */ "./components/canvas/Text/index.tsx");
 /* harmony import */ var _Transformer__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./Transformer */ "./components/canvas/Transformer/index.tsx");
+/* harmony import */ var _CharacteristicsLayer__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./CharacteristicsLayer */ "./components/canvas/CharacteristicsLayer/index.tsx");
 
 
 
@@ -1942,6 +2078,7 @@ var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\canvas\\i
 var __jsx = react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement;
 
 /** @jsx jsx */
+
 
 
 
@@ -1972,8 +2109,6 @@ function (_Component) {
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8__["default"])(_this), "state", {
       backgroundImage: null,
-      canvasHeight: 750,
-      canvasWidth: 500,
       editTextAreaProps: {},
       editTextAreaValue: '',
       onTextAreaClosed: function onTextAreaClosed() {
@@ -2013,9 +2148,9 @@ function (_Component) {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8__["default"])(_this), "getResizedImage", function (image) {
       var height = image.height,
           width = image.width;
-      var _this$state = _this.state,
-          canvasHeight = _this$state.canvasHeight,
-          canvasWidth = _this$state.canvasWidth;
+      var _this$props = _this.props,
+          canvasHeight = _this$props.canvasHeight,
+          canvasWidth = _this$props.canvasWidth;
       var imageHeight = height;
       var imageWidth = width; // Resize to go over the canvas height
 
@@ -2197,25 +2332,27 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var _this$state2 = this.state,
-          backgroundImage = _this$state2.backgroundImage,
-          canvasHeight = _this$state2.canvasHeight,
-          canvasWidth = _this$state2.canvasWidth,
-          showEditTextArea = _this$state2.showEditTextArea,
-          editTextAreaProps = _this$state2.editTextAreaProps,
-          onTextAreaClosed = _this$state2.onTextAreaClosed;
-      var _this$props = this.props,
-          canvasTexts = _this$props.canvasTexts,
-          onRef = _this$props.onRef,
-          onTextChanged = _this$props.onTextChanged;
+      var _this$state = this.state,
+          backgroundImage = _this$state.backgroundImage,
+          showEditTextArea = _this$state.showEditTextArea,
+          editTextAreaProps = _this$state.editTextAreaProps,
+          onTextAreaClosed = _this$state.onTextAreaClosed;
+      var _this$props2 = this.props,
+          canvasTexts = _this$props2.canvasTexts,
+          onRef = _this$props2.onRef,
+          onTextChanged = _this$props2.onTextChanged,
+          canvasHeight = _this$props2.canvasHeight,
+          canvasWidth = _this$props2.canvasWidth,
+          characteristics = _this$props2.characteristics;
       var textBlocks = canvasTexts.textBlocks,
-          selectedTextBlock = canvasTexts.selectedTextBlock;
+          selectedTextBlock = canvasTexts.selectedTextBlock; //const test = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="venus" class="svg-inline--fa fa-venus fa-w-9" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 512"><path fill="currentColor" d="M288 176c0-79.5-64.5-144-144-144S0 96.5 0 176c0 68.5 47.9 125.9 112 140.4V368H76c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h36v36c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-36h36c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-36v-51.6c64.1-14.5 112-71.9 112-140.4zm-224 0c0-44.1 35.9-80 80-80s80 35.9 80 80-35.9 80-80 80-80-35.9-80-80z"></path></svg>'
+
       return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_12__["Card"], {
         elevation: _blueprintjs_core__WEBPACK_IMPORTED_MODULE_12__["Elevation"].ONE,
         css: _style__WEBPACK_IMPORTED_MODULE_17__["canvasStyle"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 235
+          lineNumber: 239
         },
         __self: this
       },  true && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_13__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_14__["Stage"], {
@@ -2225,7 +2362,7 @@ function (_Component) {
         onClick: this.handleStageMouseDown,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 237
+          lineNumber: 241
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_BackgroundImage__WEBPACK_IMPORTED_MODULE_15__["default"], {
@@ -2234,23 +2371,19 @@ function (_Component) {
         canvasWidth: canvasWidth,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 243
+          lineNumber: 247
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_13__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_14__["Layer"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 248
+          lineNumber: 252
         },
         __self: this
       }, _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_1___default()(textBlocks).map(function (textBlock) {
         return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_Text__WEBPACK_IMPORTED_MODULE_18__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
           key: textBlock.id
         }, textBlock, {
-          position: {
-            x: 0,
-            y: 0
-          },
           maxHeight: canvasHeight,
           maxWidth: canvasWidth,
           onClick: _this2.onTextClick,
@@ -2258,19 +2391,28 @@ function (_Component) {
           onMouseDown: _this2.onMouseDown,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 250
+            lineNumber: 254
           },
           __self: this
         }));
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_CharacteristicsLayer__WEBPACK_IMPORTED_MODULE_20__["default"], {
+        canvasHeight: canvasHeight,
+        canvasWidth: canvasWidth,
+        characteristics: characteristics,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 265
+        },
+        __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_Transformer__WEBPACK_IMPORTED_MODULE_19__["default"], {
         resizeEnabled: true,
-        rotateEnabled: false,
+        rotateEnabled: true,
         borderEnabled: true,
         onMount: this.onMount,
         selectedShapeName: selectedTextBlock,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 261
+          lineNumber: 267
         },
         __self: this
       }))), showEditTextArea && textBlocks[selectedTextBlock].text && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_TextArea__WEBPACK_IMPORTED_MODULE_16__["default"], {
@@ -2283,7 +2425,7 @@ function (_Component) {
         maxHeight: canvasHeight,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 272
+          lineNumber: 278
         },
         __self: this
       }));
@@ -2301,15 +2443,26 @@ function (_Component) {
 /*!************************************!*\
   !*** ./components/canvas/style.ts ***!
   \************************************/
-/*! exports provided: canvasStyle */
+/*! exports provided: canvasStyle, testStyle */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "canvasStyle", function() { return canvasStyle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "testStyle", function() { return testStyle; });
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral.js");
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
 
+
+function _templateObject2() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
 
 function _templateObject() {
   var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 1rem;\n  width: 35rem;\n  justify-content: center;\n  & .konvajs-content {\n    background: ghostwhite;\n    border: solid 1px lightgray;\n  }\n"]);
@@ -2323,6 +2476,7 @@ function _templateObject() {
 
 
 var canvasStyle = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject());
+var testStyle = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject2());
 
 /***/ }),
 
@@ -37052,71 +37206,6 @@ Util_1.Collection.mapMethods(Wedge);
 
 /***/ }),
 
-/***/ "./node_modules/nanoid/index.browser.js":
-/*!**********************************************!*\
-  !*** ./node_modules/nanoid/index.browser.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// This file replaces `index.js` in bundlers like webpack or Rollup,
-// according to `browser` config in `package.json`.
-
-if (true) {
-  // All bundlers will remove this block in production bundle
-  if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
-    throw new Error(
-      'React Native does not have a built-in secure random generator. ' +
-      'If you don’t need unpredictable IDs, you can use `nanoid/non-secure`. ' +
-      'For secure ID install `expo-random` locally and use `nanoid/async`.'
-    )
-  }
-  if (typeof self === 'undefined' || (!self.crypto && !self.msCrypto)) {
-    throw new Error(
-      'Your browser does not have secure random generator. ' +
-      'If you don’t need unpredictable IDs, you can use nanoid/non-secure.'
-    )
-  }
-}
-
-var crypto = self.crypto || self.msCrypto
-
-// This alphabet uses a-z A-Z 0-9 _- symbols.
-// Symbols are generated for smaller size.
-// -_zyxwvutsrqponmlkjihgfedcba9876543210ZYXWVUTSRQPONMLKJIHGFEDCBA
-var url = '-_'
-// Loop from 36 to 0 (from z to a and 9 to 0 in Base36).
-var i = 36
-while (i--) {
-  // 36 is radix. Number.prototype.toString(36) returns number
-  // in Base36 representation. Base36 is like hex, but it uses 0–9 and a-z.
-  url += i.toString(36)
-}
-// Loop from 36 to 10 (from Z to A in Base36).
-i = 36
-while (i-- - 10) {
-  url += i.toString(36).toUpperCase()
-}
-
-module.exports = function (size) {
-  var id = ''
-  var bytes = crypto.getRandomValues(new Uint8Array(size || 21))
-  i = size || 21
-
-  // Compact alternative for `for (var i = 0; i < size; i++)`
-  while (i--) {
-    // We can’t use bytes bigger than the alphabet. 63 is 00111111 bitmask.
-    // This mask reduces random byte 0-255 to 0-63 values.
-    // There is no need in `|| ''` and `* 1.6` hacks in here,
-    // because bitmask trim bytes exact to alphabet size.
-    id += url[bytes[i] & 63]
-  }
-  return id
-}
-
-
-/***/ }),
-
 /***/ "./node_modules/next/dist/build/polyfills/object-assign.js":
 /*!***********************************************************************************************************************!*\
   !*** delegated ./node_modules/next/dist/build/polyfills/object-assign.js from dll-reference dll_5f137288facb1107b491 ***!
@@ -63594,12 +63683,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
-/* harmony import */ var nanoid__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! nanoid */ "./node_modules/nanoid/index.browser.js");
-/* harmony import */ var nanoid__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(nanoid__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _components_canvas__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/canvas */ "./components/canvas/index.tsx");
-/* harmony import */ var _components_LeftSideBar__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/LeftSideBar */ "./components/LeftSideBar/index.tsx");
-/* harmony import */ var _components_Nav__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/Nav */ "./components/Nav/index.tsx");
-/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./styles */ "./pages/styles.ts");
+/* harmony import */ var _components_canvas__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/canvas */ "./components/canvas/index.tsx");
+/* harmony import */ var _components_LeftSideBar__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/LeftSideBar */ "./components/LeftSideBar/index.tsx");
+/* harmony import */ var _components_Nav__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/Nav */ "./components/Nav/index.tsx");
+/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./styles */ "./pages/styles.ts");
+/* harmony import */ var _assets_icons__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../assets/icons */ "./assets/icons.ts");
 
 
 
@@ -63669,7 +63757,10 @@ function (_Component) {
         'caso-mascota': '',
         'ciudad-contacto': '',
         'sexo-mascota': ''
-      }
+      },
+      characteristics: {},
+      canvasHeight: 750,
+      canvasWidth: 500
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "stageRef", Object(react__WEBPACK_IMPORTED_MODULE_13__["createRef"])());
@@ -63717,38 +63808,157 @@ function (_Component) {
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "setAdoptionFormField", function (key, value) {
-      _this.setState({
-        formValues: _objectSpread({}, _this.state.formValues, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])({}, key, value))
+      var _this$state = _this.state,
+          canvasTexts = _this$state.canvasTexts,
+          canvasHeight = _this$state.canvasHeight,
+          canvasWidth = _this$state.canvasWidth,
+          characteristics = _this$state.characteristics;
+      var textBlocks = canvasTexts.textBlocks;
+      var actualCharacteristics = characteristics;
+      var newTextBlock = {
+        id: key,
+        color: 'black',
+        text: value,
+        fontSize: 'medium',
+        position: {
+          x: 0,
+          y: 0
+        }
+      };
+      var characteristic = {
+        priority: '',
+        text: '',
+        icon: ''
+      };
+      var validator = '';
+
+      switch (key) {
+        case 'nombre-mascota':
+          newTextBlock.align = 'center';
+          newTextBlock.width = canvasWidth;
+          newTextBlock.position.y = canvasHeight * 0.1;
+          newTextBlock.style = 'bold';
+          newTextBlock.fontSize = 'large';
+          validator = 'textBlock';
+          break;
+
+        case 'caso-mascota':
+          newTextBlock.align = 'center';
+          newTextBlock.width = canvasWidth;
+          newTextBlock.position.y = canvasHeight * 0.2;
+          newTextBlock.text = value === '1' ? "En adopción" : 'Perdido';
+          validator = 'textBlock';
+          break;
+
+        case 'edad-mascota':
+          characteristic = {
+            priority: '0',
+            icon: _assets_icons__WEBPACK_IMPORTED_MODULE_19__["birthday_cake"],
+            text: value
+          };
+          validator = 'characteristic';
+          break;
+
+        case 'sexo-mascota':
+          characteristic = {
+            priority: '1',
+            icon: value === '1' ? _assets_icons__WEBPACK_IMPORTED_MODULE_19__["mars"] : _assets_icons__WEBPACK_IMPORTED_MODULE_19__["venus"],
+            text: value === '1' ? 'Macho' : 'Hembra'
+          };
+          validator = 'characteristic';
+          break;
+
+        case 'tamaño-mascota':
+          characteristic = {
+            priority: '3',
+            icon: _assets_icons__WEBPACK_IMPORTED_MODULE_19__["dog"],
+            text: value === 's' ? 'Pequeño' : value === 'm' ? 'Mediano' : 'Grande'
+          };
+          validator = 'characteristic';
+          break;
+
+        case 'esterilizado':
+          if (value) {
+            characteristic = {
+              priority: '4',
+              icon: _assets_icons__WEBPACK_IMPORTED_MODULE_19__["band_aid"],
+              text: 'Esterilizado'
+            };
+            validator = 'characteristic';
+          } else {
+            delete actualCharacteristics['4'];
+            validator = 'deletedCharacteristic';
+          }
+
+          break;
+
+        case 'chip':
+          if (value) {
+            characteristic = {
+              priority: '5',
+              icon: _assets_icons__WEBPACK_IMPORTED_MODULE_19__["paw"],
+              text: 'Con chip'
+            };
+            validator = 'characteristic';
+          } else {
+            delete actualCharacteristics['5'];
+            validator = 'deletedCharacteristic';
+          }
+
+          break;
+
+        case 'vacunas':
+          if (value) {
+            characteristic = {
+              priority: '6',
+              icon: _assets_icons__WEBPACK_IMPORTED_MODULE_19__["syringe"],
+              text: 'Al día'
+            };
+            validator = 'characteristic';
+          } else {
+            delete actualCharacteristics['6'];
+            validator = 'deletedCharacteristic';
+          }
+
+          break;
+      }
+
+      if (validator === 'textBlock') {
+        _this.setState({
+          formValues: _objectSpread({}, _this.state.formValues, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])({}, key, value)),
+          canvasTexts: _objectSpread({}, canvasTexts, {
+            textBlocks: _objectSpread({}, textBlocks, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])({}, key, newTextBlock))
+          })
+        });
+      } else if (validator === 'characteristic') {
+        _this.setState({
+          formValues: _objectSpread({}, _this.state.formValues, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])({}, key, value)),
+          characteristics: _objectSpread({}, characteristics, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])({}, characteristic.priority, characteristic))
+        });
+      } else if (validator = 'deletedCharacteristic') {
+        _this.setState({
+          formValues: _objectSpread({}, _this.state.formValues, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])({}, key, value)),
+          characteristics: actualCharacteristics
+        });
+      }
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "deleteCharacteristic", function (characPriority) {
+      var characteristics = _this.state.characteristics;
+      var actualCharacteristics = characteristics;
+      var updatePriority = {};
+
+      _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(characteristics).forEach(function (priority) {
+        if (priority !== characPriority) {
+          updatePriority[priority] = actualCharacteristics[priority];
+        }
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "addTextBlock", function () {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "addTextBlockWithData", function (newTextblock) {
       var canvasTexts = _this.state.canvasTexts;
       var textBlocks = canvasTexts.textBlocks;
-      var id = nanoid__WEBPACK_IMPORTED_MODULE_15___default()();
-      var newTextblock = {
-        color: 'black',
-        fontSize: 'medium',
-        id: id,
-        text: ''
-      };
-
-      _this.setState({
-        canvasTexts: _objectSpread({}, canvasTexts, {
-          textBlocks: _objectSpread({}, textBlocks, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])({}, id, newTextblock))
-        })
-      });
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "addTextBlockWithData", function (id, text) {
-      var canvasTexts = _this.state.canvasTexts;
-      var textBlocks = canvasTexts.textBlocks;
-      var newTextblock = {
-        color: 'black',
-        fontSize: 'medium',
-        id: id,
-        text: text
-      };
+      var id = newTextblock.id;
 
       _this.setState({
         canvasTexts: _objectSpread({}, canvasTexts, {
@@ -63762,42 +63972,42 @@ function (_Component) {
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_7__["default"])(Home, [{
     key: "componentDidMount",
-    value: function componentDidMount() {
-      this.addTextBlock();
+    value: function componentDidMount() {//this.addTextBlock();
     }
   }, {
     key: "render",
     value: function render() {
-      var _this$state = this.state,
-          canvasImage = _this$state.canvasImage,
-          canvasTexts = _this$state.canvasTexts,
-          formValues = _this$state.formValues;
+      var _this$state2 = this.state,
+          canvasImage = _this$state2.canvasImage,
+          canvasTexts = _this$state2.canvasTexts,
+          formValues = _this$state2.formValues,
+          canvasHeight = _this$state2.canvasHeight,
+          canvasWidth = _this$state2.canvasWidth,
+          characteristics = _this$state2.characteristics;
       var selectedTextBlock = canvasTexts.selectedTextBlock,
           textBlocks = canvasTexts.textBlocks;
       return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_14__["jsx"])("div", {
-        css: _styles__WEBPACK_IMPORTED_MODULE_19__["pageStyle"],
+        css: _styles__WEBPACK_IMPORTED_MODULE_18__["pageStyle"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 190
+          lineNumber: 349
         },
         __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_components_Nav__WEBPACK_IMPORTED_MODULE_18__["default"], {
-        onImageUploaded: this.setCanvasImage,
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_components_Nav__WEBPACK_IMPORTED_MODULE_17__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 191
+          lineNumber: 350
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_14__["jsx"])("section", {
         "data-name": "bodycontainer",
-        css: _styles__WEBPACK_IMPORTED_MODULE_19__["containerStyle"],
+        css: _styles__WEBPACK_IMPORTED_MODULE_18__["containerStyle"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 192
+          lineNumber: 351
         },
         __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_components_LeftSideBar__WEBPACK_IMPORTED_MODULE_17__["default"], {
-        addTextBlock: this.addTextBlock,
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_components_LeftSideBar__WEBPACK_IMPORTED_MODULE_16__["default"], {
         canvasRef: this.stageRef,
         formValues: formValues,
         onTextBlockInteracted: this.setSelectedTextBlock,
@@ -63806,12 +64016,13 @@ function (_Component) {
         onInputChanged: this.setAdoptionFormField,
         onTextChanged: this.onTextChanged,
         addTextBlockWithData: this.addTextBlockWithData,
+        onImageUploaded: this.setCanvasImage,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 193
+          lineNumber: 352
         },
         __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_components_canvas__WEBPACK_IMPORTED_MODULE_16__["default"], {
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_components_canvas__WEBPACK_IMPORTED_MODULE_15__["default"], {
         canvasRef: this.stageRef,
         canvasTexts: canvasTexts,
         currentCanvasText: textBlocks[selectedTextBlock],
@@ -63819,9 +64030,12 @@ function (_Component) {
         onRef: this.stageRef,
         onTextChanged: this.onTextBlockChanged,
         onTextBlockSelected: this.setSelectedTextBlock,
+        canvasHeight: canvasHeight,
+        canvasWidth: canvasWidth,
+        characteristics: characteristics,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 204
+          lineNumber: 363
         },
         __self: this
       })));
@@ -63876,7 +64090,7 @@ var pageStyle = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["css"])(_templ
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CLucas%5CDocuments%5Cquiltros%5Cpages%5Cindex.tsx ***!
   \********************************************************************************************************************************/
@@ -63899,5 +64113,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

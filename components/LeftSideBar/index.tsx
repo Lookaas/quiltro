@@ -3,7 +3,7 @@ import { jsx } from '@emotion/core';
 import React, { Component, FormEvent, RefObject } from 'react';
 import ReactGA from 'react-ga';
 
-import { IAdoptionForm } from '../../pages';
+import { IAdoptionForm, ITextBlockElement } from '../../pages';
 import ContactInformation from './ContactInformation';
 import PetInformation from './PetInformation';
 import SubmitButton from './SubmitButton';
@@ -16,13 +16,14 @@ export interface ILeftSidebarProps {
   formValues: IAdoptionForm;
   selectedTextBlock: string;
   textBlocks: {
-    [id: string]: ITextBlocksConfigPanelState;
+    [id: string]: ITextBlockElement;
   };
-  addTextBlock: () => void;
-  addTextBlockWithData: (id: string, value: string) => void;
+  //addTextBlock: () => void;
+  addTextBlockWithData: (textBlock: ITextBlockElement) => void;
   onInputChanged: (key: keyof IAdoptionForm, value: any) => void;
   onTextBlockInteracted: (key: string) => void;
   onTextChanged: (key: string, value: string, id: string) => void;
+  onImageUploaded: (prop1: HTMLImageElement) => void;
 }
 
 export interface ILeftSidebarState {
@@ -122,13 +123,13 @@ export default class LeftSidebar extends Component<
       onInputChanged,
       onTextBlockInteracted,
       selectedTextBlock,
-      addTextBlock,
       textBlocks,
-      addTextBlockWithData
+      addTextBlockWithData,
+      onImageUploaded
     } = this.props;
     return (
       <form onSubmit={this.onSubmit} onChange={this.onFormChange} css={containerStyle} method="post">
-        <PetInformation onChange={onInputChanged} formValues={formValues} addText={addTextBlockWithData} />
+        <PetInformation onChange={onInputChanged} formValues={formValues} addText={addTextBlockWithData} onImageUploaded={onImageUploaded}/>
         <div>
           <ContactInformation onChange={onInputChanged} formValues={formValues} />
           <SubmitButton />
