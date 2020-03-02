@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -171,7 +171,7 @@ class ContactInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Co
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
-      label: "Nombre",
+      label: "Nombre *",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 23
@@ -185,6 +185,7 @@ class ContactInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Co
       onChange: e => {
         onChange('nombre-contacto', e.currentTarget.value);
       },
+      leftIcon: "person",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 24
@@ -193,14 +194,14 @@ class ContactInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Co
     }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 36
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
-      label: "Tel\xE9fono",
+      label: "Tel\xE9fono *",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 37
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
@@ -210,48 +211,24 @@ class ContactInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Co
       onChange: e => {
         onChange('telefono-contacto', e.currentTarget.value);
       },
+      leftIcon: "mobile-phone",
       required: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 38
       },
       __self: this
     }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 48
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
-      label: "Whatsapp",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 49
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
-      placeholder: "Whatsapp",
-      name: "whatsapp-contacto",
-      value: formValues['whatsapp-contacto'],
-      onChange: e => {
-        onChange('whatsapp-contacto', e.currentTarget.value);
-      },
       __source: {
         fileName: _jsxFileName,
         lineNumber: 50
       },
       __self: this
-    }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 60
-      },
-      __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
-      label: "Email",
+      label: "Email *",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 51
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
@@ -262,22 +239,23 @@ class ContactInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Co
       onChange: e => {
         onChange('email-contacto', e.currentTarget.value);
       },
+      leftIcon: "inbox",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 52
       },
       __self: this
     }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 64
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
       label: "Ciudad",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 65
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
@@ -287,9 +265,10 @@ class ContactInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Co
       onChange: e => {
         onChange('ciudad-contacto', e.currentTarget.value);
       },
+      leftIcon: "home",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 75
+        lineNumber: 66
       },
       __self: this
     }))));
@@ -337,12 +316,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style */ "./components/LeftSideBar/PetInformation/style.ts");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "@fortawesome/free-solid-svg-icons");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "@fortawesome/react-fontawesome");
+/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\LeftSideBar\\PetInformation\\index.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /** @jsx jsx */
+
+
 
 
 
@@ -428,31 +413,39 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       sex,
       inputFileRef
     } = this.state;
+    const dogIcon = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
+      icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__["faDog"],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 85
+      },
+      __self: this
+    });
     return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Card"], {
       elevation: _blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Elevation"].ONE,
       css: _style__WEBPACK_IMPORTED_MODULE_3__["sidebarContainerStyle"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 83
+        lineNumber: 87
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["H4"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84
+        lineNumber: 88
       },
       __self: this
     }, "Informaci\xF3n"), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 89
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
       label: "Imagen *",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 90
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Button"], {
@@ -462,7 +455,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       onClick: this.openFile,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 91
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("input", {
@@ -472,20 +465,20 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       css: _style__WEBPACK_IMPORTED_MODULE_3__["fileUpload"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93
+        lineNumber: 97
       },
       __self: this
     }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 101
+        lineNumber: 105
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
       label: 'Nombre',
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 102
+        lineNumber: 106
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
@@ -499,20 +492,20 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       required: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 103
+        lineNumber: 107
       },
       __self: this
     }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 115
+        lineNumber: 119
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
       label: "Caso *",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 116
+        lineNumber: 120
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -524,7 +517,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       css: _style__WEBPACK_IMPORTED_MODULE_3__["fakeRadioGroupStyle"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 117
+        lineNumber: 121
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -534,7 +527,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       value: "1",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 125
+        lineNumber: 129
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -544,44 +537,81 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       value: "2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 131
+        lineNumber: 135
       },
       __self: this
     }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 139
+        lineNumber: 143
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
-      label: "Edad",
+      label: "Edad *",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 140
+        lineNumber: 144
       },
       __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
+      label: "A\xF1os",
+      inline: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 145
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["NumericInput"], {
       name: "edad-mascota",
       value: formValues['edad-mascota'],
-      onChange: e => onChange('edad-mascota', e.currentTarget.value),
+      onValueChange: (valueInt, valueString) => {
+        onChange('edad-mascota', valueString);
+      },
       placeholder: "A\xF1os",
+      max: 20,
+      min: 0,
+      allowNumericCharactersOnly: true,
       required: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 141
+        lineNumber: 146
       },
       __self: this
-    }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+    })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
+      label: "Meses",
+      inline: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 150
+        lineNumber: 157
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["NumericInput"], {
+      name: "edad-mascota",
+      value: formValues['edad-mascota'],
+      onValueChange: (valueInt, valueString) => {
+        onChange('edad-mascota', valueString);
+      },
+      placeholder: "Meses",
+      max: 11,
+      min: 0,
+      allowNumericCharactersOnly: true,
+      required: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 158
+      },
+      __self: this
+    })))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 171
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
       label: "Sexo *",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 151
+        lineNumber: 172
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -593,7 +623,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       css: _style__WEBPACK_IMPORTED_MODULE_3__["fakeRadioGroupStyle"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 152
+        lineNumber: 173
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -603,7 +633,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       value: "1",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 160
+        lineNumber: 181
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -613,20 +643,20 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       value: "2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 166
+        lineNumber: 187
       },
       __self: this
     }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 174
+        lineNumber: 195
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
       label: "Tama\xF1o *",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 175
+        lineNumber: 196
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -638,7 +668,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       css: _style__WEBPACK_IMPORTED_MODULE_3__["fakeRadioGroupStyle"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 176
+        lineNumber: 197
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -648,7 +678,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       value: "s",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 184
+        lineNumber: 205
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -658,7 +688,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       value: "m",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 190
+        lineNumber: 211
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -668,13 +698,13 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       value: "l",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 196
+        lineNumber: 217
       },
       __self: this
     }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 204
+        lineNumber: 225
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Checkbox"], {
@@ -686,7 +716,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 205
+        lineNumber: 226
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Checkbox"], {
@@ -698,7 +728,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 213
+        lineNumber: 234
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Checkbox"], {
@@ -710,7 +740,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 221
+        lineNumber: 242
       },
       __self: this
     })));
@@ -920,11 +950,15 @@ class LeftSidebar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
     _defineProperty(this, "onSubmit", async e => {
       e.preventDefault();
-      const imgB64 = this.props.canvasRef.current.toDataURL({
-        pixelRatio: 2
+      const imgB64 = this.props.canvasRef.current.getStage().toDataURL({
+        pixelRatio: 1,
+        quality: 1,
+        mimeType: 'image/png',
+        width: 500,
+        height: 750
       });
       let link = document.createElement('a');
-      link.download = "Test.png";
+      link.download = "Test";
       link.href = imgB64;
       document.body.appendChild(link);
       link.click();
@@ -968,7 +1002,7 @@ class LeftSidebar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       method: "post",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 131
+        lineNumber: 132
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_PetInformation__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -978,13 +1012,13 @@ class LeftSidebar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onImageUploaded: onImageUploaded,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 132
+        lineNumber: 133
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 133
+        lineNumber: 134
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_ContactInformation__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -992,13 +1026,13 @@ class LeftSidebar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       formValues: formValues,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 134
+        lineNumber: 135
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_SubmitButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 135
+        lineNumber: 136
       },
       __self: this
     })));
@@ -1214,9 +1248,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-class CharacteristicsLayer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
-  setPosition() {}
-
+class ContactLayer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   render() {
     const {
       canvasHeight,
@@ -1232,22 +1264,56 @@ class CharacteristicsLayer extends react__WEBPACK_IMPORTED_MODULE_0__["Component
     const xOffset = layerWidth * offsetDelta * (6 - keys.length);
     return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Group"], {
       x: canvasWidth * 0.05,
-      y: canvasHeight * 0.7,
+      y: canvasHeight * 0.75,
       height: layerHeigth,
-      width: layerHeigth,
+      width: layerWidth,
       visible: true,
+      draggable: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 34
       },
       __self: this
-    }, Object.keys(characteristics).sort().map((charKey, index) => Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Group"], {
-      width: layerWidth * 0.16,
-      height: layerHeigth,
-      x: xOffset + index * layerWidth * 0.16,
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Group"], {
+      height: layerHeigth * 0.3,
+      width: layerWidth,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 41
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Label"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 44
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Tag"], {
+      fill: "#fff",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 45
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+      text: "Caracter\xEDsticas",
+      fontSize: 20,
+      fontStyle: "bold",
+      width: layerWidth,
+      align: "center",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 46
+      },
+      __self: this
+    }))), Object.keys(characteristics).sort().map((charKey, index) => Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Group"], {
+      width: layerWidth * 0.16,
+      height: layerHeigth,
+      x: xOffset + index * layerWidth * 0.16,
+      y: layerHeigth * 0.3,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 55
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Path"], {
@@ -1257,26 +1323,39 @@ class CharacteristicsLayer extends react__WEBPACK_IMPORTED_MODULE_0__["Component
       scaleY: 0.08,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 60
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Label"], {
+      y: layerHeigth - 12,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 65
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Tag"], {
+      fill: "#fff",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 66
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Text"], {
       width: layerWidth * 0.16,
       text: characteristics[charKey].text,
       fontSize: 10,
-      y: layerHeigth - 12,
       align: 'center',
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 67
       },
       __self: this
-    }))));
+    })))));
   }
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (CharacteristicsLayer);
+/* harmony default export */ __webpack_exports__["default"] = (ContactLayer);
 
 /***/ }),
 
@@ -1399,7 +1478,29 @@ class CanvasText extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component 
     const {
       fontSize
     } = this.state;
-    return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+    return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Group"], {
+      draggable: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 100
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Label"], {
+      x: position.x,
+      y: position.y,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 101
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Tag"], {
+      fill: "#fff",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 105
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Text"], {
       padding: 10,
       fontSize: fontSize,
       ref: this.transformerRef,
@@ -1407,10 +1508,7 @@ class CanvasText extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component 
       id: id,
       fill: color,
       text: text,
-      x: position.x,
-      y: position.y,
       transformsEnabled: "position",
-      draggable: true,
       dragBoundFunc: this.onDrag,
       onTransform: this.onTransform,
       onClick: onClick,
@@ -1422,317 +1520,15 @@ class CanvasText extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component 
       ,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 100
+        lineNumber: 106
       },
       __self: this
-    });
+    })));
   }
 
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (CanvasText);
-
-/***/ }),
-
-/***/ "./components/canvas/TextArea/index.tsx":
-/*!**********************************************!*\
-  !*** ./components/canvas/TextArea/index.tsx ***!
-  \**********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/core */ "@emotion/core");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_core__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "react-dom");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style */ "./components/canvas/TextArea/style.ts");
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\canvas\\TextArea\\index.tsx";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-/** @jsx jsx */
-
-
-
-
-
-class EditTextArea extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
-  constructor(...args) {
-    super(...args);
-
-    _defineProperty(this, "state", {
-      height: 0
-    });
-
-    _defineProperty(this, "onChange", e => {
-      const {
-        onTextAreaChanged,
-        selectedtextblockid
-      } = this.props;
-      const {
-        currentTarget
-      } = e;
-      const {
-        height
-      } = this.state;
-      const {
-        value,
-        scrollHeight
-      } = currentTarget;
-      console.log(selectedtextblockid, value);
-      onTextAreaChanged(selectedtextblockid, value);
-
-      if (scrollHeight !== height) {
-        this.setState({
-          height: scrollHeight
-        });
-      }
-    });
-
-    _defineProperty(this, "onKeyDown", e => {
-      const {
-        onTextAreaClosed
-      } = this.props;
-      const {
-        keyCode,
-        shiftKey
-      } = e; // If key is 'enter' and shift key is pressed
-
-      if (keyCode === 13 && !shiftKey) {
-        // End editing
-        onTextAreaClosed();
-      } // If key is 'esc'
-
-
-      if (keyCode === 27) {
-        // End editing
-        onTextAreaClosed();
-      }
-    });
-  }
-
-  componentDidMount() {
-    this.setState({
-      height: this.props.style.height
-    });
-  }
-
-  render() {
-    if (!document) {
-      return;
-    }
-
-    const domNode = document.querySelector('#portal_container');
-
-    if (!domNode) {
-      return;
-    }
-
-    const {
-      height
-    } = this.state;
-
-    const _this$props = this.props,
-          {
-      style,
-      maxWidth,
-      maxHeight,
-      onTextAreaClosed,
-      onTextAreaChanged
-    } = _this$props,
-          restOfProps = _objectWithoutProperties(_this$props, ["style", "maxWidth", "maxHeight", "onTextAreaClosed", "onTextAreaChanged"]);
-
-    const {
-      height: _
-    } = style,
-          rest = _objectWithoutProperties(style, ["height"]);
-
-    return react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.createPortal(Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("textarea", _extends({
-      autoFocus: true,
-      css: _style__WEBPACK_IMPORTED_MODULE_3__["textaAreaStyle"],
-      onKeyDown: this.onKeyDown,
-      onChange: this.onChange,
-      style: _objectSpread({}, rest, {
-        height,
-        maxWeight: `${maxHeight}px`,
-        maxWidth: `${maxWidth}px`
-      })
-    }, restOfProps, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 82
-      },
-      __self: this
-    })), domNode);
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (EditTextArea);
-
-/***/ }),
-
-/***/ "./components/canvas/TextArea/style.ts":
-/*!*********************************************!*\
-  !*** ./components/canvas/TextArea/style.ts ***!
-  \*********************************************/
-/*! exports provided: textaAreaStyle */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "textaAreaStyle", function() { return textaAreaStyle; });
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @emotion/core */ "@emotion/core");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_core__WEBPACK_IMPORTED_MODULE_0__);
-
-const textaAreaStyle = _emotion_core__WEBPACK_IMPORTED_MODULE_0__["css"]`
-  position: absolute;
-  z-index: 100;
-  border-style: solid;
-  border-width: 1.5px;
-  border-color: #5ac2ff;
-  margin: 0px;
-  overflow: hidden;
-  background: none;
-  outline: none;
-  resize: none;
-`;
-
-/***/ }),
-
-/***/ "./components/canvas/Transformer/index.tsx":
-/*!*************************************************!*\
-  !*** ./components/canvas/Transformer/index.tsx ***!
-  \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @emotion/core */ "@emotion/core");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_core__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-konva */ "react-konva");
-/* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_konva__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\canvas\\Transformer\\index.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-/** @jsx jsx */
-
-
-
-
-class TransformerComponent extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
-  constructor(...args) {
-    super(...args);
-
-    _defineProperty(this, "transformerRef", Object(react__WEBPACK_IMPORTED_MODULE_1__["createRef"])());
-
-    _defineProperty(this, "boundFoxFunction", (oldBox, newBox) => {
-      const {
-        minWidth
-      } = this.props;
-      const ref = this.transformerRef.current;
-      const stageWidth = ref.getStage().width();
-
-      if (newBox.width > stageWidth - 10) {
-        const maxWidth = Math.min(newBox.width, stageWidth - 10);
-        newBox.width = maxWidth;
-      } else {
-        const width = Math.max(minWidth, newBox.width);
-        newBox.width = width;
-      }
-
-      return newBox;
-    });
-  }
-
-  componentDidMount() {
-    this.checkNode();
-    this.props.onMount(this.transformerRef);
-  }
-
-  componentDidUpdate() {
-    this.checkNode();
-  }
-
-  checkNode() {
-    // We manually attach or detach a node to the Transformer
-    const ref = this.transformerRef.current;
-    const stage = ref.getStage();
-    const {
-      selectedShapeName
-    } = this.props;
-    const selectedNode = stage.findOne('.' + selectedShapeName); // do nothing if the selected node is already attached to the transformer
-
-    if (selectedNode === ref.node()) {
-      return;
-    }
-
-    if (selectedNode) {
-      // attach transformer to another node
-      ref.attachTo(selectedNode);
-    } else {
-      // remove current ref from the fransformer
-      ref.detach();
-    } // Trigger a draw for the layer
-
-
-    ref.getLayer().batchDraw();
-  }
-
-  render() {
-    const _this$props = this.props,
-          {
-      selectedShapeName
-    } = _this$props,
-          rest = _objectWithoutProperties(_this$props, ["selectedShapeName"]);
-
-    return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Transformer"], _extends({
-      ref: this.transformerRef,
-      enabledAnchors: ['middle-left', 'middle-right'],
-      boundBoxFunc: this.boundFoxFunction
-    }, rest, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 71
-      },
-      __self: this
-    }));
-  }
-
-}
-
-_defineProperty(TransformerComponent, "defaultProps", {
-  minWidth: 50
-});
-
-/* harmony default export */ __webpack_exports__["default"] = (TransformerComponent);
 
 /***/ }),
 
@@ -1754,11 +1550,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-konva */ "react-konva");
 /* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_konva__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _BackgroundImage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./BackgroundImage */ "./components/canvas/BackgroundImage/index.tsx");
-/* harmony import */ var _TextArea__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./TextArea */ "./components/canvas/TextArea/index.tsx");
-/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./style */ "./components/canvas/style.ts");
-/* harmony import */ var _Text__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Text */ "./components/canvas/Text/index.tsx");
-/* harmony import */ var _Transformer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Transformer */ "./components/canvas/Transformer/index.tsx");
-/* harmony import */ var _CharacteristicsLayer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./CharacteristicsLayer */ "./components/canvas/CharacteristicsLayer/index.tsx");
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style */ "./components/canvas/style.ts");
+/* harmony import */ var _Text__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Text */ "./components/canvas/Text/index.tsx");
+/* harmony import */ var _CharacteristicsLayer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./CharacteristicsLayer */ "./components/canvas/CharacteristicsLayer/index.tsx");
 var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\canvas\\index.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -1768,8 +1562,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /** @jsx jsx */
-
-
 
 
 
@@ -2007,26 +1799,13 @@ class Canvas extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
     return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_2__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_1__["Card"], {
       elevation: _blueprintjs_core__WEBPACK_IMPORTED_MODULE_1__["Elevation"].ONE,
-      css: _style__WEBPACK_IMPORTED_MODULE_6__["canvasStyle"],
+      css: _style__WEBPACK_IMPORTED_MODULE_5__["canvasStyle"],
       __source: {
         fileName: _jsxFileName,
         lineNumber: 239
       },
       __self: this
-    },  false && false, showEditTextArea && textBlocks[selectedTextBlock].text && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_2__["jsx"])(_TextArea__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      onTextAreaClosed: onTextAreaClosed,
-      onTextAreaChanged: onTextChanged,
-      selectedtextblockid: selectedTextBlock,
-      value: textBlocks[selectedTextBlock].text,
-      style: editTextAreaProps,
-      maxWidth: canvasWidth,
-      maxHeight: canvasHeight,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 278
-      },
-      __self: this
-    }));
+    },  false && false);
   }
 
 }
@@ -2057,7 +1836,7 @@ const canvasStyle = _emotion_core__WEBPACK_IMPORTED_MODULE_0__["css"]`
   width: 35rem;
   justify-content: center;
   & .konvajs-content {
-    background: ghostwhite;
+    background-color: white;
     border: solid 1px lightgray;
   }
 `;
@@ -2087,6 +1866,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Nav__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Nav */ "./components/Nav/index.tsx");
 /* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles */ "./pages/styles.ts");
 /* harmony import */ var _assets_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/icons */ "./assets/icons.ts");
+/* harmony import */ var konva__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! konva */ "konva");
+/* harmony import */ var konva__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(konva__WEBPACK_IMPORTED_MODULE_7__);
 var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\pages\\index.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -2098,6 +1879,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /** @jsx jsx */
+
 
 
 
@@ -2125,7 +1907,7 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         'nombre-contacto': '',
         'nombre-mascota': '',
         'tamaño-mascota': '',
-        'telefono-contacto': '',
+        'telefono-contacto': '+56 ',
         vacunas: false,
         'whatsapp-contacto': '',
         'caso-mascota': '',
@@ -2311,6 +2093,46 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           }
 
           break;
+
+        case 'nombre-contacto':
+          newTextBlock.fontSize = 'small';
+          newTextBlock.position = {
+            x: canvasWidth * 0.8,
+            y: canvasHeight * 0.7
+          };
+          validator = 'textBlock';
+          break;
+
+        case 'telefono-contacto':
+          if (value.length < 4) {
+            value = '+56 ';
+          }
+
+          newTextBlock.fontSize = 'small';
+          newTextBlock.position = {
+            x: canvasWidth * 0.8,
+            y: canvasHeight * 0.7 + 30
+          };
+          validator = 'textBlock';
+          break;
+
+        case 'email-contacto':
+          newTextBlock.fontSize = 'small';
+          newTextBlock.position = {
+            x: canvasWidth * 0.8,
+            y: canvasHeight * 0.7 + 60
+          };
+          validator = 'textBlock';
+          break;
+
+        case 'ciudad-contacto':
+          newTextBlock.fontSize = 'small';
+          newTextBlock.position = {
+            x: canvasWidth * 0.8,
+            y: canvasHeight * 0.7 + 90
+          };
+          validator = 'textBlock';
+          break;
       }
 
       if (validator === 'textBlock') {
@@ -2374,7 +2196,89 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     });
   }
 
-  componentDidMount() {//this.addTextBlock();
+  componentDidMount() {
+    //this.addTextBlock();
+    console.log(window.devicePixelRatio);
+  }
+
+  test() {
+    let stage = new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Stage({
+      container: 'testcanvas',
+      width: 500,
+      height: 750
+    });
+    let layer = new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Layer();
+    let layer2 = new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Layer();
+    let layer3 = new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Layer();
+    let layer4 = new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Layer();
+    let text = new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Text({
+      text: 'Perritu',
+      fontSize: 20,
+      width: 500,
+      align: 'center',
+      y: 50,
+      fontStyle: 'bold'
+    });
+    let text2 = new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Text({
+      text: 'Aaaaaaaaa',
+      fontSize: 15,
+      width: 500,
+      align: 'center',
+      y: 150
+    });
+    let text3 = new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Text({
+      text: 'uwu',
+      fontSize: 10,
+      y: 250,
+      x: 60
+    });
+    let text4 = new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Text({
+      text: 'uwu',
+      fontSize: 10,
+      y: 450,
+      x: 90
+    }); // create label
+
+    var label = new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Label({
+      x: 100,
+      y: 100,
+      draggable: true
+    }); // add a tag to the label
+
+    label.add(new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Tag({
+      fill: 'transparent'
+    })); // add text to the label
+
+    label.add(new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Text({
+      text: 'Hello World!',
+      fontSize: 20,
+      lineHeight: 1.2,
+      padding: 10,
+      fill: 'green'
+    }));
+    layer.add(label);
+    layer.add(text);
+    layer2.add(text2);
+    layer3.add(text3);
+    layer4.add(text4);
+    stage.add(layer);
+    stage.add(layer2);
+    stage.add(layer3);
+    stage.add(layer4);
+    const imgB64 = stage.toDataURL({
+      pixelRatio: 3,
+      quality: 1,
+      mimeType: 'image/png',
+      width: 500,
+      height: 750
+    }); //document.write('img src="'+imgB64+'" />');
+
+    let link = document.createElement('a');
+    link.download = "Test";
+    link.href = imgB64;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 
   render() {
@@ -2394,13 +2298,13 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       css: _styles__WEBPACK_IMPORTED_MODULE_5__["pageStyle"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 349
+        lineNumber: 458
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_components_Nav__WEBPACK_IMPORTED_MODULE_4__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 350
+        lineNumber: 459
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("section", {
@@ -2408,7 +2312,7 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       css: _styles__WEBPACK_IMPORTED_MODULE_5__["containerStyle"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 351
+        lineNumber: 460
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_components_LeftSideBar__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -2423,7 +2327,7 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onImageUploaded: this.setCanvasImage,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 352
+        lineNumber: 461
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_components_canvas__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2439,10 +2343,24 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       characteristics: characteristics,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 363
+        lineNumber: 472
       },
       __self: this
-    })));
+    })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+      id: "testcanvas",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 485
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("button", {
+      onClick: this.test,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 486
+      },
+      __self: this
+    }, "Hola"));
   }
 
 }
@@ -2483,7 +2401,7 @@ const pageStyle = _emotion_core__WEBPACK_IMPORTED_MODULE_0__["css"]`
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!*******************************!*\
   !*** multi ./pages/index.tsx ***!
   \*******************************/
@@ -2517,6 +2435,39 @@ module.exports = require("@emotion/core");
 
 /***/ }),
 
+/***/ "@fortawesome/free-solid-svg-icons":
+/*!****************************************************!*\
+  !*** external "@fortawesome/free-solid-svg-icons" ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@fortawesome/free-solid-svg-icons");
+
+/***/ }),
+
+/***/ "@fortawesome/react-fontawesome":
+/*!*************************************************!*\
+  !*** external "@fortawesome/react-fontawesome" ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@fortawesome/react-fontawesome");
+
+/***/ }),
+
+/***/ "konva":
+/*!************************!*\
+  !*** external "konva" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("konva");
+
+/***/ }),
+
 /***/ "react":
 /*!************************!*\
   !*** external "react" ***!
@@ -2525,17 +2476,6 @@ module.exports = require("@emotion/core");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
-
-/***/ }),
-
-/***/ "react-dom":
-/*!****************************!*\
-  !*** external "react-dom" ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-dom");
 
 /***/ }),
 

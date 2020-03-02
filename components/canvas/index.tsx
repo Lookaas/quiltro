@@ -4,7 +4,7 @@ import { jsx } from '@emotion/core';
 import { KonvaEventObject } from 'konva/types/Node';
 import Konva from 'konva'
 import React, { Component, createRef, RefObject } from 'react';
-import { Layer, Stage, Path, Group } from 'react-konva';
+import { Layer, Stage, Text, Group } from 'react-konva';
 import { Image as ImageKonva } from 'react-konva';
 
 import { ICanvasTexts, ITextBlockElement } from '../../pages';
@@ -244,12 +244,8 @@ class Canvas extends Component<IAppProps, IAppState> {
             height={canvasHeight}
             onClick={this.handleStageMouseDown}
           >
-            <BackgroundImage
-              backgroundImage={backgroundImage}
-              canvasHeight={canvasHeight}
-              canvasWidth={canvasWidth}
-            />
-            <Layer >
+            <BackgroundImage backgroundImage={backgroundImage} canvasHeight={canvasHeight} canvasWidth={canvasWidth} />
+            <Layer  >
               {Object.values(textBlocks).map(textBlock => (
                 <CanvasText
                   key={textBlock.id}
@@ -264,17 +260,17 @@ class Canvas extends Component<IAppProps, IAppState> {
 
               <CharacteristicsLayer canvasHeight={canvasHeight} canvasWidth={canvasWidth} characteristics={characteristics} />
 
-              <TransformerComponent
+              {/*<TransformerComponent
                 resizeEnabled
                 rotateEnabled={true}
                 borderEnabled
                 onMount={this.onMount}
                 selectedShapeName={selectedTextBlock}
-              />
+              />*/}
             </Layer>
           </Stage>
         )}
-        {showEditTextArea && textBlocks[selectedTextBlock].text && (
+        {/*showEditTextArea && textBlocks[selectedTextBlock].text && (
           <EditTextArea
             onTextAreaClosed={onTextAreaClosed}
             onTextAreaChanged={onTextChanged}
@@ -284,7 +280,7 @@ class Canvas extends Component<IAppProps, IAppState> {
             maxWidth={canvasWidth}
             maxHeight={canvasHeight}
           />
-        )}
+        )*/}
       </Card>
     );
   }

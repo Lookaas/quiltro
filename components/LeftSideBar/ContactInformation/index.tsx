@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { Card, Elevation, FormGroup, H4, InputGroup } from '@blueprintjs/core';
+import { Card, Elevation, FormGroup, H4, InputGroup, NumericInput, Tag, Icon } from '@blueprintjs/core';
 import { jsx } from '@emotion/core';
-import React, { FormEvent } from 'react';
+import React, { FormEvent, ChangeEvent } from 'react';
 import { IAdoptionForm } from '../../../pages';
 import { sidebarContainerStyle } from './style';
 
@@ -20,7 +20,7 @@ export default class ContactInformation extends React.Component<
       <Card elevation={Elevation.ONE} css={sidebarContainerStyle}>
         <H4>Datos de contacto</H4>
         <div>
-          <FormGroup label="Nombre">
+          <FormGroup label="Nombre *">
             <InputGroup
               placeholder="Nombre"
               name="nombre-contacto"
@@ -29,36 +29,26 @@ export default class ContactInformation extends React.Component<
               onChange={ (e: FormEvent<HTMLInputElement>) : void => {
                 onChange('nombre-contacto', e.currentTarget.value);
               }}
+              leftIcon='person'
             />
           </FormGroup>
         </div>
         <div>
-          <FormGroup label="Teléfono">
+          <FormGroup label="Teléfono *">
             <InputGroup
               placeholder="Teléfono"
               name="telefono-contacto"
               value={formValues['telefono-contacto']}
-              onChange={(e: FormEvent<HTMLInputElement>) : void => {
+              onChange={(e: ChangeEvent<HTMLInputElement>) : void => {
                 onChange('telefono-contacto', e.currentTarget.value);
               }}
+              leftIcon='mobile-phone'
               required
             />
           </FormGroup>
         </div>
         <div>
-          <FormGroup label="Whatsapp">
-            <InputGroup
-              placeholder="Whatsapp"
-              name="whatsapp-contacto"
-              value={formValues['whatsapp-contacto']}
-              onChange={(e: FormEvent<HTMLInputElement>) : void => {
-                onChange('whatsapp-contacto', e.currentTarget.value);
-              }}
-            />
-          </FormGroup>
-        </div>
-        <div>
-          <FormGroup label="Email">
+          <FormGroup label="Email *">
             <InputGroup
               name="Email"
               type="email-contacto"
@@ -67,6 +57,7 @@ export default class ContactInformation extends React.Component<
               onChange={(e: FormEvent<HTMLInputElement>) : void => {
                 onChange('email-contacto', e.currentTarget.value);
               }}
+              leftIcon='inbox'
             />
           </FormGroup>
         </div>
@@ -79,6 +70,7 @@ export default class ContactInformation extends React.Component<
               onChange={(e: FormEvent<HTMLInputElement>) : void => {
                 onChange('ciudad-contacto', e.currentTarget.value);
               }}
+              leftIcon='home'
             />
           </FormGroup>
         </div>

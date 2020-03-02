@@ -10,9 +10,10 @@ import SubmitButton from './SubmitButton';
 import TextBlocksCreator from './TextBlocksCreator';
 import { ITextBlocksConfigPanelState } from './TextBlocksCreator/panel';
 import { containerStyle } from './styles'
+import { Stage } from 'konva/types/Stage';
 
 export interface ILeftSidebarProps {
-  canvasRef: RefObject<any>;
+  canvasRef: RefObject<Stage>;
   formValues: IAdoptionForm;
   selectedTextBlock: string;
   textBlocks: {
@@ -88,9 +89,9 @@ export default class LeftSidebar extends Component<
   onSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    const imgB64 = this.props.canvasRef.current!.toDataURL({ pixelRatio: 2 });
+    const imgB64 = this.props.canvasRef.current!.getStage().toDataURL({ pixelRatio: 1, quality:1, mimeType: 'image/png', width: 500, height: 750 });
     let link = document.createElement('a');
-    link.download = "Test.png";
+    link.download = "Test";
     link.href = imgB64;
     document.body.appendChild(link);
     link.click();

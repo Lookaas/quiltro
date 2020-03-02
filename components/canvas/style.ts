@@ -8,7 +8,7 @@ export const canvasStyle = css`
   width: 35rem;
   justify-content: center;
   & .konvajs-content {
-    background: ghostwhite;
+    background-color: white;
     border: solid 1px lightgray;
   }
 `;

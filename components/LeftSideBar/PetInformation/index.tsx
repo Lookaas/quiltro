@@ -8,12 +8,15 @@ import {
   InputGroup,
   Radio,
   TextArea,
-  Button
+  Button,
+  NumericInput
 } from '@blueprintjs/core';
 import { jsx } from '@emotion/core';
 import React, { FormEvent, createRef } from 'react';
 import { IAdoptionForm, ITextBlockElement } from '../../../pages';
 import { fakeRadioGroupStyle, sidebarContainerStyle, fileUpload } from './style';
+import {faDog} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 export interface IPetInformationProps {
   onChange: (key: keyof IAdoptionForm, value: any) => void;
@@ -79,6 +82,7 @@ export default class PetInformation extends React.Component<
   render() {
     const { onChange, formValues, addText } = this.props;
     const { size, caseOption, sex, inputFileRef } = this.state;
+    const dogIcon = <FontAwesomeIcon icon={faDog} />
     return (
       <Card elevation={Elevation.ONE} css={sidebarContainerStyle}>
         <H4>Información</H4>
@@ -137,14 +141,31 @@ export default class PetInformation extends React.Component<
           </FormGroup>
         </div>
         <div>
-          <FormGroup label="Edad">
-            <InputGroup
+          <FormGroup label="Edad *">
+            <FormGroup label="Años" inline>
+            <NumericInput
               name="edad-mascota"
               value={formValues['edad-mascota']}
-              onChange={(e: FormEvent<HTMLInputElement>) : void => onChange('edad-mascota', e.currentTarget.value)}
+              onValueChange={(valueInt, valueString) => { onChange('edad-mascota', valueString)}}
               placeholder="Años"
+              max={20}
+              min={0}
+              allowNumericCharactersOnly
               required
             />
+            </FormGroup>
+            <FormGroup label="Meses" inline>
+            <NumericInput
+              name="edad-mascota"
+              value={formValues['edad-mascota']}
+              onValueChange={(valueInt, valueString) => { onChange('edad-mascota', valueString)}}
+              placeholder="Meses"
+              max={11}
+              min={0}
+              allowNumericCharactersOnly
+              required
+            />
+            </FormGroup>
           </FormGroup>
         </div>
         <div>

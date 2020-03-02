@@ -2,7 +2,7 @@
 
 import React, { Component, createRef, RefObject } from 'react';
 import { jsx } from '@emotion/core';
-import { Text, Path, Group } from 'react-konva';
+import { Text, Path, Group, Label, Tag } from 'react-konva';
 
 export interface ICharacteristicElement {
   priority: string;
@@ -18,11 +18,8 @@ interface ICharacteristicsProps {
   };
 }
 
-class CharacteristicsLayer extends Component<ICharacteristicsProps, any> {
+class ContactLayer extends Component<ICharacteristicsProps, any> {
 
-  setPosition() {
-
-  }
 
   render() {
     const {canvasHeight, canvasWidth, characteristics} = this.props;
@@ -36,26 +33,43 @@ class CharacteristicsLayer extends Component<ICharacteristicsProps, any> {
     return (
       <Group
       x={canvasWidth*0.05}
-      y={canvasHeight*0.7}
+      y={canvasHeight*0.75}
       height={layerHeigth}
-      width={layerHeigth}
-      visible={true}>
+      width={layerWidth}
+      visible={true}
+      draggable>
+        <Group
+        height={layerHeigth*0.3}
+        width={layerWidth} >
+          <Label>
+            <Tag fill='#fff' />
+            <Text
+              text='Características'
+              fontSize={20}
+              fontStyle='bold'
+              width={layerWidth}
+              align='center' />
+          </Label>
+        </Group>
         {Object.keys(characteristics).sort().map((charKey, index) => (
             <Group
             width={layerWidth*0.16}
             height={layerHeigth}
-            x={xOffset + index*layerWidth*0.16}>
+            x={xOffset + index*layerWidth*0.16}
+            y={layerHeigth*0.3} >
               <Path
               data={characteristics[charKey].icon}
               fill={'red'}
               scaleX={0.08}
               scaleY={0.08} />
-              <Text
-              width={layerWidth*0.16}
-              text={characteristics[charKey].text}
-              fontSize={10}
-              y={layerHeigth - 12}
-              align={'center'} />
+              <Label y={layerHeigth - 12}>
+                <Tag fill='#fff' />
+                <Text
+                width={layerWidth*0.16}
+                text={characteristics[charKey].text}
+                fontSize={10}
+                align={'center'} />
+              </Label>
             </Group>
         ))}
       </Group>
@@ -64,4 +78,4 @@ class CharacteristicsLayer extends Component<ICharacteristicsProps, any> {
 
 }
 
-export default CharacteristicsLayer;
+export default ContactLayer;

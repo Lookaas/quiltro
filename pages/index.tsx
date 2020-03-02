@@ -8,6 +8,7 @@ import { ICharacteristicElement } from '../components/canvas/CharacteristicsLaye
 import Nav from '../components/Nav';
 import { containerStyle, pageStyle } from './styles';
 import * as icons from '../assets/icons';
+import Konva from 'konva'
 
 interface IHomeState {
   canvasImage: HTMLImageElement | null;
@@ -80,7 +81,7 @@ class Home extends Component<any, IHomeState> {
       'nombre-contacto': '',
       'nombre-mascota': '',
       'tamaño-mascota': '',
-      'telefono-contacto': '',
+      'telefono-contacto': '+56 ',
       vacunas: false,
       'whatsapp-contacto': '',
       'caso-mascota': '',
@@ -96,6 +97,7 @@ class Home extends Component<any, IHomeState> {
 
   componentDidMount() {
     //this.addTextBlock();
+    console.log(window.devicePixelRatio);
   }
 
   setSelectedTextBlock = (selectedTextBlock: string) => {
@@ -252,6 +254,29 @@ class Home extends Component<any, IHomeState> {
           validator = 'deletedCharacteristic';
         }
         break;
+      case 'nombre-contacto':
+        newTextBlock.fontSize = 'small';
+        newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7};
+        validator = 'textBlock';
+        break;
+      case 'telefono-contacto':
+        if (value.length < 4) {
+          value = '+56 ';
+        }
+        newTextBlock.fontSize = 'small';
+        newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7 + 30};
+        validator = 'textBlock';
+        break;
+        case 'email-contacto':
+          newTextBlock.fontSize = 'small';
+          newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7 + 60};
+          validator = 'textBlock';
+          break;
+        case 'ciudad-contacto':
+          newTextBlock.fontSize = 'small';
+          newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7 + 90};
+          validator = 'textBlock';
+          break;
 
     }
     if(validator === 'textBlock') {
@@ -341,10 +366,94 @@ class Home extends Component<any, IHomeState> {
     });
   };
 
+  test() {
+    let stage = new Konva.Stage({
+      container: 'testcanvas',
+      width: 500,
+      height: 750
+    });
+
+    let layer = new Konva.Layer();
+    let layer2 = new Konva.Layer();
+    let layer3 = new Konva.Layer();
+    let layer4 = new Konva.Layer();
+
+    let text = new Konva.Text({
+      text: 'Perritu',
+      fontSize: 20,
+      width: 500,
+      align: 'center',
+      y:50,
+      fontStyle: 'bold'
+    })
+
+    let text2 = new Konva.Text({
+      text: 'Aaaaaaaaa',
+      fontSize: 15,
+      width: 500,
+      align: 'center',
+      y:150
+    })
+
+    let text3 = new Konva.Text({
+      text: 'uwu',
+      fontSize: 10,
+      y:250,
+      x: 60
+    })
+
+    let text4 = new Konva.Text({
+      text: 'uwu',
+      fontSize: 10,
+      y:450,
+      x: 90
+    })
+
+    // create label
+    var label = new Konva.Label({
+      x: 100,
+      y: 100,
+      draggable: true
+    });
+
+    // add a tag to the label
+    label.add(new Konva.Tag({
+      fill: 'transparent'
+    }));
+
+    // add text to the label
+    label.add(new Konva.Text({
+      text: 'Hello World!',
+      fontSize: 20,
+      lineHeight: 1.2,
+      padding: 10,
+      fill: 'green'
+    }));
+
+    layer.add(label);
+
+    layer.add(text);
+    layer2.add(text2);
+    layer3.add(text3);
+    layer4.add(text4);
+    stage.add(layer);
+    stage.add(layer2);
+    stage.add(layer3);
+    stage.add(layer4);
+
+    const imgB64 = stage.toDataURL({ pixelRatio: 3, quality:1, mimeType: 'image/png', width: 500, height: 750 });
+    //document.write('img src="'+imgB64+'" />');
+    let link = document.createElement('a');
+    link.download = "Test";
+    link.href = imgB64;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   render() {
     const { canvasImage, canvasTexts, formValues, canvasHeight, canvasWidth, characteristics } = this.state;
     const { selectedTextBlock, textBlocks } = canvasTexts;
-
     return (
       <div css={pageStyle}>
         <Nav />
@@ -373,6 +482,8 @@ class Home extends Component<any, IHomeState> {
             characteristics={characteristics}
           />
         </section>
+        <div id='testcanvas'></div>
+        <button onClick={this.test}>Hola</button>
       </div>
     );
   }

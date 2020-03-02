@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/core';
 import { KonvaEventObject } from 'konva/types/Node';
 import React, { createRef } from 'react';
-import { Text } from 'react-konva';
+import { Text, Label, Tag, Group } from 'react-konva';
 import { ITextBlocksConfigPanelState } from '../../LeftSideBar/TextBlocksCreator/panel';
 import { ITextBlockElement } from '../../../pages'
 
@@ -97,7 +97,13 @@ class CanvasText extends React.Component<ICanvasText, any> {
     } = this.props;
     const { fontSize } = this.state;
     return (
-      <Text
+      <Group draggable>
+      <Label
+        x={position.x}
+        y={position.y}
+        >
+        <Tag fill='#fff'/>
+        <Text
         padding={10}
         fontSize={fontSize}
         ref={this.transformerRef}
@@ -105,10 +111,7 @@ class CanvasText extends React.Component<ICanvasText, any> {
         id={id}
         fill={color}
         text={text}
-        x={position.x}
-        y={position.y}
         transformsEnabled="position"
-        draggable
         dragBoundFunc={this.onDrag}
         onTransform={this.onTransform}
         onClick={onClick}
@@ -118,7 +121,9 @@ class CanvasText extends React.Component<ICanvasText, any> {
         width={width}
         fontStyle={style}
         // _useStrictMode
-      />
+        />
+      </Label>
+      </Group>
     );
   }
 }
