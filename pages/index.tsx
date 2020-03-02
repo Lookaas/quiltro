@@ -63,6 +63,8 @@ export interface IAdoptionForm {
   'caso-mascota': string;
   'ciudad-contacto': string;
   'sexo-mascota': string;
+  'años-mascota': string;
+  'meses-mascota': string;
 }
 
 class Home extends Component<any, IHomeState> {
@@ -86,7 +88,9 @@ class Home extends Component<any, IHomeState> {
       'whatsapp-contacto': '',
       'caso-mascota': '',
       'ciudad-contacto': '',
-      'sexo-mascota': ''
+      'sexo-mascota': '',
+      'años-mascota': '',
+      'meses-mascota': ''
     },
     characteristics: {},
     canvasHeight: 750,
@@ -156,7 +160,7 @@ class Home extends Component<any, IHomeState> {
   };
 
   setAdoptionFormField = (key: keyof IAdoptionForm, value: any) => {
-    const { canvasTexts, canvasHeight, canvasWidth, characteristics } = this.state;
+    const { canvasTexts, canvasHeight, canvasWidth, characteristics, formValues } = this.state;
     const { textBlocks } = canvasTexts;
     const actualCharacteristics: ICharacteristics = characteristics;
     let newTextBlock: ITextBlockElement = {
@@ -169,7 +173,8 @@ class Home extends Component<any, IHomeState> {
     let characteristic: ICharacteristicElement = {
       priority: '',
       text: '',
-      icon: ''
+      icon: '',
+      scale: -1
     }
     let validator: '' | 'textBlock' | 'characteristic' | 'deletedCharacteristic'= '';
     switch (key) {
@@ -188,19 +193,62 @@ class Home extends Component<any, IHomeState> {
         newTextBlock.text = value === '1' ? "En adopción" : 'Perdido';
         validator = 'textBlock';
         break;
-      case 'edad-mascota' :
-        characteristic = {
-          priority: '0',
-          icon: icons.birthday_cake,
-          text: value
+      case 'años-mascota' :
+        if (isNaN(value)) {
+          value = formValues['años-mascota'];
         }
-        validator = 'characteristic';
+        else {
+          const meses = formValues['meses-mascota'];
+          let edadString = ''
+          if (value !== '' && meses !== '') {
+            edadString = value+' años '+meses+' meses';
+          }
+          else if (value !== '') {
+            edadString = value+' años';
+          }
+          else if (meses !== '') {
+            edadString = meses+' meses';
+          }
+          characteristic = {
+            priority: '0',
+            icon: icons.birthday_cake,
+            text: edadString,
+            scale: 0.08
+          }
+          validator = 'characteristic';
+        }
+        break;
+      case 'meses-mascota' :
+        if (isNaN(value)) {
+          value = formValues['meses-mascota'];
+        }
+        else {
+          const años = formValues['años-mascota'];
+          let edadString2 = ''
+          if (value !== '' && años !== '') {
+            edadString2 = años+' años '+value+' meses';
+          }
+          else if (value !== '') {
+            edadString2 = value+' meses';
+          }
+          else if (años !== '') {
+            edadString2 = años+' años';
+          }
+          characteristic = {
+            priority: '0',
+            icon: icons.birthday_cake,
+            text: edadString2,
+            scale: 0.08
+          }
+          validator = 'characteristic';
+        }
         break;
       case 'sexo-mascota' :
         characteristic = {
           priority: '1',
           icon: value === '1' ? icons.mars : icons.venus,
-          text: value === '1' ? 'Macho' : 'Hembra'
+          text: value === '1' ? 'Macho' : 'Hembra',
+          scale: 0.08
         }
         validator = 'characteristic';
         break;
@@ -208,7 +256,8 @@ class Home extends Component<any, IHomeState> {
         characteristic = {
           priority: '3',
           icon: icons.dog,
-          text: value === 's' ? 'Pequeño' : value === 'm' ? 'Mediano' : 'Grande'
+          text: value === 's' ? 'Pequeño' : value === 'm' ? 'Mediano' : 'Grande',
+          scale:  value === 's' ? 0.04 : value === 'm' ? 0.06 : 0.08
         }
         validator = 'characteristic';
         break;
@@ -217,7 +266,8 @@ class Home extends Component<any, IHomeState> {
           characteristic = {
             priority: '4',
             icon: icons.band_aid,
-            text: 'Esterilizado'
+            text: 'Esterilizado',
+            scale: 0.08
           }
           validator = 'characteristic';
         }
@@ -231,7 +281,8 @@ class Home extends Component<any, IHomeState> {
           characteristic = {
             priority: '5',
             icon: icons.paw,
-            text: 'Con chip'
+            text: 'Con chip',
+            scale: 0.08
           }
           validator = 'characteristic';
         }
@@ -245,7 +296,8 @@ class Home extends Component<any, IHomeState> {
           characteristic = {
             priority: '6',
             icon: icons.syringe,
-            text: 'Al día'
+            text: 'Al día',
+            scale: 0.08
           }
           validator = 'characteristic';
         }
@@ -254,7 +306,15 @@ class Home extends Component<any, IHomeState> {
           validator = 'deletedCharacteristic';
         }
         break;
-      case 'nombre-contacto':
+      case 'telefono-contacto':
+        if (value.length < 4) {
+          value = '+56 ';
+        }
+        else if (isNaN(value.slice(4).trim())) {
+          value = formValues['telefono-contacto'];
+        }
+        break;
+      /*case 'nombre-contacto':
         newTextBlock.fontSize = 'small';
         newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7};
         validator = 'textBlock';
@@ -277,6 +337,8 @@ class Home extends Component<any, IHomeState> {
           newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7 + 90};
           validator = 'textBlock';
           break;
+      */
+        default:
 
     }
     if(validator === 'textBlock') {
@@ -366,91 +428,6 @@ class Home extends Component<any, IHomeState> {
     });
   };
 
-  test() {
-    let stage = new Konva.Stage({
-      container: 'testcanvas',
-      width: 500,
-      height: 750
-    });
-
-    let layer = new Konva.Layer();
-    let layer2 = new Konva.Layer();
-    let layer3 = new Konva.Layer();
-    let layer4 = new Konva.Layer();
-
-    let text = new Konva.Text({
-      text: 'Perritu',
-      fontSize: 20,
-      width: 500,
-      align: 'center',
-      y:50,
-      fontStyle: 'bold'
-    })
-
-    let text2 = new Konva.Text({
-      text: 'Aaaaaaaaa',
-      fontSize: 15,
-      width: 500,
-      align: 'center',
-      y:150
-    })
-
-    let text3 = new Konva.Text({
-      text: 'uwu',
-      fontSize: 10,
-      y:250,
-      x: 60
-    })
-
-    let text4 = new Konva.Text({
-      text: 'uwu',
-      fontSize: 10,
-      y:450,
-      x: 90
-    })
-
-    // create label
-    var label = new Konva.Label({
-      x: 100,
-      y: 100,
-      draggable: true
-    });
-
-    // add a tag to the label
-    label.add(new Konva.Tag({
-      fill: 'transparent'
-    }));
-
-    // add text to the label
-    label.add(new Konva.Text({
-      text: 'Hello World!',
-      fontSize: 20,
-      lineHeight: 1.2,
-      padding: 10,
-      fill: 'green'
-    }));
-
-    layer.add(label);
-
-    layer.add(text);
-    layer2.add(text2);
-    layer3.add(text3);
-    layer4.add(text4);
-    stage.add(layer);
-    stage.add(layer2);
-    stage.add(layer3);
-    stage.add(layer4);
-
-    const imgB64 = stage.toDataURL({ pixelRatio: 3, quality:1, mimeType: 'image/png', width: 500, height: 750 });
-    //document.write('img src="'+imgB64+'" />');
-    let link = document.createElement('a');
-    link.download = "Test";
-    link.href = imgB64;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
-
   render() {
     const { canvasImage, canvasTexts, formValues, canvasHeight, canvasWidth, characteristics } = this.state;
     const { selectedTextBlock, textBlocks } = canvasTexts;
@@ -480,10 +457,9 @@ class Home extends Component<any, IHomeState> {
             canvasHeight={canvasHeight}
             canvasWidth={canvasWidth}
             characteristics={characteristics}
+            formData={formValues}
           />
         </section>
-        <div id='testcanvas'></div>
-        <button onClick={this.test}>Hola</button>
       </div>
     );
   }

@@ -51,7 +51,7 @@ export default class ContactInformation extends React.Component<
           <FormGroup label="Email *">
             <InputGroup
               name="Email"
-              type="email-contacto"
+              type="email"
               placeholder="Email"
               value={formValues['email-contacto']}
               onChange={(e: FormEvent<HTMLInputElement>) : void => {
@@ -62,7 +62,7 @@ export default class ContactInformation extends React.Component<
           </FormGroup>
         </div>
         <div>
-          <FormGroup label="Ciudad">
+          <FormGroup label="Ciudad *">
             <InputGroup
               placeholder="Ciudad"
               name="ciudad-contacto"

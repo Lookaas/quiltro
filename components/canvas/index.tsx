@@ -7,14 +7,14 @@ import React, { Component, createRef, RefObject } from 'react';
 import { Layer, Stage, Text, Group } from 'react-konva';
 import { Image as ImageKonva } from 'react-konva';
 
-import { ICanvasTexts, ITextBlockElement } from '../../pages';
-import { ITextBlocksConfigPanelState } from '../LeftSideBar/TextBlocksCreator/panel';
+import { ICanvasTexts, ITextBlockElement, IAdoptionForm } from '../../pages';
 import BackgroundImage from './BackgroundImage';
 import EditTextArea from './TextArea';
 import { canvasStyle, testStyle } from './style';
 import CanvasText from './Text';
 import TransformerComponent from './Transformer';
-import CharacteristicsLayer, { ICharacteristicElement } from './CharacteristicsLayer'
+import CharacteristicsLayer, { ICharacteristicElement } from './CharacteristicsLayer';
+import ContactLayer from './ContactLayer';
 
 interface IAppProps {
   onRef: RefObject<any>;
@@ -28,7 +28,8 @@ interface IAppProps {
   canvasWidth: number;
   characteristics: {
     [priority: string] : ICharacteristicElement
-  }
+  },
+  formData: IAdoptionForm;
 }
 
 interface IAppState {
@@ -232,7 +233,7 @@ class Canvas extends Component<IAppProps, IAppState> {
       editTextAreaProps,
       onTextAreaClosed
     } = this.state;
-    const { canvasTexts, onRef, onTextChanged, canvasHeight, canvasWidth, characteristics } = this.props;
+    const { canvasTexts, onRef, onTextChanged, canvasHeight, canvasWidth, characteristics, formData } = this.props;
     const { textBlocks, selectedTextBlock } = canvasTexts;
     //const test = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="venus" class="svg-inline--fa fa-venus fa-w-9" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 512"><path fill="currentColor" d="M288 176c0-79.5-64.5-144-144-144S0 96.5 0 176c0 68.5 47.9 125.9 112 140.4V368H76c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h36v36c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-36h36c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-36v-51.6c64.1-14.5 112-71.9 112-140.4zm-224 0c0-44.1 35.9-80 80-80s80 35.9 80 80-35.9 80-80 80-80-35.9-80-80z"></path></svg>'
     return (
@@ -259,6 +260,8 @@ class Canvas extends Component<IAppProps, IAppState> {
               ))}
 
               <CharacteristicsLayer canvasHeight={canvasHeight} canvasWidth={canvasWidth} characteristics={characteristics} />
+
+              <ContactLayer canvasHeight={canvasHeight} canvasWidth={canvasWidth} formData={formData} />
 
               {/*<TransformerComponent
                 resizeEnabled

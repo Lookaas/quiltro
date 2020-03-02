@@ -9,12 +9,13 @@ import {
   Radio,
   TextArea,
   Button,
-  NumericInput
+  NumericInput,
+  Tag
 } from '@blueprintjs/core';
 import { jsx } from '@emotion/core';
 import React, { FormEvent, createRef } from 'react';
 import { IAdoptionForm, ITextBlockElement } from '../../../pages';
-import { fakeRadioGroupStyle, sidebarContainerStyle, fileUpload } from './style';
+import { fakeRadioGroupStyle, sidebarContainerStyle, fileUpload, containerStyle } from './style';
 import {faDog} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
@@ -82,7 +83,8 @@ export default class PetInformation extends React.Component<
   render() {
     const { onChange, formValues, addText } = this.props;
     const { size, caseOption, sex, inputFileRef } = this.state;
-    const dogIcon = <FontAwesomeIcon icon={faDog} />
+    const añosTag = <Tag>Años</Tag>
+    const mesesTag = <Tag>Meses</Tag>
     return (
       <Card elevation={Elevation.ONE} css={sidebarContainerStyle}>
         <H4>Información</H4>
@@ -141,31 +143,33 @@ export default class PetInformation extends React.Component<
           </FormGroup>
         </div>
         <div>
-          <FormGroup label="Edad *">
-            <FormGroup label="Años" inline>
-            <NumericInput
+          <FormGroup label="Edad aproximada *">
+            <div style={{display: 'flex', width: '100%'}}>
+            <div style={{width: '50%', margin: '2px'}} >
+            <InputGroup
               name="edad-mascota"
-              value={formValues['edad-mascota']}
-              onValueChange={(valueInt, valueString) => { onChange('edad-mascota', valueString)}}
+              value={formValues['años-mascota']}
               placeholder="Años"
+              rightElement={añosTag}
+              onChange={(e: FormEvent<HTMLInputElement>) : void => {onChange('años-mascota', e.currentTarget.value)}}
               max={20}
               min={0}
-              allowNumericCharactersOnly
               required
             />
-            </FormGroup>
-            <FormGroup label="Meses" inline>
-            <NumericInput
+            </div>
+            <div style={{width: '50%', margin: '2px'}} >
+            <InputGroup
               name="edad-mascota"
-              value={formValues['edad-mascota']}
-              onValueChange={(valueInt, valueString) => { onChange('edad-mascota', valueString)}}
+              value={formValues['meses-mascota']}
               placeholder="Meses"
+              rightElement={mesesTag}
+              onChange={(e: FormEvent<HTMLInputElement>) : void => {onChange('meses-mascota', e.currentTarget.value)}}
               max={11}
               min={0}
-              allowNumericCharactersOnly
               required
             />
-            </FormGroup>
+            </div>
+            </div>
           </FormGroup>
         </div>
         <div>

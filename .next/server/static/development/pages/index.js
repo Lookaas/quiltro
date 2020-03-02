@@ -233,7 +233,7 @@ class ContactInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Co
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
       name: "Email",
-      type: "email-contacto",
+      type: "email",
       placeholder: "Email",
       value: formValues['email-contacto'],
       onChange: e => {
@@ -252,7 +252,7 @@ class ContactInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Co
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
-      label: "Ciudad",
+      label: "Ciudad *",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 65
@@ -316,18 +316,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style */ "./components/LeftSideBar/PetInformation/style.ts");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "@fortawesome/free-solid-svg-icons");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "@fortawesome/react-fontawesome");
-/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\LeftSideBar\\PetInformation\\index.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /** @jsx jsx */
-
-
 
 
 
@@ -413,39 +407,45 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       sex,
       inputFileRef
     } = this.state;
-    const dogIcon = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
-      icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__["faDog"],
+    const añosTag = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Tag"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 86
       },
       __self: this
-    });
-    return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Card"], {
-      elevation: _blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Elevation"].ONE,
-      css: _style__WEBPACK_IMPORTED_MODULE_3__["sidebarContainerStyle"],
+    }, "A\xF1os");
+    const mesesTag = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Tag"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 87
       },
       __self: this
+    }, "Meses");
+    return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Card"], {
+      elevation: _blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Elevation"].ONE,
+      css: _style__WEBPACK_IMPORTED_MODULE_3__["sidebarContainerStyle"],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 89
+      },
+      __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["H4"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 90
       },
       __self: this
     }, "Informaci\xF3n"), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89
+        lineNumber: 91
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
       label: "Imagen *",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90
+        lineNumber: 92
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Button"], {
@@ -455,7 +455,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       onClick: this.openFile,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91
+        lineNumber: 93
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("input", {
@@ -465,20 +465,20 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       css: _style__WEBPACK_IMPORTED_MODULE_3__["fileUpload"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 97
+        lineNumber: 99
       },
       __self: this
     }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 105
+        lineNumber: 107
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
       label: 'Nombre',
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 106
+        lineNumber: 108
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
@@ -492,20 +492,20 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       required: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 107
+        lineNumber: 109
       },
       __self: this
     }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 119
+        lineNumber: 121
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
       label: "Caso *",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 120
+        lineNumber: 122
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -517,7 +517,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       css: _style__WEBPACK_IMPORTED_MODULE_3__["fakeRadioGroupStyle"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 121
+        lineNumber: 123
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -527,7 +527,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       value: "1",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 129
+        lineNumber: 131
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -537,81 +537,95 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       value: "2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 135
+        lineNumber: 137
       },
       __self: this
     }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 143
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
-      label: "Edad *",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 144
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
-      label: "A\xF1os",
-      inline: true,
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 145
       },
       __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["NumericInput"], {
-      name: "edad-mascota",
-      value: formValues['edad-mascota'],
-      onValueChange: (valueInt, valueString) => {
-        onChange('edad-mascota', valueString);
-      },
-      placeholder: "A\xF1os",
-      max: 20,
-      min: 0,
-      allowNumericCharactersOnly: true,
-      required: true,
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
+      label: "Edad aproximada *",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 146
       },
       __self: this
-    })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
-      label: "Meses",
-      inline: true,
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+      style: {
+        display: 'flex',
+        width: '100%'
+      },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 157
+        lineNumber: 147
       },
       __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["NumericInput"], {
-      name: "edad-mascota",
-      value: formValues['edad-mascota'],
-      onValueChange: (valueInt, valueString) => {
-        onChange('edad-mascota', valueString);
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+      style: {
+        width: '50%',
+        margin: '2px'
       },
-      placeholder: "Meses",
-      max: 11,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 148
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
+      name: "edad-mascota",
+      value: formValues['años-mascota'],
+      placeholder: "A\xF1os",
+      rightElement: añosTag,
+      onChange: e => {
+        onChange('años-mascota', e.currentTarget.value);
+      },
+      max: 20,
       min: 0,
-      allowNumericCharactersOnly: true,
       required: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 158
+        lineNumber: 149
       },
       __self: this
-    })))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+    })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+      style: {
+        width: '50%',
+        margin: '2px'
+      },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 171
+        lineNumber: 160
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
+      name: "edad-mascota",
+      value: formValues['meses-mascota'],
+      placeholder: "Meses",
+      rightElement: mesesTag,
+      onChange: e => {
+        onChange('meses-mascota', e.currentTarget.value);
+      },
+      max: 11,
+      min: 0,
+      required: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 161
+      },
+      __self: this
+    }))))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 175
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
       label: "Sexo *",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 172
+        lineNumber: 176
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -623,7 +637,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       css: _style__WEBPACK_IMPORTED_MODULE_3__["fakeRadioGroupStyle"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 173
+        lineNumber: 177
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -633,7 +647,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       value: "1",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 181
+        lineNumber: 185
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -643,20 +657,20 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       value: "2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 187
+        lineNumber: 191
       },
       __self: this
     }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 195
+        lineNumber: 199
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
       label: "Tama\xF1o *",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 196
+        lineNumber: 200
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -668,7 +682,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       css: _style__WEBPACK_IMPORTED_MODULE_3__["fakeRadioGroupStyle"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 197
+        lineNumber: 201
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -678,7 +692,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       value: "s",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 205
+        lineNumber: 209
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -688,7 +702,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       value: "m",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 211
+        lineNumber: 215
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
@@ -698,13 +712,13 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       value: "l",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 217
+        lineNumber: 221
       },
       __self: this
     }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 225
+        lineNumber: 229
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Checkbox"], {
@@ -716,7 +730,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 226
+        lineNumber: 230
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Checkbox"], {
@@ -728,7 +742,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 234
+        lineNumber: 238
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Checkbox"], {
@@ -740,7 +754,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 242
+        lineNumber: 246
       },
       __self: this
     })));
@@ -754,7 +768,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
 /*!********************************************************!*\
   !*** ./components/LeftSideBar/PetInformation/style.ts ***!
   \********************************************************/
-/*! exports provided: sidebarContainerStyle, fakeRadioGroupStyle, fileUpload */
+/*! exports provided: sidebarContainerStyle, fakeRadioGroupStyle, fileUpload, containerStyle, ageInputStyle */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -762,6 +776,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sidebarContainerStyle", function() { return sidebarContainerStyle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fakeRadioGroupStyle", function() { return fakeRadioGroupStyle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fileUpload", function() { return fileUpload; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "containerStyle", function() { return containerStyle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ageInputStyle", function() { return ageInputStyle; });
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @emotion/core */ "@emotion/core");
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_core__WEBPACK_IMPORTED_MODULE_0__);
 
@@ -777,6 +793,15 @@ const fakeRadioGroupStyle = _emotion_core__WEBPACK_IMPORTED_MODULE_0__["css"]`
 `;
 const fileUpload = _emotion_core__WEBPACK_IMPORTED_MODULE_0__["css"]`
   display: none;
+`;
+const containerStyle = _emotion_core__WEBPACK_IMPORTED_MODULE_0__["css"]`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+`;
+const ageInputStyle = _emotion_core__WEBPACK_IMPORTED_MODULE_0__["css"]`
+  width:
 `;
 
 /***/ }),
@@ -951,7 +976,7 @@ class LeftSidebar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     _defineProperty(this, "onSubmit", async e => {
       e.preventDefault();
       const imgB64 = this.props.canvasRef.current.getStage().toDataURL({
-        pixelRatio: 1,
+        pixelRatio: 3,
         quality: 1,
         mimeType: 'image/png',
         width: 500,
@@ -1248,7 +1273,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-class ContactLayer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+class CharacteristicsLayer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   render() {
     const {
       canvasHeight,
@@ -1319,8 +1344,8 @@ class ContactLayer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Path"], {
       data: characteristics[charKey].icon,
       fill: 'red',
-      scaleX: 0.08,
-      scaleY: 0.08,
+      scaleX: characteristics[charKey].scale,
+      scaleY: characteristics[charKey].scale,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 60
@@ -1351,6 +1376,177 @@ class ContactLayer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __self: this
     })))));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (CharacteristicsLayer);
+
+/***/ }),
+
+/***/ "./components/canvas/ContactLayer/index.tsx":
+/*!**************************************************!*\
+  !*** ./components/canvas/ContactLayer/index.tsx ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/core */ "@emotion/core");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_core__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-konva */ "react-konva");
+/* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_konva__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\canvas\\ContactLayer\\index.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+/** @jsx jsx */
+
+
+
+
+class ContactLayer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  render() {
+    const {
+      canvasHeight,
+      canvasWidth,
+      formData
+    } = this.props;
+    const layerWidth = canvasWidth * 0.2;
+    return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Group"], {
+      x: canvasWidth * 0.75,
+      y: canvasHeight * 0.75,
+      width: layerWidth,
+      visible: true,
+      draggable: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Group"], {
+      width: layerWidth,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Label"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Tag"], {
+      fill: "#fff",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+      text: "Contacto",
+      fontSize: 14,
+      fontStyle: "bold",
+      width: layerWidth,
+      align: "center",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31
+      },
+      __self: this
+    })), formData['nombre-contacto'] !== '' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Label"], {
+      y: 20,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 39
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Tag"], {
+      fill: "#fff",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+      text: formData['nombre-contacto'],
+      fontSize: 14,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 41
+      },
+      __self: this
+    })), formData['telefono-contacto'] !== '+56 ' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Label"], {
+      y: 40,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 47
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Tag"], {
+      fill: "#fff",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 48
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+      text: formData['telefono-contacto'],
+      fontSize: 14,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 49
+      },
+      __self: this
+    })), formData['email-contacto'] !== '' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Label"], {
+      y: 60,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 55
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Tag"], {
+      fill: "#fff",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 56
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+      text: formData['email-contacto'],
+      fontSize: 14,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 57
+      },
+      __self: this
+    })), formData['ciudad-contacto'] !== '' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Label"], {
+      y: 80,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 63
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Tag"], {
+      fill: "#fff",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 64
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+      text: formData['ciudad-contacto'],
+      fontSize: 14,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 65
+      },
+      __self: this
+    }))));
   }
 
 }
@@ -1553,6 +1749,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style */ "./components/canvas/style.ts");
 /* harmony import */ var _Text__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Text */ "./components/canvas/Text/index.tsx");
 /* harmony import */ var _CharacteristicsLayer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./CharacteristicsLayer */ "./components/canvas/CharacteristicsLayer/index.tsx");
+/* harmony import */ var _ContactLayer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ContactLayer */ "./components/canvas/ContactLayer/index.tsx");
 var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\canvas\\index.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -1562,6 +1759,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /** @jsx jsx */
+
 
 
 
@@ -1790,7 +1988,8 @@ class Canvas extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onTextChanged,
       canvasHeight,
       canvasWidth,
-      characteristics
+      characteristics,
+      formData
     } = this.props;
     const {
       textBlocks,
@@ -1802,7 +2001,7 @@ class Canvas extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       css: _style__WEBPACK_IMPORTED_MODULE_5__["canvasStyle"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 239
+        lineNumber: 240
       },
       __self: this
     },  false && false);
@@ -1866,8 +2065,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Nav__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Nav */ "./components/Nav/index.tsx");
 /* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles */ "./pages/styles.ts");
 /* harmony import */ var _assets_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/icons */ "./assets/icons.ts");
-/* harmony import */ var konva__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! konva */ "konva");
-/* harmony import */ var konva__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(konva__WEBPACK_IMPORTED_MODULE_7__);
 var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\pages\\index.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -1879,7 +2076,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /** @jsx jsx */
-
 
 
 
@@ -1912,7 +2108,9 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         'whatsapp-contacto': '',
         'caso-mascota': '',
         'ciudad-contacto': '',
-        'sexo-mascota': ''
+        'sexo-mascota': '',
+        'años-mascota': '',
+        'meses-mascota': ''
       },
       characteristics: {},
       canvasHeight: 750,
@@ -1981,7 +2179,8 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         canvasTexts,
         canvasHeight,
         canvasWidth,
-        characteristics
+        characteristics,
+        formValues
       } = this.state;
       const {
         textBlocks
@@ -2000,7 +2199,8 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       let characteristic = {
         priority: '',
         text: '',
-        icon: ''
+        icon: '',
+        scale: -1
       };
       let validator = '';
 
@@ -2022,20 +2222,64 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           validator = 'textBlock';
           break;
 
-        case 'edad-mascota':
-          characteristic = {
-            priority: '0',
-            icon: _assets_icons__WEBPACK_IMPORTED_MODULE_6__["birthday_cake"],
-            text: value
-          };
-          validator = 'characteristic';
+        case 'años-mascota':
+          if (isNaN(value)) {
+            value = formValues['años-mascota'];
+          } else {
+            const meses = formValues['meses-mascota'];
+            let edadString = '';
+
+            if (value !== '' && meses !== '') {
+              edadString = value + ' años ' + meses + ' meses';
+            } else if (value !== '') {
+              edadString = value + ' años';
+            } else if (meses !== '') {
+              edadString = meses + ' meses';
+            }
+
+            characteristic = {
+              priority: '0',
+              icon: _assets_icons__WEBPACK_IMPORTED_MODULE_6__["birthday_cake"],
+              text: edadString,
+              scale: 0.08
+            };
+            validator = 'characteristic';
+          }
+
+          break;
+
+        case 'meses-mascota':
+          if (isNaN(value)) {
+            value = formValues['meses-mascota'];
+          } else {
+            const años = formValues['años-mascota'];
+            let edadString2 = '';
+
+            if (value !== '' && años !== '') {
+              edadString2 = años + ' años ' + value + ' meses';
+            } else if (value !== '') {
+              edadString2 = value + ' meses';
+            } else if (años !== '') {
+              edadString2 = años + ' años';
+            }
+
+            characteristic = {
+              priority: '0',
+              icon: _assets_icons__WEBPACK_IMPORTED_MODULE_6__["birthday_cake"],
+              text: edadString2,
+              scale: 0.08
+            };
+            validator = 'characteristic';
+          }
+
           break;
 
         case 'sexo-mascota':
           characteristic = {
             priority: '1',
             icon: value === '1' ? _assets_icons__WEBPACK_IMPORTED_MODULE_6__["mars"] : _assets_icons__WEBPACK_IMPORTED_MODULE_6__["venus"],
-            text: value === '1' ? 'Macho' : 'Hembra'
+            text: value === '1' ? 'Macho' : 'Hembra',
+            scale: 0.08
           };
           validator = 'characteristic';
           break;
@@ -2044,7 +2288,8 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           characteristic = {
             priority: '3',
             icon: _assets_icons__WEBPACK_IMPORTED_MODULE_6__["dog"],
-            text: value === 's' ? 'Pequeño' : value === 'm' ? 'Mediano' : 'Grande'
+            text: value === 's' ? 'Pequeño' : value === 'm' ? 'Mediano' : 'Grande',
+            scale: value === 's' ? 0.04 : value === 'm' ? 0.06 : 0.08
           };
           validator = 'characteristic';
           break;
@@ -2054,7 +2299,8 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
             characteristic = {
               priority: '4',
               icon: _assets_icons__WEBPACK_IMPORTED_MODULE_6__["band_aid"],
-              text: 'Esterilizado'
+              text: 'Esterilizado',
+              scale: 0.08
             };
             validator = 'characteristic';
           } else {
@@ -2069,7 +2315,8 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
             characteristic = {
               priority: '5',
               icon: _assets_icons__WEBPACK_IMPORTED_MODULE_6__["paw"],
-              text: 'Con chip'
+              text: 'Con chip',
+              scale: 0.08
             };
             validator = 'characteristic';
           } else {
@@ -2084,7 +2331,8 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
             characteristic = {
               priority: '6',
               icon: _assets_icons__WEBPACK_IMPORTED_MODULE_6__["syringe"],
-              text: 'Al día'
+              text: 'Al día',
+              scale: 0.08
             };
             validator = 'characteristic';
           } else {
@@ -2094,45 +2342,41 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
           break;
 
-        case 'nombre-contacto':
-          newTextBlock.fontSize = 'small';
-          newTextBlock.position = {
-            x: canvasWidth * 0.8,
-            y: canvasHeight * 0.7
-          };
-          validator = 'textBlock';
+        case 'telefono-contacto':
+          if (value.length < 4) {
+            value = '+56 ';
+          } else if (isNaN(value.slice(4).trim())) {
+            value = formValues['telefono-contacto'];
+          }
+
           break;
 
+        /*case 'nombre-contacto':
+          newTextBlock.fontSize = 'small';
+          newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7};
+          validator = 'textBlock';
+          break;
         case 'telefono-contacto':
           if (value.length < 4) {
             value = '+56 ';
           }
-
           newTextBlock.fontSize = 'small';
-          newTextBlock.position = {
-            x: canvasWidth * 0.8,
-            y: canvasHeight * 0.7 + 30
-          };
+          newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7 + 30};
           validator = 'textBlock';
           break;
+          case 'email-contacto':
+            newTextBlock.fontSize = 'small';
+            newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7 + 60};
+            validator = 'textBlock';
+            break;
+          case 'ciudad-contacto':
+            newTextBlock.fontSize = 'small';
+            newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7 + 90};
+            validator = 'textBlock';
+            break;
+        */
 
-        case 'email-contacto':
-          newTextBlock.fontSize = 'small';
-          newTextBlock.position = {
-            x: canvasWidth * 0.8,
-            y: canvasHeight * 0.7 + 60
-          };
-          validator = 'textBlock';
-          break;
-
-        case 'ciudad-contacto':
-          newTextBlock.fontSize = 'small';
-          newTextBlock.position = {
-            x: canvasWidth * 0.8,
-            y: canvasHeight * 0.7 + 90
-          };
-          validator = 'textBlock';
-          break;
+        default:
       }
 
       if (validator === 'textBlock') {
@@ -2201,86 +2445,6 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     console.log(window.devicePixelRatio);
   }
 
-  test() {
-    let stage = new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Stage({
-      container: 'testcanvas',
-      width: 500,
-      height: 750
-    });
-    let layer = new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Layer();
-    let layer2 = new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Layer();
-    let layer3 = new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Layer();
-    let layer4 = new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Layer();
-    let text = new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Text({
-      text: 'Perritu',
-      fontSize: 20,
-      width: 500,
-      align: 'center',
-      y: 50,
-      fontStyle: 'bold'
-    });
-    let text2 = new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Text({
-      text: 'Aaaaaaaaa',
-      fontSize: 15,
-      width: 500,
-      align: 'center',
-      y: 150
-    });
-    let text3 = new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Text({
-      text: 'uwu',
-      fontSize: 10,
-      y: 250,
-      x: 60
-    });
-    let text4 = new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Text({
-      text: 'uwu',
-      fontSize: 10,
-      y: 450,
-      x: 90
-    }); // create label
-
-    var label = new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Label({
-      x: 100,
-      y: 100,
-      draggable: true
-    }); // add a tag to the label
-
-    label.add(new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Tag({
-      fill: 'transparent'
-    })); // add text to the label
-
-    label.add(new konva__WEBPACK_IMPORTED_MODULE_7___default.a.Text({
-      text: 'Hello World!',
-      fontSize: 20,
-      lineHeight: 1.2,
-      padding: 10,
-      fill: 'green'
-    }));
-    layer.add(label);
-    layer.add(text);
-    layer2.add(text2);
-    layer3.add(text3);
-    layer4.add(text4);
-    stage.add(layer);
-    stage.add(layer2);
-    stage.add(layer3);
-    stage.add(layer4);
-    const imgB64 = stage.toDataURL({
-      pixelRatio: 3,
-      quality: 1,
-      mimeType: 'image/png',
-      width: 500,
-      height: 750
-    }); //document.write('img src="'+imgB64+'" />');
-
-    let link = document.createElement('a');
-    link.download = "Test";
-    link.href = imgB64;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
-
   render() {
     const {
       canvasImage,
@@ -2298,13 +2462,13 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       css: _styles__WEBPACK_IMPORTED_MODULE_5__["pageStyle"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 458
+        lineNumber: 435
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_components_Nav__WEBPACK_IMPORTED_MODULE_4__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 459
+        lineNumber: 436
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("section", {
@@ -2312,7 +2476,7 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       css: _styles__WEBPACK_IMPORTED_MODULE_5__["containerStyle"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 460
+        lineNumber: 437
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_components_LeftSideBar__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -2327,7 +2491,7 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onImageUploaded: this.setCanvasImage,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 461
+        lineNumber: 438
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_components_canvas__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2341,26 +2505,13 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       canvasHeight: canvasHeight,
       canvasWidth: canvasWidth,
       characteristics: characteristics,
+      formData: formValues,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 472
+        lineNumber: 449
       },
       __self: this
-    })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
-      id: "testcanvas",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 485
-      },
-      __self: this
-    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("button", {
-      onClick: this.test,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 486
-      },
-      __self: this
-    }, "Hola"));
+    })));
   }
 
 }
@@ -2432,39 +2583,6 @@ module.exports = require("@blueprintjs/core");
 /***/ (function(module, exports) {
 
 module.exports = require("@emotion/core");
-
-/***/ }),
-
-/***/ "@fortawesome/free-solid-svg-icons":
-/*!****************************************************!*\
-  !*** external "@fortawesome/free-solid-svg-icons" ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@fortawesome/free-solid-svg-icons");
-
-/***/ }),
-
-/***/ "@fortawesome/react-fontawesome":
-/*!*************************************************!*\
-  !*** external "@fortawesome/react-fontawesome" ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@fortawesome/react-fontawesome");
-
-/***/ }),
-
-/***/ "konva":
-/*!************************!*\
-  !*** external "konva" ***!
-  \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("konva");
 
 /***/ }),
 

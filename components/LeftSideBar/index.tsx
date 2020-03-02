@@ -89,7 +89,7 @@ export default class LeftSidebar extends Component<
   onSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    const imgB64 = this.props.canvasRef.current!.getStage().toDataURL({ pixelRatio: 1, quality:1, mimeType: 'image/png', width: 500, height: 750 });
+    const imgB64 = this.props.canvasRef.current!.getStage().toDataURL({ pixelRatio: 3, quality:1, mimeType: 'image/png', width: 500, height: 750 });
     let link = document.createElement('a');
     link.download = "Test";
     link.href = imgB64;

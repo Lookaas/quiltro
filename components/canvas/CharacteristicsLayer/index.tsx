@@ -8,6 +8,7 @@ export interface ICharacteristicElement {
   priority: string;
   icon: string;
   text: string;
+  scale: number;
 }
 
 interface ICharacteristicsProps {
@@ -18,8 +19,7 @@ interface ICharacteristicsProps {
   };
 }
 
-class ContactLayer extends Component<ICharacteristicsProps, any> {
-
+class CharacteristicsLayer extends Component<ICharacteristicsProps, any> {
 
   render() {
     const {canvasHeight, canvasWidth, characteristics} = this.props;
@@ -60,8 +60,8 @@ class ContactLayer extends Component<ICharacteristicsProps, any> {
               <Path
               data={characteristics[charKey].icon}
               fill={'red'}
-              scaleX={0.08}
-              scaleY={0.08} />
+              scaleX={characteristics[charKey].scale}
+              scaleY={characteristics[charKey].scale} />
               <Label y={layerHeigth - 12}>
                 <Tag fill='#fff' />
                 <Text
@@ -78,4 +78,4 @@ class ContactLayer extends Component<ICharacteristicsProps, any> {
 
 }
 
-export default ContactLayer;
+export default CharacteristicsLayer;
