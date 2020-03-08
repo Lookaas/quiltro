@@ -3,10 +3,11 @@
 import React, { Component, createRef, RefObject } from 'react';
 import { jsx } from '@emotion/core';
 import { Text, Path, Group, Label, Tag } from 'react-konva';
+import { IIcon } from '../../../assets/icons'
 
 export interface ICharacteristicElement {
   priority: string;
-  icon: string;
+  icon: IIcon;
   text: string;
   scale: number;
 }
@@ -51,27 +52,36 @@ class CharacteristicsLayer extends Component<ICharacteristicsProps, any> {
               align='center' />
           </Label>
         </Group>
-        {Object.keys(characteristics).sort().map((charKey, index) => (
+        {Object.keys(characteristics).sort().map((charKey, index) => {
+          const characteristic = characteristics[charKey];
+          const groupWidth = layerWidth*0.16;
+          const xGroup = xOffset + index*layerWidth*0.16;
+          const yGroup = layerHeigth*0.3;
+          const xIcon = (groupWidth/2) - ((characteristic.icon.w*characteristic.scale)/2)
+          return (
             <Group
-            width={layerWidth*0.16}
+            width={groupWidth}
             height={layerHeigth}
-            x={xOffset + index*layerWidth*0.16}
-            y={layerHeigth*0.3} >
+            x={xGroup}
+            y={yGroup} >
               <Path
-              data={characteristics[charKey].icon}
+              data={characteristic.icon.path}
               fill={'red'}
-              scaleX={characteristics[charKey].scale}
-              scaleY={characteristics[charKey].scale} />
+              scaleX={characteristic.scale}
+              scaleY={characteristic.scale}
+              x={xIcon} />
               <Label y={layerHeigth - 12}>
                 <Tag fill='#fff' />
                 <Text
                 width={layerWidth*0.16}
-                text={characteristics[charKey].text}
+                text={characteristic.text}
                 fontSize={10}
                 align={'center'} />
               </Label>
             </Group>
-        ))}
+          )
+        }
+        )}
       </Group>
     )
   }

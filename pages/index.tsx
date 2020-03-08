@@ -173,7 +173,7 @@ class Home extends Component<any, IHomeState> {
     let characteristic: ICharacteristicElement = {
       priority: '',
       text: '',
-      icon: '',
+      icon: {path: '', w: -1, h:-1},
       scale: -1
     }
     let validator: '' | 'textBlock' | 'characteristic' | 'deletedCharacteristic'= '';
@@ -194,19 +194,19 @@ class Home extends Component<any, IHomeState> {
         validator = 'textBlock';
         break;
       case 'años-mascota' :
-        if (isNaN(value)) {
+        if (isNaN(value) && value !== '0') {
           value = formValues['años-mascota'];
         }
         else {
           const meses = formValues['meses-mascota'];
           let edadString = ''
-          if (value !== '' && meses !== '') {
+          if (value !== '' && meses !== '' && value !== '0' && meses !== '0') {
             edadString = value+' años '+meses+' meses';
           }
-          else if (value !== '') {
+          else if (value !== '' && value !== '0') {
             edadString = value+' años';
           }
-          else if (meses !== '') {
+          else if (meses !== '' && meses !== '0') {
             edadString = meses+' meses';
           }
           characteristic = {
@@ -219,19 +219,19 @@ class Home extends Component<any, IHomeState> {
         }
         break;
       case 'meses-mascota' :
-        if (isNaN(value)) {
+        if (isNaN(value) && value !== '0') {
           value = formValues['meses-mascota'];
         }
         else {
           const años = formValues['años-mascota'];
           let edadString2 = ''
-          if (value !== '' && años !== '') {
+          if (value !== '' && años !== '' && value !== '0' && años !== '0') {
             edadString2 = años+' años '+value+' meses';
           }
-          else if (value !== '') {
+          else if (value !== '' && value !== '0') {
             edadString2 = value+' meses';
           }
-          else if (años !== '') {
+          else if (años !== '' && años !== '0') {
             edadString2 = años+' años';
           }
           characteristic = {
