@@ -9,6 +9,7 @@ import Nav from '../components/Nav';
 import { containerStyle, pageStyle } from './styles';
 import * as icons from '../assets/icons';
 import Konva from 'konva'
+import axios from 'axios';
 
 interface IHomeState {
   canvasImage: HTMLImageElement | null;
@@ -17,6 +18,10 @@ interface IHomeState {
   characteristics: ICharacteristics;
   canvasHeight: number;
   canvasWidth: number;
+  imageFormat: string;
+  color: string;
+  secundaryColor: string;
+  textColor: string;
 }
 
 export interface ICanvasTexts {
@@ -93,15 +98,53 @@ class Home extends Component<any, IHomeState> {
       'meses-mascota': ''
     },
     characteristics: {},
-    canvasHeight: 750,
-    canvasWidth: 500,
+    canvasHeight: 540,
+    canvasWidth: 540,
+    imageFormat: 'cuadrada',
+    color: '#4E9818',
+    secundaryColor: '#0A6507',
+    textColor: '#F3DE58'
   };
 
   stageRef = createRef<any>();
 
   componentDidMount() {
     //this.addTextBlock();
-    console.log(window.devicePixelRatio);
+    /*console.log(window.devicePixelRatio);
+    const exios = axios.create({
+      baseURL: 'https://api.twitter.com/',
+    })
+    axios.get('https://api.twitter.com/oauth/authorize').then(r => {
+      console.log(r);
+    }).catch(error => {
+      console.error(error);
+    })*/
+  }
+
+  changeDimensions = (imageFormat : string) => {
+    switch (imageFormat) {
+      case 'vertical' :
+        this.setState({
+          canvasWidth: 540,
+          canvasHeight: 675,
+          imageFormat: imageFormat
+        });
+        break;
+      case 'cuadrada' :
+        this.setState({
+          canvasWidth: 540,
+          canvasHeight: 540,
+          imageFormat: imageFormat
+        });
+        break;
+      case 'horizontal' :
+        this.setState({
+          canvasWidth: 1080,
+          canvasHeight: 576,
+          imageFormat: imageFormat
+        });
+        break;
+    }
   }
 
   setSelectedTextBlock = (selectedTextBlock: string) => {
@@ -429,7 +472,7 @@ class Home extends Component<any, IHomeState> {
   };
 
   render() {
-    const { canvasImage, canvasTexts, formValues, canvasHeight, canvasWidth, characteristics } = this.state;
+    const { canvasImage, canvasTexts, formValues, canvasHeight, canvasWidth, characteristics, imageFormat, color, secundaryColor, textColor } = this.state;
     const { selectedTextBlock, textBlocks } = canvasTexts;
     return (
       <div css={pageStyle}>
@@ -445,6 +488,7 @@ class Home extends Component<any, IHomeState> {
             onTextChanged={this.onTextChanged}
             addTextBlockWithData={this.addTextBlockWithData}
             onImageUploaded={this.setCanvasImage}
+            changeDimensions={this.changeDimensions}
           />
           <Canvas
             canvasRef={this.stageRef}
@@ -458,7 +502,12 @@ class Home extends Component<any, IHomeState> {
             canvasWidth={canvasWidth}
             characteristics={characteristics}
             formData={formValues}
+            imageFormat={imageFormat}
+            color={color}
+            secundaryColor={secundaryColor}
+            textColor={textColor}
           />
+
         </section>
       </div>
     );

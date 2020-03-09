@@ -18,12 +18,14 @@ interface ICharacteristicsProps {
   characteristics: {
     [priority: string] : ICharacteristicElement
   };
+  color: string;
+  textColor: string;
 }
 
 class CharacteristicsLayer extends Component<ICharacteristicsProps, any> {
 
   render() {
-    const {canvasHeight, canvasWidth, characteristics} = this.props;
+    const {canvasHeight, canvasWidth, characteristics, color, textColor} = this.props;
     const layerWidth = canvasWidth*0.7;
     const layerHeigth = canvasHeight*0.1;
     console.log(characteristics);
@@ -43,8 +45,9 @@ class CharacteristicsLayer extends Component<ICharacteristicsProps, any> {
         height={layerHeigth*0.3}
         width={layerWidth} >
           <Label>
-            <Tag fill='#fff' />
+            <Tag fill={color} />
             <Text
+              fill={textColor}
               text='Características'
               fontSize={20}
               fontStyle='bold'
@@ -71,8 +74,9 @@ class CharacteristicsLayer extends Component<ICharacteristicsProps, any> {
               scaleY={characteristic.scale}
               x={xIcon} />
               <Label y={layerHeigth - 12}>
-                <Tag fill='#fff' />
+                <Tag fill={color} />
                 <Text
+                fill={textColor}
                 width={layerWidth*0.16}
                 text={characteristic.text}
                 fontSize={10}

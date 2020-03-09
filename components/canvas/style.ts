@@ -5,10 +5,9 @@ export const canvasStyle = css`
   flex-direction: column;
   align-items: center;
   margin: 1rem;
-  width: 35rem;
   justify-content: center;
   & .konvajs-content {
-    background-color: white;
+    background-color: #69F765;
     border: solid 1px lightgray;
   }
 `;

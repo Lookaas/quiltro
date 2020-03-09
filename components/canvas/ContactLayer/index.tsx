@@ -10,12 +10,14 @@ interface IContactProps {
   canvasWidth: number;
   canvasHeight: number;
   formData: IAdoptionForm;
+  color: string;
+  textColor: string;
 }
 
 class ContactLayer extends Component<IContactProps, any> {
 
   render() {
-    const {canvasHeight, canvasWidth, formData} = this.props;
+    const {canvasHeight, canvasWidth, formData, color, textColor} = this.props;
     const layerWidth = canvasWidth*0.2;
     return (
       <Group
@@ -27,8 +29,9 @@ class ContactLayer extends Component<IContactProps, any> {
         <Group
         width={layerWidth} >
           <Label>
-            <Tag fill='#fff' />
+            <Tag fill={color} />
             <Text
+              fill={textColor}
               text='Contacto'
               fontSize={14}
               fontStyle='bold'
@@ -37,34 +40,38 @@ class ContactLayer extends Component<IContactProps, any> {
           </Label>
           {formData['nombre-contacto'] !== '' &&
             <Label y={20} >
-              <Tag fill='#fff' />
+              <Tag fill={color} />
               <Text
+              fill={textColor}
               text={formData['nombre-contacto']}
-              fontSize={14}
+              fontSize={11}
               />
             </Label>}
             {formData['telefono-contacto'] !== '+56 ' &&
             <Label y={40}  >
-            <Tag fill='#fff' />
+            <Tag fill={color} />
             <Text
+            fill={textColor}
             text={formData['telefono-contacto']}
-            fontSize={14}
+            fontSize={11}
             />
           </Label>}
             {formData['email-contacto'] !== '' &&
             <Label y={60} >
-            <Tag fill='#fff' />
+            <Tag fill={color} />
             <Text
+            fill={textColor}
             text={formData['email-contacto']}
-            fontSize={14}
+            fontSize={11}
              />
           </Label>}
             {formData['ciudad-contacto'] !== '' &&
             <Label y={80} >
-            <Tag fill='#fff' />
+            <Tag fill={color} />
             <Text
+            fill={textColor}
             text={formData['ciudad-contacto']}
-            fontSize={14}
+            fontSize={11}
              />
           </Label>}
         </Group>

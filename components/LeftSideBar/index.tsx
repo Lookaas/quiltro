@@ -25,6 +25,7 @@ export interface ILeftSidebarProps {
   onTextBlockInteracted: (key: string) => void;
   onTextChanged: (key: string, value: string, id: string) => void;
   onImageUploaded: (prop1: HTMLImageElement) => void;
+  changeDimensions: (imageFormat: string) => void;
 }
 
 export interface ILeftSidebarState {
@@ -126,11 +127,12 @@ export default class LeftSidebar extends Component<
       selectedTextBlock,
       textBlocks,
       addTextBlockWithData,
-      onImageUploaded
+      onImageUploaded,
+      changeDimensions
     } = this.props;
     return (
       <form onSubmit={this.onSubmit} onChange={this.onFormChange} css={containerStyle} method="post">
-        <PetInformation onChange={onInputChanged} formValues={formValues} addText={addTextBlockWithData} onImageUploaded={onImageUploaded}/>
+        <PetInformation onChange={onInputChanged} formValues={formValues} addText={addTextBlockWithData} onImageUploaded={onImageUploaded} changeDimensions={changeDimensions}/>
         <div>
           <ContactInformation onChange={onInputChanged} formValues={formValues} />
           <SubmitButton />

@@ -7,10 +7,9 @@ import {
   H4,
   InputGroup,
   Radio,
-  TextArea,
   Button,
-  NumericInput,
-  Tag
+  Tag,
+  RadioGroup
 } from '@blueprintjs/core';
 import { jsx } from '@emotion/core';
 import React, { FormEvent, createRef } from 'react';
@@ -23,6 +22,7 @@ export interface IPetInformationProps {
   onChange: (key: keyof IAdoptionForm, value: any) => void;
   addText: (textBlock: ITextBlockElement) => void;
   onImageUploaded: (prop1: HTMLImageElement) => void;
+  changeDimensions: (imageFormat: string) => void;
   formValues: IAdoptionForm;
 }
 
@@ -34,7 +34,8 @@ export default class PetInformation extends React.Component<
     size: '',
     caseOption: '',
     sex: '',
-    inputFileRef: createRef<HTMLInputElement>()
+    inputFileRef: createRef<HTMLInputElement>(),
+    imageFormat: 'cuadrada'
   };
 
   onSizeChanged = (e: FormEvent<HTMLInputElement>) => {
@@ -80,9 +81,18 @@ export default class PetInformation extends React.Component<
     reader.readAsDataURL(e.currentTarget.files![0]);
   };
 
+  onChangeDimensions = (e : FormEvent<HTMLInputElement>) => {
+    const {changeDimensions} = this.props;
+    const newImageFormat = e.currentTarget.value;
+    this.setState({
+      imageFormat: newImageFormat
+    });
+    changeDimensions(newImageFormat);
+  }
+
   render() {
-    const { onChange, formValues, addText } = this.props;
-    const { size, caseOption, sex, inputFileRef } = this.state;
+    const { onChange, formValues, addText, changeDimensions } = this.props;
+    const { size, caseOption, sex, inputFileRef, imageFormat } = this.state;
     const añosTag = <Tag>Años</Tag>
     const mesesTag = <Tag>Meses</Tag>
     return (
@@ -103,6 +113,16 @@ export default class PetInformation extends React.Component<
               css={fileUpload}
             />
           </FormGroup>
+        </div>
+        <div>
+          <RadioGroup
+            label='Dimensiones de imagen *'
+            onChange={this.onChangeDimensions}
+            selectedValue={imageFormat} >
+              <Radio label='Cuadrada' value='cuadrada' />
+              <Radio label='Vertical' value='vertical' />
+              <Radio label='Horizontal' value='horizontal' />
+            </RadioGroup>
         </div>
         <div>
           <FormGroup label={'Nombre'}>

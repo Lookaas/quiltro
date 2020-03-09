@@ -326,7 +326,8 @@ function (_React$Component) {
       size: '',
       caseOption: '',
       sex: '',
-      inputFileRef: Object(react__WEBPACK_IMPORTED_MODULE_9__["createRef"])()
+      inputFileRef: Object(react__WEBPACK_IMPORTED_MODULE_9__["createRef"])(),
+      imageFormat: 'cuadrada'
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "onSizeChanged", function (e) {
@@ -386,6 +387,17 @@ function (_React$Component) {
       reader.readAsDataURL(e.currentTarget.files[0]);
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "onChangeDimensions", function (e) {
+      var changeDimensions = _this.props.changeDimensions;
+      var newImageFormat = e.currentTarget.value;
+
+      _this.setState({
+        imageFormat: newImageFormat
+      });
+
+      changeDimensions(newImageFormat);
+    });
+
     return _this;
   }
 
@@ -395,23 +407,25 @@ function (_React$Component) {
       var _this$props = this.props,
           _onChange = _this$props.onChange,
           formValues = _this$props.formValues,
-          addText = _this$props.addText;
+          addText = _this$props.addText,
+          changeDimensions = _this$props.changeDimensions;
       var _this$state = this.state,
           size = _this$state.size,
           caseOption = _this$state.caseOption,
           sex = _this$state.sex,
-          inputFileRef = _this$state.inputFileRef;
+          inputFileRef = _this$state.inputFileRef,
+          imageFormat = _this$state.imageFormat;
       var añosTag = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Tag"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86
+          lineNumber: 96
         },
         __self: this
       }, "A\xF1os");
       var mesesTag = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Tag"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 97
         },
         __self: this
       }, "Meses");
@@ -420,26 +434,26 @@ function (_React$Component) {
         css: _style__WEBPACK_IMPORTED_MODULE_10__["sidebarContainerStyle"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 99
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["H4"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 100
         },
         __self: this
       }, "Informaci\xF3n"), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 101
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
         label: "Imagen *",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92
+          lineNumber: 102
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Button"], {
@@ -449,7 +463,7 @@ function (_React$Component) {
         onClick: this.openFile,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 103
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("input", {
@@ -459,20 +473,59 @@ function (_React$Component) {
         css: _style__WEBPACK_IMPORTED_MODULE_10__["fileUpload"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 99
+          lineNumber: 109
         },
         __self: this
       }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 107
+          lineNumber: 117
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["RadioGroup"], {
+        label: "Dimensiones de imagen *",
+        onChange: this.onChangeDimensions,
+        selectedValue: imageFormat,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 118
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
+        label: "Cuadrada",
+        value: "cuadrada",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 122
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
+        label: "Vertical",
+        value: "vertical",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 123
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
+        label: "Horizontal",
+        value: "horizontal",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 124
+        },
+        __self: this
+      }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 127
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
         label: 'Nombre',
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 108
+          lineNumber: 128
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["InputGroup"], {
@@ -486,20 +539,20 @@ function (_React$Component) {
         required: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 109
+          lineNumber: 129
         },
         __self: this
       }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 121
+          lineNumber: 141
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
         label: "Caso *",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 122
+          lineNumber: 142
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
@@ -513,7 +566,7 @@ function (_React$Component) {
         css: _style__WEBPACK_IMPORTED_MODULE_10__["fakeRadioGroupStyle"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 123
+          lineNumber: 143
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
@@ -523,7 +576,7 @@ function (_React$Component) {
         value: "1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131
+          lineNumber: 151
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
@@ -533,20 +586,20 @@ function (_React$Component) {
         value: "2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 137
+          lineNumber: 157
         },
         __self: this
       }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 145
+          lineNumber: 165
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
         label: "Edad aproximada *",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 146
+          lineNumber: 166
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
@@ -556,7 +609,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 147
+          lineNumber: 167
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
@@ -566,7 +619,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 148
+          lineNumber: 168
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["InputGroup"], {
@@ -582,7 +635,7 @@ function (_React$Component) {
         required: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 149
+          lineNumber: 169
         },
         __self: this
       })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
@@ -592,7 +645,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 160
+          lineNumber: 180
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["InputGroup"], {
@@ -608,20 +661,20 @@ function (_React$Component) {
         required: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 161
+          lineNumber: 181
         },
         __self: this
       }))))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 175
+          lineNumber: 195
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
         label: "Sexo *",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 176
+          lineNumber: 196
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
@@ -635,7 +688,7 @@ function (_React$Component) {
         css: _style__WEBPACK_IMPORTED_MODULE_10__["fakeRadioGroupStyle"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 177
+          lineNumber: 197
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
@@ -647,7 +700,7 @@ function (_React$Component) {
         value: "1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 185
+          lineNumber: 205
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
@@ -659,20 +712,20 @@ function (_React$Component) {
         value: "2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 191
+          lineNumber: 211
         },
         __self: this
       }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 199
+          lineNumber: 219
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
         label: "Tama\xF1o *",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 200
+          lineNumber: 220
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
@@ -686,7 +739,7 @@ function (_React$Component) {
         css: _style__WEBPACK_IMPORTED_MODULE_10__["fakeRadioGroupStyle"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 201
+          lineNumber: 221
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
@@ -698,7 +751,7 @@ function (_React$Component) {
         value: "s",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 209
+          lineNumber: 229
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
@@ -710,7 +763,7 @@ function (_React$Component) {
         value: "m",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 215
+          lineNumber: 235
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
@@ -722,13 +775,13 @@ function (_React$Component) {
         value: "l",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 221
+          lineNumber: 241
         },
         __self: this
       }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 229
+          lineNumber: 249
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Checkbox"], {
@@ -740,7 +793,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 230
+          lineNumber: 250
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Checkbox"], {
@@ -752,7 +805,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 238
+          lineNumber: 258
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Checkbox"], {
@@ -764,7 +817,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 246
+          lineNumber: 266
         },
         __self: this
       })));
@@ -1145,7 +1198,8 @@ function (_Component) {
           selectedTextBlock = _this$props.selectedTextBlock,
           textBlocks = _this$props.textBlocks,
           addTextBlockWithData = _this$props.addTextBlockWithData,
-          onImageUploaded = _this$props.onImageUploaded;
+          onImageUploaded = _this$props.onImageUploaded,
+          changeDimensions = _this$props.changeDimensions;
       return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])("form", {
         onSubmit: this.onSubmit,
         onChange: this.onFormChange,
@@ -1153,7 +1207,7 @@ function (_Component) {
         method: "post",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 132
+          lineNumber: 134
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_PetInformation__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -1161,15 +1215,16 @@ function (_Component) {
         formValues: formValues,
         addText: addTextBlockWithData,
         onImageUploaded: onImageUploaded,
+        changeDimensions: changeDimensions,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133
+          lineNumber: 135
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 134
+          lineNumber: 136
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_ContactInformation__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1177,13 +1232,13 @@ function (_Component) {
         formValues: formValues,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 135
+          lineNumber: 137
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_SubmitButton__WEBPACK_IMPORTED_MODULE_12__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 136
+          lineNumber: 138
         },
         __self: this
       })));
@@ -1390,19 +1445,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-konva */ "./node_modules/react-konva/lib/ReactKonva.js");
-/* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_konva__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-konva */ "./node_modules/react-konva/lib/ReactKonva.js");
+/* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_konva__WEBPACK_IMPORTED_MODULE_9__);
+
+
 
 
 
 
 
 var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\canvas\\BackgroundImage\\index.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 
 /** @jsx jsx */
 
@@ -1412,12 +1471,30 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 var BackgroundImage =
 /*#__PURE__*/
 function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(BackgroundImage, _React$Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(BackgroundImage, _React$Component);
 
   function BackgroundImage() {
+    var _getPrototypeOf2;
+
+    var _this;
+
     Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, BackgroundImage);
 
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(BackgroundImage).apply(this, arguments));
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(BackgroundImage)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "transformWidth", function (oldHeight, oldWidth, newHeight) {
+      return newHeight * oldWidth / oldHeight;
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "transformHeight", function (oldHeight, oldWidth, newWidth) {
+      return oldHeight * newWidth / oldWidth;
+    });
+
+    return _this;
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(BackgroundImage, [{
@@ -1426,7 +1503,8 @@ function (_React$Component) {
       var _this$props = this.props,
           backgroundImage = _this$props.backgroundImage,
           canvasHeight = _this$props.canvasHeight,
-          canvasWidth = _this$props.canvasWidth;
+          canvasWidth = _this$props.canvasWidth,
+          imageFormat = _this$props.imageFormat;
 
       if (!backgroundImage) {
         return null;
@@ -1434,24 +1512,64 @@ function (_React$Component) {
 
       var height = backgroundImage.height,
           width = backgroundImage.width;
-      var medianWidth = -(width / 2 - canvasWidth) / 2;
-      var medianHeight = -(height / 2 - canvasHeight) / 2;
-      return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Layer"], {
+      var imageProportion = 0.4;
+      var x = 0;
+      var y = 0;
+      var imageWidth = width;
+      var imageHeight = height;
+
+      if (imageFormat === 'vertical') {
+        if (width < canvasWidth && height < canvasHeight * imageProportion) {
+          var yOffset = (canvasHeight * imageProportion - height) / 2;
+          x = (canvasWidth - width) / 2;
+          y = canvasHeight * imageProportion + yOffset;
+        } else if (height < canvasHeight * imageProportion) {
+          imageWidth = canvasWidth;
+          imageHeight = this.transformHeight(height, width, imageWidth);
+
+          var _yOffset = imageHeight * imageProportion / 2 - imageHeight / 2;
+
+          y = canvasHeight * 0.3 + _yOffset;
+        } else {
+          imageHeight = canvasHeight * imageProportion;
+          imageWidth = this.transformWidth(height, width, imageHeight);
+
+          if (imageWidth <= canvasWidth) {
+            x = (canvasWidth - imageWidth) / 2;
+            y = canvasHeight * 0.3;
+          } else {
+            imageWidth = canvasWidth;
+            imageHeight = this.transformHeight(height, width, imageWidth);
+
+            var _yOffset2 = imageHeight * imageProportion / 2 - imageHeight / 2;
+
+            y = canvasHeight * 0.3 + _yOffset2;
+          }
+        }
+      } else if (imageFormat === 'cuadrada') {
+        imageWidth = canvasWidth;
+        imageHeight = this.transformHeight(height, width, imageWidth);
+      } else if (imageFormat === 'horizontal') {
+        imageHeight = canvasHeight;
+        imageWidth = this.transformWidth(height, width, imageHeight);
+      }
+
+      return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_9__["Layer"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 75
         },
         __self: this
-      }, backgroundImage && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_5__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Image"], {
+      }, backgroundImage && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_9__["Image"], {
         image: backgroundImage,
-        x: medianWidth,
-        y: medianHeight,
-        scaleX: 0.5,
-        scaleY: 0.5,
+        x: x,
+        y: y,
+        width: imageWidth,
+        height: imageHeight,
         draggable: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 77
         },
         __self: this
       }));
@@ -1459,7 +1577,7 @@ function (_React$Component) {
   }]);
 
   return BackgroundImage;
-}(react__WEBPACK_IMPORTED_MODULE_6___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_8___default.a.Component);
 
 
 
@@ -1518,7 +1636,9 @@ function (_Component) {
       var _this$props = this.props,
           canvasHeight = _this$props.canvasHeight,
           canvasWidth = _this$props.canvasWidth,
-          characteristics = _this$props.characteristics;
+          characteristics = _this$props.characteristics,
+          color = _this$props.color,
+          textColor = _this$props.textColor;
       var layerWidth = canvasWidth * 0.7;
       var layerHeigth = canvasHeight * 0.1;
       console.log(characteristics);
@@ -1537,7 +1657,7 @@ function (_Component) {
         draggable: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 37
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_8__["Group"], {
@@ -1545,23 +1665,24 @@ function (_Component) {
         width: layerWidth,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 44
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_8__["Label"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 47
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_8__["Tag"], {
-        fill: "#fff",
+        fill: color,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 48
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_8__["Text"], {
+        fill: textColor,
         text: "Caracter\xEDsticas",
         fontSize: 20,
         fontStyle: "bold",
@@ -1569,7 +1690,7 @@ function (_Component) {
         align: "center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 49
         },
         __self: this
       }))), _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(characteristics).sort().map(function (charKey, index) {
@@ -1585,7 +1706,7 @@ function (_Component) {
           y: yGroup,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 62
+            lineNumber: 65
           },
           __self: this
         }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_8__["Path"], {
@@ -1596,31 +1717,32 @@ function (_Component) {
           x: xIcon,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 67
+            lineNumber: 70
           },
           __self: this
         }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_8__["Label"], {
           y: layerHeigth - 12,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 73
+            lineNumber: 76
           },
           __self: this
         }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_8__["Tag"], {
-          fill: "#fff",
+          fill: color,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 74
+            lineNumber: 77
           },
           __self: this
         }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_8__["Text"], {
+          fill: textColor,
           width: layerWidth * 0.16,
           text: characteristic.text,
           fontSize: 10,
           align: 'center',
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 75
+            lineNumber: 78
           },
           __self: this
         })));
@@ -1685,7 +1807,9 @@ function (_Component) {
       var _this$props = this.props,
           canvasHeight = _this$props.canvasHeight,
           canvasWidth = _this$props.canvasWidth,
-          formData = _this$props.formData;
+          formData = _this$props.formData,
+          color = _this$props.color,
+          textColor = _this$props.textColor;
       var layerWidth = canvasWidth * 0.2;
       return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Group"], {
         x: canvasWidth * 0.75,
@@ -1695,30 +1819,31 @@ function (_Component) {
         draggable: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 23
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Group"], {
         width: layerWidth,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 29
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Label"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 31
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Tag"], {
-        fill: "#fff",
+        fill: color,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 32
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Text"], {
+        fill: textColor,
         text: "Contacto",
         fontSize: 14,
         fontStyle: "bold",
@@ -1726,95 +1851,99 @@ function (_Component) {
         align: "center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 33
         },
         __self: this
       })), formData['nombre-contacto'] !== '' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Label"], {
         y: 20,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 42
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Tag"], {
-        fill: "#fff",
+        fill: color,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 43
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Text"], {
+        fill: textColor,
         text: formData['nombre-contacto'],
-        fontSize: 14,
+        fontSize: 11,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 44
         },
         __self: this
       })), formData['telefono-contacto'] !== '+56 ' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Label"], {
         y: 40,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 51
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Tag"], {
-        fill: "#fff",
+        fill: color,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 52
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Text"], {
+        fill: textColor,
         text: formData['telefono-contacto'],
-        fontSize: 14,
+        fontSize: 11,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 53
         },
         __self: this
       })), formData['email-contacto'] !== '' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Label"], {
         y: 60,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 60
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Tag"], {
-        fill: "#fff",
+        fill: color,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 61
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Text"], {
+        fill: textColor,
         text: formData['email-contacto'],
-        fontSize: 14,
+        fontSize: 11,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 62
         },
         __self: this
       })), formData['ciudad-contacto'] !== '' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Label"], {
         y: 80,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 69
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Tag"], {
-        fill: "#fff",
+        fill: color,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 70
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Text"], {
+        fill: textColor,
         text: formData['ciudad-contacto'],
-        fontSize: 14,
+        fontSize: 11,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 71
         },
         __self: this
       }))));
@@ -1828,205 +1957,6 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./components/canvas/Text/index.tsx":
-/*!******************************************!*\
-  !*** ./components/canvas/Text/index.tsx ***!
-  \******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-konva */ "./node_modules/react-konva/lib/ReactKonva.js");
-/* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_konva__WEBPACK_IMPORTED_MODULE_9__);
-
-
-
-
-
-
-
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\canvas\\Text\\index.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
-
-/** @jsx jsx */
-
-
-
-
-var CanvasText =
-/*#__PURE__*/
-function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(CanvasText, _React$Component);
-
-  function CanvasText() {
-    var _getPrototypeOf2;
-
-    var _this;
-
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, CanvasText);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(CanvasText)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "state", {
-      fontSize: 10
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "transformerRef", Object(react__WEBPACK_IMPORTED_MODULE_8__["createRef"])());
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "getNewPosition", function (pos) {
-      var _this$props = _this.props,
-          maxWidth = _this$props.maxWidth,
-          maxHeight = _this$props.maxHeight;
-      var ref = _this.transformerRef.current;
-      var topBorder = pos.y;
-      var bottomBorder = pos.y + ref.height();
-      var leftBorder = pos.x;
-      var rightBorder = pos.x + ref.width();
-      var x = pos.x;
-      var y = pos.y;
-
-      if (topBorder < 0) {
-        y = 0;
-      } else if (bottomBorder > maxHeight) {
-        y = maxHeight - ref.height();
-      }
-
-      if (leftBorder < 0) {
-        x = 0;
-      } else if (rightBorder > maxWidth) {
-        x = maxWidth - ref.width();
-      }
-
-      return {
-        x: x,
-        y: y
-      };
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "onTransform", function () {
-      var ref = _this.transformerRef.current;
-      ref.setAttrs({
-        scaleX: 1,
-        width: ref.width() * ref.scaleX()
-      });
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "onDrag", function (pos) {
-      return _this.getNewPosition(pos);
-    });
-
-    return _this;
-  }
-
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(CanvasText, [{
-    key: "render",
-    value: function render() {
-      var _this$props2 = this.props,
-          id = _this$props2.id,
-          text = _this$props2.text,
-          color = _this$props2.color,
-          onDoubleClick = _this$props2.onDoubleClick,
-          onClick = _this$props2.onClick,
-          onMouseDown = _this$props2.onMouseDown,
-          position = _this$props2.position,
-          align = _this$props2.align,
-          width = _this$props2.width,
-          style = _this$props2.style;
-      var fontSize = this.state.fontSize;
-      return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_9__["Group"], {
-        draggable: true,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 100
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_9__["Label"], {
-        x: position.x,
-        y: position.y,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 101
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_9__["Tag"], {
-        fill: "#fff",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 105
-        },
-        __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_9__["Text"], {
-        padding: 10,
-        fontSize: fontSize,
-        ref: this.transformerRef,
-        name: id,
-        id: id,
-        fill: color,
-        text: text,
-        transformsEnabled: "position",
-        dragBoundFunc: this.onDrag,
-        onTransform: this.onTransform,
-        onClick: onClick,
-        onDblClick: onDoubleClick,
-        onMouseDown: onMouseDown,
-        align: align,
-        width: width,
-        fontStyle: style // _useStrictMode
-        ,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 106
-        },
-        __self: this
-      })));
-    }
-  }], [{
-    key: "getDerivedStateFromProps",
-    value: function getDerivedStateFromProps(props) {
-      var stateFontSize = 10;
-      var fontSize = props.fontSize;
-
-      if (fontSize === 'small') {
-        stateFontSize = 14;
-      }
-
-      if (fontSize === 'medium') {
-        stateFontSize = 21;
-      }
-
-      if (fontSize === 'large') {
-        stateFontSize = 35;
-      }
-
-      console.log();
-      return {
-        fontSize: stateFontSize
-      };
-    }
-  }]);
-
-  return CanvasText;
-}(react__WEBPACK_IMPORTED_MODULE_8___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (CanvasText);
-
-/***/ }),
-
 /***/ "./components/canvas/index.tsx":
 /*!*************************************!*\
   !*** ./components/canvas/index.tsx ***!
@@ -2036,32 +1966,27 @@ function (_React$Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/values */ "./node_modules/@babel/runtime-corejs2/core-js/object/values.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
-/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _blueprintjs_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @blueprintjs/core */ "./node_modules/@blueprintjs/core/lib/esm/index.js");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
-/* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-konva */ "./node_modules/react-konva/lib/ReactKonva.js");
-/* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react_konva__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _BackgroundImage__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./BackgroundImage */ "./components/canvas/BackgroundImage/index.tsx");
-/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./style */ "./components/canvas/style.ts");
-/* harmony import */ var _Text__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./Text */ "./components/canvas/Text/index.tsx");
-/* harmony import */ var _CharacteristicsLayer__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./CharacteristicsLayer */ "./components/canvas/CharacteristicsLayer/index.tsx");
-/* harmony import */ var _ContactLayer__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./ContactLayer */ "./components/canvas/ContactLayer/index.tsx");
-
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _blueprintjs_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @blueprintjs/core */ "./node_modules/@blueprintjs/core/lib/esm/index.js");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
+/* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-konva */ "./node_modules/react-konva/lib/ReactKonva.js");
+/* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(react_konva__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _BackgroundImage__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./BackgroundImage */ "./components/canvas/BackgroundImage/index.tsx");
+/* harmony import */ var _CharacteristicsLayer__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./CharacteristicsLayer */ "./components/canvas/CharacteristicsLayer/index.tsx");
+/* harmony import */ var _ContactLayer__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./ContactLayer */ "./components/canvas/ContactLayer/index.tsx");
 
 
 
@@ -2074,10 +1999,19 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\canvas\\index.tsx";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement;
+
+function _templateObject() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      margin: 1rem;\n      justify-content: center;\n      & .konvajs-content {\n        background-color: ", ";\n        border: solid 1px lightgray;\n      }\n    "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
 
 /** @jsx jsx */
-
 
 
 
@@ -2090,22 +2024,22 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement;
 var Canvas =
 /*#__PURE__*/
 function (_Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_9__["default"])(Canvas, _Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_8__["default"])(Canvas, _Component);
 
   function Canvas() {
     var _getPrototypeOf2;
 
     var _this;
 
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_4__["default"])(this, Canvas);
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Canvas);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_6__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_7__["default"])(Canvas)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__["default"])(Canvas)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8__["default"])(_this), "state", {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "state", {
       backgroundImage: null,
       editTextAreaProps: {},
       editTextAreaValue: '',
@@ -2116,19 +2050,19 @@ function (_Component) {
       targetToRestore: []
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8__["default"])(_this), "transformerRef", Object(react__WEBPACK_IMPORTED_MODULE_11__["createRef"])());
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "transformerRef", Object(react__WEBPACK_IMPORTED_MODULE_10__["createRef"])());
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8__["default"])(_this), "resizeImageHeight", function (img, newHeight, newWidth) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "resizeImageHeight", function (img, newHeight, newWidth) {
       var canvas = document.createElement('canvas');
       canvas.height = newHeight;
       canvas.width = newWidth;
       var ctx = canvas.getContext('2d');
 
       if (!ctx) {
-        return _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_3___default.a.resolve(img);
+        return _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_2___default.a.resolve(img);
       }
 
-      return new _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_3___default.a(function (resolve, reject) {
+      return new _babel_runtime_corejs2_core_js_promise__WEBPACK_IMPORTED_MODULE_2___default.a(function (resolve, reject) {
         ctx.drawImage(img, 0, 0);
         ctx.drawImage(img, 0, 0, newWidth, newHeight);
         var dataurl = canvas.toDataURL('image/png');
@@ -2143,7 +2077,7 @@ function (_Component) {
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8__["default"])(_this), "getResizedImage", function (image) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "getResizedImage", function (image) {
       var height = image.height,
           width = image.width;
       var _this$props = _this.props,
@@ -2163,14 +2097,14 @@ function (_Component) {
       return _this.resizeImageHeight(image, imageHeight, imageWidth);
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8__["default"])(_this), "onTextClick", function (e) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "onTextClick", function (e) {
       e.cancelBubble = true;
       var selectedTextBlock = e.target.name();
 
       _this.props.onTextBlockSelected(selectedTextBlock);
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8__["default"])(_this), "handleStageMouseDown", function (e) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "handleStageMouseDown", function (e) {
       var showEditTextArea = false;
       var selectedTextBlock = '';
       var currentTarget = e.currentTarget;
@@ -2200,7 +2134,7 @@ function (_Component) {
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8__["default"])(_this), "showElements", function (currentTarget) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "showElements", function (currentTarget) {
       return function () {
         _this.setState({
           showEditTextArea: false
@@ -2215,7 +2149,7 @@ function (_Component) {
       };
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8__["default"])(_this), "hideElements", function (currentTarget) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "hideElements", function (currentTarget) {
       currentTarget.hide();
       var transformerRef = _this.transformerRef.current;
       var canvasRef = _this.props.canvasRef.current;
@@ -2224,7 +2158,7 @@ function (_Component) {
       canvasRef.draw();
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8__["default"])(_this), "onMouseDown", function (evt) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "onMouseDown", function (evt) {
       var onTextBlockSelected = _this.props.onTextBlockSelected;
       evt.cancelBubble = true;
       var currentTarget = evt.target;
@@ -2232,7 +2166,7 @@ function (_Component) {
       onTextBlockSelected(id);
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8__["default"])(_this), "onDoubleClick", function (evt) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "onDoubleClick", function (evt) {
       var currentTarget = evt.currentTarget;
       var transformerRef = _this.transformerRef.current;
       var canvasRef = _this.props.canvasRef.current;
@@ -2287,18 +2221,18 @@ function (_Component) {
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_8__["default"])(_this), "onMount", function (ref) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "onMount", function (ref) {
       _this.transformerRef = ref;
     });
 
     return _this;
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_5__["default"])(Canvas, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(Canvas, [{
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
       var image, backgroundImage;
-      return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.async(function componentDidUpdate$(_context) {
+      return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.async(function componentDidUpdate$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
@@ -2310,7 +2244,7 @@ function (_Component) {
               }
 
               _context.next = 4;
-              return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.awrap(this.getResizedImage(image));
+              return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.awrap(this.getResizedImage(image));
 
             case 4:
               backgroundImage = _context.sent;
@@ -2328,8 +2262,6 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       var _this$state = this.state,
           backgroundImage = _this$state.backgroundImage,
           showEditTextArea = _this$state.showEditTextArea,
@@ -2342,136 +2274,176 @@ function (_Component) {
           canvasHeight = _this$props2.canvasHeight,
           canvasWidth = _this$props2.canvasWidth,
           characteristics = _this$props2.characteristics,
-          formData = _this$props2.formData;
+          formData = _this$props2.formData,
+          imageFormat = _this$props2.imageFormat,
+          color = _this$props2.color,
+          secundaryColor = _this$props2.secundaryColor,
+          textColor = _this$props2.textColor;
       var textBlocks = canvasTexts.textBlocks,
-          selectedTextBlock = canvasTexts.selectedTextBlock; //const test = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="venus" class="svg-inline--fa fa-venus fa-w-9" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 512"><path fill="currentColor" d="M288 176c0-79.5-64.5-144-144-144S0 96.5 0 176c0 68.5 47.9 125.9 112 140.4V368H76c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h36v36c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12v-36h36c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-36v-51.6c64.1-14.5 112-71.9 112-140.4zm-224 0c0-44.1 35.9-80 80-80s80 35.9 80 80-35.9 80-80 80-80-35.9-80-80z"></path></svg>'
-
-      return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_12__["Card"], {
-        elevation: _blueprintjs_core__WEBPACK_IMPORTED_MODULE_12__["Elevation"].ONE,
-        css: _style__WEBPACK_IMPORTED_MODULE_16__["canvasStyle"],
+          selectedTextBlock = canvasTexts.selectedTextBlock;
+      var canvasStyle = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["css"])(_templateObject(), color);
+      return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_11__["Card"], {
+        elevation: _blueprintjs_core__WEBPACK_IMPORTED_MODULE_11__["Elevation"].ONE,
+        css: canvasStyle,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 240
+          lineNumber: 253
         },
         __self: this
-      },  true && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_13__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_14__["Stage"], {
+      },  true && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Stage"], {
         ref: onRef,
         width: canvasWidth,
         height: canvasHeight,
         onClick: this.handleStageMouseDown,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 242
+          lineNumber: 255
         },
         __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_BackgroundImage__WEBPACK_IMPORTED_MODULE_15__["default"], {
-        backgroundImage: backgroundImage,
-        canvasHeight: canvasHeight,
-        canvasWidth: canvasWidth,
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Layer"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 248
+          lineNumber: 261
         },
         __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_13__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_14__["Layer"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 249
-        },
-        __self: this
-      }, _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_1___default()(textBlocks).map(function (textBlock) {
-        return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_Text__WEBPACK_IMPORTED_MODULE_17__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
-          key: textBlock.id
-        }, textBlock, {
-          maxHeight: canvasHeight,
-          maxWidth: canvasWidth,
-          onClick: _this2.onTextClick,
-          onDoubleClick: _this2.onDoubleClick,
-          onMouseDown: _this2.onMouseDown,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 251
-          },
-          __self: this
-        }));
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_CharacteristicsLayer__WEBPACK_IMPORTED_MODULE_18__["default"], {
-        canvasHeight: canvasHeight,
-        canvasWidth: canvasWidth,
-        characteristics: characteristics,
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Rect"], {
+        width: canvasWidth,
+        height: canvasHeight,
+        fill: color,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 262
         },
         __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_13__["jsx"])(_ContactLayer__WEBPACK_IMPORTED_MODULE_19__["default"], {
+      })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(_BackgroundImage__WEBPACK_IMPORTED_MODULE_14__["default"], {
+        backgroundImage: backgroundImage,
         canvasHeight: canvasHeight,
         canvasWidth: canvasWidth,
-        formData: formData,
+        imageFormat: imageFormat,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 264
         },
         __self: this
-      }))));
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Layer"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 265
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Label"], {
+        x: 0,
+        y: canvasHeight * 0.1,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 267
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Tag"], {
+        fill: color,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 271
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Text"], {
+        fill: textColor,
+        padding: 10,
+        fontSize: 35,
+        text: formData['nombre-mascota'] !== '' ? formData['nombre-mascota'] : 'Nombre mascota',
+        align: 'center',
+        width: canvasWidth,
+        fontStyle: 'bold' // _useStrictMode
+        ,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 272
+        },
+        __self: this
+      })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Label"], {
+        x: 0,
+        y: canvasHeight * 0.2,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 283
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Tag"], {
+        fill: color,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 287
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Text"], {
+        fill: textColor,
+        padding: 10,
+        fontSize: 22,
+        text: formData['caso-mascota'] !== '' ? formData['caso-mascota'] === '1' ? "En adopción" : 'Perdido' : 'Caso mascota',
+        align: 'center',
+        width: canvasWidth // _useStrictMode
+        ,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 288
+        },
+        __self: this
+      })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(_CharacteristicsLayer__WEBPACK_IMPORTED_MODULE_15__["default"], {
+        canvasHeight: canvasHeight,
+        canvasWidth: canvasWidth,
+        characteristics: characteristics,
+        color: color,
+        textColor: textColor,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 299
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(_ContactLayer__WEBPACK_IMPORTED_MODULE_16__["default"], {
+        canvasHeight: canvasHeight,
+        canvasWidth: canvasWidth,
+        formData: formData,
+        color: color,
+        textColor: textColor,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 301
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Label"], {
+        y: canvasHeight * 0.95,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 303
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Tag"], {
+        fill: secundaryColor,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 305
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Text"], {
+        fill: textColor,
+        padding: 10,
+        width: canvasWidth,
+        text: "difunde.quiltroschile.cl",
+        fontSize: 12,
+        align: "center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 306
+        },
+        __self: this
+      })))));
     }
   }]);
 
   return Canvas;
-}(react__WEBPACK_IMPORTED_MODULE_11__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_10__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Canvas);
-
-/***/ }),
-
-/***/ "./components/canvas/style.ts":
-/*!************************************!*\
-  !*** ./components/canvas/style.ts ***!
-  \************************************/
-/*! exports provided: canvasStyle, testStyle */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "canvasStyle", function() { return canvasStyle; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "testStyle", function() { return testStyle; });
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral.js");
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
-
-
-function _templateObject2() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 1rem;\n  width: 35rem;\n  justify-content: center;\n  & .konvajs-content {\n    background-color: white;\n    border: solid 1px lightgray;\n  }\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-
-var canvasStyle = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject());
-var testStyle = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject2());
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/assign.js ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/object/assign */ "./node_modules/core-js/library/fn/object/assign.js");
 
 /***/ }),
 
@@ -2582,17 +2554,6 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/keys */ "./no
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/object/set-prototype-of */ "./node_modules/core-js/library/fn/object/set-prototype-of.js");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/values.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/values.js ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/object/values */ "./node_modules/core-js/library/fn/object/values.js");
 
 /***/ }),
 
@@ -2726,39 +2687,6 @@ function _defineProperty(obj, key, value) {
   }
 
   return obj;
-}
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js ***!
-  \********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _extends; });
-/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
-/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
-
-function _extends() {
-  _extends = _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default.a || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
 }
 
 /***/ }),
@@ -20339,19 +20267,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
-/***/ "./node_modules/core-js/library/fn/object/assign.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/core-js/library/fn/object/assign.js ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es6.object.assign */ "./node_modules/core-js/library/modules/es6.object.assign.js");
-module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Object.assign;
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/library/fn/object/create.js":
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/library/fn/object/create.js ***!
@@ -20490,19 +20405,6 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/
 
 __webpack_require__(/*! ../../modules/es6.object.set-prototype-of */ "./node_modules/core-js/library/modules/es6.object.set-prototype-of.js");
 module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Object.setPrototypeOf;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/fn/object/values.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/core-js/library/fn/object/values.js ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es7.object.values */ "./node_modules/core-js/library/modules/es7.object.values.js");
-module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Object.values;
 
 
 /***/ }),
@@ -21524,56 +21426,6 @@ module.exports.f = function (C) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/library/modules/_object-assign.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_object-assign.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// 19.1.2.1 Object.assign(target, source, ...)
-var DESCRIPTORS = __webpack_require__(/*! ./_descriptors */ "./node_modules/core-js/library/modules/_descriptors.js");
-var getKeys = __webpack_require__(/*! ./_object-keys */ "./node_modules/core-js/library/modules/_object-keys.js");
-var gOPS = __webpack_require__(/*! ./_object-gops */ "./node_modules/core-js/library/modules/_object-gops.js");
-var pIE = __webpack_require__(/*! ./_object-pie */ "./node_modules/core-js/library/modules/_object-pie.js");
-var toObject = __webpack_require__(/*! ./_to-object */ "./node_modules/core-js/library/modules/_to-object.js");
-var IObject = __webpack_require__(/*! ./_iobject */ "./node_modules/core-js/library/modules/_iobject.js");
-var $assign = Object.assign;
-
-// should work with symbols and should have deterministic property order (V8 bug)
-module.exports = !$assign || __webpack_require__(/*! ./_fails */ "./node_modules/core-js/library/modules/_fails.js")(function () {
-  var A = {};
-  var B = {};
-  // eslint-disable-next-line no-undef
-  var S = Symbol();
-  var K = 'abcdefghijklmnopqrst';
-  A[S] = 7;
-  K.split('').forEach(function (k) { B[k] = k; });
-  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
-}) ? function assign(target, source) { // eslint-disable-line no-unused-vars
-  var T = toObject(target);
-  var aLen = arguments.length;
-  var index = 1;
-  var getSymbols = gOPS.f;
-  var isEnum = pIE.f;
-  while (aLen > index) {
-    var S = IObject(arguments[index++]);
-    var keys = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S);
-    var length = keys.length;
-    var j = 0;
-    var key;
-    while (length > j) {
-      key = keys[j++];
-      if (!DESCRIPTORS || isEnum.call(S, key)) T[key] = S[key];
-    }
-  } return T;
-} : $assign;
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/library/modules/_object-create.js":
 /*!****************************************************************!*\
   !*** ./node_modules/core-js/library/modules/_object-create.js ***!
@@ -21862,38 +21714,6 @@ module.exports = function (KEY, exec) {
   var exp = {};
   exp[KEY] = exec(fn);
   $export($export.S + $export.F * fails(function () { fn(1); }), 'Object', exp);
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_object-to-array.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_object-to-array.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var DESCRIPTORS = __webpack_require__(/*! ./_descriptors */ "./node_modules/core-js/library/modules/_descriptors.js");
-var getKeys = __webpack_require__(/*! ./_object-keys */ "./node_modules/core-js/library/modules/_object-keys.js");
-var toIObject = __webpack_require__(/*! ./_to-iobject */ "./node_modules/core-js/library/modules/_to-iobject.js");
-var isEnum = __webpack_require__(/*! ./_object-pie */ "./node_modules/core-js/library/modules/_object-pie.js").f;
-module.exports = function (isEntries) {
-  return function (it) {
-    var O = toIObject(it);
-    var keys = getKeys(O);
-    var length = keys.length;
-    var i = 0;
-    var result = [];
-    var key;
-    while (length > i) {
-      key = keys[i++];
-      if (!DESCRIPTORS || isEnum.call(O, key)) {
-        result.push(isEntries ? [key, O[key]] : O[key]);
-      }
-    }
-    return result;
-  };
 };
 
 
@@ -22526,21 +22346,6 @@ Iterators.Arguments = Iterators.Array;
 addToUnscopables('keys');
 addToUnscopables('values');
 addToUnscopables('entries');
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/es6.object.assign.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/es6.object.assign.js ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.3.1 Object.assign(target, source)
-var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
-
-$export($export.S + $export.F, 'Object', { assign: __webpack_require__(/*! ./_object-assign */ "./node_modules/core-js/library/modules/_object-assign.js") });
 
 
 /***/ }),
@@ -23304,26 +23109,6 @@ $export($export.S, 'Object', {
       if (desc !== undefined) createProperty(result, key, desc);
     }
     return result;
-  }
-});
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/es7.object.values.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/es7.object.values.js ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// https://github.com/tc39/proposal-object-values-entries
-var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
-var $values = __webpack_require__(/*! ./_object-to-array */ "./node_modules/core-js/library/modules/_object-to-array.js")(false);
-
-$export($export.S, 'Object', {
-  values: function values(it) {
-    return $values(it);
   }
 });
 
@@ -63677,11 +63462,46 @@ function (_Component) {
         'meses-mascota': ''
       },
       characteristics: {},
-      canvasHeight: 750,
-      canvasWidth: 500
+      canvasHeight: 540,
+      canvasWidth: 540,
+      imageFormat: 'cuadrada',
+      color: '#4E9818',
+      secundaryColor: '#0A6507',
+      textColor: '#F3DE58'
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "stageRef", Object(react__WEBPACK_IMPORTED_MODULE_13__["createRef"])());
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "changeDimensions", function (imageFormat) {
+      switch (imageFormat) {
+        case 'vertical':
+          _this.setState({
+            canvasWidth: 540,
+            canvasHeight: 675,
+            imageFormat: imageFormat
+          });
+
+          break;
+
+        case 'cuadrada':
+          _this.setState({
+            canvasWidth: 540,
+            canvasHeight: 540,
+            imageFormat: imageFormat
+          });
+
+          break;
+
+        case 'horizontal':
+          _this.setState({
+            canvasWidth: 1080,
+            canvasHeight: 576,
+            imageFormat: imageFormat
+          });
+
+          break;
+      }
+    });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "setSelectedTextBlock", function (selectedTextBlock) {
       var canvasTexts = _this.state.canvasTexts;
@@ -63980,9 +63800,17 @@ function (_Component) {
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_7__["default"])(Home, [{
     key: "componentDidMount",
-    value: function componentDidMount() {
-      //this.addTextBlock();
-      console.log(window.devicePixelRatio);
+    value: function componentDidMount() {//this.addTextBlock();
+
+      /*console.log(window.devicePixelRatio);
+      const exios = axios.create({
+        baseURL: 'https://api.twitter.com/',
+      })
+      axios.get('https://api.twitter.com/oauth/authorize').then(r => {
+        console.log(r);
+      }).catch(error => {
+        console.error(error);
+      })*/
     }
   }, {
     key: "render",
@@ -63993,20 +63821,24 @@ function (_Component) {
           formValues = _this$state2.formValues,
           canvasHeight = _this$state2.canvasHeight,
           canvasWidth = _this$state2.canvasWidth,
-          characteristics = _this$state2.characteristics;
+          characteristics = _this$state2.characteristics,
+          imageFormat = _this$state2.imageFormat,
+          color = _this$state2.color,
+          secundaryColor = _this$state2.secundaryColor,
+          textColor = _this$state2.textColor;
       var selectedTextBlock = canvasTexts.selectedTextBlock,
           textBlocks = canvasTexts.textBlocks;
       return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_14__["jsx"])("div", {
         css: _styles__WEBPACK_IMPORTED_MODULE_18__["pageStyle"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 435
+          lineNumber: 478
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_components_Nav__WEBPACK_IMPORTED_MODULE_17__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 436
+          lineNumber: 479
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_14__["jsx"])("section", {
@@ -64014,7 +63846,7 @@ function (_Component) {
         css: _styles__WEBPACK_IMPORTED_MODULE_18__["containerStyle"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 437
+          lineNumber: 480
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_components_LeftSideBar__WEBPACK_IMPORTED_MODULE_16__["default"], {
@@ -64027,9 +63859,10 @@ function (_Component) {
         onTextChanged: this.onTextChanged,
         addTextBlockWithData: this.addTextBlockWithData,
         onImageUploaded: this.setCanvasImage,
+        changeDimensions: this.changeDimensions,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 438
+          lineNumber: 481
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_components_canvas__WEBPACK_IMPORTED_MODULE_15__["default"], {
@@ -64044,9 +63877,13 @@ function (_Component) {
         canvasWidth: canvasWidth,
         characteristics: characteristics,
         formData: formValues,
+        imageFormat: imageFormat,
+        color: color,
+        secundaryColor: secundaryColor,
+        textColor: textColor,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 449
+          lineNumber: 493
         },
         __self: this
       })));
