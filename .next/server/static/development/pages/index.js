@@ -1055,16 +1055,17 @@ class LeftSidebar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     });
 
     _defineProperty(this, "onSubmit", async e => {
+      const {
+        formValues
+      } = this.props;
       e.preventDefault();
       const imgB64 = this.props.canvasRef.current.getStage().toDataURL({
-        pixelRatio: 3,
+        pixelRatio: 2,
         quality: 1,
-        mimeType: 'image/png',
-        width: 500,
-        height: 750
+        mimeType: 'image/png'
       });
       let link = document.createElement('a');
-      link.download = "Test";
+      link.download = formValues['nombre-mascota'];
       link.href = imgB64;
       document.body.appendChild(link);
       link.click();
@@ -1109,7 +1110,7 @@ class LeftSidebar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       method: "post",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 134
+        lineNumber: 135
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_PetInformation__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -1120,13 +1121,13 @@ class LeftSidebar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       changeDimensions: changeDimensions,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 135
+        lineNumber: 136
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 136
+        lineNumber: 137
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_ContactInformation__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1134,13 +1135,13 @@ class LeftSidebar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       formValues: formValues,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 137
+        lineNumber: 138
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_SubmitButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 138
+        lineNumber: 139
       },
       __self: this
     })));
@@ -1309,7 +1310,8 @@ class BackgroundImage extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compo
       backgroundImage,
       canvasHeight,
       canvasWidth,
-      imageFormat
+      imageFormat,
+      rectColor
     } = this.props;
 
     if (!backgroundImage) {
@@ -1320,51 +1322,95 @@ class BackgroundImage extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compo
       height,
       width
     } = backgroundImage;
-    const imageProportion = 0.4;
     let x = 0;
     let y = 0;
     let imageWidth = width;
     let imageHeight = height;
+    let rectX = 0,
+        rectY = 0,
+        rectWidth = 0,
+        rectHeigth = 0;
 
-    if (imageFormat === 'vertical') {
+    if (imageFormat === 'vertical' || imageFormat === 'cuadrada') {
+      const imageOffset = 0.2;
+      const imageProportion = 0.5;
+      rectWidth = canvasWidth;
+      rectHeigth = canvasHeight * imageProportion;
+
+      if (imageFormat === 'vertical') {
+        rectY = imageOffset * canvasHeight;
+      }
+
       if (width < canvasWidth && height < canvasHeight * imageProportion) {
-        const yOffset = (canvasHeight * imageProportion - height) / 2;
         x = (canvasWidth - width) / 2;
-        y = canvasHeight * imageProportion + yOffset;
+
+        if (imageFormat === 'vertical') {
+          const yOffset = (canvasHeight * imageProportion - height) / 2;
+          y = canvasHeight * imageOffset + yOffset;
+        }
       } else if (height < canvasHeight * imageProportion) {
         imageWidth = canvasWidth;
         imageHeight = this.transformHeight(height, width, imageWidth);
-        const yOffset = imageHeight * imageProportion / 2 - imageHeight / 2;
-        y = canvasHeight * 0.3 + yOffset;
+
+        if (imageFormat === 'vertical') {
+          const yOffset = imageHeight * imageProportion / 2 - imageHeight / 2;
+          y = canvasHeight * imageOffset + yOffset;
+        }
       } else {
         imageHeight = canvasHeight * imageProportion;
         imageWidth = this.transformWidth(height, width, imageHeight);
 
         if (imageWidth <= canvasWidth) {
           x = (canvasWidth - imageWidth) / 2;
-          y = canvasHeight * 0.3;
+
+          if (imageFormat === 'vertical') {
+            y = canvasHeight * imageOffset;
+          }
         } else {
           imageWidth = canvasWidth;
           imageHeight = this.transformHeight(height, width, imageWidth);
           const yOffset = imageHeight * imageProportion / 2 - imageHeight / 2;
-          y = canvasHeight * 0.3 + yOffset;
+
+          if (imageFormat === 'vertical') {
+            y = canvasHeight * imageOffset + yOffset;
+          }
         }
       }
-    } else if (imageFormat === 'cuadrada') {
-      imageWidth = canvasWidth;
-      imageHeight = this.transformHeight(height, width, imageWidth);
     } else if (imageFormat === 'horizontal') {
-      imageHeight = canvasHeight;
-      imageWidth = this.transformWidth(height, width, imageHeight);
+      const imageProportion = 0.4;
+
+      if (width < canvasWidth * imageProportion && height < canvasHeight) {
+        x = (canvasWidth * imageProportion - width) / 2;
+        y = (canvasHeight - height) / 2;
+      } else if (width < canvasWidth * imageProportion) {
+        imageHeight = canvasHeight;
+        imageWidth = this.transformWidth(height, width, imageHeight);
+        x = (canvasWidth * imageProportion - imageWidth) / 2;
+      } else {
+        imageWidth = canvasWidth * imageProportion;
+        imageHeight = this.transformHeight(height, width, imageWidth);
+        y = (canvasHeight - imageHeight) / 2;
+      }
     }
 
     return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Layer"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 75
+        lineNumber: 100
       },
       __self: this
-    }, backgroundImage && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Image"], {
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Rect"], {
+      width: rectWidth,
+      height: rectHeigth,
+      x: rectX,
+      y: rectY,
+      fill: rectColor,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 101
+      },
+      __self: this
+    }), backgroundImage && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Image"], {
       image: backgroundImage,
       x: x,
       y: y,
@@ -1373,7 +1419,7 @@ class BackgroundImage extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compo
       draggable: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
+        lineNumber: 103
       },
       __self: this
     }));
@@ -1985,12 +2031,24 @@ class Canvas extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         border: solid 1px lightgray;
       }
     `;
+    let yLabels = 0;
+    let textX = 0,
+        textY = 0,
+        textWidth = canvasWidth;
+
+    if (imageFormat === 'cuadrada') {
+      yLabels = 0.5 * canvasHeight;
+    } else if (imageFormat === 'horizontal') {
+      textX = canvasWidth * 0.4;
+      textWidth = canvasWidth * 0.6;
+    }
+
     return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_2__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_1__["Card"], {
       elevation: _blueprintjs_core__WEBPACK_IMPORTED_MODULE_1__["Elevation"].ONE,
       css: canvasStyle,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 253
+        lineNumber: 262
       },
       __self: this
     },  false && false);

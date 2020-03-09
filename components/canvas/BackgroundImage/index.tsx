@@ -2,13 +2,14 @@
 import { jsx } from '@emotion/core';
 import React from 'react';
 
-import { Image as KonvaImage, Layer } from 'react-konva';
+import { Image as KonvaImage, Layer, Rect } from 'react-konva';
 
 export interface IBackgroundImageProps {
   backgroundImage: HTMLImageElement | null;
   canvasHeight: number;
   canvasWidth: number;
   imageFormat: string;
+  rectColor: string;
 }
 
 export default class BackgroundImage extends React.Component<
@@ -24,55 +25,80 @@ export default class BackgroundImage extends React.Component<
   }
 
   render() {
-    const { backgroundImage, canvasHeight, canvasWidth, imageFormat } = this.props;
+    const { backgroundImage, canvasHeight, canvasWidth, imageFormat, rectColor } = this.props;
     if (!backgroundImage) {
       return null;
     }
     const { height, width } = backgroundImage;
-    const imageProportion = 0.4;
     let x = 0;
     let y = 0;
     let imageWidth = width;
     let imageHeight = height;
-
-    if (imageFormat === 'vertical') {
+    let rectX = 0, rectY = 0, rectWidth = 0, rectHeigth = 0;
+    if (imageFormat === 'vertical' || imageFormat === 'cuadrada') {
+      const imageOffset = 0.2;
+      const imageProportion = 0.5;
+      rectWidth = canvasWidth;
+      rectHeigth = canvasHeight*imageProportion;
+      if (imageFormat === 'vertical') {
+        rectY = imageOffset*canvasHeight;
+      }
       if (width < canvasWidth && height < canvasHeight*imageProportion) {
-        const yOffset = (canvasHeight*imageProportion - height)/2;
         x = (canvasWidth - width)/2;
-        y = canvasHeight*imageProportion + yOffset;
+        if (imageFormat === 'vertical') {
+          const yOffset = (canvasHeight*imageProportion - height)/2;
+          y = canvasHeight*imageOffset + yOffset;
+        }
       }
       else if (height < canvasHeight*imageProportion) {
         imageWidth = canvasWidth;
         imageHeight = this.transformHeight(height, width, imageWidth);
-        const yOffset = (imageHeight*imageProportion)/2 - imageHeight/2;
-        y = canvasHeight*0.3 + yOffset;
+        if (imageFormat === 'vertical') {
+          const yOffset = (imageHeight*imageProportion)/2 - imageHeight/2;
+          y = canvasHeight*imageOffset + yOffset;
+        }
       }
       else {
         imageHeight = canvasHeight*imageProportion;
         imageWidth = this.transformWidth(height, width, imageHeight);
         if (imageWidth <= canvasWidth) {
           x = (canvasWidth - imageWidth)/2;
-          y = canvasHeight*0.3
+          if (imageFormat === 'vertical') {
+            y = canvasHeight*imageOffset;
+          }
         }
         else {
           imageWidth = canvasWidth;
           imageHeight = this.transformHeight(height, width, imageWidth);
           const yOffset = (imageHeight*imageProportion)/2 - imageHeight/2;
-          y = canvasHeight*0.3 + yOffset;
+          if (imageFormat === 'vertical') {
+            y = canvasHeight*imageOffset + yOffset;
+          }
         }
       }
     }
-    else if (imageFormat === 'cuadrada') {
-      imageWidth = canvasWidth;
-      imageHeight = this.transformHeight(height, width, imageWidth);
-    }
+
     else if (imageFormat === 'horizontal') {
-      imageHeight = canvasHeight;
-      imageWidth = this.transformWidth(height, width, imageHeight);
+      const imageProportion = 0.4;
+      if (width < canvasWidth*imageProportion && height < canvasHeight) {
+        x = (canvasWidth*imageProportion - width)/2;
+        y = (canvasHeight - height)/2;
+      }
+      else if (width < canvasWidth*imageProportion) {
+        imageHeight = canvasHeight;
+        imageWidth = this.transformWidth(height, width, imageHeight);
+        x = (canvasWidth*imageProportion - imageWidth)/2;
+      }
+      else {
+        imageWidth = canvasWidth*imageProportion;
+        imageHeight = this.transformHeight(height, width, imageWidth);
+        y = (canvasHeight - imageHeight)/2;
+      }
     }
 
     return (
       <Layer>
+        <Rect width={rectWidth} height={rectHeigth} x={rectX} y={rectY} fill={rectColor} />
         {backgroundImage && (
           <KonvaImage
             image={backgroundImage}

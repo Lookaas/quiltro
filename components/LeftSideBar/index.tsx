@@ -88,11 +88,12 @@ export default class LeftSidebar extends Component<
   };
 
   onSubmit = async (e: FormEvent) => {
+    const {formValues} = this.props;
     e.preventDefault();
 
-    const imgB64 = this.props.canvasRef.current!.getStage().toDataURL({ pixelRatio: 3, quality:1, mimeType: 'image/png', width: 500, height: 750 });
+    const imgB64 = this.props.canvasRef.current!.getStage().toDataURL({ pixelRatio: 2, quality:1, mimeType: 'image/png'});
     let link = document.createElement('a');
-    link.download = "Test";
+    link.download = formValues['nombre-mascota'];
     link.href = imgB64;
     document.body.appendChild(link);
     link.click();

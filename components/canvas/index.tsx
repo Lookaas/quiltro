@@ -4,7 +4,7 @@ import { jsx } from '@emotion/core';
 import { KonvaEventObject } from 'konva/types/Node';
 import Konva from 'konva'
 import React, { Component, createRef, RefObject } from 'react';
-import { Layer, Stage, Text, Label, Tag, Rect } from 'react-konva';
+import { Layer, Stage, Text, Label, Tag, Rect, Line, Group } from 'react-konva';
 import { css } from '@emotion/core';
 
 import { ICanvasTexts, ITextBlockElement, IAdoptionForm } from '../../pages';
@@ -249,6 +249,15 @@ class Canvas extends Component<IAppProps, IAppState> {
         border: solid 1px lightgray;
       }
     `;
+    let yLabels = 0;
+    let textX = 0, textY=0, textWidth=canvasWidth;
+    if (imageFormat === 'cuadrada') {
+      yLabels = 0.5*canvasHeight;
+    }
+    else if (imageFormat === 'horizontal') {
+      textX = canvasWidth*0.4;
+      textWidth = canvasWidth*0.6;
+    }
     return (
       <Card elevation={Elevation.ONE} css={canvasStyle}>
         {process.browser && (
@@ -261,12 +270,13 @@ class Canvas extends Component<IAppProps, IAppState> {
             <Layer>
               <Rect width={canvasWidth} height={canvasHeight} fill={color} />
             </Layer>
-            <BackgroundImage backgroundImage={backgroundImage} canvasHeight={canvasHeight} canvasWidth={canvasWidth} imageFormat={imageFormat} />
+            <BackgroundImage backgroundImage={backgroundImage} canvasHeight={canvasHeight} canvasWidth={canvasWidth} imageFormat={imageFormat} rectColor={textColor} />
             <Layer  >
-
-            <Label
+            <Group x={textX} y={textY} width={textWidth} height={canvasHeight} >
+              <Group y={yLabels}>
+              <Label
               x={0}
-              y={canvasHeight*0.1}
+              y={canvasHeight*0.05}
               >
               <Tag fill={color} />
               <Text
@@ -275,14 +285,14 @@ class Canvas extends Component<IAppProps, IAppState> {
               fontSize={35}
               text={formData['nombre-mascota'] !== '' ? formData['nombre-mascota'] : 'Nombre mascota'}
               align={'center'}
-              width={canvasWidth}
+              width={textWidth}
               fontStyle={'bold'}
               // _useStrictMode
               />
             </Label>
             <Label
               x={0}
-              y={canvasHeight*0.2}
+              y={canvasHeight*0.15}
               >
               <Tag fill={color} />
               <Text
@@ -291,14 +301,15 @@ class Canvas extends Component<IAppProps, IAppState> {
               fontSize={22}
               text={formData['caso-mascota'] !== '' ? (formData['caso-mascota'] === '1' ? "En adopción" : 'Perdido') : 'Caso mascota'}
               align={'center'}
-              width={canvasWidth}
+              width={textWidth}
               // _useStrictMode
               />
             </Label>
+              </Group>
 
-              <CharacteristicsLayer canvasHeight={canvasHeight} canvasWidth={canvasWidth} characteristics={characteristics} color={color} textColor={textColor} />
+              <CharacteristicsLayer canvasHeight={canvasHeight} canvasWidth={textWidth} characteristics={characteristics} color={color} textColor={textColor} />
 
-              <ContactLayer canvasHeight={canvasHeight} canvasWidth={canvasWidth} formData={formData} color={color} textColor={textColor} />
+              <ContactLayer canvasHeight={canvasHeight} canvasWidth={textWidth} formData={formData} color={color} textColor={textColor} />
 
               <Label
               y={canvasHeight*0.95} >
@@ -306,11 +317,12 @@ class Canvas extends Component<IAppProps, IAppState> {
                 <Text
                 fill={textColor}
                   padding={10}
-                  width={canvasWidth}
+                  width={textWidth}
                   text='difunde.quiltroschile.cl'
                   fontSize={12}
                   align='center' />
               </Label>
+              </Group>
 
               {/*<TransformerComponent
                 resizeEnabled

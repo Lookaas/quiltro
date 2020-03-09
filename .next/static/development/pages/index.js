@@ -1137,21 +1137,20 @@ function (_Component) {
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "onSubmit", function _callee(e) {
-      var imgB64, link;
+      var formValues, imgB64, link;
       return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
+              formValues = _this.props.formValues;
               e.preventDefault();
               imgB64 = _this.props.canvasRef.current.getStage().toDataURL({
-                pixelRatio: 3,
+                pixelRatio: 2,
                 quality: 1,
-                mimeType: 'image/png',
-                width: 500,
-                height: 750
+                mimeType: 'image/png'
               });
               link = document.createElement('a');
-              link.download = "Test";
+              link.download = formValues['nombre-mascota'];
               link.href = imgB64;
               document.body.appendChild(link);
               link.click();
@@ -1168,7 +1167,7 @@ function (_Component) {
                 ...formJson
               });*/
 
-            case 8:
+            case 9:
             case "end":
               return _context.stop();
           }
@@ -1207,7 +1206,7 @@ function (_Component) {
         method: "post",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 134
+          lineNumber: 135
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_PetInformation__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -1218,13 +1217,13 @@ function (_Component) {
         changeDimensions: changeDimensions,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 135
+          lineNumber: 136
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 136
+          lineNumber: 137
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_ContactInformation__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -1232,13 +1231,13 @@ function (_Component) {
         formValues: formValues,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 137
+          lineNumber: 138
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_SubmitButton__WEBPACK_IMPORTED_MODULE_12__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 138
+          lineNumber: 139
         },
         __self: this
       })));
@@ -1504,7 +1503,8 @@ function (_React$Component) {
           backgroundImage = _this$props.backgroundImage,
           canvasHeight = _this$props.canvasHeight,
           canvasWidth = _this$props.canvasWidth,
-          imageFormat = _this$props.imageFormat;
+          imageFormat = _this$props.imageFormat,
+          rectColor = _this$props.rectColor;
 
       if (!backgroundImage) {
         return null;
@@ -1512,55 +1512,97 @@ function (_React$Component) {
 
       var height = backgroundImage.height,
           width = backgroundImage.width;
-      var imageProportion = 0.4;
       var x = 0;
       var y = 0;
       var imageWidth = width;
       var imageHeight = height;
+      var rectX = 0,
+          rectY = 0,
+          rectWidth = 0,
+          rectHeigth = 0;
 
-      if (imageFormat === 'vertical') {
+      if (imageFormat === 'vertical' || imageFormat === 'cuadrada') {
+        var imageOffset = 0.2;
+        var imageProportion = 0.5;
+        rectWidth = canvasWidth;
+        rectHeigth = canvasHeight * imageProportion;
+
+        if (imageFormat === 'vertical') {
+          rectY = imageOffset * canvasHeight;
+        }
+
         if (width < canvasWidth && height < canvasHeight * imageProportion) {
-          var yOffset = (canvasHeight * imageProportion - height) / 2;
           x = (canvasWidth - width) / 2;
-          y = canvasHeight * imageProportion + yOffset;
+
+          if (imageFormat === 'vertical') {
+            var yOffset = (canvasHeight * imageProportion - height) / 2;
+            y = canvasHeight * imageOffset + yOffset;
+          }
         } else if (height < canvasHeight * imageProportion) {
           imageWidth = canvasWidth;
           imageHeight = this.transformHeight(height, width, imageWidth);
 
-          var _yOffset = imageHeight * imageProportion / 2 - imageHeight / 2;
+          if (imageFormat === 'vertical') {
+            var _yOffset = imageHeight * imageProportion / 2 - imageHeight / 2;
 
-          y = canvasHeight * 0.3 + _yOffset;
+            y = canvasHeight * imageOffset + _yOffset;
+          }
         } else {
           imageHeight = canvasHeight * imageProportion;
           imageWidth = this.transformWidth(height, width, imageHeight);
 
           if (imageWidth <= canvasWidth) {
             x = (canvasWidth - imageWidth) / 2;
-            y = canvasHeight * 0.3;
+
+            if (imageFormat === 'vertical') {
+              y = canvasHeight * imageOffset;
+            }
           } else {
             imageWidth = canvasWidth;
             imageHeight = this.transformHeight(height, width, imageWidth);
 
             var _yOffset2 = imageHeight * imageProportion / 2 - imageHeight / 2;
 
-            y = canvasHeight * 0.3 + _yOffset2;
+            if (imageFormat === 'vertical') {
+              y = canvasHeight * imageOffset + _yOffset2;
+            }
           }
         }
-      } else if (imageFormat === 'cuadrada') {
-        imageWidth = canvasWidth;
-        imageHeight = this.transformHeight(height, width, imageWidth);
       } else if (imageFormat === 'horizontal') {
-        imageHeight = canvasHeight;
-        imageWidth = this.transformWidth(height, width, imageHeight);
+        var _imageProportion = 0.4;
+
+        if (width < canvasWidth * _imageProportion && height < canvasHeight) {
+          x = (canvasWidth * _imageProportion - width) / 2;
+          y = (canvasHeight - height) / 2;
+        } else if (width < canvasWidth * _imageProportion) {
+          imageHeight = canvasHeight;
+          imageWidth = this.transformWidth(height, width, imageHeight);
+          x = (canvasWidth * _imageProportion - imageWidth) / 2;
+        } else {
+          imageWidth = canvasWidth * _imageProportion;
+          imageHeight = this.transformHeight(height, width, imageWidth);
+          y = (canvasHeight - imageHeight) / 2;
+        }
       }
 
       return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_9__["Layer"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75
+          lineNumber: 100
         },
         __self: this
-      }, backgroundImage && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_9__["Image"], {
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_9__["Rect"], {
+        width: rectWidth,
+        height: rectHeigth,
+        x: rectX,
+        y: rectY,
+        fill: rectColor,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 101
+        },
+        __self: this
+      }), backgroundImage && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_9__["Image"], {
         image: backgroundImage,
         x: x,
         y: y,
@@ -1569,7 +1611,7 @@ function (_React$Component) {
         draggable: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 103
         },
         __self: this
       }));
@@ -2282,12 +2324,24 @@ function (_Component) {
       var textBlocks = canvasTexts.textBlocks,
           selectedTextBlock = canvasTexts.selectedTextBlock;
       var canvasStyle = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["css"])(_templateObject(), color);
+      var yLabels = 0;
+      var textX = 0,
+          textY = 0,
+          textWidth = canvasWidth;
+
+      if (imageFormat === 'cuadrada') {
+        yLabels = 0.5 * canvasHeight;
+      } else if (imageFormat === 'horizontal') {
+        textX = canvasWidth * 0.4;
+        textWidth = canvasWidth * 0.6;
+      }
+
       return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_11__["Card"], {
         elevation: _blueprintjs_core__WEBPACK_IMPORTED_MODULE_11__["Elevation"].ONE,
         css: canvasStyle,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 253
+          lineNumber: 262
         },
         __self: this
       },  true && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Stage"], {
@@ -2297,13 +2351,13 @@ function (_Component) {
         onClick: this.handleStageMouseDown,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 255
+          lineNumber: 264
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Layer"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 261
+          lineNumber: 270
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Rect"], {
@@ -2312,7 +2366,7 @@ function (_Component) {
         fill: color,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 262
+          lineNumber: 271
         },
         __self: this
       })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(_BackgroundImage__WEBPACK_IMPORTED_MODULE_14__["default"], {
@@ -2320,30 +2374,48 @@ function (_Component) {
         canvasHeight: canvasHeight,
         canvasWidth: canvasWidth,
         imageFormat: imageFormat,
+        rectColor: textColor,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 264
+          lineNumber: 273
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Layer"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 265
+          lineNumber: 274
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Group"], {
+        x: textX,
+        y: textY,
+        width: textWidth,
+        height: canvasHeight,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 275
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Group"], {
+        y: yLabels,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 276
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Label"], {
         x: 0,
-        y: canvasHeight * 0.1,
+        y: canvasHeight * 0.05,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 267
+          lineNumber: 277
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Tag"], {
         fill: color,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 271
+          lineNumber: 281
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Text"], {
@@ -2352,27 +2424,27 @@ function (_Component) {
         fontSize: 35,
         text: formData['nombre-mascota'] !== '' ? formData['nombre-mascota'] : 'Nombre mascota',
         align: 'center',
-        width: canvasWidth,
+        width: textWidth,
         fontStyle: 'bold' // _useStrictMode
         ,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 272
+          lineNumber: 282
         },
         __self: this
       })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Label"], {
         x: 0,
-        y: canvasHeight * 0.2,
+        y: canvasHeight * 0.15,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 283
+          lineNumber: 293
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Tag"], {
         fill: color,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 287
+          lineNumber: 297
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Text"], {
@@ -2381,62 +2453,62 @@ function (_Component) {
         fontSize: 22,
         text: formData['caso-mascota'] !== '' ? formData['caso-mascota'] === '1' ? "En adopción" : 'Perdido' : 'Caso mascota',
         align: 'center',
-        width: canvasWidth // _useStrictMode
+        width: textWidth // _useStrictMode
         ,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 288
+          lineNumber: 298
         },
         __self: this
-      })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(_CharacteristicsLayer__WEBPACK_IMPORTED_MODULE_15__["default"], {
+      }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(_CharacteristicsLayer__WEBPACK_IMPORTED_MODULE_15__["default"], {
         canvasHeight: canvasHeight,
-        canvasWidth: canvasWidth,
+        canvasWidth: textWidth,
         characteristics: characteristics,
         color: color,
         textColor: textColor,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 299
+          lineNumber: 310
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(_ContactLayer__WEBPACK_IMPORTED_MODULE_16__["default"], {
         canvasHeight: canvasHeight,
-        canvasWidth: canvasWidth,
+        canvasWidth: textWidth,
         formData: formData,
         color: color,
         textColor: textColor,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 301
+          lineNumber: 312
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Label"], {
         y: canvasHeight * 0.95,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 303
+          lineNumber: 314
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Tag"], {
         fill: secundaryColor,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 305
+          lineNumber: 316
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Text"], {
         fill: textColor,
         padding: 10,
-        width: canvasWidth,
+        width: textWidth,
         text: "difunde.quiltroschile.cl",
         fontSize: 12,
         align: "center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 306
+          lineNumber: 317
         },
         __self: this
-      })))));
+      }))))));
     }
   }]);
 
