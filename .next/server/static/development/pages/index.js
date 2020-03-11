@@ -1325,92 +1325,88 @@ class BackgroundImage extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compo
     let x = 0;
     let y = 0;
     let imageWidth = width;
-    let imageHeight = height;
-    let rectX = 0,
-        rectY = 0,
-        rectWidth = 0,
-        rectHeigth = 0;
+    let imageHeight = height; //let rectX = 0, rectY = 0, rectWidth = 0, rectHeigth = 0;
 
     if (imageFormat === 'vertical' || imageFormat === 'cuadrada') {
       const imageOffset = 0.2;
       const imageProportion = 0.5;
-      rectWidth = canvasWidth;
-      rectHeigth = canvasHeight * imageProportion;
+      imageWidth = canvasWidth;
+      imageHeight = canvasHeight * imageProportion;
 
       if (imageFormat === 'vertical') {
-        rectY = imageOffset * canvasHeight;
+        y = canvasHeight * imageOffset;
       }
-
-      if (width < canvasWidth && height < canvasHeight * imageProportion) {
-        x = (canvasWidth - width) / 2;
-
+      /*if (imageFormat === 'vertical') {
+        rectY = imageOffset*canvasHeight;
+      }
+      if (width < canvasWidth && height < canvasHeight*imageProportion) {
+        x = (canvasWidth - width)/2;
         if (imageFormat === 'vertical') {
-          const yOffset = (canvasHeight * imageProportion - height) / 2;
-          y = canvasHeight * imageOffset + yOffset;
+          const yOffset = (canvasHeight*imageProportion - height)/2;
+          y = canvasHeight*imageOffset + yOffset;
         }
-      } else if (height < canvasHeight * imageProportion) {
-        imageWidth = canvasWidth;
+      }
+      else if (height < canvasHeight*imageProportion) {
+        imageWidth = canvasWidth-20;
         imageHeight = this.transformHeight(height, width, imageWidth);
-
+        x = 10;
         if (imageFormat === 'vertical') {
-          const yOffset = imageHeight * imageProportion / 2 - imageHeight / 2;
-          y = canvasHeight * imageOffset + yOffset;
+          const yOffset = (imageHeight*imageProportion)/2 - imageHeight/2;
+          y = canvasHeight*imageOffset + yOffset;
         }
-      } else {
-        imageHeight = canvasHeight * imageProportion;
+      }
+      else {
+        imageHeight = canvasHeight*imageProportion-20;
         imageWidth = this.transformWidth(height, width, imageHeight);
-
         if (imageWidth <= canvasWidth) {
-          x = (canvasWidth - imageWidth) / 2;
-
+          x = (canvasWidth - imageWidth)/2;
           if (imageFormat === 'vertical') {
-            y = canvasHeight * imageOffset;
+            y = canvasHeight*imageOffset+10;
           }
-        } else {
-          imageWidth = canvasWidth;
-          imageHeight = this.transformHeight(height, width, imageWidth);
-          const yOffset = imageHeight * imageProportion / 2 - imageHeight / 2;
-
-          if (imageFormat === 'vertical') {
-            y = canvasHeight * imageOffset + yOffset;
+          else {
+            y = 10;
           }
         }
-      }
-    } else if (imageFormat === 'horizontal') {
-      const imageProportion = 0.4;
+        else {
+          imageWidth = canvasWidth-20;
+          imageHeight = this.transformHeight(height, width, imageWidth);
+          const yOffset = (imageHeight*imageProportion)/2 - imageHeight/2;
+          x = 10;
+          if (imageFormat === 'vertical') {
+            y = canvasHeight*imageOffset + yOffset;
+          }
+        }
+      }*/
 
-      if (width < canvasWidth * imageProportion && height < canvasHeight) {
-        x = (canvasWidth * imageProportion - width) / 2;
-        y = (canvasHeight - height) / 2;
-      } else if (width < canvasWidth * imageProportion) {
-        imageHeight = canvasHeight;
-        imageWidth = this.transformWidth(height, width, imageHeight);
-        x = (canvasWidth * imageProportion - imageWidth) / 2;
-      } else {
-        imageWidth = canvasWidth * imageProportion;
-        imageHeight = this.transformHeight(height, width, imageWidth);
-        y = (canvasHeight - imageHeight) / 2;
+    } else if (imageFormat === 'horizontal') {
+      const imageProportion = 0.5;
+      imageWidth = canvasWidth * imageProportion;
+      imageHeight = canvasHeight;
+      /*if (width < canvasWidth*imageProportion && height < canvasHeight) {
+        x = (canvasWidth*imageProportion - width)/2;
+        y = (canvasHeight - height)/2;
       }
+      else if (width < canvasWidth*imageProportion) {
+        imageHeight = canvasHeight-20;
+        imageWidth = this.transformWidth(height, width, imageHeight);
+        x = (canvasWidth*imageProportion - imageWidth)/2;
+        y = 10;
+      }
+      else {
+        imageWidth = canvasWidth*imageProportion-20;
+        imageHeight = this.transformHeight(height, width, imageWidth);
+        y = (canvasHeight - imageHeight)/2;
+        x = 10;
+      }*/
     }
 
     return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Layer"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 100
+        lineNumber: 112
       },
       __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Rect"], {
-      width: rectWidth,
-      height: rectHeigth,
-      x: rectX,
-      y: rectY,
-      fill: rectColor,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 101
-      },
-      __self: this
-    }), backgroundImage && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Image"], {
+    }, backgroundImage && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_0__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Image"], {
       image: backgroundImage,
       x: x,
       y: y,
@@ -1419,7 +1415,7 @@ class BackgroundImage extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Compo
       draggable: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 103
+        lineNumber: 115
       },
       __self: this
     }));
@@ -2032,15 +2028,18 @@ class Canvas extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       }
     `;
     let yLabels = 0;
+    let yLines = canvasHeight * 0.71;
     let textX = 0,
         textY = 0,
         textWidth = canvasWidth;
 
     if (imageFormat === 'cuadrada') {
-      yLabels = 0.5 * canvasHeight;
+      yLabels = 0.43 * canvasHeight;
+      yLines = canvasHeight * 0.65;
     } else if (imageFormat === 'horizontal') {
-      textX = canvasWidth * 0.4;
-      textWidth = canvasWidth * 0.6;
+      textX = canvasWidth * 0.5;
+      textWidth = canvasWidth * 0.5;
+      yLines = canvasHeight * 0.22;
     }
 
     return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_2__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_1__["Card"], {
@@ -2048,7 +2047,7 @@ class Canvas extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       css: canvasStyle,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 262
+        lineNumber: 265
       },
       __self: this
     },  false && false);
@@ -2156,7 +2155,7 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
         case 'horizontal':
           this.setState({
-            canvasWidth: 1080,
+            canvasWidth: 810,
             canvasHeight: 576,
             imageFormat: imageFormat
           });

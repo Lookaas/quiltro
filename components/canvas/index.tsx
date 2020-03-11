@@ -250,13 +250,16 @@ class Canvas extends Component<IAppProps, IAppState> {
       }
     `;
     let yLabels = 0;
+    let yLines = canvasHeight*0.71;
     let textX = 0, textY=0, textWidth=canvasWidth;
     if (imageFormat === 'cuadrada') {
-      yLabels = 0.5*canvasHeight;
+      yLabels = 0.43*canvasHeight;
+      yLines = canvasHeight*0.65;
     }
     else if (imageFormat === 'horizontal') {
-      textX = canvasWidth*0.4;
-      textWidth = canvasWidth*0.6;
+      textX = canvasWidth*0.5;
+      textWidth = canvasWidth*0.5;
+      yLines = canvasHeight*0.22;
     }
     return (
       <Card elevation={Elevation.ONE} css={canvasStyle}>
@@ -305,6 +308,11 @@ class Canvas extends Component<IAppProps, IAppState> {
               // _useStrictMode
               />
             </Label>
+              </Group>
+              <Group y={yLines}>
+                <Rect x={0} y={0} width={textWidth} height={3} fill={textColor} />
+                <Rect x={0} y={6} width={textWidth} height={6} fill={textColor} />
+                <Rect x={0} y={15} width={textWidth} height={3} fill={textColor} />
               </Group>
 
               <CharacteristicsLayer canvasHeight={canvasHeight} canvasWidth={textWidth} characteristics={characteristics} color={color} textColor={textColor} />

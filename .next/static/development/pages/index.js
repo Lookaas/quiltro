@@ -1515,94 +1515,88 @@ function (_React$Component) {
       var x = 0;
       var y = 0;
       var imageWidth = width;
-      var imageHeight = height;
-      var rectX = 0,
-          rectY = 0,
-          rectWidth = 0,
-          rectHeigth = 0;
+      var imageHeight = height; //let rectX = 0, rectY = 0, rectWidth = 0, rectHeigth = 0;
 
       if (imageFormat === 'vertical' || imageFormat === 'cuadrada') {
         var imageOffset = 0.2;
         var imageProportion = 0.5;
-        rectWidth = canvasWidth;
-        rectHeigth = canvasHeight * imageProportion;
+        imageWidth = canvasWidth;
+        imageHeight = canvasHeight * imageProportion;
 
         if (imageFormat === 'vertical') {
-          rectY = imageOffset * canvasHeight;
+          y = canvasHeight * imageOffset;
         }
-
-        if (width < canvasWidth && height < canvasHeight * imageProportion) {
-          x = (canvasWidth - width) / 2;
-
+        /*if (imageFormat === 'vertical') {
+          rectY = imageOffset*canvasHeight;
+        }
+        if (width < canvasWidth && height < canvasHeight*imageProportion) {
+          x = (canvasWidth - width)/2;
           if (imageFormat === 'vertical') {
-            var yOffset = (canvasHeight * imageProportion - height) / 2;
-            y = canvasHeight * imageOffset + yOffset;
+            const yOffset = (canvasHeight*imageProportion - height)/2;
+            y = canvasHeight*imageOffset + yOffset;
           }
-        } else if (height < canvasHeight * imageProportion) {
-          imageWidth = canvasWidth;
+        }
+        else if (height < canvasHeight*imageProportion) {
+          imageWidth = canvasWidth-20;
           imageHeight = this.transformHeight(height, width, imageWidth);
-
+          x = 10;
           if (imageFormat === 'vertical') {
-            var _yOffset = imageHeight * imageProportion / 2 - imageHeight / 2;
-
-            y = canvasHeight * imageOffset + _yOffset;
+            const yOffset = (imageHeight*imageProportion)/2 - imageHeight/2;
+            y = canvasHeight*imageOffset + yOffset;
           }
-        } else {
-          imageHeight = canvasHeight * imageProportion;
+        }
+        else {
+          imageHeight = canvasHeight*imageProportion-20;
           imageWidth = this.transformWidth(height, width, imageHeight);
-
           if (imageWidth <= canvasWidth) {
-            x = (canvasWidth - imageWidth) / 2;
-
+            x = (canvasWidth - imageWidth)/2;
             if (imageFormat === 'vertical') {
-              y = canvasHeight * imageOffset;
+              y = canvasHeight*imageOffset+10;
             }
-          } else {
-            imageWidth = canvasWidth;
-            imageHeight = this.transformHeight(height, width, imageWidth);
-
-            var _yOffset2 = imageHeight * imageProportion / 2 - imageHeight / 2;
-
-            if (imageFormat === 'vertical') {
-              y = canvasHeight * imageOffset + _yOffset2;
+            else {
+              y = 10;
             }
           }
-        }
-      } else if (imageFormat === 'horizontal') {
-        var _imageProportion = 0.4;
+          else {
+            imageWidth = canvasWidth-20;
+            imageHeight = this.transformHeight(height, width, imageWidth);
+            const yOffset = (imageHeight*imageProportion)/2 - imageHeight/2;
+            x = 10;
+            if (imageFormat === 'vertical') {
+              y = canvasHeight*imageOffset + yOffset;
+            }
+          }
+        }*/
 
-        if (width < canvasWidth * _imageProportion && height < canvasHeight) {
-          x = (canvasWidth * _imageProportion - width) / 2;
-          y = (canvasHeight - height) / 2;
-        } else if (width < canvasWidth * _imageProportion) {
-          imageHeight = canvasHeight;
-          imageWidth = this.transformWidth(height, width, imageHeight);
-          x = (canvasWidth * _imageProportion - imageWidth) / 2;
-        } else {
-          imageWidth = canvasWidth * _imageProportion;
-          imageHeight = this.transformHeight(height, width, imageWidth);
-          y = (canvasHeight - imageHeight) / 2;
+      } else if (imageFormat === 'horizontal') {
+        var _imageProportion = 0.5;
+        imageWidth = canvasWidth * _imageProportion;
+        imageHeight = canvasHeight;
+        /*if (width < canvasWidth*imageProportion && height < canvasHeight) {
+          x = (canvasWidth*imageProportion - width)/2;
+          y = (canvasHeight - height)/2;
         }
+        else if (width < canvasWidth*imageProportion) {
+          imageHeight = canvasHeight-20;
+          imageWidth = this.transformWidth(height, width, imageHeight);
+          x = (canvasWidth*imageProportion - imageWidth)/2;
+          y = 10;
+        }
+        else {
+          imageWidth = canvasWidth*imageProportion-20;
+          imageHeight = this.transformHeight(height, width, imageWidth);
+          y = (canvasHeight - imageHeight)/2;
+          x = 10;
+        }*/
       }
 
       return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_9__["Layer"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100
+          lineNumber: 112
         },
         __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_9__["Rect"], {
-        width: rectWidth,
-        height: rectHeigth,
-        x: rectX,
-        y: rectY,
-        fill: rectColor,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 101
-        },
-        __self: this
-      }), backgroundImage && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_9__["Image"], {
+      }, backgroundImage && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_9__["Image"], {
         image: backgroundImage,
         x: x,
         y: y,
@@ -1611,7 +1605,7 @@ function (_React$Component) {
         draggable: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 103
+          lineNumber: 115
         },
         __self: this
       }));
@@ -2325,15 +2319,18 @@ function (_Component) {
           selectedTextBlock = canvasTexts.selectedTextBlock;
       var canvasStyle = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["css"])(_templateObject(), color);
       var yLabels = 0;
+      var yLines = canvasHeight * 0.71;
       var textX = 0,
           textY = 0,
           textWidth = canvasWidth;
 
       if (imageFormat === 'cuadrada') {
-        yLabels = 0.5 * canvasHeight;
+        yLabels = 0.43 * canvasHeight;
+        yLines = canvasHeight * 0.65;
       } else if (imageFormat === 'horizontal') {
-        textX = canvasWidth * 0.4;
-        textWidth = canvasWidth * 0.6;
+        textX = canvasWidth * 0.5;
+        textWidth = canvasWidth * 0.5;
+        yLines = canvasHeight * 0.22;
       }
 
       return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_11__["Card"], {
@@ -2341,7 +2338,7 @@ function (_Component) {
         css: canvasStyle,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 262
+          lineNumber: 265
         },
         __self: this
       },  true && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Stage"], {
@@ -2351,13 +2348,13 @@ function (_Component) {
         onClick: this.handleStageMouseDown,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 264
+          lineNumber: 267
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Layer"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 270
+          lineNumber: 273
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Rect"], {
@@ -2366,7 +2363,7 @@ function (_Component) {
         fill: color,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 271
+          lineNumber: 274
         },
         __self: this
       })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(_BackgroundImage__WEBPACK_IMPORTED_MODULE_14__["default"], {
@@ -2377,13 +2374,13 @@ function (_Component) {
         rectColor: textColor,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 273
+          lineNumber: 276
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Layer"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 274
+          lineNumber: 277
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Group"], {
@@ -2393,14 +2390,14 @@ function (_Component) {
         height: canvasHeight,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 275
+          lineNumber: 278
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Group"], {
         y: yLabels,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 276
+          lineNumber: 279
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Label"], {
@@ -2408,14 +2405,14 @@ function (_Component) {
         y: canvasHeight * 0.05,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 277
+          lineNumber: 280
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Tag"], {
         fill: color,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 281
+          lineNumber: 284
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Text"], {
@@ -2429,7 +2426,7 @@ function (_Component) {
         ,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 282
+          lineNumber: 285
         },
         __self: this
       })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Label"], {
@@ -2437,14 +2434,14 @@ function (_Component) {
         y: canvasHeight * 0.15,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 293
+          lineNumber: 296
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Tag"], {
         fill: color,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 297
+          lineNumber: 300
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Text"], {
@@ -2457,10 +2454,50 @@ function (_Component) {
         ,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 298
+          lineNumber: 301
         },
         __self: this
-      }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(_CharacteristicsLayer__WEBPACK_IMPORTED_MODULE_15__["default"], {
+      }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Group"], {
+        y: yLines,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 312
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Rect"], {
+        x: 0,
+        y: 0,
+        width: textWidth,
+        height: 3,
+        fill: textColor,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 313
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Rect"], {
+        x: 0,
+        y: 6,
+        width: textWidth,
+        height: 6,
+        fill: textColor,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 314
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Rect"], {
+        x: 0,
+        y: 15,
+        width: textWidth,
+        height: 3,
+        fill: textColor,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 315
+        },
+        __self: this
+      })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(_CharacteristicsLayer__WEBPACK_IMPORTED_MODULE_15__["default"], {
         canvasHeight: canvasHeight,
         canvasWidth: textWidth,
         characteristics: characteristics,
@@ -2468,7 +2505,7 @@ function (_Component) {
         textColor: textColor,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 310
+          lineNumber: 318
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(_ContactLayer__WEBPACK_IMPORTED_MODULE_16__["default"], {
@@ -2479,21 +2516,21 @@ function (_Component) {
         textColor: textColor,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 312
+          lineNumber: 320
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Label"], {
         y: canvasHeight * 0.95,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 314
+          lineNumber: 322
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Tag"], {
         fill: secundaryColor,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 316
+          lineNumber: 324
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_12__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_13__["Text"], {
@@ -2505,7 +2542,7 @@ function (_Component) {
         align: "center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 317
+          lineNumber: 325
         },
         __self: this
       }))))));
@@ -63566,7 +63603,7 @@ function (_Component) {
 
         case 'horizontal':
           _this.setState({
-            canvasWidth: 1080,
+            canvasWidth: 810,
             canvasHeight: 576,
             imageFormat: imageFormat
           });
