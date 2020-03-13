@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsx jsx*/
 import {
   Card,
   Checkbox,
@@ -14,7 +14,7 @@ import {
 import { jsx } from '@emotion/core';
 import React, { FormEvent, createRef } from 'react';
 import { IAdoptionForm, ITextBlockElement } from '../../../pages';
-import { fakeRadioGroupStyle, sidebarContainerStyle, fileUpload, containerStyle } from './style';
+import { fakeRadioGroupStyle, sidebarContainerStyle, fileUpload } from './style';
 import {faDog} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
@@ -31,9 +31,9 @@ export default class PetInformation extends React.Component<
   any
 > {
   state = {
-    size: '',
-    caseOption: '',
-    sex: '',
+    size: 'm',
+    caseOption: '1',
+    sex: 'm',
     inputFileRef: createRef<HTMLInputElement>(),
     imageFormat: 'cuadrada'
   };
@@ -42,7 +42,7 @@ export default class PetInformation extends React.Component<
     const { onChange } = this.props;
     const size = e.currentTarget.value;
     this.setState({ size });
-    onChange('tamaño-mascota', size);
+    onChange('pet-size', size);
   };
 
   onCaseChanged = (e: FormEvent<HTMLInputElement>) => {
@@ -93,37 +93,11 @@ export default class PetInformation extends React.Component<
   render() {
     const { onChange, formValues, addText, changeDimensions } = this.props;
     const { size, caseOption, sex, inputFileRef, imageFormat } = this.state;
-    const añosTag = <Tag>Años</Tag>
-    const mesesTag = <Tag>Meses</Tag>
+    const yearTag = <Tag>años</Tag>
+    const monthTag = <Tag>meses</Tag>
     return (
       <Card elevation={Elevation.ONE} css={sidebarContainerStyle}>
         <H4>Información</H4>
-        <div>
-          <FormGroup label="Imagen *">
-            <Button
-              intent="primary"
-              rightIcon="upload"
-              text="Subir Imagen"
-              onClick={this.openFile}
-            />
-            <input
-              ref={inputFileRef}
-              onChange={this.onFileUploaded}
-              type="file"
-              css={fileUpload}
-            />
-          </FormGroup>
-        </div>
-        <div>
-          <RadioGroup
-            label='Dimensiones de imagen *'
-            onChange={this.onChangeDimensions}
-            selectedValue={imageFormat} >
-              <Radio label='Cuadrada' value='cuadrada' />
-              <Radio label='Vertical' value='vertical' />
-              <Radio label='Horizontal' value='horizontal' />
-            </RadioGroup>
-        </div>
         <div>
           <FormGroup label={'Nombre'}>
             <InputGroup
@@ -139,7 +113,7 @@ export default class PetInformation extends React.Component<
           </FormGroup>
         </div>
         <div>
-          <FormGroup label="Caso *">
+          <FormGroup label="Situación*">
             <Radio
               name="caso"
               value={caseOption}
@@ -151,27 +125,29 @@ export default class PetInformation extends React.Component<
             <Radio
               onChange={this.onCaseChanged}
               checked={caseOption === '1'}
-              label="Mascota en adopción"
+              label="En adopción"
               value="1"
+              inline
             />
             <Radio
               onChange={this.onCaseChanged}
               checked={caseOption === '2'}
-              label="Mascota perdida"
+              label="Perdida"
               value="2"
+              inline
             />
           </FormGroup>
         </div>
         <div>
-          <FormGroup label="Edad aproximada *">
+          <FormGroup label="Edad aproximada*">
             <div style={{display: 'flex', width: '100%'}}>
             <div style={{width: '50%', margin: '2px'}} >
             <InputGroup
               name="edad-mascota"
-              value={formValues['años-mascota']}
+              value={formValues['age-pet']}
               placeholder="Años"
-              rightElement={añosTag}
-              onChange={(e: FormEvent<HTMLInputElement>) : void => {onChange('años-mascota', e.currentTarget.value)}}
+              rightElement={yearTag}
+              onChange={(e: FormEvent<HTMLInputElement>) : void => {onChange('age-pet', e.currentTarget.value)}}
               max={20}
               min={0}
               required
@@ -180,10 +156,10 @@ export default class PetInformation extends React.Component<
             <div style={{width: '50%', margin: '2px'}} >
             <InputGroup
               name="edad-mascota"
-              value={formValues['meses-mascota']}
+              value={formValues['month-age-pet']}
               placeholder="Meses"
-              rightElement={mesesTag}
-              onChange={(e: FormEvent<HTMLInputElement>) : void => {onChange('meses-mascota', e.currentTarget.value)}}
+              rightElement={monthTag}
+              onChange={(e: FormEvent<HTMLInputElement>) : void => {onChange('month-age-pet', e.currentTarget.value)}}
               max={11}
               min={0}
               required
@@ -193,54 +169,57 @@ export default class PetInformation extends React.Component<
           </FormGroup>
         </div>
         <div>
-          <FormGroup label="Sexo *">
+          <FormGroup label="Sexo*">
             <Radio
-              name="sexo-mascota"
-              value={formValues['sexo-mascota']}
-              onChange={e => onChange('sexo-mascota', Boolean(sex))}
-              checked={Boolean(formValues['sexo-mascota'])}
+              name="pet-gender"
+              value={formValues['pet-gender']}
+              onChange={e => onChange('pet-gender', Boolean(sex))}
+              checked={Boolean(formValues['pet-gender'])}
               required
+              inline
               css={fakeRadioGroupStyle}
             />
             <Radio
-              onChange={e => onChange('sexo-mascota', '1')}
-              checked={formValues['sexo-mascota'] === '1'}
+              onChange={e => onChange('pet-gender', '1')}
+              checked={formValues['pet-gender'] === '1'}
               label="Macho"
               value="1"
+              inline
             />
             <Radio
-              onChange={e => onChange('sexo-mascota', '2')}
-              checked={formValues['sexo-mascota'] === '2'}
+              onChange={e => onChange('pet-gender', '2')}
+              checked={formValues['pet-gender'] === '2'}
               label="Hembra"
               value="2"
+              inline
             />
           </FormGroup>
         </div>
         <div>
-          <FormGroup label="Tamaño *">
+          <FormGroup label="Tamaño*">
             <Radio
-              name="tamaño-mascota"
-              value={formValues["tamaño-mascota"]}
-              onChange={e => onChange('tamaño-mascota', Boolean(size))}
-              checked={Boolean(formValues["tamaño-mascota"])}
+              name="pet-size"
+              value={formValues["pet-size"]}
+              onChange={e => onChange('pet-size', Boolean(size))}
+              checked={Boolean(formValues["pet-size"])}
               required
               css={fakeRadioGroupStyle}
             />
             <Radio
-              onChange={e => onChange('tamaño-mascota', 's')}
-              checked={formValues["tamaño-mascota"] === 's'}
+              onChange={e => onChange('pet-size', 's')}
+              checked={formValues["pet-size"] === 's'}
               label="Pequeño"
               value="s"
             />
             <Radio
-              onChange={e => onChange('tamaño-mascota', 'm')}
-              checked={formValues["tamaño-mascota"] === 'm'}
+              onChange={e => onChange('pet-size', 'm')}
+              checked={formValues["pet-size"] === 'm'}
               label="Mediano"
               value="m"
             />
             <Radio
-              onChange={e => onChange('tamaño-mascota', 'l')}
-              checked={formValues["tamaño-mascota"] === 'l'}
+              onChange={e => onChange('pet-size', 'l')}
+              checked={formValues["pet-size"] === 'l'}
               label="Grande"
               value="l"
             />
@@ -248,11 +227,11 @@ export default class PetInformation extends React.Component<
         </div>
         <div>
           <Checkbox
-            name="esterilizado"
+            name="Esterilizado"
             label="¿Está esterilizado?"
-            checked={formValues.esterilizado}
+            checked={formValues.sterilized}
             onChange={e => {
-              onChange('esterilizado', !formValues.esterilizado);
+              onChange('sterilized', !formValues.sterilized);
             }}
           />
           <Checkbox
@@ -264,11 +243,11 @@ export default class PetInformation extends React.Component<
             }}
           />
           <Checkbox
-            name="vacunas"
+            name="Vacunas"
             label="¿Tiene las vacunas al día?"
-            checked={formValues.vacunas}
+            checked={formValues.vaccines}
             onChange={e => {
-              onChange('vacunas', !formValues.vacunas);
+              onChange('vaccines', !formValues.vaccines);
             }}
           />
         </div>

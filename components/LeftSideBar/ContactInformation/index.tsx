@@ -23,11 +23,11 @@ export default class ContactInformation extends React.Component<
           <FormGroup label="Nombre *">
             <InputGroup
               placeholder="Nombre"
-              name="nombre-contacto"
+              name="contact-name"
               required
-              value={formValues['nombre-contacto']}
+              value={formValues['contact-name']}
               onChange={ (e: FormEvent<HTMLInputElement>) : void => {
-                onChange('nombre-contacto', e.currentTarget.value);
+                onChange('contact-name', e.currentTarget.value);
               }}
               leftIcon='person'
             />
@@ -37,10 +37,10 @@ export default class ContactInformation extends React.Component<
           <FormGroup label="Teléfono *">
             <InputGroup
               placeholder="Teléfono"
-              name="telefono-contacto"
-              value={formValues['telefono-contacto']}
+              name="contact-phone"
+              value={formValues['contact-phone']}
               onChange={(e: ChangeEvent<HTMLInputElement>) : void => {
-                onChange('telefono-contacto', e.currentTarget.value);
+                onChange('contact-phone', e.currentTarget.value);
               }}
               leftIcon='mobile-phone'
               required
@@ -53,9 +53,9 @@ export default class ContactInformation extends React.Component<
               name="Email"
               type="email"
               placeholder="Email"
-              value={formValues['email-contacto']}
+              value={formValues['contact-email']}
               onChange={(e: FormEvent<HTMLInputElement>) : void => {
-                onChange('email-contacto', e.currentTarget.value);
+                onChange('contact-email', e.currentTarget.value);
               }}
               leftIcon='inbox'
             />
@@ -65,10 +65,10 @@ export default class ContactInformation extends React.Component<
           <FormGroup label="Ciudad *">
             <InputGroup
               placeholder="Ciudad"
-              name="ciudad-contacto"
-              value={formValues['ciudad-contacto']}
+              name="contact-city"
+              value={formValues['contact-city']}
               onChange={(e: FormEvent<HTMLInputElement>) : void => {
-                onChange('ciudad-contacto', e.currentTarget.value);
+                onChange('contact-city', e.currentTarget.value);
               }}
               leftIcon='home'
             />

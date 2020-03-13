@@ -38,39 +38,39 @@ class ContactLayer extends Component<IContactProps, any> {
               width={layerWidth}
               align='center' />
           </Label>
-          {formData['nombre-contacto'] !== '' &&
+          {formData['contact-name'] !== '' &&
             <Label y={20} >
               <Tag fill={color} />
               <Text
               fill={textColor}
-              text={formData['nombre-contacto']}
+              text={formData['contact-name']}
               fontSize={11}
               />
             </Label>}
-            {formData['telefono-contacto'] !== '+56 ' &&
+            {formData['contact-phone'] !== '+56 ' &&
             <Label y={40}  >
             <Tag fill={color} />
             <Text
             fill={textColor}
-            text={formData['telefono-contacto']}
+            text={formData['contact-phone']}
             fontSize={11}
             />
           </Label>}
-            {formData['email-contacto'] !== '' &&
+            {formData['contact-email'] !== '' &&
             <Label y={60} >
             <Tag fill={color} />
             <Text
             fill={textColor}
-            text={formData['email-contacto']}
+            text={formData['contact-email']}
             fontSize={11}
              />
           </Label>}
-            {formData['ciudad-contacto'] !== '' &&
+            {formData['contact-city'] !== '' &&
             <Label y={80} >
             <Tag fill={color} />
             <Text
             fill={textColor}
-            text={formData['ciudad-contacto']}
+            text={formData['contact-city']}
             fontSize={11}
              />
           </Label>}

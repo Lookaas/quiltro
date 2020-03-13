@@ -5,6 +5,7 @@ import ReactGA from 'react-ga';
 
 import { IAdoptionForm, ITextBlockElement } from '../../pages';
 import ContactInformation from './ContactInformation';
+import PhotoInformation from './PhotoInformation';
 import PetInformation from './PetInformation';
 import SubmitButton from './SubmitButton';
 import TextBlocksCreator from './TextBlocksCreator';
@@ -133,9 +134,12 @@ export default class LeftSidebar extends Component<
     } = this.props;
     return (
       <form onSubmit={this.onSubmit} onChange={this.onFormChange} css={containerStyle} method="post">
-        <PetInformation onChange={onInputChanged} formValues={formValues} addText={addTextBlockWithData} onImageUploaded={onImageUploaded} changeDimensions={changeDimensions}/>
         <div>
+          <PhotoInformation onChange={onInputChanged} formValues={formValues} addText={addTextBlockWithData} onImageUploaded={onImageUploaded} changeDimensions={changeDimensions}/>
           <ContactInformation onChange={onInputChanged} formValues={formValues} />
+          </div>
+        <div>
+          <PetInformation onChange={onInputChanged} formValues={formValues} addText={addTextBlockWithData} onImageUploaded={onImageUploaded} changeDimensions={changeDimensions}/>
           <SubmitButton />
         </div>
       </form>

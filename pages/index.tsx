@@ -55,21 +55,21 @@ export interface ITextBlockElement {
 
 export interface IAdoptionForm {
   'nombre-mascota': string;
-  'nombre-contacto': string;
-  'telefono-contacto': string;
+  'contact-name': string;
+  'contact-phone': string;
   'whatsapp-contacto': string;
-  'email-contacto': string;
-  'esterilizado': boolean;
+  'contact-email': string;
+  'sterilized': boolean;
   'chip': boolean;
-  'vacunas': boolean;
+  'vaccines': boolean;
   'edad-mascota': string;
   'informacion-extra-mascota'?: string;
-  'tamaño-mascota': string;
+  'pet-size': string;
   'caso-mascota': string;
-  'ciudad-contacto': string;
-  'sexo-mascota': string;
-  'años-mascota': string;
-  'meses-mascota': string;
+  'contact-city': string;
+  'pet-gender': string;
+  'age-pet': string;
+  'month-age-pet': string;
 }
 
 class Home extends Component<any, IHomeState> {
@@ -82,28 +82,28 @@ class Home extends Component<any, IHomeState> {
     formValues: {
       chip: false,
       'edad-mascota': '',
-      'email-contacto': '',
-      esterilizado: false,
+      'contact-email': '',
+      sterilized: false,
       'informacion-extra-mascota': '',
-      'nombre-contacto': '',
+      'contact-name': '',
       'nombre-mascota': '',
-      'tamaño-mascota': '',
-      'telefono-contacto': '+56 ',
-      vacunas: false,
+      'pet-size': '',
+      'contact-phone': '+56 ',
+      vaccines: false,
       'whatsapp-contacto': '',
       'caso-mascota': '',
-      'ciudad-contacto': '',
-      'sexo-mascota': '',
-      'años-mascota': '',
-      'meses-mascota': ''
+      'contact-city': '',
+      'pet-gender': '',
+      'age-pet': '',
+      'month-age-pet': ''
     },
     characteristics: {},
     canvasHeight: 540,
     canvasWidth: 540,
     imageFormat: 'cuadrada',
-    color: '#4E9818',
-    secundaryColor: '#0A6507',
-    textColor: '#F3DE58'
+    color: '#62bfa2',
+    secundaryColor: '#51947f',
+    textColor: '#ffffff'
   };
 
   stageRef = createRef<any>();
@@ -206,6 +206,7 @@ class Home extends Component<any, IHomeState> {
     const { canvasTexts, canvasHeight, canvasWidth, characteristics, formValues } = this.state;
     const { textBlocks } = canvasTexts;
     const actualCharacteristics: ICharacteristics = characteristics;
+    let size = 'Pequeño';
     let newTextBlock: ITextBlockElement = {
       id: key,
       color: 'black',
@@ -236,57 +237,69 @@ class Home extends Component<any, IHomeState> {
         newTextBlock.text = value === '1' ? "En adopción" : 'Perdido';
         validator = 'textBlock';
         break;
-      case 'años-mascota' :
+      case 'age-pet' :
         if (isNaN(value) && value !== '0') {
-          value = formValues['años-mascota'];
+          value = formValues['age-pet'];
         }
         else {
-          const meses = formValues['meses-mascota'];
-          let edadString = ''
-          if (value !== '' && meses !== '' && value !== '0' && meses !== '0') {
-            edadString = value+' años '+meses+' meses';
+          const months = formValues['month-age-pet'];
+          let ageString = '';
+          let yearTextAux = '';
+          let monthTextAux = '';
+          if (value !== '' && months !== '' && value !== '0' && months !== '0') {
+            yearTextAux = parseInt(value, 10) > 1 ? ' años ' : ' año ';
+            monthTextAux = parseInt(months, 10) > 1 ? ' meses ' : ' mes ';
+            ageString = value + yearTextAux + '\n' + months + monthTextAux;
           }
           else if (value !== '' && value !== '0') {
-            edadString = value+' años';
+            yearTextAux = parseInt(value, 10) > 1 ? ' años' : ' año';
+            ageString = value + yearTextAux;
           }
-          else if (meses !== '' && meses !== '0') {
-            edadString = meses+' meses';
+          else if (months !== '' && months !== '0') {
+            monthTextAux = parseInt(months, 10) > 1 ? ' meses' : ' mes';
+            ageString = months + monthTextAux;
           }
           characteristic = {
             priority: '0',
             icon: icons.birthday_cake,
-            text: edadString,
+            text: ageString,
+            scale: 0.05
+          }
+          validator = 'characteristic';
+        }
+        break;
+      case 'month-age-pet' :
+        if (isNaN(value) && value !== '0') {
+          value = formValues['month-age-pet'];
+        }
+        else {
+          const year = formValues['age-pet'];
+          let ageString2 = ''
+          let yearTextAux = '';
+          let monthTextAux = '';
+          if (value !== '' && year !== '' && value !== '0' && year !== '0') {
+            yearTextAux = parseInt(year, 10) > 1 ? ' años ' : ' año ';
+            monthTextAux = parseInt(value, 10) > 1 ? ' meses ' : ' mes ';
+            ageString2 = year + yearTextAux + '\n' + value + monthTextAux;
+          }
+          else if (value !== '' && value !== '0') {
+            monthTextAux = parseInt(value, 10) > 1 ? ' meses' : ' mes';
+            ageString2 = value + monthTextAux;
+          }
+          else if (year !== '' && year !== '0') {
+            yearTextAux = parseInt(year, 10) > 1 ? ' años' : ' año';
+            ageString2 = year + yearTextAux;
+          }
+          characteristic = {
+            priority: '0',
+            icon: icons.birthday_cake,
+            text: ageString2,
             scale: 0.08
           }
           validator = 'characteristic';
         }
         break;
-      case 'meses-mascota' :
-        if (isNaN(value) && value !== '0') {
-          value = formValues['meses-mascota'];
-        }
-        else {
-          const años = formValues['años-mascota'];
-          let edadString2 = ''
-          if (value !== '' && años !== '' && value !== '0' && años !== '0') {
-            edadString2 = años+' años '+value+' meses';
-          }
-          else if (value !== '' && value !== '0') {
-            edadString2 = value+' meses';
-          }
-          else if (años !== '' && años !== '0') {
-            edadString2 = años+' años';
-          }
-          characteristic = {
-            priority: '0',
-            icon: icons.birthday_cake,
-            text: edadString2,
-            scale: 0.08
-          }
-          validator = 'characteristic';
-        }
-        break;
-      case 'sexo-mascota' :
+      case 'pet-gender' :
         characteristic = {
           priority: '1',
           icon: value === '1' ? icons.mars : icons.venus,
@@ -295,21 +308,24 @@ class Home extends Component<any, IHomeState> {
         }
         validator = 'characteristic';
         break;
-      case 'tamaño-mascota' :
+      case 'pet-size' :
+        size = 'Pequeño';
+        if( value === 'm' ) size = 'Mediano';
+        if( value !== 'm' &&  value !== 's' ) size = 'Grande';
         characteristic = {
           priority: '3',
           icon: icons.dog,
-          text: value === 's' ? 'Pequeño' : value === 'm' ? 'Mediano' : 'Grande',
+          text: size,
           scale:  value === 's' ? 0.04 : value === 'm' ? 0.06 : 0.08
         }
         validator = 'characteristic';
         break;
-      case 'esterilizado' :
+      case 'sterilized' :
         if(value) {
           characteristic = {
             priority: '4',
             icon: icons.band_aid,
-            text: 'Esterilizado',
+            text: 'sterilized',
             scale: 0.08
           }
           validator = 'characteristic';
@@ -334,7 +350,7 @@ class Home extends Component<any, IHomeState> {
           validator = 'deletedCharacteristic';
         }
         break;
-      case 'vacunas' :
+      case 'vaccines' :
         if(value) {
           characteristic = {
             priority: '6',
@@ -349,20 +365,20 @@ class Home extends Component<any, IHomeState> {
           validator = 'deletedCharacteristic';
         }
         break;
-      case 'telefono-contacto':
+      case 'contact-phone':
         if (value.length < 4) {
           value = '+56 ';
         }
         else if (isNaN(value.slice(4).trim())) {
-          value = formValues['telefono-contacto'];
+          value = formValues['contact-phone'];
         }
         break;
-      /*case 'nombre-contacto':
+      /*case 'contact-name':
         newTextBlock.fontSize = 'small';
         newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7};
         validator = 'textBlock';
         break;
-      case 'telefono-contacto':
+      case 'contact-phone':
         if (value.length < 4) {
           value = '+56 ';
         }
@@ -370,12 +386,12 @@ class Home extends Component<any, IHomeState> {
         newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7 + 30};
         validator = 'textBlock';
         break;
-        case 'email-contacto':
+        case 'contact-email':
           newTextBlock.fontSize = 'small';
           newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7 + 60};
           validator = 'textBlock';
           break;
-        case 'ciudad-contacto':
+        case 'contact-city':
           newTextBlock.fontSize = 'small';
           newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7 + 90};
           validator = 'textBlock';

@@ -7,7 +7,7 @@ export const canvasStyle = css`
   margin: 1rem;
   justify-content: center;
   & .konvajs-content {
-    background-color: #69F765;
+    background-color: #51947f;
     border: solid 1px lightgray;
   }
 `;
