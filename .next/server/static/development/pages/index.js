@@ -164,7 +164,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style */ "./components/LeftSideBar/ContactInformation/style.ts");
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\LeftSideBar\\ContactInformation\\index.tsx";
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/components/LeftSideBar/ContactInformation/index.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 /** @jsx jsx */
@@ -207,11 +207,11 @@ class ContactInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Co
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
       placeholder: "Nombre",
-      name: "nombre-contacto",
+      name: "contact-name",
       required: true,
-      value: formValues['nombre-contacto'],
+      value: formValues['contact-name'],
       onChange: e => {
-        onChange('nombre-contacto', e.currentTarget.value);
+        onChange('contact-name', e.currentTarget.value);
       },
       leftIcon: "person",
       __source: {
@@ -234,10 +234,10 @@ class ContactInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Co
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
       placeholder: "Tel\xE9fono",
-      name: "telefono-contacto",
-      value: formValues['telefono-contacto'],
+      name: "contact-phone",
+      value: formValues['contact-phone'],
       onChange: e => {
-        onChange('telefono-contacto', e.currentTarget.value);
+        onChange('contact-phone', e.currentTarget.value);
       },
       leftIcon: "mobile-phone",
       required: true,
@@ -263,9 +263,9 @@ class ContactInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Co
       name: "Email",
       type: "email",
       placeholder: "Email",
-      value: formValues['email-contacto'],
+      value: formValues['contact-email'],
       onChange: e => {
-        onChange('email-contacto', e.currentTarget.value);
+        onChange('contact-email', e.currentTarget.value);
       },
       leftIcon: "inbox",
       __source: {
@@ -288,10 +288,10 @@ class ContactInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Co
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
       placeholder: "Ciudad",
-      name: "ciudad-contacto",
-      value: formValues['ciudad-contacto'],
+      name: "contact-city",
+      value: formValues['contact-city'],
       onChange: e => {
-        onChange('ciudad-contacto', e.currentTarget.value);
+        onChange('contact-city', e.currentTarget.value);
       },
       leftIcon: "home",
       __source: {
@@ -344,12 +344,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style */ "./components/LeftSideBar/PetInformation/style.ts");
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\LeftSideBar\\PetInformation\\index.tsx";
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/components/LeftSideBar/PetInformation/index.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-/** @jsx jsx */
+/** @jsx jsx*/
 
 
 
@@ -359,9 +359,9 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
     super(...args);
 
     _defineProperty(this, "state", {
-      size: '',
-      caseOption: '',
-      sex: '',
+      size: 'm',
+      caseOption: '1',
+      sex: 'm',
       inputFileRef: Object(react__WEBPACK_IMPORTED_MODULE_2__["createRef"])(),
       imageFormat: 'cuadrada'
     });
@@ -374,7 +374,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       this.setState({
         size
       });
-      onChange('tamaño-mascota', size);
+      onChange('pet-size', size);
     });
 
     _defineProperty(this, "onCaseChanged", e => {
@@ -449,20 +449,20 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       inputFileRef,
       imageFormat
     } = this.state;
-    const añosTag = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Tag"], {
+    const yearTag = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Tag"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 96
       },
       __self: this
-    }, "A\xF1os");
-    const mesesTag = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Tag"], {
+    }, "a\xF1os");
+    const monthTag = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Tag"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 97
       },
       __self: this
-    }, "Meses");
+    }, "meses");
     return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Card"], {
       elevation: _blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Elevation"].ONE,
       css: _style__WEBPACK_IMPORTED_MODULE_3__["sidebarContainerStyle"],
@@ -484,7 +484,500 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
-      label: "Imagen *",
+      label: 'Nombre',
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 102
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
+      name: "nombre-mascota",
+      placeholder: "Nombre",
+      intent: "primary",
+      value: formValues['nombre-mascota'],
+      onChange: e => {
+        onChange('nombre-mascota', e.currentTarget.value);
+      },
+      required: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 103
+      },
+      __self: this
+    }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 115
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
+      label: "Situaci\xF3n*",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 116
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
+      name: "caso",
+      value: caseOption,
+      onChange: e => onChange('caso-mascota', caseOption),
+      checked: Boolean(caseOption),
+      required: true,
+      css: _style__WEBPACK_IMPORTED_MODULE_3__["fakeRadioGroupStyle"],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 117
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
+      onChange: this.onCaseChanged,
+      checked: caseOption === '1',
+      label: "En adopci\xF3n",
+      value: "1",
+      inline: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 125
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
+      onChange: this.onCaseChanged,
+      checked: caseOption === '2',
+      label: "Perdida",
+      value: "2",
+      inline: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 132
+      },
+      __self: this
+    }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 141
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
+      label: "Edad aproximada*",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 142
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+      style: {
+        display: 'flex',
+        width: '100%'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 143
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+      style: {
+        width: '50%',
+        margin: '2px'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 144
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
+      name: "edad-mascota",
+      value: formValues['age-pet'],
+      placeholder: "A\xF1os",
+      rightElement: yearTag,
+      onChange: e => {
+        onChange('age-pet', e.currentTarget.value);
+      },
+      max: 20,
+      min: 0,
+      required: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 145
+      },
+      __self: this
+    })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+      style: {
+        width: '50%',
+        margin: '2px'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 156
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
+      name: "edad-mascota",
+      value: formValues['month-age-pet'],
+      placeholder: "Meses",
+      rightElement: monthTag,
+      onChange: e => {
+        onChange('month-age-pet', e.currentTarget.value);
+      },
+      max: 11,
+      min: 0,
+      required: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 157
+      },
+      __self: this
+    }))))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 171
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
+      label: "Sexo*",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 172
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
+      name: "pet-gender",
+      value: formValues['pet-gender'],
+      onChange: e => onChange('pet-gender', Boolean(sex)),
+      checked: Boolean(formValues['pet-gender']),
+      required: true,
+      inline: true,
+      css: _style__WEBPACK_IMPORTED_MODULE_3__["fakeRadioGroupStyle"],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 173
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
+      onChange: e => onChange('pet-gender', '1'),
+      checked: formValues['pet-gender'] === '1',
+      label: "Macho",
+      value: "1",
+      inline: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 182
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
+      onChange: e => onChange('pet-gender', '2'),
+      checked: formValues['pet-gender'] === '2',
+      label: "Hembra",
+      value: "2",
+      inline: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 189
+      },
+      __self: this
+    }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 198
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
+      label: "Tama\xF1o*",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 199
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
+      name: "pet-size",
+      value: formValues["pet-size"],
+      onChange: e => onChange('pet-size', Boolean(size)),
+      checked: Boolean(formValues["pet-size"]),
+      required: true,
+      css: _style__WEBPACK_IMPORTED_MODULE_3__["fakeRadioGroupStyle"],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 200
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
+      onChange: e => onChange('pet-size', 's'),
+      checked: formValues["pet-size"] === 's',
+      label: "Peque\xF1o",
+      value: "s",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 208
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
+      onChange: e => onChange('pet-size', 'm'),
+      checked: formValues["pet-size"] === 'm',
+      label: "Mediano",
+      value: "m",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 214
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
+      onChange: e => onChange('pet-size', 'l'),
+      checked: formValues["pet-size"] === 'l',
+      label: "Grande",
+      value: "l",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 220
+      },
+      __self: this
+    }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 228
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Checkbox"], {
+      name: "Esterilizado",
+      label: "\xBFEst\xE1 esterilizado?",
+      checked: formValues.sterilized,
+      onChange: e => {
+        onChange('sterilized', !formValues.sterilized);
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 229
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Checkbox"], {
+      name: "chip",
+      label: "\xBFTiene chip?",
+      checked: formValues.chip,
+      onChange: e => {
+        onChange('chip', !formValues.chip);
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 237
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Checkbox"], {
+      name: "Vacunas",
+      label: "\xBFTiene las vacunas al d\xEDa?",
+      checked: formValues.vaccines,
+      onChange: e => {
+        onChange('vaccines', !formValues.vaccines);
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 245
+      },
+      __self: this
+    })));
+  }
+
+}
+
+/***/ }),
+
+/***/ "./components/LeftSideBar/PetInformation/style.ts":
+/*!********************************************************!*\
+  !*** ./components/LeftSideBar/PetInformation/style.ts ***!
+  \********************************************************/
+/*! exports provided: sidebarContainerStyle, fakeRadioGroupStyle, fileUpload, containerStyle, ageInputStyle */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sidebarContainerStyle", function() { return sidebarContainerStyle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fakeRadioGroupStyle", function() { return fakeRadioGroupStyle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fileUpload", function() { return fileUpload; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "containerStyle", function() { return containerStyle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ageInputStyle", function() { return ageInputStyle; });
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @emotion/core */ "@emotion/core");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_core__WEBPACK_IMPORTED_MODULE_0__);
+
+const sidebarContainerStyle = _emotion_core__WEBPACK_IMPORTED_MODULE_0__["css"]`
+  margin: 1rem;
+  min-width: 300px;
+  width: 300px;
+`;
+const fakeRadioGroupStyle = _emotion_core__WEBPACK_IMPORTED_MODULE_0__["css"]`
+  opacity: 0;
+  height: 1;
+  position: absolute;
+`;
+const fileUpload = _emotion_core__WEBPACK_IMPORTED_MODULE_0__["css"]`
+  display: none;
+`;
+const containerStyle = _emotion_core__WEBPACK_IMPORTED_MODULE_0__["css"]`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+`;
+const ageInputStyle = _emotion_core__WEBPACK_IMPORTED_MODULE_0__["css"]`
+  width:
+`;
+
+/***/ }),
+
+/***/ "./components/LeftSideBar/PhotoInformation/index.tsx":
+/*!***********************************************************!*\
+  !*** ./components/LeftSideBar/PhotoInformation/index.tsx ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return PhotoInformation; });
+/* harmony import */ var _blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @blueprintjs/core */ "@blueprintjs/core");
+/* harmony import */ var _blueprintjs_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/core */ "@emotion/core");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_core__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style */ "./components/LeftSideBar/PhotoInformation/style.ts");
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/components/LeftSideBar/PhotoInformation/index.tsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+/** @jsx jsx*/
+
+
+
+
+class PhotoInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
+  constructor(...args) {
+    super(...args);
+
+    _defineProperty(this, "state", {
+      size: 'm',
+      caseOption: '1',
+      sex: 'm',
+      inputFileRef: Object(react__WEBPACK_IMPORTED_MODULE_2__["createRef"])(),
+      imageFormat: 'cuadrada'
+    });
+
+    _defineProperty(this, "onSizeChanged", e => {
+      const {
+        onChange
+      } = this.props;
+      const size = e.currentTarget.value;
+      this.setState({
+        size
+      });
+      onChange('pet-size', size);
+    });
+
+    _defineProperty(this, "onCaseChanged", e => {
+      const {
+        onChange
+      } = this.props;
+      const caseOption = e.currentTarget.value;
+      this.setState({
+        caseOption
+      });
+      onChange('caso-mascota', caseOption);
+    });
+
+    _defineProperty(this, "onSexChanged", e => {
+      const {
+        onChange
+      } = this.props;
+      const sex = e.currentTarget.value;
+      this.setState({
+        sex
+      });
+      onChange('caso-mascota', sex);
+    });
+
+    _defineProperty(this, "openFile", () => {
+      this.state.inputFileRef.current.click();
+    });
+
+    _defineProperty(this, "loadImageOntoReader", event => {
+      const img = new Image();
+      img.src = event.target.result;
+      img.addEventListener('load', () => {
+        this.props.onImageUploaded(img);
+      });
+    });
+
+    _defineProperty(this, "onFileUploaded", e => {
+      const reader = new FileReader();
+      reader.onload = this.loadImageOntoReader;
+      const file = e.currentTarget.files[0];
+
+      if (!file) {
+        console.error('!file', file, e);
+      }
+
+      reader.readAsDataURL(e.currentTarget.files[0]);
+    });
+
+    _defineProperty(this, "onChangeDimensions", e => {
+      const {
+        changeDimensions
+      } = this.props;
+      const newImageFormat = e.currentTarget.value;
+      this.setState({
+        imageFormat: newImageFormat
+      });
+      changeDimensions(newImageFormat);
+    });
+  }
+
+  render() {
+    const {
+      onChange,
+      formValues,
+      addText,
+      changeDimensions
+    } = this.props;
+    const {
+      size,
+      caseOption,
+      sex,
+      inputFileRef,
+      imageFormat
+    } = this.state;
+    const yearTag = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Tag"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 96
+      },
+      __self: this
+    }, "a\xF1os");
+    const monthTag = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Tag"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 97
+      },
+      __self: this
+    }, "meses");
+    return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Card"], {
+      elevation: _blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Elevation"].ONE,
+      css: _style__WEBPACK_IMPORTED_MODULE_3__["sidebarContainerStyle"],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 99
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["H4"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 100
+      },
+      __self: this
+    }, "Fotograf\xEDa"), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 101
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
+      label: "Imagen*",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 102
@@ -517,7 +1010,7 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["RadioGroup"], {
-      label: "Dimensiones de imagen *",
+      label: "Formato*",
       onChange: this.onChangeDimensions,
       selectedValue: imageFormat,
       __source: {
@@ -549,306 +1042,17 @@ class PetInformation extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Compon
         lineNumber: 124
       },
       __self: this
-    }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 127
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
-      label: 'Nombre',
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 128
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
-      name: "nombre-mascota",
-      placeholder: "Nombre",
-      intent: "primary",
-      value: formValues['nombre-mascota'],
-      onChange: e => {
-        onChange('nombre-mascota', e.currentTarget.value);
-      },
-      required: true,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 129
-      },
-      __self: this
-    }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 141
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
-      label: "Caso *",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 142
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
-      name: "caso",
-      value: caseOption,
-      onChange: e => onChange('caso-mascota', caseOption),
-      checked: Boolean(caseOption),
-      required: true,
-      css: _style__WEBPACK_IMPORTED_MODULE_3__["fakeRadioGroupStyle"],
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 143
-      },
-      __self: this
-    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
-      onChange: this.onCaseChanged,
-      checked: caseOption === '1',
-      label: "Mascota en adopci\xF3n",
-      value: "1",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 151
-      },
-      __self: this
-    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
-      onChange: this.onCaseChanged,
-      checked: caseOption === '2',
-      label: "Mascota perdida",
-      value: "2",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 157
-      },
-      __self: this
-    }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 165
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
-      label: "Edad aproximada *",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 166
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
-      style: {
-        display: 'flex',
-        width: '100%'
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 167
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
-      style: {
-        width: '50%',
-        margin: '2px'
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 168
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
-      name: "edad-mascota",
-      value: formValues['años-mascota'],
-      placeholder: "A\xF1os",
-      rightElement: añosTag,
-      onChange: e => {
-        onChange('años-mascota', e.currentTarget.value);
-      },
-      max: 20,
-      min: 0,
-      required: true,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 169
-      },
-      __self: this
-    })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
-      style: {
-        width: '50%',
-        margin: '2px'
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 180
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["InputGroup"], {
-      name: "edad-mascota",
-      value: formValues['meses-mascota'],
-      placeholder: "Meses",
-      rightElement: mesesTag,
-      onChange: e => {
-        onChange('meses-mascota', e.currentTarget.value);
-      },
-      max: 11,
-      min: 0,
-      required: true,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 181
-      },
-      __self: this
-    }))))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 195
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
-      label: "Sexo *",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 196
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
-      name: "sexo-mascota",
-      value: formValues['sexo-mascota'],
-      onChange: e => onChange('sexo-mascota', Boolean(sex)),
-      checked: Boolean(formValues['sexo-mascota']),
-      required: true,
-      css: _style__WEBPACK_IMPORTED_MODULE_3__["fakeRadioGroupStyle"],
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 197
-      },
-      __self: this
-    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
-      onChange: e => onChange('sexo-mascota', '1'),
-      checked: formValues['sexo-mascota'] === '1',
-      label: "Macho",
-      value: "1",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 205
-      },
-      __self: this
-    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
-      onChange: e => onChange('sexo-mascota', '2'),
-      checked: formValues['sexo-mascota'] === '2',
-      label: "Hembra",
-      value: "2",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 211
-      },
-      __self: this
-    }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 219
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["FormGroup"], {
-      label: "Tama\xF1o *",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 220
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
-      name: "tama\xF1o-mascota",
-      value: formValues["tamaño-mascota"],
-      onChange: e => onChange('tamaño-mascota', Boolean(size)),
-      checked: Boolean(formValues["tamaño-mascota"]),
-      required: true,
-      css: _style__WEBPACK_IMPORTED_MODULE_3__["fakeRadioGroupStyle"],
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 221
-      },
-      __self: this
-    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
-      onChange: e => onChange('tamaño-mascota', 's'),
-      checked: formValues["tamaño-mascota"] === 's',
-      label: "Peque\xF1o",
-      value: "s",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 229
-      },
-      __self: this
-    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
-      onChange: e => onChange('tamaño-mascota', 'm'),
-      checked: formValues["tamaño-mascota"] === 'm',
-      label: "Mediano",
-      value: "m",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 235
-      },
-      __self: this
-    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Radio"], {
-      onChange: e => onChange('tamaño-mascota', 'l'),
-      checked: formValues["tamaño-mascota"] === 'l',
-      label: "Grande",
-      value: "l",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 241
-      },
-      __self: this
-    }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 249
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Checkbox"], {
-      name: "esterilizado",
-      label: "\xBFEst\xE1 esterilizado?",
-      checked: formValues.esterilizado,
-      onChange: e => {
-        onChange('esterilizado', !formValues.esterilizado);
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 250
-      },
-      __self: this
-    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Checkbox"], {
-      name: "chip",
-      label: "\xBFTiene chip?",
-      checked: formValues.chip,
-      onChange: e => {
-        onChange('chip', !formValues.chip);
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 258
-      },
-      __self: this
-    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_0__["Checkbox"], {
-      name: "vacunas",
-      label: "\xBFTiene las vacunas al d\xEDa?",
-      checked: formValues.vacunas,
-      onChange: e => {
-        onChange('vacunas', !formValues.vacunas);
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 266
-      },
-      __self: this
-    })));
+    }))));
   }
 
 }
 
 /***/ }),
 
-/***/ "./components/LeftSideBar/PetInformation/style.ts":
-/*!********************************************************!*\
-  !*** ./components/LeftSideBar/PetInformation/style.ts ***!
-  \********************************************************/
+/***/ "./components/LeftSideBar/PhotoInformation/style.ts":
+/*!**********************************************************!*\
+  !*** ./components/LeftSideBar/PhotoInformation/style.ts ***!
+  \**********************************************************/
 /*! exports provided: sidebarContainerStyle, fakeRadioGroupStyle, fileUpload, containerStyle, ageInputStyle */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -903,7 +1107,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style */ "./components/LeftSideBar/SubmitButton/style.ts");
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\LeftSideBar\\SubmitButton\\index.tsx";
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/components/LeftSideBar/SubmitButton/index.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 /** @jsx jsx */
@@ -975,16 +1179,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/core */ "@emotion/core");
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_core__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _ContactInformation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ContactInformation */ "./components/LeftSideBar/ContactInformation/index.tsx");
-/* harmony import */ var _PetInformation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PetInformation */ "./components/LeftSideBar/PetInformation/index.tsx");
-/* harmony import */ var _SubmitButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SubmitButton */ "./components/LeftSideBar/SubmitButton/index.tsx");
-/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles */ "./components/LeftSideBar/styles.ts");
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\LeftSideBar\\index.tsx";
+/* harmony import */ var _PhotoInformation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PhotoInformation */ "./components/LeftSideBar/PhotoInformation/index.tsx");
+/* harmony import */ var _PetInformation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./PetInformation */ "./components/LeftSideBar/PetInformation/index.tsx");
+/* harmony import */ var _SubmitButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./SubmitButton */ "./components/LeftSideBar/SubmitButton/index.tsx");
+/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles */ "./components/LeftSideBar/styles.ts");
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/components/LeftSideBar/index.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /** @jsx jsx */
+
 
 
 
@@ -1074,7 +1280,7 @@ class LeftSidebar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         body: formData,
         method: 'POST'
       }).then(r => r.json());
-        ReactGA.event({
+       ReactGA.event({
         action: 'adoption-created',
         category: 'User',
         value: 1,
@@ -1105,14 +1311,20 @@ class LeftSidebar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("form", {
       onSubmit: this.onSubmit,
       onChange: this.onFormChange,
-      css: _styles__WEBPACK_IMPORTED_MODULE_5__["containerStyle"],
+      css: _styles__WEBPACK_IMPORTED_MODULE_6__["containerStyle"],
       method: "post",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 134
+        lineNumber: 135
       },
       __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_PetInformation__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 136
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_PhotoInformation__WEBPACK_IMPORTED_MODULE_3__["default"], {
       onChange: onInputChanged,
       formValues: formValues,
       addText: addTextBlockWithData,
@@ -1120,27 +1332,38 @@ class LeftSidebar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       changeDimensions: changeDimensions,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 135
+        lineNumber: 137
       },
       __self: this
-    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 136
-      },
-      __self: this
-    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_ContactInformation__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_ContactInformation__WEBPACK_IMPORTED_MODULE_2__["default"], {
       onChange: onInputChanged,
       formValues: formValues,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 137
+        lineNumber: 138
       },
       __self: this
-    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_SubmitButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 138
+        lineNumber: 140
+      },
+      __self: this
+    }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_PetInformation__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      onChange: onInputChanged,
+      formValues: formValues,
+      addText: addTextBlockWithData,
+      onImageUploaded: onImageUploaded,
+      changeDimensions: changeDimensions,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 141
+      },
+      __self: this
+    }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_SubmitButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 142
       },
       __self: this
     })));
@@ -1187,7 +1410,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @emotion/core */ "@emotion/core");
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_emotion_core__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles */ "./components/Nav/styles.ts");
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\Nav\\index.tsx";
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/components/Nav/index.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -1282,7 +1505,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-konva */ "react-konva");
 /* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_konva__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\canvas\\BackgroundImage\\index.tsx";
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/components/canvas/BackgroundImage/index.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -1398,7 +1621,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_core__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-konva */ "react-konva");
 /* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_konva__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\canvas\\CharacteristicsLayer\\index.tsx";
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/components/canvas/CharacteristicsLayer/index.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -1486,10 +1709,11 @@ class CharacteristicsLayer extends react__WEBPACK_IMPORTED_MODULE_0__["Component
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Path"], {
         data: characteristic.icon.path,
-        fill: 'red',
+        fill: 'white',
         scaleX: characteristic.scale,
         scaleY: characteristic.scale,
         x: xIcon,
+        y: 10,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 70
@@ -1499,14 +1723,14 @@ class CharacteristicsLayer extends react__WEBPACK_IMPORTED_MODULE_0__["Component
         y: layerHeigth - 12,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 77
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Tag"], {
         fill: color,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 78
         },
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Text"], {
@@ -1517,7 +1741,7 @@ class CharacteristicsLayer extends react__WEBPACK_IMPORTED_MODULE_0__["Component
         align: 'center',
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78
+          lineNumber: 79
         },
         __self: this
       })));
@@ -1545,7 +1769,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_core__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-konva */ "react-konva");
 /* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_konva__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\canvas\\ContactLayer\\index.tsx";
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/components/canvas/ContactLayer/index.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -1607,7 +1831,7 @@ class ContactLayer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 33
       },
       __self: this
-    })), formData['nombre-contacto'] !== '' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Label"], {
+    })), formData['contact-name'] !== '' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Label"], {
       y: 20,
       __source: {
         fileName: _jsxFileName,
@@ -1623,14 +1847,14 @@ class ContactLayer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Text"], {
       fill: textColor,
-      text: formData['nombre-contacto'],
+      text: formData['contact-name'],
       fontSize: 11,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 44
       },
       __self: this
-    })), formData['telefono-contacto'] !== '+56 ' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Label"], {
+    })), formData['contact-phone'] !== '+56 ' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Label"], {
       y: 40,
       __source: {
         fileName: _jsxFileName,
@@ -1646,14 +1870,14 @@ class ContactLayer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Text"], {
       fill: textColor,
-      text: formData['telefono-contacto'],
+      text: formData['contact-phone'],
       fontSize: 11,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 53
       },
       __self: this
-    })), formData['email-contacto'] !== '' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Label"], {
+    })), formData['contact-email'] !== '' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Label"], {
       y: 60,
       __source: {
         fileName: _jsxFileName,
@@ -1669,14 +1893,14 @@ class ContactLayer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Text"], {
       fill: textColor,
-      text: formData['email-contacto'],
+      text: formData['contact-email'],
       fontSize: 11,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 62
       },
       __self: this
-    })), formData['ciudad-contacto'] !== '' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Label"], {
+    })), formData['contact-city'] !== '' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Label"], {
       y: 80,
       __source: {
         fileName: _jsxFileName,
@@ -1692,7 +1916,7 @@ class ContactLayer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_2__["Text"], {
       fill: textColor,
-      text: formData['ciudad-contacto'],
+      text: formData['contact-city'],
       fontSize: 11,
       __source: {
         fileName: _jsxFileName,
@@ -1728,7 +1952,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _BackgroundImage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./BackgroundImage */ "./components/canvas/BackgroundImage/index.tsx");
 /* harmony import */ var _CharacteristicsLayer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./CharacteristicsLayer */ "./components/canvas/CharacteristicsLayer/index.tsx");
 /* harmony import */ var _ContactLayer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ContactLayer */ "./components/canvas/ContactLayer/index.tsx");
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\canvas\\index.tsx";
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/components/canvas/index.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -2020,7 +2244,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Nav__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Nav */ "./components/Nav/index.tsx");
 /* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles */ "./pages/styles.ts");
 /* harmony import */ var _assets_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/icons */ "./assets/icons.ts");
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\pages\\index.tsx";
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/pages/index.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -2052,28 +2276,28 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       formValues: {
         chip: false,
         'edad-mascota': '',
-        'email-contacto': '',
-        esterilizado: false,
+        'contact-email': '',
+        sterilized: false,
         'informacion-extra-mascota': '',
-        'nombre-contacto': '',
+        'contact-name': '',
         'nombre-mascota': '',
-        'tamaño-mascota': '',
-        'telefono-contacto': '+56 ',
-        vacunas: false,
+        'pet-size': '',
+        'contact-phone': '+56 ',
+        vaccines: false,
         'whatsapp-contacto': '',
         'caso-mascota': '',
-        'ciudad-contacto': '',
-        'sexo-mascota': '',
-        'años-mascota': '',
-        'meses-mascota': ''
+        'contact-city': '',
+        'pet-gender': '',
+        'age-pet': '',
+        'month-age-pet': ''
       },
       characteristics: {},
       canvasHeight: 540,
       canvasWidth: 540,
       imageFormat: 'cuadrada',
-      color: '#4E9818',
-      secundaryColor: '#0A6507',
-      textColor: '#F3DE58'
+      color: '#62bfa2',
+      secundaryColor: '#51947f',
+      textColor: '#ffffff'
     });
 
     _defineProperty(this, "stageRef", Object(react__WEBPACK_IMPORTED_MODULE_0__["createRef"])());
@@ -2173,6 +2397,7 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         textBlocks
       } = canvasTexts;
       const actualCharacteristics = characteristics;
+      let size = 'Pequeño';
       let newTextBlock = {
         id: key,
         color: 'black',
@@ -2213,25 +2438,63 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           validator = 'textBlock';
           break;
 
-        case 'años-mascota':
+        case 'age-pet':
           if (isNaN(value) && value !== '0') {
-            value = formValues['años-mascota'];
+            value = formValues['age-pet'];
           } else {
-            const meses = formValues['meses-mascota'];
-            let edadString = '';
+            const months = formValues['month-age-pet'];
+            let ageString = '';
+            let yearTextAux = '';
+            let monthTextAux = '';
 
-            if (value !== '' && meses !== '' && value !== '0' && meses !== '0') {
-              edadString = value + ' años ' + meses + ' meses';
+            if (value !== '' && months !== '' && value !== '0' && months !== '0') {
+              yearTextAux = parseInt(value, 10) > 1 ? ' años ' : ' año ';
+              monthTextAux = parseInt(months, 10) > 1 ? ' meses ' : ' mes ';
+              ageString = value + yearTextAux + '\n' + months + monthTextAux;
             } else if (value !== '' && value !== '0') {
-              edadString = value + ' años';
-            } else if (meses !== '' && meses !== '0') {
-              edadString = meses + ' meses';
+              yearTextAux = parseInt(value, 10) > 1 ? ' años' : ' año';
+              ageString = value + yearTextAux;
+            } else if (months !== '' && months !== '0') {
+              monthTextAux = parseInt(months, 10) > 1 ? ' meses' : ' mes';
+              ageString = months + monthTextAux;
             }
 
             characteristic = {
               priority: '0',
               icon: _assets_icons__WEBPACK_IMPORTED_MODULE_6__["birthday_cake"],
-              text: edadString,
+              text: ageString,
+              scale: 0.05
+            };
+            validator = 'characteristic';
+          }
+
+          break;
+
+        case 'month-age-pet':
+          if (isNaN(value) && value !== '0') {
+            value = formValues['month-age-pet'];
+          } else {
+            const year = formValues['age-pet'];
+            let ageString2 = '';
+            let yearTextAux = '';
+            let monthTextAux = '';
+
+            if (value !== '' && year !== '' && value !== '0' && year !== '0') {
+              yearTextAux = parseInt(year, 10) > 1 ? ' años ' : ' año ';
+              monthTextAux = parseInt(value, 10) > 1 ? ' meses ' : ' mes ';
+              ageString2 = year + yearTextAux + '\n' + value + monthTextAux;
+            } else if (value !== '' && value !== '0') {
+              monthTextAux = parseInt(value, 10) > 1 ? ' meses' : ' mes';
+              ageString2 = value + monthTextAux;
+            } else if (year !== '' && year !== '0') {
+              yearTextAux = parseInt(year, 10) > 1 ? ' años' : ' año';
+              ageString2 = year + yearTextAux;
+            }
+
+            characteristic = {
+              priority: '0',
+              icon: _assets_icons__WEBPACK_IMPORTED_MODULE_6__["birthday_cake"],
+              text: ageString2,
               scale: 0.08
             };
             validator = 'characteristic';
@@ -2239,33 +2502,7 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
           break;
 
-        case 'meses-mascota':
-          if (isNaN(value) && value !== '0') {
-            value = formValues['meses-mascota'];
-          } else {
-            const años = formValues['años-mascota'];
-            let edadString2 = '';
-
-            if (value !== '' && años !== '' && value !== '0' && años !== '0') {
-              edadString2 = años + ' años ' + value + ' meses';
-            } else if (value !== '' && value !== '0') {
-              edadString2 = value + ' meses';
-            } else if (años !== '' && años !== '0') {
-              edadString2 = años + ' años';
-            }
-
-            characteristic = {
-              priority: '0',
-              icon: _assets_icons__WEBPACK_IMPORTED_MODULE_6__["birthday_cake"],
-              text: edadString2,
-              scale: 0.08
-            };
-            validator = 'characteristic';
-          }
-
-          break;
-
-        case 'sexo-mascota':
+        case 'pet-gender':
           characteristic = {
             priority: '1',
             icon: value === '1' ? _assets_icons__WEBPACK_IMPORTED_MODULE_6__["mars"] : _assets_icons__WEBPACK_IMPORTED_MODULE_6__["venus"],
@@ -2275,22 +2512,25 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           validator = 'characteristic';
           break;
 
-        case 'tamaño-mascota':
+        case 'pet-size':
+          size = 'Pequeño';
+          if (value === 'm') size = 'Mediano';
+          if (value !== 'm' && value !== 's') size = 'Grande';
           characteristic = {
             priority: '3',
             icon: _assets_icons__WEBPACK_IMPORTED_MODULE_6__["dog"],
-            text: value === 's' ? 'Pequeño' : value === 'm' ? 'Mediano' : 'Grande',
+            text: size,
             scale: value === 's' ? 0.04 : value === 'm' ? 0.06 : 0.08
           };
           validator = 'characteristic';
           break;
 
-        case 'esterilizado':
+        case 'sterilized':
           if (value) {
             characteristic = {
               priority: '4',
               icon: _assets_icons__WEBPACK_IMPORTED_MODULE_6__["band_aid"],
-              text: 'Esterilizado',
+              text: 'sterilized',
               scale: 0.08
             };
             validator = 'characteristic';
@@ -2317,7 +2557,7 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
           break;
 
-        case 'vacunas':
+        case 'vaccines':
           if (value) {
             characteristic = {
               priority: '6',
@@ -2333,21 +2573,21 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
           break;
 
-        case 'telefono-contacto':
+        case 'contact-phone':
           if (value.length < 4) {
             value = '+56 ';
           } else if (isNaN(value.slice(4).trim())) {
-            value = formValues['telefono-contacto'];
+            value = formValues['contact-phone'];
           }
 
           break;
 
-        /*case 'nombre-contacto':
+        /*case 'contact-name':
           newTextBlock.fontSize = 'small';
           newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7};
           validator = 'textBlock';
           break;
-        case 'telefono-contacto':
+        case 'contact-phone':
           if (value.length < 4) {
             value = '+56 ';
           }
@@ -2355,12 +2595,12 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7 + 30};
           validator = 'textBlock';
           break;
-          case 'email-contacto':
+          case 'contact-email':
             newTextBlock.fontSize = 'small';
             newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7 + 60};
             validator = 'textBlock';
             break;
-          case 'ciudad-contacto':
+          case 'contact-city':
             newTextBlock.fontSize = 'small';
             newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7 + 90};
             validator = 'textBlock';
@@ -2465,13 +2705,13 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       css: _styles__WEBPACK_IMPORTED_MODULE_5__["pageStyle"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 478
+        lineNumber: 494
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_components_Nav__WEBPACK_IMPORTED_MODULE_4__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 479
+        lineNumber: 495
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])("section", {
@@ -2479,7 +2719,7 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       css: _styles__WEBPACK_IMPORTED_MODULE_5__["containerStyle"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 480
+        lineNumber: 496
       },
       __self: this
     }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_components_LeftSideBar__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -2495,7 +2735,7 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       changeDimensions: this.changeDimensions,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 481
+        lineNumber: 497
       },
       __self: this
     }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["jsx"])(_components_canvas__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2516,7 +2756,7 @@ class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       textColor: textColor,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 493
+        lineNumber: 509
       },
       __self: this
     })));
@@ -2567,7 +2807,7 @@ const pageStyle = _emotion_core__WEBPACK_IMPORTED_MODULE_0__["css"]`
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Lucas\Documents\quiltros\pages\index.tsx */"./pages/index.tsx");
+module.exports = __webpack_require__(/*! /Users/alma/Documents/react/quiltro/pages/index.tsx */"./pages/index.tsx");
 
 
 /***/ }),

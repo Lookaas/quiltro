@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\index.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
 
 /***/ "./assets/icons.ts":
 /*!*************************!*\
@@ -79,7 +79,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\LeftSideBar\\ContactInformation\\index.tsx";
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/components/LeftSideBar/ContactInformation/index.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 
 /** @jsx jsx */
@@ -134,11 +134,11 @@ function (_React$Component) {
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_5__["InputGroup"], {
         placeholder: "Nombre",
-        name: "nombre-contacto",
+        name: "contact-name",
         required: true,
-        value: formValues['nombre-contacto'],
+        value: formValues['contact-name'],
         onChange: function onChange(e) {
-          _onChange('nombre-contacto', e.currentTarget.value);
+          _onChange('contact-name', e.currentTarget.value);
         },
         leftIcon: "person",
         __source: {
@@ -161,10 +161,10 @@ function (_React$Component) {
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_5__["InputGroup"], {
         placeholder: "Tel\xE9fono",
-        name: "telefono-contacto",
-        value: formValues['telefono-contacto'],
+        name: "contact-phone",
+        value: formValues['contact-phone'],
         onChange: function onChange(e) {
-          _onChange('telefono-contacto', e.currentTarget.value);
+          _onChange('contact-phone', e.currentTarget.value);
         },
         leftIcon: "mobile-phone",
         required: true,
@@ -190,9 +190,9 @@ function (_React$Component) {
         name: "Email",
         type: "email",
         placeholder: "Email",
-        value: formValues['email-contacto'],
+        value: formValues['contact-email'],
         onChange: function onChange(e) {
-          _onChange('email-contacto', e.currentTarget.value);
+          _onChange('contact-email', e.currentTarget.value);
         },
         leftIcon: "inbox",
         __source: {
@@ -215,10 +215,10 @@ function (_React$Component) {
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_5__["InputGroup"], {
         placeholder: "Ciudad",
-        name: "ciudad-contacto",
-        value: formValues['ciudad-contacto'],
+        name: "contact-city",
+        value: formValues['contact-city'],
         onChange: function onChange(e) {
-          _onChange('ciudad-contacto', e.currentTarget.value);
+          _onChange('contact-city', e.currentTarget.value);
         },
         leftIcon: "home",
         __source: {
@@ -295,10 +295,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\LeftSideBar\\PetInformation\\index.tsx";
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/components/LeftSideBar/PetInformation/index.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement;
 
-/** @jsx jsx */
+/** @jsx jsx*/
 
 
 
@@ -323,9 +323,9 @@ function (_React$Component) {
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(PetInformation)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "state", {
-      size: '',
-      caseOption: '',
-      sex: '',
+      size: 'm',
+      caseOption: '1',
+      sex: 'm',
       inputFileRef: Object(react__WEBPACK_IMPORTED_MODULE_9__["createRef"])(),
       imageFormat: 'cuadrada'
     });
@@ -338,7 +338,7 @@ function (_React$Component) {
         size: size
       });
 
-      onChange('tamaño-mascota', size);
+      onChange('pet-size', size);
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "onCaseChanged", function (e) {
@@ -415,20 +415,20 @@ function (_React$Component) {
           sex = _this$state.sex,
           inputFileRef = _this$state.inputFileRef,
           imageFormat = _this$state.imageFormat;
-      var añosTag = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Tag"], {
+      var yearTag = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Tag"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 96
         },
         __self: this
-      }, "A\xF1os");
-      var mesesTag = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Tag"], {
+      }, "a\xF1os");
+      var monthTag = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Tag"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 97
         },
         __self: this
-      }, "Meses");
+      }, "meses");
       return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Card"], {
         elevation: _blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Elevation"].ONE,
         css: _style__WEBPACK_IMPORTED_MODULE_10__["sidebarContainerStyle"],
@@ -450,7 +450,582 @@ function (_React$Component) {
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
-        label: "Imagen *",
+        label: 'Nombre',
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 102
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["InputGroup"], {
+        name: "nombre-mascota",
+        placeholder: "Nombre",
+        intent: "primary",
+        value: formValues['nombre-mascota'],
+        onChange: function onChange(e) {
+          _onChange('nombre-mascota', e.currentTarget.value);
+        },
+        required: true,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 103
+        },
+        __self: this
+      }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 115
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
+        label: "Situaci\xF3n*",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 116
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
+        name: "caso",
+        value: caseOption,
+        onChange: function onChange(e) {
+          return _onChange('caso-mascota', caseOption);
+        },
+        checked: Boolean(caseOption),
+        required: true,
+        css: _style__WEBPACK_IMPORTED_MODULE_10__["fakeRadioGroupStyle"],
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 117
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
+        onChange: this.onCaseChanged,
+        checked: caseOption === '1',
+        label: "En adopci\xF3n",
+        value: "1",
+        inline: true,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 125
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
+        onChange: this.onCaseChanged,
+        checked: caseOption === '2',
+        label: "Perdida",
+        value: "2",
+        inline: true,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 132
+        },
+        __self: this
+      }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 141
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
+        label: "Edad aproximada*",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 142
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
+        style: {
+          display: 'flex',
+          width: '100%'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 143
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
+        style: {
+          width: '50%',
+          margin: '2px'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 144
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["InputGroup"], {
+        name: "edad-mascota",
+        value: formValues['age-pet'],
+        placeholder: "A\xF1os",
+        rightElement: yearTag,
+        onChange: function onChange(e) {
+          _onChange('age-pet', e.currentTarget.value);
+        },
+        max: 20,
+        min: 0,
+        required: true,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 145
+        },
+        __self: this
+      })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
+        style: {
+          width: '50%',
+          margin: '2px'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 156
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["InputGroup"], {
+        name: "edad-mascota",
+        value: formValues['month-age-pet'],
+        placeholder: "Meses",
+        rightElement: monthTag,
+        onChange: function onChange(e) {
+          _onChange('month-age-pet', e.currentTarget.value);
+        },
+        max: 11,
+        min: 0,
+        required: true,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 157
+        },
+        __self: this
+      }))))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 171
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
+        label: "Sexo*",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 172
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
+        name: "pet-gender",
+        value: formValues['pet-gender'],
+        onChange: function onChange(e) {
+          return _onChange('pet-gender', Boolean(sex));
+        },
+        checked: Boolean(formValues['pet-gender']),
+        required: true,
+        inline: true,
+        css: _style__WEBPACK_IMPORTED_MODULE_10__["fakeRadioGroupStyle"],
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 173
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
+        onChange: function onChange(e) {
+          return _onChange('pet-gender', '1');
+        },
+        checked: formValues['pet-gender'] === '1',
+        label: "Macho",
+        value: "1",
+        inline: true,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 182
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
+        onChange: function onChange(e) {
+          return _onChange('pet-gender', '2');
+        },
+        checked: formValues['pet-gender'] === '2',
+        label: "Hembra",
+        value: "2",
+        inline: true,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 189
+        },
+        __self: this
+      }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 198
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
+        label: "Tama\xF1o*",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 199
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
+        name: "pet-size",
+        value: formValues["pet-size"],
+        onChange: function onChange(e) {
+          return _onChange('pet-size', Boolean(size));
+        },
+        checked: Boolean(formValues["pet-size"]),
+        required: true,
+        css: _style__WEBPACK_IMPORTED_MODULE_10__["fakeRadioGroupStyle"],
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 200
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
+        onChange: function onChange(e) {
+          return _onChange('pet-size', 's');
+        },
+        checked: formValues["pet-size"] === 's',
+        label: "Peque\xF1o",
+        value: "s",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 208
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
+        onChange: function onChange(e) {
+          return _onChange('pet-size', 'm');
+        },
+        checked: formValues["pet-size"] === 'm',
+        label: "Mediano",
+        value: "m",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 214
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
+        onChange: function onChange(e) {
+          return _onChange('pet-size', 'l');
+        },
+        checked: formValues["pet-size"] === 'l',
+        label: "Grande",
+        value: "l",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 220
+        },
+        __self: this
+      }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 228
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Checkbox"], {
+        name: "Esterilizado",
+        label: "\xBFEst\xE1 esterilizado?",
+        checked: formValues.sterilized,
+        onChange: function onChange(e) {
+          _onChange('sterilized', !formValues.sterilized);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 229
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Checkbox"], {
+        name: "chip",
+        label: "\xBFTiene chip?",
+        checked: formValues.chip,
+        onChange: function onChange(e) {
+          _onChange('chip', !formValues.chip);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 237
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Checkbox"], {
+        name: "Vacunas",
+        label: "\xBFTiene las vacunas al d\xEDa?",
+        checked: formValues.vaccines,
+        onChange: function onChange(e) {
+          _onChange('vaccines', !formValues.vaccines);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 245
+        },
+        __self: this
+      })));
+    }
+  }]);
+
+  return PetInformation;
+}(react__WEBPACK_IMPORTED_MODULE_9___default.a.Component);
+
+
+
+/***/ }),
+
+/***/ "./components/LeftSideBar/PetInformation/style.ts":
+/*!********************************************************!*\
+  !*** ./components/LeftSideBar/PetInformation/style.ts ***!
+  \********************************************************/
+/*! exports provided: sidebarContainerStyle, fakeRadioGroupStyle, fileUpload, containerStyle, ageInputStyle */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sidebarContainerStyle", function() { return sidebarContainerStyle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fakeRadioGroupStyle", function() { return fakeRadioGroupStyle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fileUpload", function() { return fileUpload; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "containerStyle", function() { return containerStyle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ageInputStyle", function() { return ageInputStyle; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
+
+
+function _templateObject5() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width:\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: flex-start;\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: none;\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  opacity: 0;\n  height: 1;\n  position: absolute;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  margin: 1rem;\n  min-width: 300px;\n  width: 300px;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+
+var sidebarContainerStyle = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject());
+var fakeRadioGroupStyle = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject2());
+var fileUpload = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject3());
+var containerStyle = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject4());
+var ageInputStyle = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject5());
+
+/***/ }),
+
+/***/ "./components/LeftSideBar/PhotoInformation/index.tsx":
+/*!***********************************************************!*\
+  !*** ./components/LeftSideBar/PhotoInformation/index.tsx ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return PhotoInformation; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var _blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @blueprintjs/core */ "./node_modules/@blueprintjs/core/lib/esm/index.js");
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./style */ "./components/LeftSideBar/PhotoInformation/style.ts");
+
+
+
+
+
+
+
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/components/LeftSideBar/PhotoInformation/index.tsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement;
+
+/** @jsx jsx*/
+
+
+
+
+
+var PhotoInformation =
+/*#__PURE__*/
+function (_React$Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(PhotoInformation, _React$Component);
+
+  function PhotoInformation() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, PhotoInformation);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(PhotoInformation)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "state", {
+      size: 'm',
+      caseOption: '1',
+      sex: 'm',
+      inputFileRef: Object(react__WEBPACK_IMPORTED_MODULE_9__["createRef"])(),
+      imageFormat: 'cuadrada'
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "onSizeChanged", function (e) {
+      var onChange = _this.props.onChange;
+      var size = e.currentTarget.value;
+
+      _this.setState({
+        size: size
+      });
+
+      onChange('pet-size', size);
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "onCaseChanged", function (e) {
+      var onChange = _this.props.onChange;
+      var caseOption = e.currentTarget.value;
+
+      _this.setState({
+        caseOption: caseOption
+      });
+
+      onChange('caso-mascota', caseOption);
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "onSexChanged", function (e) {
+      var onChange = _this.props.onChange;
+      var sex = e.currentTarget.value;
+
+      _this.setState({
+        sex: sex
+      });
+
+      onChange('caso-mascota', sex);
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "openFile", function () {
+      _this.state.inputFileRef.current.click();
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "loadImageOntoReader", function (event) {
+      var img = new Image();
+      img.src = event.target.result;
+      img.addEventListener('load', function () {
+        _this.props.onImageUploaded(img);
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "onFileUploaded", function (e) {
+      var reader = new FileReader();
+      reader.onload = _this.loadImageOntoReader;
+      var file = e.currentTarget.files[0];
+
+      if (!file) {
+        console.error('!file', file, e);
+      }
+
+      reader.readAsDataURL(e.currentTarget.files[0]);
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "onChangeDimensions", function (e) {
+      var changeDimensions = _this.props.changeDimensions;
+      var newImageFormat = e.currentTarget.value;
+
+      _this.setState({
+        imageFormat: newImageFormat
+      });
+
+      changeDimensions(newImageFormat);
+    });
+
+    return _this;
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(PhotoInformation, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          onChange = _this$props.onChange,
+          formValues = _this$props.formValues,
+          addText = _this$props.addText,
+          changeDimensions = _this$props.changeDimensions;
+      var _this$state = this.state,
+          size = _this$state.size,
+          caseOption = _this$state.caseOption,
+          sex = _this$state.sex,
+          inputFileRef = _this$state.inputFileRef,
+          imageFormat = _this$state.imageFormat;
+      var yearTag = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Tag"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 96
+        },
+        __self: this
+      }, "a\xF1os");
+      var monthTag = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Tag"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 97
+        },
+        __self: this
+      }, "meses");
+      return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Card"], {
+        elevation: _blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Elevation"].ONE,
+        css: _style__WEBPACK_IMPORTED_MODULE_10__["sidebarContainerStyle"],
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 99
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["H4"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 100
+        },
+        __self: this
+      }, "Fotograf\xEDa"), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 101
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
+        label: "Imagen*",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 102
@@ -483,7 +1058,7 @@ function (_React$Component) {
         },
         __self: this
       }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["RadioGroup"], {
-        label: "Dimensiones de imagen *",
+        label: "Formato*",
         onChange: this.onChangeDimensions,
         selectedValue: imageFormat,
         __source: {
@@ -515,326 +1090,21 @@ function (_React$Component) {
           lineNumber: 124
         },
         __self: this
-      }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 127
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
-        label: 'Nombre',
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 128
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["InputGroup"], {
-        name: "nombre-mascota",
-        placeholder: "Nombre",
-        intent: "primary",
-        value: formValues['nombre-mascota'],
-        onChange: function onChange(e) {
-          _onChange('nombre-mascota', e.currentTarget.value);
-        },
-        required: true,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 129
-        },
-        __self: this
-      }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 141
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
-        label: "Caso *",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 142
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
-        name: "caso",
-        value: caseOption,
-        onChange: function onChange(e) {
-          return _onChange('caso-mascota', caseOption);
-        },
-        checked: Boolean(caseOption),
-        required: true,
-        css: _style__WEBPACK_IMPORTED_MODULE_10__["fakeRadioGroupStyle"],
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 143
-        },
-        __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
-        onChange: this.onCaseChanged,
-        checked: caseOption === '1',
-        label: "Mascota en adopci\xF3n",
-        value: "1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 151
-        },
-        __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
-        onChange: this.onCaseChanged,
-        checked: caseOption === '2',
-        label: "Mascota perdida",
-        value: "2",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 157
-        },
-        __self: this
-      }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 165
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
-        label: "Edad aproximada *",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 166
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
-        style: {
-          display: 'flex',
-          width: '100%'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 167
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
-        style: {
-          width: '50%',
-          margin: '2px'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 168
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["InputGroup"], {
-        name: "edad-mascota",
-        value: formValues['años-mascota'],
-        placeholder: "A\xF1os",
-        rightElement: añosTag,
-        onChange: function onChange(e) {
-          _onChange('años-mascota', e.currentTarget.value);
-        },
-        max: 20,
-        min: 0,
-        required: true,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 169
-        },
-        __self: this
-      })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
-        style: {
-          width: '50%',
-          margin: '2px'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 180
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["InputGroup"], {
-        name: "edad-mascota",
-        value: formValues['meses-mascota'],
-        placeholder: "Meses",
-        rightElement: mesesTag,
-        onChange: function onChange(e) {
-          _onChange('meses-mascota', e.currentTarget.value);
-        },
-        max: 11,
-        min: 0,
-        required: true,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 181
-        },
-        __self: this
-      }))))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 195
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
-        label: "Sexo *",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 196
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
-        name: "sexo-mascota",
-        value: formValues['sexo-mascota'],
-        onChange: function onChange(e) {
-          return _onChange('sexo-mascota', Boolean(sex));
-        },
-        checked: Boolean(formValues['sexo-mascota']),
-        required: true,
-        css: _style__WEBPACK_IMPORTED_MODULE_10__["fakeRadioGroupStyle"],
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 197
-        },
-        __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
-        onChange: function onChange(e) {
-          return _onChange('sexo-mascota', '1');
-        },
-        checked: formValues['sexo-mascota'] === '1',
-        label: "Macho",
-        value: "1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 205
-        },
-        __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
-        onChange: function onChange(e) {
-          return _onChange('sexo-mascota', '2');
-        },
-        checked: formValues['sexo-mascota'] === '2',
-        label: "Hembra",
-        value: "2",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 211
-        },
-        __self: this
-      }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 219
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["FormGroup"], {
-        label: "Tama\xF1o *",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 220
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
-        name: "tama\xF1o-mascota",
-        value: formValues["tamaño-mascota"],
-        onChange: function onChange(e) {
-          return _onChange('tamaño-mascota', Boolean(size));
-        },
-        checked: Boolean(formValues["tamaño-mascota"]),
-        required: true,
-        css: _style__WEBPACK_IMPORTED_MODULE_10__["fakeRadioGroupStyle"],
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 221
-        },
-        __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
-        onChange: function onChange(e) {
-          return _onChange('tamaño-mascota', 's');
-        },
-        checked: formValues["tamaño-mascota"] === 's',
-        label: "Peque\xF1o",
-        value: "s",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 229
-        },
-        __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
-        onChange: function onChange(e) {
-          return _onChange('tamaño-mascota', 'm');
-        },
-        checked: formValues["tamaño-mascota"] === 'm',
-        label: "Mediano",
-        value: "m",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 235
-        },
-        __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Radio"], {
-        onChange: function onChange(e) {
-          return _onChange('tamaño-mascota', 'l');
-        },
-        checked: formValues["tamaño-mascota"] === 'l',
-        label: "Grande",
-        value: "l",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 241
-        },
-        __self: this
-      }))), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 249
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Checkbox"], {
-        name: "esterilizado",
-        label: "\xBFEst\xE1 esterilizado?",
-        checked: formValues.esterilizado,
-        onChange: function onChange(e) {
-          _onChange('esterilizado', !formValues.esterilizado);
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 250
-        },
-        __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Checkbox"], {
-        name: "chip",
-        label: "\xBFTiene chip?",
-        checked: formValues.chip,
-        onChange: function onChange(e) {
-          _onChange('chip', !formValues.chip);
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 258
-        },
-        __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_8__["jsx"])(_blueprintjs_core__WEBPACK_IMPORTED_MODULE_7__["Checkbox"], {
-        name: "vacunas",
-        label: "\xBFTiene las vacunas al d\xEDa?",
-        checked: formValues.vacunas,
-        onChange: function onChange(e) {
-          _onChange('vacunas', !formValues.vacunas);
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 266
-        },
-        __self: this
-      })));
+      }))));
     }
   }]);
 
-  return PetInformation;
+  return PhotoInformation;
 }(react__WEBPACK_IMPORTED_MODULE_9___default.a.Component);
 
 
 
 /***/ }),
 
-/***/ "./components/LeftSideBar/PetInformation/style.ts":
-/*!********************************************************!*\
-  !*** ./components/LeftSideBar/PetInformation/style.ts ***!
-  \********************************************************/
+/***/ "./components/LeftSideBar/PhotoInformation/style.ts":
+/*!**********************************************************!*\
+  !*** ./components/LeftSideBar/PhotoInformation/style.ts ***!
+  \**********************************************************/
 /*! exports provided: sidebarContainerStyle, fakeRadioGroupStyle, fileUpload, containerStyle, ageInputStyle */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -932,7 +1202,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\LeftSideBar\\SubmitButton\\index.tsx";
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/components/LeftSideBar/SubmitButton/index.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 
 /** @jsx jsx */
@@ -1034,9 +1304,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
 /* harmony import */ var _ContactInformation__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ContactInformation */ "./components/LeftSideBar/ContactInformation/index.tsx");
-/* harmony import */ var _PetInformation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./PetInformation */ "./components/LeftSideBar/PetInformation/index.tsx");
-/* harmony import */ var _SubmitButton__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./SubmitButton */ "./components/LeftSideBar/SubmitButton/index.tsx");
-/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./styles */ "./components/LeftSideBar/styles.ts");
+/* harmony import */ var _PhotoInformation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./PhotoInformation */ "./components/LeftSideBar/PhotoInformation/index.tsx");
+/* harmony import */ var _PetInformation__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./PetInformation */ "./components/LeftSideBar/PetInformation/index.tsx");
+/* harmony import */ var _SubmitButton__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./SubmitButton */ "./components/LeftSideBar/SubmitButton/index.tsx");
+/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./styles */ "./components/LeftSideBar/styles.ts");
 
 
 
@@ -1045,11 +1316,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\LeftSideBar\\index.tsx";
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/components/LeftSideBar/index.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 
 /** @jsx jsx */
+
 
 
 
@@ -1161,7 +1433,7 @@ function (_Component) {
                 body: formData,
                 method: 'POST'
               }).then(r => r.json());
-                ReactGA.event({
+               ReactGA.event({
                 action: 'adoption-created',
                 category: 'User',
                 value: 1,
@@ -1203,14 +1475,20 @@ function (_Component) {
       return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])("form", {
         onSubmit: this.onSubmit,
         onChange: this.onFormChange,
-        css: _styles__WEBPACK_IMPORTED_MODULE_13__["containerStyle"],
+        css: _styles__WEBPACK_IMPORTED_MODULE_14__["containerStyle"],
         method: "post",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 134
+          lineNumber: 135
         },
         __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_PetInformation__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 136
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_PhotoInformation__WEBPACK_IMPORTED_MODULE_11__["default"], {
         onChange: onInputChanged,
         formValues: formValues,
         addText: addTextBlockWithData,
@@ -1218,27 +1496,38 @@ function (_Component) {
         changeDimensions: changeDimensions,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 135
+          lineNumber: 137
         },
         __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 136
-        },
-        __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_ContactInformation__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_ContactInformation__WEBPACK_IMPORTED_MODULE_10__["default"], {
         onChange: onInputChanged,
         formValues: formValues,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 137
+          lineNumber: 138
         },
         __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_SubmitButton__WEBPACK_IMPORTED_MODULE_12__["default"], {
+      })), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 138
+          lineNumber: 140
+        },
+        __self: this
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_PetInformation__WEBPACK_IMPORTED_MODULE_12__["default"], {
+        onChange: onInputChanged,
+        formValues: formValues,
+        addText: addTextBlockWithData,
+        onImageUploaded: onImageUploaded,
+        changeDimensions: changeDimensions,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 141
+        },
+        __self: this
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_9__["jsx"])(_SubmitButton__WEBPACK_IMPORTED_MODULE_13__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 142
         },
         __self: this
       })));
@@ -1305,7 +1594,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\Nav\\index.tsx";
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/components/Nav/index.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
@@ -1460,7 +1749,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\canvas\\BackgroundImage\\index.tsx";
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/components/canvas/BackgroundImage/index.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 
 /** @jsx jsx */
@@ -1610,7 +1899,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\canvas\\CharacteristicsLayer\\index.tsx";
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/components/canvas/CharacteristicsLayer/index.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
@@ -1711,10 +2000,11 @@ function (_Component) {
           __self: this
         }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_8__["Path"], {
           data: characteristic.icon.path,
-          fill: 'red',
+          fill: 'white',
           scaleX: characteristic.scale,
           scaleY: characteristic.scale,
           x: xIcon,
+          y: 10,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 70
@@ -1724,14 +2014,14 @@ function (_Component) {
           y: layerHeigth - 12,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 76
+            lineNumber: 77
           },
           __self: this
         }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_8__["Tag"], {
           fill: color,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 77
+            lineNumber: 78
           },
           __self: this
         }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_7__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_8__["Text"], {
@@ -1742,7 +2032,7 @@ function (_Component) {
           align: 'center',
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 78
+            lineNumber: 79
           },
           __self: this
         })));
@@ -1781,7 +2071,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\canvas\\ContactLayer\\index.tsx";
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/components/canvas/ContactLayer/index.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
@@ -1854,7 +2144,7 @@ function (_Component) {
           lineNumber: 33
         },
         __self: this
-      })), formData['nombre-contacto'] !== '' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Label"], {
+      })), formData['contact-name'] !== '' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Label"], {
         y: 20,
         __source: {
           fileName: _jsxFileName,
@@ -1870,14 +2160,14 @@ function (_Component) {
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Text"], {
         fill: textColor,
-        text: formData['nombre-contacto'],
+        text: formData['contact-name'],
         fontSize: 11,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 44
         },
         __self: this
-      })), formData['telefono-contacto'] !== '+56 ' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Label"], {
+      })), formData['contact-phone'] !== '+56 ' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Label"], {
         y: 40,
         __source: {
           fileName: _jsxFileName,
@@ -1893,14 +2183,14 @@ function (_Component) {
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Text"], {
         fill: textColor,
-        text: formData['telefono-contacto'],
+        text: formData['contact-phone'],
         fontSize: 11,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 53
         },
         __self: this
-      })), formData['email-contacto'] !== '' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Label"], {
+      })), formData['contact-email'] !== '' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Label"], {
         y: 60,
         __source: {
           fileName: _jsxFileName,
@@ -1916,14 +2206,14 @@ function (_Component) {
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Text"], {
         fill: textColor,
-        text: formData['email-contacto'],
+        text: formData['contact-email'],
         fontSize: 11,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 62
         },
         __self: this
-      })), formData['ciudad-contacto'] !== '' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Label"], {
+      })), formData['contact-city'] !== '' && Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Label"], {
         y: 80,
         __source: {
           fileName: _jsxFileName,
@@ -1939,7 +2229,7 @@ function (_Component) {
         __self: this
       }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_6__["jsx"])(react_konva__WEBPACK_IMPORTED_MODULE_7__["Text"], {
         fill: textColor,
-        text: formData['ciudad-contacto'],
+        text: formData['contact-city'],
         fontSize: 11,
         __source: {
           fileName: _jsxFileName,
@@ -1997,7 +2287,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\components\\canvas\\index.tsx";
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/components/canvas/index.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement;
 
@@ -2554,6 +2844,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/keys */ "./no
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/object/set-prototype-of */ "./node_modules/core-js/library/fn/object/set-prototype-of.js");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/parse-int.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/parse-int */ "./node_modules/core-js/library/fn/parse-int.js");
 
 /***/ }),
 
@@ -20409,6 +20710,19 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/
 
 /***/ }),
 
+/***/ "./node_modules/core-js/library/fn/parse-int.js":
+/*!******************************************************!*\
+  !*** ./node_modules/core-js/library/fn/parse-int.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../modules/es6.parse-int */ "./node_modules/core-js/library/modules/es6.parse-int.js");
+module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/core-js/library/modules/_core.js").parseInt;
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/library/fn/promise.js":
 /*!****************************************************!*\
   !*** ./node_modules/core-js/library/fn/promise.js ***!
@@ -21740,6 +22054,26 @@ module.exports = Reflect && Reflect.ownKeys || function ownKeys(it) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/library/modules/_parse-int.js":
+/*!************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_parse-int.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $parseInt = __webpack_require__(/*! ./_global */ "./node_modules/core-js/library/modules/_global.js").parseInt;
+var $trim = __webpack_require__(/*! ./_string-trim */ "./node_modules/core-js/library/modules/_string-trim.js").trim;
+var ws = __webpack_require__(/*! ./_string-ws */ "./node_modules/core-js/library/modules/_string-ws.js");
+var hex = /^[-+]?0[xX]/;
+
+module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? function parseInt(str, radix) {
+  var string = $trim(String(str), 3);
+  return $parseInt(string, (radix >>> 0) || (hex.test(string) ? 16 : 10));
+} : $parseInt;
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/library/modules/_perform.js":
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/library/modules/_perform.js ***!
@@ -21993,6 +22327,60 @@ module.exports = function (TO_STRING) {
       : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
   };
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/_string-trim.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_string-trim.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
+var defined = __webpack_require__(/*! ./_defined */ "./node_modules/core-js/library/modules/_defined.js");
+var fails = __webpack_require__(/*! ./_fails */ "./node_modules/core-js/library/modules/_fails.js");
+var spaces = __webpack_require__(/*! ./_string-ws */ "./node_modules/core-js/library/modules/_string-ws.js");
+var space = '[' + spaces + ']';
+var non = '\u200b\u0085';
+var ltrim = RegExp('^' + space + space + '*');
+var rtrim = RegExp(space + space + '*$');
+
+var exporter = function (KEY, exec, ALIAS) {
+  var exp = {};
+  var FORCE = fails(function () {
+    return !!spaces[KEY]() || non[KEY]() != non;
+  });
+  var fn = exp[KEY] = FORCE ? exec(trim) : spaces[KEY];
+  if (ALIAS) exp[ALIAS] = fn;
+  $export($export.P + $export.F * FORCE, 'String', exp);
+};
+
+// 1 -> String#trimLeft
+// 2 -> String#trimRight
+// 3 -> String#trim
+var trim = exporter.trim = function (string, TYPE) {
+  string = String(defined(string));
+  if (TYPE & 1) string = string.replace(ltrim, '');
+  if (TYPE & 2) string = string.replace(rtrim, '');
+  return string;
+};
+
+module.exports = exporter;
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/_string-ws.js":
+/*!************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_string-ws.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
+  '\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
 
 
 /***/ }),
@@ -22493,6 +22881,21 @@ $export($export.S, 'Object', { setPrototypeOf: __webpack_require__(/*! ./_set-pr
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/es6.parse-int.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/es6.parse-int.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
+var $parseInt = __webpack_require__(/*! ./_parse-int */ "./node_modules/core-js/library/modules/_parse-int.js");
+// 18.2.5 parseInt(string, radix)
+$export($export.G + $export.F * (parseInt != $parseInt), { parseInt: $parseInt });
 
 
 /***/ }),
@@ -36909,19 +37312,19 @@ Util_1.Collection.mapMethods(Wedge);
 
 /***/ "./node_modules/next/dist/build/polyfills/object-assign.js":
 /*!***********************************************************************************************************************!*\
-  !*** delegated ./node_modules/next/dist/build/polyfills/object-assign.js from dll-reference dll_5f137288facb1107b491 ***!
+  !*** delegated ./node_modules/next/dist/build/polyfills/object-assign.js from dll-reference dll_ef0ff7c60362f24a921f ***!
   \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491 */ "dll-reference dll_5f137288facb1107b491"))("./node_modules/next/dist/build/polyfills/object-assign.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f */ "dll-reference dll_ef0ff7c60362f24a921f"))("./node_modules/next/dist/build/polyfills/object-assign.js");
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CLucas%5CDocuments%5Cquiltros%5Cpages%5Cindex.tsx!./":
-/*!****************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CLucas%5CDocuments%5Cquiltros%5Cpages%5Cindex.tsx ***!
-  \****************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Falma%2FDocuments%2Freact%2Fquiltro%2Fpages%2Findex.tsx!./":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Falma%2FDocuments%2Freact%2Fquiltro%2Fpages%2Findex.tsx ***!
+  \******************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -40008,12 +40411,12 @@ process.umask = function() { return 0; };
 
 /***/ "./node_modules/prop-types/checkPropTypes.js":
 /*!*********************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_5f137288facb1107b491 ***!
+  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_ef0ff7c60362f24a921f ***!
   \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491 */ "dll-reference dll_5f137288facb1107b491"))("./node_modules/prop-types/checkPropTypes.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f */ "dll-reference dll_ef0ff7c60362f24a921f"))("./node_modules/prop-types/checkPropTypes.js");
 
 /***/ }),
 
@@ -40648,23 +41051,23 @@ if (true) {
 
 /***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
 /*!*******************************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_5f137288facb1107b491 ***!
+  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_ef0ff7c60362f24a921f ***!
   \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491 */ "dll-reference dll_5f137288facb1107b491"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f */ "dll-reference dll_ef0ff7c60362f24a921f"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
 
 /***/ }),
 
 /***/ "./node_modules/react-dom/index.js":
 /*!***********************************************************************************************!*\
-  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_5f137288facb1107b491 ***!
+  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_ef0ff7c60362f24a921f ***!
   \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491 */ "dll-reference dll_5f137288facb1107b491"))("./node_modules/react-dom/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f */ "dll-reference dll_ef0ff7c60362f24a921f"))("./node_modules/react-dom/index.js");
 
 /***/ }),
 
@@ -61396,12 +61799,12 @@ exports.classNamesShape = classNamesShape;
 
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
-  !*** delegated ./node_modules/react/index.js from dll-reference dll_5f137288facb1107b491 ***!
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_ef0ff7c60362f24a921f ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491 */ "dll-reference dll_5f137288facb1107b491"))("./node_modules/react/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f */ "dll-reference dll_ef0ff7c60362f24a921f"))("./node_modules/react/index.js");
 
 /***/ }),
 
@@ -63228,23 +63631,23 @@ var index = (function () {
 
 /***/ "./node_modules/scheduler/index.js":
 /*!***********************************************************************************************!*\
-  !*** delegated ./node_modules/scheduler/index.js from dll-reference dll_5f137288facb1107b491 ***!
+  !*** delegated ./node_modules/scheduler/index.js from dll-reference dll_ef0ff7c60362f24a921f ***!
   \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491 */ "dll-reference dll_5f137288facb1107b491"))("./node_modules/scheduler/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f */ "dll-reference dll_ef0ff7c60362f24a921f"))("./node_modules/scheduler/index.js");
 
 /***/ }),
 
 /***/ "./node_modules/scheduler/tracing.js":
 /*!*************************************************************************************************!*\
-  !*** delegated ./node_modules/scheduler/tracing.js from dll-reference dll_5f137288facb1107b491 ***!
+  !*** delegated ./node_modules/scheduler/tracing.js from dll-reference dll_ef0ff7c60362f24a921f ***!
   \*************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491 */ "dll-reference dll_5f137288facb1107b491"))("./node_modules/scheduler/tracing.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f */ "dll-reference dll_ef0ff7c60362f24a921f"))("./node_modules/scheduler/tracing.js");
 
 /***/ }),
 
@@ -63374,21 +63777,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
-/* harmony import */ var _components_canvas__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/canvas */ "./components/canvas/index.tsx");
-/* harmony import */ var _components_LeftSideBar__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/LeftSideBar */ "./components/LeftSideBar/index.tsx");
-/* harmony import */ var _components_Nav__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/Nav */ "./components/Nav/index.tsx");
-/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./styles */ "./pages/styles.ts");
-/* harmony import */ var _assets_icons__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../assets/icons */ "./assets/icons.ts");
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js");
+/* harmony import */ var _components_canvas__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/canvas */ "./components/canvas/index.tsx");
+/* harmony import */ var _components_LeftSideBar__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/LeftSideBar */ "./components/LeftSideBar/index.tsx");
+/* harmony import */ var _components_Nav__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/Nav */ "./components/Nav/index.tsx");
+/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./styles */ "./pages/styles.ts");
+/* harmony import */ var _assets_icons__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../assets/icons */ "./assets/icons.ts");
 
 
 
@@ -63402,13 +63807,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\pages\\index.tsx";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_13___default.a.createElement;
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/pages/index.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
 
 /** @jsx jsx */
 
@@ -63422,22 +63828,22 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 var Home =
 /*#__PURE__*/
 function (_Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_11__["default"])(Home, _Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_12__["default"])(Home, _Component);
 
   function Home() {
     var _getPrototypeOf2;
 
     var _this;
 
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_6__["default"])(this, Home);
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_7__["default"])(this, Home);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_8__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_9__["default"])(Home)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_9__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_10__["default"])(Home)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "state", {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_11__["default"])(_this), "state", {
       canvasImage: null,
       canvasTexts: {
         selectedTextBlock: '',
@@ -63446,33 +63852,33 @@ function (_Component) {
       formValues: {
         chip: false,
         'edad-mascota': '',
-        'email-contacto': '',
-        esterilizado: false,
+        'contact-email': '',
+        sterilized: false,
         'informacion-extra-mascota': '',
-        'nombre-contacto': '',
+        'contact-name': '',
         'nombre-mascota': '',
-        'tamaño-mascota': '',
-        'telefono-contacto': '+56 ',
-        vacunas: false,
+        'pet-size': '',
+        'contact-phone': '+56 ',
+        vaccines: false,
         'whatsapp-contacto': '',
         'caso-mascota': '',
-        'ciudad-contacto': '',
-        'sexo-mascota': '',
-        'años-mascota': '',
-        'meses-mascota': ''
+        'contact-city': '',
+        'pet-gender': '',
+        'age-pet': '',
+        'month-age-pet': ''
       },
       characteristics: {},
       canvasHeight: 540,
       canvasWidth: 540,
       imageFormat: 'cuadrada',
-      color: '#4E9818',
-      secundaryColor: '#0A6507',
-      textColor: '#F3DE58'
+      color: '#62bfa2',
+      secundaryColor: '#51947f',
+      textColor: '#ffffff'
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "stageRef", Object(react__WEBPACK_IMPORTED_MODULE_13__["createRef"])());
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_11__["default"])(_this), "stageRef", Object(react__WEBPACK_IMPORTED_MODULE_14__["createRef"])());
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "changeDimensions", function (imageFormat) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_11__["default"])(_this), "changeDimensions", function (imageFormat) {
       switch (imageFormat) {
         case 'vertical':
           _this.setState({
@@ -63503,7 +63909,7 @@ function (_Component) {
       }
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "setSelectedTextBlock", function (selectedTextBlock) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_11__["default"])(_this), "setSelectedTextBlock", function (selectedTextBlock) {
       var canvasTexts = _this.state.canvasTexts;
 
       _this.setState({
@@ -63513,30 +63919,30 @@ function (_Component) {
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "setCanvasImage", function (image) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_11__["default"])(_this), "setCanvasImage", function (image) {
       _this.setState({
         canvasImage: image
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "onTextChanged", function (key, value, id) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_11__["default"])(_this), "onTextChanged", function (key, value, id) {
       var canvasTexts = _this.state.canvasTexts;
       var textBlocks = canvasTexts.textBlocks;
 
       _this.setState({
         canvasTexts: _objectSpread({}, canvasTexts, {
-          textBlocks: _objectSpread({}, textBlocks, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])({}, id, _objectSpread({}, textBlocks[id], Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])({}, key, value))))
+          textBlocks: _objectSpread({}, textBlocks, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__["default"])({}, id, _objectSpread({}, textBlocks[id], Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__["default"])({}, key, value))))
         })
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "onTextBlockChanged", function (id, text) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_11__["default"])(_this), "onTextBlockChanged", function (id, text) {
       var canvasTexts = _this.state.canvasTexts;
       var textBlocks = canvasTexts.textBlocks;
 
       _this.setState({
         canvasTexts: _objectSpread({}, canvasTexts, {
-          textBlocks: _objectSpread({}, textBlocks, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])({}, id, _objectSpread({}, textBlocks[id], {
+          textBlocks: _objectSpread({}, textBlocks, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__["default"])({}, id, _objectSpread({}, textBlocks[id], {
             text: text
           })))
         })
@@ -63545,7 +63951,7 @@ function (_Component) {
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "setAdoptionFormField", function (key, value) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_11__["default"])(_this), "setAdoptionFormField", function (key, value) {
       var _this$state = _this.state,
           canvasTexts = _this$state.canvasTexts,
           canvasHeight = _this$state.canvasHeight,
@@ -63554,6 +63960,7 @@ function (_Component) {
           formValues = _this$state.formValues;
       var textBlocks = canvasTexts.textBlocks;
       var actualCharacteristics = characteristics;
+      var size = 'Pequeño';
       var newTextBlock = {
         id: key,
         color: 'black',
@@ -63594,25 +64001,63 @@ function (_Component) {
           validator = 'textBlock';
           break;
 
-        case 'años-mascota':
+        case 'age-pet':
           if (isNaN(value) && value !== '0') {
-            value = formValues['años-mascota'];
+            value = formValues['age-pet'];
           } else {
-            var meses = formValues['meses-mascota'];
-            var edadString = '';
+            var months = formValues['month-age-pet'];
+            var ageString = '';
+            var yearTextAux = '';
+            var monthTextAux = '';
 
-            if (value !== '' && meses !== '' && value !== '0' && meses !== '0') {
-              edadString = value + ' años ' + meses + ' meses';
+            if (value !== '' && months !== '' && value !== '0' && months !== '0') {
+              yearTextAux = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_6___default()(value, 10) > 1 ? ' años ' : ' año ';
+              monthTextAux = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_6___default()(months, 10) > 1 ? ' meses ' : ' mes ';
+              ageString = value + yearTextAux + '\n' + months + monthTextAux;
             } else if (value !== '' && value !== '0') {
-              edadString = value + ' años';
-            } else if (meses !== '' && meses !== '0') {
-              edadString = meses + ' meses';
+              yearTextAux = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_6___default()(value, 10) > 1 ? ' años' : ' año';
+              ageString = value + yearTextAux;
+            } else if (months !== '' && months !== '0') {
+              monthTextAux = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_6___default()(months, 10) > 1 ? ' meses' : ' mes';
+              ageString = months + monthTextAux;
             }
 
             characteristic = {
               priority: '0',
-              icon: _assets_icons__WEBPACK_IMPORTED_MODULE_19__["birthday_cake"],
-              text: edadString,
+              icon: _assets_icons__WEBPACK_IMPORTED_MODULE_20__["birthday_cake"],
+              text: ageString,
+              scale: 0.05
+            };
+            validator = 'characteristic';
+          }
+
+          break;
+
+        case 'month-age-pet':
+          if (isNaN(value) && value !== '0') {
+            value = formValues['month-age-pet'];
+          } else {
+            var year = formValues['age-pet'];
+            var ageString2 = '';
+            var _yearTextAux = '';
+            var _monthTextAux = '';
+
+            if (value !== '' && year !== '' && value !== '0' && year !== '0') {
+              _yearTextAux = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_6___default()(year, 10) > 1 ? ' años ' : ' año ';
+              _monthTextAux = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_6___default()(value, 10) > 1 ? ' meses ' : ' mes ';
+              ageString2 = year + _yearTextAux + '\n' + value + _monthTextAux;
+            } else if (value !== '' && value !== '0') {
+              _monthTextAux = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_6___default()(value, 10) > 1 ? ' meses' : ' mes';
+              ageString2 = value + _monthTextAux;
+            } else if (year !== '' && year !== '0') {
+              _yearTextAux = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_6___default()(year, 10) > 1 ? ' años' : ' año';
+              ageString2 = year + _yearTextAux;
+            }
+
+            characteristic = {
+              priority: '0',
+              icon: _assets_icons__WEBPACK_IMPORTED_MODULE_20__["birthday_cake"],
+              text: ageString2,
               scale: 0.08
             };
             validator = 'characteristic';
@@ -63620,58 +64065,35 @@ function (_Component) {
 
           break;
 
-        case 'meses-mascota':
-          if (isNaN(value) && value !== '0') {
-            value = formValues['meses-mascota'];
-          } else {
-            var años = formValues['años-mascota'];
-            var edadString2 = '';
-
-            if (value !== '' && años !== '' && value !== '0' && años !== '0') {
-              edadString2 = años + ' años ' + value + ' meses';
-            } else if (value !== '' && value !== '0') {
-              edadString2 = value + ' meses';
-            } else if (años !== '' && años !== '0') {
-              edadString2 = años + ' años';
-            }
-
-            characteristic = {
-              priority: '0',
-              icon: _assets_icons__WEBPACK_IMPORTED_MODULE_19__["birthday_cake"],
-              text: edadString2,
-              scale: 0.08
-            };
-            validator = 'characteristic';
-          }
-
-          break;
-
-        case 'sexo-mascota':
+        case 'pet-gender':
           characteristic = {
             priority: '1',
-            icon: value === '1' ? _assets_icons__WEBPACK_IMPORTED_MODULE_19__["mars"] : _assets_icons__WEBPACK_IMPORTED_MODULE_19__["venus"],
+            icon: value === '1' ? _assets_icons__WEBPACK_IMPORTED_MODULE_20__["mars"] : _assets_icons__WEBPACK_IMPORTED_MODULE_20__["venus"],
             text: value === '1' ? 'Macho' : 'Hembra',
             scale: 0.08
           };
           validator = 'characteristic';
           break;
 
-        case 'tamaño-mascota':
+        case 'pet-size':
+          size = 'Pequeño';
+          if (value === 'm') size = 'Mediano';
+          if (value !== 'm' && value !== 's') size = 'Grande';
           characteristic = {
             priority: '3',
-            icon: _assets_icons__WEBPACK_IMPORTED_MODULE_19__["dog"],
-            text: value === 's' ? 'Pequeño' : value === 'm' ? 'Mediano' : 'Grande',
+            icon: _assets_icons__WEBPACK_IMPORTED_MODULE_20__["dog"],
+            text: size,
             scale: value === 's' ? 0.04 : value === 'm' ? 0.06 : 0.08
           };
           validator = 'characteristic';
           break;
 
-        case 'esterilizado':
+        case 'sterilized':
           if (value) {
             characteristic = {
               priority: '4',
-              icon: _assets_icons__WEBPACK_IMPORTED_MODULE_19__["band_aid"],
-              text: 'Esterilizado',
+              icon: _assets_icons__WEBPACK_IMPORTED_MODULE_20__["band_aid"],
+              text: 'sterilized',
               scale: 0.08
             };
             validator = 'characteristic';
@@ -63686,7 +64108,7 @@ function (_Component) {
           if (value) {
             characteristic = {
               priority: '5',
-              icon: _assets_icons__WEBPACK_IMPORTED_MODULE_19__["paw"],
+              icon: _assets_icons__WEBPACK_IMPORTED_MODULE_20__["paw"],
               text: 'Con chip',
               scale: 0.08
             };
@@ -63698,11 +64120,11 @@ function (_Component) {
 
           break;
 
-        case 'vacunas':
+        case 'vaccines':
           if (value) {
             characteristic = {
               priority: '6',
-              icon: _assets_icons__WEBPACK_IMPORTED_MODULE_19__["syringe"],
+              icon: _assets_icons__WEBPACK_IMPORTED_MODULE_20__["syringe"],
               text: 'Al día',
               scale: 0.08
             };
@@ -63714,21 +64136,21 @@ function (_Component) {
 
           break;
 
-        case 'telefono-contacto':
+        case 'contact-phone':
           if (value.length < 4) {
             value = '+56 ';
           } else if (isNaN(value.slice(4).trim())) {
-            value = formValues['telefono-contacto'];
+            value = formValues['contact-phone'];
           }
 
           break;
 
-        /*case 'nombre-contacto':
+        /*case 'contact-name':
           newTextBlock.fontSize = 'small';
           newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7};
           validator = 'textBlock';
           break;
-        case 'telefono-contacto':
+        case 'contact-phone':
           if (value.length < 4) {
             value = '+56 ';
           }
@@ -63736,12 +64158,12 @@ function (_Component) {
           newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7 + 30};
           validator = 'textBlock';
           break;
-          case 'email-contacto':
+          case 'contact-email':
             newTextBlock.fontSize = 'small';
             newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7 + 60};
             validator = 'textBlock';
             break;
-          case 'ciudad-contacto':
+          case 'contact-city':
             newTextBlock.fontSize = 'small';
             newTextBlock.position = {x: canvasWidth*0.8, y: canvasHeight*0.7 + 90};
             validator = 'textBlock';
@@ -63753,25 +64175,25 @@ function (_Component) {
 
       if (validator === 'textBlock') {
         _this.setState({
-          formValues: _objectSpread({}, _this.state.formValues, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])({}, key, value)),
+          formValues: _objectSpread({}, _this.state.formValues, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__["default"])({}, key, value)),
           canvasTexts: _objectSpread({}, canvasTexts, {
-            textBlocks: _objectSpread({}, textBlocks, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])({}, key, newTextBlock))
+            textBlocks: _objectSpread({}, textBlocks, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__["default"])({}, key, newTextBlock))
           })
         });
       } else if (validator === 'characteristic') {
         _this.setState({
-          formValues: _objectSpread({}, _this.state.formValues, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])({}, key, value)),
-          characteristics: _objectSpread({}, characteristics, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])({}, characteristic.priority, characteristic))
+          formValues: _objectSpread({}, _this.state.formValues, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__["default"])({}, key, value)),
+          characteristics: _objectSpread({}, characteristics, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__["default"])({}, characteristic.priority, characteristic))
         });
       } else if (validator = 'deletedCharacteristic') {
         _this.setState({
-          formValues: _objectSpread({}, _this.state.formValues, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])({}, key, value)),
+          formValues: _objectSpread({}, _this.state.formValues, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__["default"])({}, key, value)),
           characteristics: actualCharacteristics
         });
       }
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "deleteCharacteristic", function (characPriority) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_11__["default"])(_this), "deleteCharacteristic", function (characPriority) {
       var characteristics = _this.state.characteristics;
       var actualCharacteristics = characteristics;
       var updatePriority = {};
@@ -63783,14 +64205,14 @@ function (_Component) {
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "addTextBlockWithData", function (newTextblock) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_11__["default"])(_this), "addTextBlockWithData", function (newTextblock) {
       var canvasTexts = _this.state.canvasTexts;
       var textBlocks = canvasTexts.textBlocks;
       var id = newTextblock.id;
 
       _this.setState({
         canvasTexts: _objectSpread({}, canvasTexts, {
-          textBlocks: _objectSpread({}, textBlocks, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_12__["default"])({}, id, newTextblock))
+          textBlocks: _objectSpread({}, textBlocks, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_13__["default"])({}, id, newTextblock))
         })
       });
     });
@@ -63798,7 +64220,7 @@ function (_Component) {
     return _this;
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_7__["default"])(Home, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_8__["default"])(Home, [{
     key: "componentDidMount",
     value: function componentDidMount() {//this.addTextBlock();
 
@@ -63828,28 +64250,28 @@ function (_Component) {
           textColor = _this$state2.textColor;
       var selectedTextBlock = canvasTexts.selectedTextBlock,
           textBlocks = canvasTexts.textBlocks;
-      return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_14__["jsx"])("div", {
-        css: _styles__WEBPACK_IMPORTED_MODULE_18__["pageStyle"],
+      return Object(_emotion_core__WEBPACK_IMPORTED_MODULE_15__["jsx"])("div", {
+        css: _styles__WEBPACK_IMPORTED_MODULE_19__["pageStyle"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 478
+          lineNumber: 494
         },
         __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_components_Nav__WEBPACK_IMPORTED_MODULE_17__["default"], {
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_15__["jsx"])(_components_Nav__WEBPACK_IMPORTED_MODULE_18__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 479
+          lineNumber: 495
         },
         __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_14__["jsx"])("section", {
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_15__["jsx"])("section", {
         "data-name": "bodycontainer",
-        css: _styles__WEBPACK_IMPORTED_MODULE_18__["containerStyle"],
+        css: _styles__WEBPACK_IMPORTED_MODULE_19__["containerStyle"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 480
+          lineNumber: 496
         },
         __self: this
-      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_components_LeftSideBar__WEBPACK_IMPORTED_MODULE_16__["default"], {
+      }, Object(_emotion_core__WEBPACK_IMPORTED_MODULE_15__["jsx"])(_components_LeftSideBar__WEBPACK_IMPORTED_MODULE_17__["default"], {
         canvasRef: this.stageRef,
         formValues: formValues,
         onTextBlockInteracted: this.setSelectedTextBlock,
@@ -63862,10 +64284,10 @@ function (_Component) {
         changeDimensions: this.changeDimensions,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 481
+          lineNumber: 497
         },
         __self: this
-      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_components_canvas__WEBPACK_IMPORTED_MODULE_15__["default"], {
+      }), Object(_emotion_core__WEBPACK_IMPORTED_MODULE_15__["jsx"])(_components_canvas__WEBPACK_IMPORTED_MODULE_16__["default"], {
         canvasRef: this.stageRef,
         canvasTexts: canvasTexts,
         currentCanvasText: textBlocks[selectedTextBlock],
@@ -63883,7 +64305,7 @@ function (_Component) {
         textColor: textColor,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 493
+          lineNumber: 509
         },
         __self: this
       })));
@@ -63891,7 +64313,7 @@ function (_Component) {
   }]);
 
   return Home;
-}(react__WEBPACK_IMPORTED_MODULE_13__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_14__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
 
@@ -63939,25 +64361,25 @@ var pageStyle = Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__["css"])(_templ
 /***/ }),
 
 /***/ 1:
-/*!********************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CLucas%5CDocuments%5Cquiltros%5Cpages%5Cindex.tsx ***!
-  \********************************************************************************************************************************/
+/*!**********************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Falma%2FDocuments%2Freact%2Fquiltro%2Fpages%2Findex.tsx ***!
+  \**********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CLucas%5CDocuments%5Cquiltros%5Cpages%5Cindex.tsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CLucas%5CDocuments%5Cquiltros%5Cpages%5Cindex.tsx!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Falma%2FDocuments%2Freact%2Fquiltro%2Fpages%2Findex.tsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Falma%2FDocuments%2Freact%2Fquiltro%2Fpages%2Findex.tsx!./");
 
 
 /***/ }),
 
-/***/ "dll-reference dll_5f137288facb1107b491":
+/***/ "dll-reference dll_ef0ff7c60362f24a921f":
 /*!*******************************************!*\
-  !*** external "dll_5f137288facb1107b491" ***!
+  !*** external "dll_ef0ff7c60362f24a921f" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = dll_5f137288facb1107b491;
+module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 

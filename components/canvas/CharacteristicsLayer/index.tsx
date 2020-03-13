@@ -69,10 +69,11 @@ class CharacteristicsLayer extends Component<ICharacteristicsProps, any> {
             y={yGroup} >
               <Path
               data={characteristic.icon.path}
-              fill={'red'}
+              fill={'white'}
               scaleX={characteristic.scale}
               scaleY={characteristic.scale}
-              x={xIcon} />
+              x={xIcon}
+              y={10} />
               <Label y={layerHeigth - 12}>
                 <Tag fill={color} />
                 <Text

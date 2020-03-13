@@ -1069,7 +1069,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _resetcss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./resetcss */ "./pages/resetcss.ts");
 /* harmony import */ var react_ga__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-ga */ "react-ga");
 /* harmony import */ var react_ga__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_ga__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "C:\\Users\\Lucas\\Documents\\quiltros\\pages\\_document.js";
+var _jsxFileName = "/Users/alma/Documents/react/quiltro/pages/_document.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
