@@ -2,6 +2,7 @@
 import { jsx } from '@emotion/core';
 import React, { Component, FormEvent, RefObject } from 'react';
 import ReactGA from 'react-ga';
+import TwitterLogin from 'react-twitter-auth/lib/react-twitter-auth-component';
 
 import { IAdoptionForm, ITextBlockElement } from '../../pages';
 import ContactInformation from './ContactInformation';
@@ -12,6 +13,7 @@ import TextBlocksCreator from './TextBlocksCreator';
 import { ITextBlocksConfigPanelState } from './TextBlocksCreator/panel';
 import { containerStyle } from './styles'
 import { Stage } from 'konva/types/Stage';
+import axios from 'axios';
 
 export interface ILeftSidebarProps {
   canvasRef: RefObject<Stage>;
@@ -88,6 +90,46 @@ export default class LeftSidebar extends Component<
     return blob;
   };
 
+  loadToTwitter = (imgB64: string) => {
+    axios.post('http://localhost:3000/testImage', {image: imgB64.replace(/data\:image\/png;base64,/, '')}).then(response => {
+      console.log(response);
+    }).catch(error => {
+      console.error(error);
+
+    })
+  }
+
+  loadToS3 = (file: Blob, filename: string) => {
+    axios.post("http://localhost:3000/testS3",{
+      fileName : filename,
+      fileType : 'png'
+    })
+    .then(response => {
+      var returnData = response.data.data.returnData;
+      var signedRequest = returnData.signedRequest;
+      var url = returnData.url;
+      console.log("Recieved a signed request " + signedRequest);
+
+     // Put the fileType in the headers for the upload
+      var options = {
+        headers: {
+          'Content-Type': 'png'
+        }
+      };
+      axios.put(signedRequest,file,options)
+      .then(result => {
+        console.log("Response from s3")
+        console.log(url);
+      })
+      .catch(error => {
+        alert("ERROR " + JSON.stringify(error));
+      })
+    })
+    .catch(error => {
+      alert(JSON.stringify(error));
+    })
+  }
+
   onSubmit = async (e: FormEvent) => {
     const {formValues} = this.props;
     e.preventDefault();
@@ -99,6 +141,8 @@ export default class LeftSidebar extends Component<
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    const imageBlob = this.dataURItoBlob(imgB64);
+    //this.loadToS3(imageBlob, formValues['nombre-mascota']);
     /*const { formData, formJson } = this.getFormData();
     const response = await fetch('/api/image', {
       body: formData,
