@@ -25,7 +25,7 @@ class ContactLayer extends Component<IContactProps, any> {
       y={canvasHeight*0.75}
       width={layerWidth}
       visible={true}
-      draggable>
+      >
         <Group
         width={layerWidth} >
           <Label>

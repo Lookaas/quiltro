@@ -118,7 +118,6 @@ export default class BackgroundImage extends React.Component<
             y={y}
             width={imageWidth}
             height={imageHeight}
-            draggable
           />
         )}
       </Layer>

@@ -40,7 +40,7 @@ class CharacteristicsLayer extends Component<ICharacteristicsProps, any> {
       height={layerHeigth}
       width={layerWidth}
       visible={true}
-      draggable>
+      >
         <Group
         height={layerHeigth*0.3}
         width={layerWidth} >
@@ -52,7 +52,7 @@ class CharacteristicsLayer extends Component<ICharacteristicsProps, any> {
               fontSize={20}
               fontStyle='bold'
               width={layerWidth}
-              align='center' />
+              align='left' />
           </Label>
         </Group>
         {Object.keys(characteristics).sort().map((charKey, index) => {
@@ -74,7 +74,7 @@ class CharacteristicsLayer extends Component<ICharacteristicsProps, any> {
               scaleY={characteristic.scale}
               x={xIcon}
               y={10} />
-              <Label y={layerHeigth - 12}>
+              <Label y={layerHeigth - 10}>
                 <Tag fill={color} />
                 <Text
                 fill={textColor}

@@ -253,8 +253,8 @@ class Canvas extends Component<IAppProps, IAppState> {
     let yLines = canvasHeight*0.71;
     let textX = 0, textY=0, textWidth=canvasWidth;
     if (imageFormat === 'cuadrada') {
-      yLabels = 0.43*canvasHeight;
-      yLines = canvasHeight*0.65;
+      yLabels = 0.5*canvasHeight;
+      yLines = canvasHeight*0.5;
     }
     else if (imageFormat === 'horizontal') {
       textX = canvasWidth*0.5;
@@ -282,6 +282,7 @@ class Canvas extends Component<IAppProps, IAppState> {
               y={canvasHeight*0.05}
               >
               <Tag fill={color} />
+              <Rect x={0} y={0} width={textWidth} height={3} fill={textColor} />
               <Text
               fill={textColor}
               padding={10}
@@ -308,11 +309,6 @@ class Canvas extends Component<IAppProps, IAppState> {
               // _useStrictMode
               />
             </Label>
-              </Group>
-              <Group y={yLines}>
-                <Rect x={0} y={0} width={textWidth} height={3} fill={textColor} />
-                <Rect x={0} y={6} width={textWidth} height={6} fill={textColor} />
-                <Rect x={0} y={15} width={textWidth} height={3} fill={textColor} />
               </Group>
 
               <CharacteristicsLayer canvasHeight={canvasHeight} canvasWidth={textWidth} characteristics={characteristics} color={color} textColor={textColor} />

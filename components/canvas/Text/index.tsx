@@ -97,7 +97,7 @@ class CanvasText extends React.Component<ICanvasText, any> {
     } = this.props;
     const { fontSize } = this.state;
     return (
-      <Group draggable>
+      <Group >
       <Label
         x={position.x}
         y={position.y}
