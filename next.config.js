@@ -1,5 +1,5 @@
 const withImages = require('next-images')
 module.exports = {
-  withImages(),
+  // withImages(),
   pageExtensions: ['mdx', 'jsx', 'js']
 };
