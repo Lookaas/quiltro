@@ -133,7 +133,7 @@ export default class LeftSidebar extends Component<
     link.click();
     document.body.removeChild(link);
     const imageBlob = this.dataURItoBlob(imgB64);
-    this.loadToS3(imageBlob, formValues['nombre-mascota']);
+    //this.loadToS3(imageBlob, formValues['nombre-mascota']);
     /*const { formData, formJson } = this.getFormData();
     const response = await fetch('/api/image', {
       body: formData,

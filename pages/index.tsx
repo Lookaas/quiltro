@@ -6,7 +6,7 @@ import Canvas from '../components/canvas';
 import LeftSidebar from '../components/LeftSideBar';
 import { ICharacteristicElement } from '../components/canvas/CharacteristicsLayer';
 import Nav from '../components/Nav';
-import { containerStyle, pageStyle } from './styles';
+import { containerStyle, pageStyle } from '../assets/styles';
 import * as icons from '../assets/icons';
 import Konva from 'konva'
 import axios from 'axios';
