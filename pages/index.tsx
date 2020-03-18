@@ -91,7 +91,7 @@ class Home extends Component<any, IHomeState> {
       'contact-phone': '+56 ',
       vaccines: false,
       'whatsapp-contacto': '',
-      'caso-mascota': '',
+      'caso-mascota': '1',
       'contact-city': '',
       'pet-gender': '',
       'age-pet': '',
@@ -325,7 +325,7 @@ class Home extends Component<any, IHomeState> {
           characteristic = {
             priority: '4',
             icon: icons.band_aid,
-            text: 'sterilized',
+            text: 'Esterilizado',
             scale: 0.08
           }
           validator = 'characteristic';

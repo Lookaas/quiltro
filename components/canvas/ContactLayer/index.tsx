@@ -12,17 +12,25 @@ interface IContactProps {
   formData: IAdoptionForm;
   color: string;
   textColor: string;
+  imageFormat: string;
 }
 
 class ContactLayer extends Component<IContactProps, any> {
 
   render() {
-    const {canvasHeight, canvasWidth, formData, color, textColor} = this.props;
-    const layerWidth = canvasWidth*0.2;
+    const {canvasHeight, canvasWidth, formData, color, textColor, imageFormat} = this.props;
+    let layerWidth = canvasWidth*0.2;
+    let xOffset = 0.75;
+    let yOffset = 0.75;
+    if (imageFormat === 'horizontal') {
+      layerWidth = canvasWidth*0.3;
+      xOffset = 0.35;
+      yOffset = 0.68;
+    }
     return (
       <Group
-      x={canvasWidth*0.75}
-      y={canvasHeight*0.75}
+      x={canvasWidth*xOffset}
+      y={canvasHeight*yOffset}
       width={layerWidth}
       visible={true}
       >

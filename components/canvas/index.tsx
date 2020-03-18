@@ -282,7 +282,6 @@ class Canvas extends Component<IAppProps, IAppState> {
               y={canvasHeight*0.05}
               >
               <Tag fill={color} />
-              <Rect x={0} y={0} width={textWidth} height={3} fill={textColor} />
               <Text
               fill={textColor}
               padding={10}
@@ -311,9 +310,9 @@ class Canvas extends Component<IAppProps, IAppState> {
             </Label>
               </Group>
 
-              <CharacteristicsLayer canvasHeight={canvasHeight} canvasWidth={textWidth} characteristics={characteristics} color={color} textColor={textColor} />
+              <CharacteristicsLayer canvasHeight={canvasHeight} canvasWidth={textWidth} characteristics={characteristics} color={color} textColor={textColor} imageFormat={imageFormat} />
 
-              <ContactLayer canvasHeight={canvasHeight} canvasWidth={textWidth} formData={formData} color={color} textColor={textColor} />
+              <ContactLayer canvasHeight={canvasHeight} canvasWidth={textWidth} formData={formData} color={color} textColor={textColor} imageFormat={imageFormat}/>
 
               <Label
               y={canvasHeight*0.95} >

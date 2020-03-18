@@ -20,23 +20,41 @@ interface ICharacteristicsProps {
   };
   color: string;
   textColor: string;
+  imageFormat: string;
 }
 
 class CharacteristicsLayer extends Component<ICharacteristicsProps, any> {
 
   render() {
-    const {canvasHeight, canvasWidth, characteristics, color, textColor} = this.props;
-    const layerWidth = canvasWidth*0.7;
-    const layerHeigth = canvasHeight*0.1;
-    console.log(characteristics);
+    const {canvasHeight, canvasWidth, characteristics, color, textColor, imageFormat} = this.props;
+    let canvasWidthProportion = 0.7;
+    let canvasHeightProportion = 0.1;
+    let layerXOffsetPercentage = 0.05;
+    let layerYOffsetPercentage = 0.75;
     const keys = Object.keys(characteristics);
-    console.log(characteristics[keys[0]]);
     const offsetDelta = 0.08;
-    const xOffset = layerWidth*offsetDelta*(6-keys.length);
+    let xOffset1 = canvasWidth*0.7*offsetDelta*(6-keys.length);
+    let xOffset2 = 0;
+    let groupWidthProportion = 0.16;
+    if (imageFormat === 'horizontal') {
+      canvasWidthProportion = 0.50;
+      canvasHeightProportion = 0.3;
+      layerXOffsetPercentage = 0.25;
+      layerYOffsetPercentage = 0.3;
+      xOffset1 = 0;
+      groupWidthProportion = 0.38;
+      if (keys.length < 3) {
+        xOffset1 = canvasWidth*canvasWidthProportion*offsetDelta*(3-keys.length);
+      } else {
+        xOffset2 = canvasWidth*canvasWidthProportion*offsetDelta*(6-keys.length);
+      }
+    }
+    const layerWidth = canvasWidth*canvasWidthProportion;
+    const layerHeigth = canvasHeight*canvasHeightProportion;
     return (
       <Group
-      x={canvasWidth*0.05}
-      y={canvasHeight*0.75}
+      x={canvasWidth*layerXOffsetPercentage}
+      y={canvasHeight*layerYOffsetPercentage}
       height={layerHeigth}
       width={layerWidth}
       visible={true}
@@ -57,14 +75,22 @@ class CharacteristicsLayer extends Component<ICharacteristicsProps, any> {
         </Group>
         {Object.keys(characteristics).sort().map((charKey, index) => {
           const characteristic = characteristics[charKey];
-          const groupWidth = layerWidth*0.16;
-          const xGroup = xOffset + index*layerWidth*0.16;
-          const yGroup = layerHeigth*0.3;
+          const groupWidth = layerWidth*groupWidthProportion;
+          let groupHeight = layerHeigth;
+          let xGroup = xOffset1 + index*layerWidth*groupWidthProportion;
+          let yGroup = layerHeigth*0.3;
+          if (imageFormat === 'horizontal') {
+            groupHeight = layerHeigth*0.35;
+            if (index >= 3) {
+              xGroup = xOffset2 + (index-3)*layerWidth*groupWidthProportion;
+              yGroup = layerHeigth*0.74;
+            }
+          }
           const xIcon = (groupWidth/2) - ((characteristic.icon.w*characteristic.scale)/2)
           return (
             <Group
             width={groupWidth}
-            height={layerHeigth}
+            height={groupHeight}
             x={xGroup}
             y={yGroup} >
               <Path
@@ -74,11 +100,11 @@ class CharacteristicsLayer extends Component<ICharacteristicsProps, any> {
               scaleY={characteristic.scale}
               x={xIcon}
               y={10} />
-              <Label y={layerHeigth - 10}>
+              <Label y={groupHeight}>
                 <Tag fill={color} />
                 <Text
                 fill={textColor}
-                width={layerWidth*0.16}
+                width={groupWidth}
                 text={characteristic.text}
                 fontSize={10}
                 align={'center'} />
