@@ -139,8 +139,8 @@ class Home extends Component<any, IHomeState> {
         break;
       case 'horizontal' :
         this.setState({
-          canvasWidth: 810,
-          canvasHeight: 576,
+          canvasWidth: 600,
+          canvasHeight: 432,
           imageFormat: imageFormat
         });
         break;

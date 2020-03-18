@@ -8,3 +8,5 @@ declare module '*.svg' {
 declare module 'twitter-lite/twitter';
 
 declare module 'react-twitter-auth/lib/react-twitter-auth-component';
+
+declare module 'react-facebook-login';

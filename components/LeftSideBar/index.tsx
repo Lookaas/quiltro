@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import React, { Component, FormEvent, RefObject } from 'react';
-import ReactGA from 'react-ga';
-import TwitterLogin from 'react-twitter-auth/lib/react-twitter-auth-component';
 
 import { IAdoptionForm, ITextBlockElement } from '../../pages';
 import ContactInformation from './ContactInformation';
@@ -33,6 +31,7 @@ export interface ILeftSidebarProps {
 
 export interface ILeftSidebarState {
   isFormValid: boolean;
+  imageLoadedUrl: string;
 }
 
 export default class LeftSidebar extends Component<
@@ -40,7 +39,8 @@ export default class LeftSidebar extends Component<
   ILeftSidebarState
 > {
   state = {
-    isFormValid: false
+    isFormValid: false,
+    imageLoadedUrl: ''
   };
 
   getDataByKey = (form: IAdoptionForm, key: keyof IAdoptionForm) => {
@@ -90,15 +90,6 @@ export default class LeftSidebar extends Component<
     return blob;
   };
 
-  loadToTwitter = (imgB64: string) => {
-    axios.post('http://localhost:3000/testImage', {image: imgB64.replace(/data\:image\/png;base64,/, '')}).then(response => {
-      console.log(response);
-    }).catch(error => {
-      console.error(error);
-
-    })
-  }
-
   loadToS3 = (file: Blob, filename: string) => {
     axios.post("http://localhost:3000/testS3",{
       fileName : filename,
@@ -122,11 +113,11 @@ export default class LeftSidebar extends Component<
         console.log(url);
       })
       .catch(error => {
-        alert("ERROR " + JSON.stringify(error));
+        console.error(error);
       })
     })
     .catch(error => {
-      alert(JSON.stringify(error));
+      console.error(error);
     })
   }
 
@@ -134,7 +125,7 @@ export default class LeftSidebar extends Component<
     const {formValues} = this.props;
     e.preventDefault();
 
-    const imgB64 = this.props.canvasRef.current!.getStage().toDataURL({ pixelRatio: 2, quality:1, mimeType: 'image/png'});
+    const imgB64 = this.props.canvasRef.current!.getStage().toDataURL({ pixelRatio: 1, quality:1, mimeType: 'image/png'});
     let link = document.createElement('a');
     link.download = formValues['nombre-mascota'];
     link.href = imgB64;
@@ -142,7 +133,7 @@ export default class LeftSidebar extends Component<
     link.click();
     document.body.removeChild(link);
     const imageBlob = this.dataURItoBlob(imgB64);
-    //this.loadToS3(imageBlob, formValues['nombre-mascota']);
+    this.loadToS3(imageBlob, formValues['nombre-mascota']);
     /*const { formData, formJson } = this.getFormData();
     const response = await fetch('/api/image', {
       body: formData,
