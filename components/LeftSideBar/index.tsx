@@ -1,14 +1,12 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import React, { Component, FormEvent, RefObject } from 'react';
+import { Component, FormEvent, RefObject } from 'react';
 
-import { IAdoptionForm, ITextBlockElement } from '../../pages';
+import { IAdoptionForm} from '../../pages';
 import ContactInformation from './ContactInformation';
 import PhotoInformation from './PhotoInformation';
 import PetInformation from './PetInformation';
 import SubmitButton from './SubmitButton';
-import TextBlocksCreator from './TextBlocksCreator';
-import { ITextBlocksConfigPanelState } from './TextBlocksCreator/panel';
 import { containerStyle } from './styles'
 import { Stage } from 'konva/types/Stage';
 import axios from 'axios';
@@ -16,15 +14,7 @@ import axios from 'axios';
 export interface ILeftSidebarProps {
   canvasRef: RefObject<Stage>;
   formValues: IAdoptionForm;
-  selectedTextBlock: string;
-  textBlocks: {
-    [id: string]: ITextBlockElement;
-  };
-  //addTextBlock: () => void;
-  addTextBlockWithData: (textBlock: ITextBlockElement) => void;
   onInputChanged: (key: keyof IAdoptionForm, value: any) => void;
-  onTextBlockInteracted: (key: string) => void;
-  onTextChanged: (key: string, value: string, id: string) => void;
   onImageUploaded: (prop1: HTMLImageElement) => void;
   changeDimensions: (imageFormat: string) => void;
 }
@@ -41,27 +31,6 @@ export default class LeftSidebar extends Component<
   state = {
     isFormValid: false,
     imageLoadedUrl: ''
-  };
-
-  getDataByKey = (form: IAdoptionForm, key: keyof IAdoptionForm) => {
-    return form[key]!.toString();
-  }
-
-  getFormData = (): { formData: FormData; formJson: object } => {
-    const formData = new FormData();
-    const { formValues } = this.props;
-    for (const key in formValues) {
-      if (formValues.hasOwnProperty(key)) {
-        const element: string = this.getDataByKey(formValues, key as keyof IAdoptionForm);
-        formData.append(key, element);
-      }
-    }
-    const imageBlob = this.onExportImageClicked();
-    formData.append('image', imageBlob);
-    return {
-      formData,
-      formJson: formValues
-    };
   };
 
   dataURItoBlob = (dataURI: String) => {
@@ -82,12 +51,6 @@ export default class LeftSidebar extends Component<
       content[i] = byteString.charCodeAt(i);
     }
     return new Blob([new Uint8Array(content)], { type: mimestring });
-  };
-
-  onExportImageClicked = () => {
-    const imgB64 = this.props.canvasRef.current!.toDataURL({ pixelRatio: 2 });
-    const blob = this.dataURItoBlob(imgB64);
-    return blob;
   };
 
   loadToS3 = (file: Blob, filename: string) => {
@@ -134,18 +97,6 @@ export default class LeftSidebar extends Component<
     document.body.removeChild(link);
     const imageBlob = this.dataURItoBlob(imgB64);
     //this.loadToS3(imageBlob, formValues['nombre-mascota']);
-    /*const { formData, formJson } = this.getFormData();
-    const response = await fetch('/api/image', {
-      body: formData,
-      method: 'POST'
-    }).then(r => r.json());
-
-    ReactGA.event({
-      action: 'adoption-created',
-      category: 'User',
-      value: 1,
-      ...formJson
-    });*/
   };
 
   onFormChange = (e: FormEvent<HTMLFormElement>) => {
@@ -157,24 +108,19 @@ export default class LeftSidebar extends Component<
 
   render() {
     const {
-      onTextChanged,
       formValues,
       onInputChanged,
-      onTextBlockInteracted,
-      selectedTextBlock,
-      textBlocks,
-      addTextBlockWithData,
       onImageUploaded,
       changeDimensions
     } = this.props;
     return (
       <form onSubmit={this.onSubmit} onChange={this.onFormChange} css={containerStyle} method="post">
         <div>
-          <PhotoInformation onChange={onInputChanged} formValues={formValues} addText={addTextBlockWithData} onImageUploaded={onImageUploaded} changeDimensions={changeDimensions}/>
+          <PhotoInformation onImageUploaded={onImageUploaded} changeDimensions={changeDimensions}/>
           <ContactInformation onChange={onInputChanged} formValues={formValues} />
           </div>
         <div>
-          <PetInformation onChange={onInputChanged} formValues={formValues} addText={addTextBlockWithData} onImageUploaded={onImageUploaded} changeDimensions={changeDimensions}/>
+          <PetInformation onChange={onInputChanged} formValues={formValues} />
           <SubmitButton />
         </div>
       </form>

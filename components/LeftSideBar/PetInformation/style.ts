@@ -12,10 +12,6 @@ export const fakeRadioGroupStyle = css`
   position: absolute;
 `;
 
-export const fileUpload = css`
-  display: none;
-`;
-
 export const containerStyle = css`
   display: flex;
   flex-direction: row;

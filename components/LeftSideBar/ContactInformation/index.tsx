@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Card, Elevation, FormGroup, H4, InputGroup, NumericInput, Tag, Icon } from '@blueprintjs/core';
+import { Card, Elevation, FormGroup, H4, InputGroup } from '@blueprintjs/core';
 import { jsx } from '@emotion/core';
 import React, { FormEvent, ChangeEvent } from 'react';
 import { IAdoptionForm } from '../../../pages';

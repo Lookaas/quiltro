@@ -15,10 +15,6 @@ class MyDocument extends Document {
     window.isEdge = document.documentMode || /Edge/.test(navigator.userAgent);
 
   }
-  static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
-  }
 
   render() {
     return (

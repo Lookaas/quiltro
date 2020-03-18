@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import React, { Component, createRef, RefObject } from 'react';
+import { Component } from 'react';
 import { jsx } from '@emotion/core';
 import { Text, Path, Group, Label, Tag } from 'react-konva';
 import { IIcon } from '../../../assets/icons'
