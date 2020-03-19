@@ -6,12 +6,6 @@ export const sidebarContainerStyle = css`
   width: 300px;
 `;
 
-export const fakeRadioGroupStyle = css`
-  opacity: 0;
-  height: 1;
-  position: absolute;
-`;
-
 export const fileUpload = css`
   display: none;
 `;

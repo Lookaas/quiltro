@@ -7,22 +7,15 @@ import {
   H4,
   InputGroup,
   Radio,
-  Button,
   Tag,
-  RadioGroup
 } from '@blueprintjs/core';
 import { jsx } from '@emotion/core';
-import React, { FormEvent, createRef } from 'react';
-import { IAdoptionForm, ITextBlockElement } from '../../../pages';
-import { fakeRadioGroupStyle, sidebarContainerStyle, fileUpload } from './style';
-import {faDog} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import React, { FormEvent } from 'react';
+import { IAdoptionForm } from '../../../pages';
+import { fakeRadioGroupStyle, sidebarContainerStyle} from './style';
 
 export interface IPetInformationProps {
   onChange: (key: keyof IAdoptionForm, value: any) => void;
-  addText: (textBlock: ITextBlockElement) => void;
-  onImageUploaded: (prop1: HTMLImageElement) => void;
-  changeDimensions: (imageFormat: string) => void;
   formValues: IAdoptionForm;
 }
 
@@ -30,69 +23,9 @@ export default class PetInformation extends React.Component<
   IPetInformationProps,
   any
 > {
-  state = {
-    size: 'm',
-    caseOption: '1',
-    sex: 'm',
-    inputFileRef: createRef<HTMLInputElement>(),
-    imageFormat: 'cuadrada'
-  };
-
-  onSizeChanged = (e: FormEvent<HTMLInputElement>) => {
-    const { onChange } = this.props;
-    const size = e.currentTarget.value;
-    this.setState({ size });
-    onChange('pet-size', size);
-  };
-
-  onCaseChanged = (e: FormEvent<HTMLInputElement>) => {
-    const { onChange } = this.props;
-    const caseOption = e.currentTarget.value;
-    this.setState({ caseOption });
-    onChange('caso-mascota', caseOption);
-  };
-
-  onSexChanged = (e: FormEvent<HTMLInputElement>) => {
-    const { onChange } = this.props;
-    const sex = e.currentTarget.value;
-    this.setState({ sex });
-    onChange('caso-mascota', sex);
-  };
-
-  openFile = () => {
-    this.state.inputFileRef.current!.click();
-  };
-
-  loadImageOntoReader = (event: ProgressEvent<FileReader>) => {
-    const img = new Image();
-    img.src = event.target!.result as string;
-    img.addEventListener('load', () => {
-      this.props.onImageUploaded(img);
-    });
-  };
-
-  onFileUploaded = (e: FormEvent<HTMLInputElement>) => {
-    const reader = new FileReader();
-    reader.onload = this.loadImageOntoReader;
-    const file : File = e.currentTarget.files![0];
-    if (!file) {
-      console.error('!file', file, e);
-    }
-    reader.readAsDataURL(e.currentTarget.files![0]);
-  };
-
-  onChangeDimensions = (e : FormEvent<HTMLInputElement>) => {
-    const {changeDimensions} = this.props;
-    const newImageFormat = e.currentTarget.value;
-    this.setState({
-      imageFormat: newImageFormat
-    });
-    changeDimensions(newImageFormat);
-  }
 
   render() {
-    const { onChange, formValues, addText, changeDimensions } = this.props;
-    const { size, caseOption, sex, inputFileRef, imageFormat } = this.state;
+    const { onChange, formValues } = this.props;
     const yearTag = <Tag>años</Tag>
     const monthTag = <Tag>meses</Tag>
     return (
@@ -116,22 +49,22 @@ export default class PetInformation extends React.Component<
           <FormGroup label="Situación*">
             <Radio
               name="caso"
-              value={caseOption}
-              onChange={e => onChange('caso-mascota', caseOption)}
-              checked={Boolean(caseOption)}
+              value={formValues['caso-mascota']}
+              onChange={e => onChange('caso-mascota', Boolean(formValues['caso-mascota']))}
+              checked={Boolean(formValues['caso-mascota'])}
               required
               css={fakeRadioGroupStyle}
             />
             <Radio
-              onChange={this.onCaseChanged}
-              checked={caseOption === '1'}
+              onChange={e => onChange('caso-mascota', '1')}
+              checked={formValues['caso-mascota'] === '1'}
               label="En adopción"
               value="1"
               inline
             />
             <Radio
-              onChange={this.onCaseChanged}
-              checked={caseOption === '2'}
+              onChange={e => onChange('caso-mascota', '2')}
+              checked={formValues['caso-mascota'] === '2'}
               label="Perdida"
               value="2"
               inline
@@ -173,7 +106,7 @@ export default class PetInformation extends React.Component<
             <Radio
               name="pet-gender"
               value={formValues['pet-gender']}
-              onChange={e => onChange('pet-gender', Boolean(sex))}
+              onChange={e => onChange('pet-gender', Boolean(formValues['pet-gender']))}
               checked={Boolean(formValues['pet-gender'])}
               required
               inline
@@ -200,7 +133,7 @@ export default class PetInformation extends React.Component<
             <Radio
               name="pet-size"
               value={formValues["pet-size"]}
-              onChange={e => onChange('pet-size', Boolean(size))}
+              onChange={e => onChange('pet-size', Boolean(formValues["pet-size"]))}
               checked={Boolean(formValues["pet-size"])}
               required
               css={fakeRadioGroupStyle}

@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { Alignment, Button, Navbar } from '@blueprintjs/core';
+import { Alignment, Navbar } from '@blueprintjs/core';
 import { jsx } from '@emotion/core';
-import React, { Component, createRef, ChangeEvent, FormEvent } from 'react';
-import { fileUpload, navContainerStyle } from './styles';
+import { Component } from 'react';
+import { navContainerStyle } from './styles';
 
 class Nav extends Component {
 
