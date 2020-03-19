@@ -97,7 +97,8 @@ class Canvas extends Component<IAppProps, IAppState> {
       imageFormat,
       color,
       secundaryColor,
-      textColor
+      textColor,
+      image
     } = this.props;
     const canvasStyle = css`
       display: flex;
@@ -187,7 +188,9 @@ class Canvas extends Component<IAppProps, IAppState> {
                 formData={formData}
                 color={color}
                 textColor={textColor}
-                imageFormat={imageFormat} />
+                imageFormat={imageFormat}
+                textStyle={image !== null && image.width === image.height && canvasHeight === canvasWidth}
+              />
 
               <Label
               y={canvasHeight*0.95} >
