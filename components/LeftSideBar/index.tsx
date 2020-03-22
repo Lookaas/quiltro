@@ -115,13 +115,15 @@ export default class LeftSidebar extends Component<
     } = this.props;
     return (
       <form onSubmit={this.onSubmit} onChange={this.onFormChange} css={containerStyle} method="post">
-        <div>
-          <PhotoInformation onImageUploaded={onImageUploaded} changeDimensions={changeDimensions}/>
-          <ContactInformation onChange={onInputChanged} formValues={formValues} />
+        <div className="row">
+          <div className="col-md-6">
+            <PhotoInformation onImageUploaded={onImageUploaded} changeDimensions={changeDimensions}/>
+            <ContactInformation onChange={onInputChanged} formValues={formValues} />
           </div>
-        <div>
-          <PetInformation onChange={onInputChanged} formValues={formValues} />
-          <SubmitButton />
+          <div className="col-md-6">
+            <PetInformation onChange={onInputChanged} formValues={formValues} />
+            <SubmitButton />
+          </div>
         </div>
       </form>
     );

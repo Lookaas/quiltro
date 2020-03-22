@@ -10,7 +10,7 @@ import {
 } from '@blueprintjs/core';
 import { jsx } from '@emotion/core';
 import React, { FormEvent, createRef } from 'react';
-import { sidebarContainerStyle, fileUpload } from './style';
+import { fileUpload, positionLabel1, buttonStyle } from './style';
 
 export interface IPhotoInformationProps {
   onImageUploaded: (prop1: HTMLImageElement) => void;
@@ -61,15 +61,18 @@ export default class PhotoInformation extends React.Component<
   render() {
     const { inputFileRef, imageFormat } = this.state;
     return (
-      <Card elevation={Elevation.ONE} css={sidebarContainerStyle}>
-        <H4>Fotografía</H4>
+      <Card elevation={Elevation.ONE}>
+        <H4 className="text-left">Fotografía</H4>
+        <label className="position-absolute" css={positionLabel1}>1</label>
         <div>
           <FormGroup label="Imagen*">
             <Button
               intent="primary"
               rightIcon="upload"
               text="Subir Imagen"
+              outlined
               onClick={this.openFile}
+              css={buttonStyle}
             />
             <input
               ref={inputFileRef}

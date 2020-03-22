@@ -121,7 +121,7 @@ class Canvas extends Component<IAppProps, IAppState> {
       textWidth = canvasWidth*0.5;
     }
     return (
-      <Card elevation={Elevation.ONE} css={canvasStyle}>
+      <Card elevation={Elevation.ONE}>
         {process.browser && (
           <Stage
             ref={onRef}

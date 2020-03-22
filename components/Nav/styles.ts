@@ -1,6 +1,11 @@
 import { css } from '@emotion/core';
 
-export const navContainerStyle = css``;
+export const navContainerStyle = css`
+  background-color: #6666cc;
+  color: white;
+  border-color: white;
+  font-family: 'Roboto', sans-serif;
+`;
 
 export const ulStyle = css`
   display: flex;

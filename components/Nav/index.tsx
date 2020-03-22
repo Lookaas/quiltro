@@ -11,7 +11,7 @@ class Nav extends Component {
       <Navbar css={navContainerStyle}>
         <Navbar.Group align={Alignment.LEFT}>
           <Navbar.Heading>Quiltro</Navbar.Heading>
-          <Navbar.Divider />
+          <Navbar.Divider css={navContainerStyle} />
         </Navbar.Group>
       </Navbar>
     );

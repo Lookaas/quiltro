@@ -19,6 +19,12 @@ export const containerStyle = css`
   align-items: flex-start;
 `;
 
-export const ageInputStyle = css`
-  width:
+export const positionLabel3 = css`
+  right: .9rem;
+  top: 0;
+  background-color: #6666cc;
+  padding: .5rem 1rem;
+  color: white;
+  border-radius: 0 3px 0 1rem;
 `
+

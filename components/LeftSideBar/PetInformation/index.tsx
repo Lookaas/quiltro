@@ -12,7 +12,7 @@ import {
 import { jsx } from '@emotion/core';
 import React, { FormEvent } from 'react';
 import { IAdoptionForm } from '../../../pages';
-import { fakeRadioGroupStyle, sidebarContainerStyle} from './style';
+import { fakeRadioGroupStyle, positionLabel3} from './style';
 
 export interface IPetInformationProps {
   onChange: (key: keyof IAdoptionForm, value: any) => void;
@@ -29,8 +29,9 @@ export default class PetInformation extends React.Component<
     const yearTag = <Tag>años</Tag>
     const monthTag = <Tag>meses</Tag>
     return (
-      <Card elevation={Elevation.ONE} css={sidebarContainerStyle}>
+      <Card elevation={Elevation.ONE}>
         <H4>Información</H4>
+        <label className="position-absolute" css={positionLabel3}>3</label>
         <div>
           <FormGroup label={'Nombre'}>
             <InputGroup

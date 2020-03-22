@@ -305,27 +305,34 @@ class Home extends Component<any, IHomeState> {
     return (
       <div css={pageStyle}>
         <Nav />
-        <section data-name="bodycontainer" css={containerStyle}>
-          <LeftSidebar
-            canvasRef={this.stageRef}
-            formValues={formValues}
-            onInputChanged={this.setAdoptionFormField}
-            onImageUploaded={this.setCanvasImage}
-            changeDimensions={this.changeDimensions}
-          />
-          <Canvas
-            canvasRef={this.stageRef}
-            image={canvasImage}
-            onRef={this.stageRef}
-            canvasHeight={canvasHeight}
-            canvasWidth={canvasWidth}
-            characteristics={characteristics}
-            formData={formValues}
-            imageFormat={imageFormat}
-            color={color}
-            secundaryColor={secundaryColor}
-            textColor={textColor}
-          />
+        <section data-name="bodycontainer" className="container">
+          <div className="row pt-5">
+            <div className="col-md-6 order-first order-md-last">
+              <Canvas
+                canvasRef={this.stageRef}
+                image={canvasImage}
+                onRef={this.stageRef}
+                canvasHeight={canvasHeight}
+                canvasWidth={canvasWidth}
+                characteristics={characteristics}
+                formData={formValues}
+                imageFormat={imageFormat}
+                color={color}
+                secundaryColor={secundaryColor}
+                textColor={textColor}
+              />
+            </div>
+
+            <div className="col-md-6 order-last order-md-first">
+              <LeftSidebar
+                canvasRef={this.stageRef}
+                formValues={formValues}
+                onInputChanged={this.setAdoptionFormField}
+                onImageUploaded={this.setCanvasImage}
+                changeDimensions={this.changeDimensions}
+              />
+            </div>
+          </div>
         </section>
       </div>
     );

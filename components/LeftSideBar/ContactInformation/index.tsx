@@ -3,7 +3,7 @@ import { Card, Elevation, FormGroup, H4, InputGroup } from '@blueprintjs/core';
 import { jsx } from '@emotion/core';
 import React, { FormEvent, ChangeEvent } from 'react';
 import { IAdoptionForm } from '../../../pages';
-import { sidebarContainerStyle } from './style';
+import { positionLabel2 } from './style';
 
 export interface IContactInformationProps {
   onChange: (key: keyof IAdoptionForm, value: any) => void;
@@ -17,8 +17,9 @@ export default class ContactInformation extends React.Component<
   render() {
     const { onChange, formValues } = this.props;
     return (
-      <Card elevation={Elevation.ONE} css={sidebarContainerStyle}>
+      <Card elevation={Elevation.ONE} className="mt-3">
         <H4>Datos de contacto</H4>
+        <label className="position-absolute" css={positionLabel2}>2</label>
         <div>
           <FormGroup label="Nombre *">
             <InputGroup
