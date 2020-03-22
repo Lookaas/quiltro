@@ -70,7 +70,7 @@ export default class PhotoInformation extends React.Component<
               intent="primary"
               rightIcon="upload"
               text="Subir Imagen"
-              outlined
+              outlined={true}
               onClick={this.openFile}
               css={buttonStyle}
             />
