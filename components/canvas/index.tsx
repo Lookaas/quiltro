@@ -131,12 +131,18 @@ class Canvas extends Component<IAppProps, IAppState> {
             <Layer>
               <Rect width={canvasWidth} height={canvasHeight} fill={color} />
             </Layer>
-
-            <BackgroundImage
+            {
+              backgroundImage !== null ?
+              <BackgroundImage
               backgroundImage={backgroundImage}
               canvasHeight={canvasHeight}
               canvasWidth={canvasWidth}
               imageFormat={imageFormat} />
+              :
+              <Layer>
+                <Rect width={canvasWidth} height={280} fill='#efefef' />
+              </Layer>
+            }
 
             <Layer>
             <Group x={textX} y={textY} width={textWidth} height={canvasHeight} >
