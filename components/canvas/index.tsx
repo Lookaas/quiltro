@@ -4,11 +4,17 @@ import { jsx } from '@emotion/core';
 import { Component,  RefObject } from 'react';
 import { Layer, Stage, Text, Label, Tag, Rect, Group } from 'react-konva';
 import { css } from '@emotion/core';
+import {
+  Carousel,
+  CarouselItem,
+  CarouselIndicators
+} from 'reactstrap';
 
 import { IAdoptionForm } from '../../pages';
 import BackgroundImage from './BackgroundImage';
 import CharacteristicsLayer, { ICharacteristicElement } from './CharacteristicsLayer';
 import ContactLayer from './ContactLayer';
+import CanvasCarousel from './CanvasCarousel';
 
 interface IAppProps {
   onRef: RefObject<any>;
@@ -121,8 +127,9 @@ class Canvas extends Component<IAppProps, IAppState> {
       textWidth = canvasWidth*0.5;
     }
     return (
-      <Card elevation={Elevation.ONE}>
-        {process.browser && (
+      <div>
+        <CanvasCarousel canvasFormats={[{width: 552, height: 552, color: '#000'}, {width: 828, height: 552, color: '#0f0'}, {width: 552, height: 828, color: '#0ff'}]} />
+        {/*process.browser && (
           <Stage
             ref={onRef}
             width={canvasWidth}
@@ -212,8 +219,44 @@ class Canvas extends Component<IAppProps, IAppState> {
               </Group>
             </Layer>
           </Stage>
-        )}
-      </Card>
+          )
+          <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+                <div className='container'>
+                <Stage
+                  width={canvasWidth}
+                  height={canvasHeight}
+                >
+                  <Layer>
+                    <Rect width={canvasWidth} height={canvasHeight} fill={color} />
+                  </Layer>
+                </Stage>
+                </div>
+            </div>
+            <div className="carousel-item">
+                <div className='container'>
+                <Stage
+                  width={canvasWidth}
+                  height={canvasHeight}
+                >
+                  <Layer>
+                    <Rect width={canvasWidth} height={canvasHeight} fill={'#fff'} />
+                  </Layer>
+                </Stage>
+                </div>
+            </div>
+          </div>
+          <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="sr-only">Previous</span>
+        </a>
+        <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="sr-only">Next</span>
+        </a>
+        </div>*/}
+      </div>
     );
   }
 }

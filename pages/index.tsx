@@ -305,7 +305,7 @@ class Home extends Component<any, IHomeState> {
     return (
       <div css={pageStyle}>
         <Nav />
-        <section data-name="bodycontainer" className="container">
+        <section data-name="bodycontainer" className="container-fluid">
           <div className="row pt-5">
             <div className="col-md-6 order-first order-md-last">
               <Canvas
