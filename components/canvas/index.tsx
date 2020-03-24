@@ -1,16 +1,15 @@
 /** @jsx jsx */
 import { Card, Elevation } from '@blueprintjs/core';
-import { jsx } from '@emotion/core';
+import { jsx, css } from '@emotion/core';
 import { Component,  RefObject } from 'react';
 import { Layer, Stage, Text, Label, Tag, Rect, Group } from 'react-konva';
-import { css } from '@emotion/core';
 import {
   Carousel,
   CarouselItem,
   CarouselIndicators
 } from 'reactstrap';
 
-import { IAdoptionForm } from '../../pages';
+import { IAdoptionForm, ICanvasFormat } from '../../pages';
 import BackgroundImage from './BackgroundImage';
 import CharacteristicsLayer, { ICharacteristicElement } from './CharacteristicsLayer';
 import ContactLayer from './ContactLayer';
@@ -30,6 +29,11 @@ interface IAppProps {
   color: string;
   secundaryColor: string;
   textColor: string;
+  formats: Array<ICanvasFormat>;
+  activeIndex: number;
+  nextCanvas: () => void;
+  previusCanvas: () => void;
+  maxHeight: number;
 }
 
 interface IAppState {
@@ -104,7 +108,12 @@ class Canvas extends Component<IAppProps, IAppState> {
       color,
       secundaryColor,
       textColor,
-      image
+      image,
+      formats,
+      activeIndex,
+      nextCanvas,
+      previusCanvas,
+      maxHeight
     } = this.props;
     const canvasStyle = css`
       display: flex;
@@ -128,7 +137,12 @@ class Canvas extends Component<IAppProps, IAppState> {
     }
     return (
       <div>
-        <CanvasCarousel canvasFormats={[{width: 552, height: 552, color: '#000'}, {width: 828, height: 552, color: '#0f0'}, {width: 552, height: 828, color: '#0ff'}]} />
+        <CanvasCarousel
+          canvasFormats={formats}
+          activeIndex={activeIndex}
+          nextCanvas={nextCanvas}
+          previusCanvas={previusCanvas}
+          maxHeight={maxHeight}  />
         {/*process.browser && (
           <Stage
             ref={onRef}

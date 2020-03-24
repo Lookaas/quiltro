@@ -9,57 +9,39 @@ import {
 } from 'reactstrap';
 import { Stage, Layer, Rect } from 'react-konva';
 
+import { ICanvasFormat } from '../../../pages'
+
 interface ICanvasCarouselProps {
-  canvasFormats: Array<any>;
+  canvasFormats: Array<ICanvasFormat>;
+  activeIndex: number;
+  nextCanvas: () => void;
+  previusCanvas: () => void;
+  maxHeight: number;
 }
 
 interface ICanvasCarouselState {
-  activeIndex: number;
   animating: boolean;
 }
 
 class CanvasCarousel extends Component<ICanvasCarouselProps, ICanvasCarouselState> {
 
   state = {
-    activeIndex: 0,
     animating: false
   }
 
-  nextCanvas = () => {
-    const { activeIndex, animating } = this.state;
-    const { canvasFormats } = this.props;
-    if (animating) {
-      return;
-    }
-    const nextIndex = activeIndex === canvasFormats.length - 1 ? 0 : activeIndex + 1;
-    this.setState({
-      activeIndex: nextIndex
-    })
-  }
-
-  previusCanvas = () => {
-    const { activeIndex, animating } = this.state;
-    const { canvasFormats } = this.props;
-    if (animating) {
-      return;
-    }
-    const prevIndex = activeIndex === 0 ? canvasFormats.length - 1 : activeIndex - 1;
-    this.setState({
-      activeIndex: prevIndex
-    })
-  }
-
   render() {
-    const { activeIndex, animating } = this.state;
-    const { canvasFormats } = this.props;
+    const { canvasFormats, nextCanvas, previusCanvas, activeIndex, maxHeight } = this.props;
     return (
       <Carousel
         activeIndex={activeIndex}
-        next={this.nextCanvas}
-        previous={this.previusCanvas}
+        next={nextCanvas}
+        previous={previusCanvas}
+        interval={false}
         css={css`
                 width: ${canvasFormats[activeIndex].width}px;
                 height: ${canvasFormats[activeIndex].height}px;
+                margin-top: ${canvasFormats[activeIndex].marginTop}px;
+                margin-left: ${canvasFormats[activeIndex].marginLeft}px;
               `} >
         {canvasFormats.map((canvasFormat: any, index) => (
           <CarouselItem key={index}>
@@ -78,8 +60,8 @@ class CanvasCarousel extends Component<ICanvasCarouselProps, ICanvasCarouselStat
             </Container>
           </CarouselItem>
         ))}
-        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previusCanvas} />
-        <CarouselControl direction="next" directionText="Next" onClickHandler={this.nextCanvas} />
+        <CarouselControl direction="prev" directionText="Previous" onClickHandler={previusCanvas} />
+        <CarouselControl direction="next" directionText="Next" onClickHandler={nextCanvas} />
       </Carousel>
     )
   }
