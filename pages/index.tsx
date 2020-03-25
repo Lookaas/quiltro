@@ -395,7 +395,7 @@ class Home extends Component<any, IHomeState> {
               padding-top: 30px;
               padding-bottom: 20px;
               height: ${canvasMaxHeight + 50}px;
-              border-bottom: 1px solid black;
+              box-shadow: 0px 10px 18px #888888;
             }`} >
               <Canvas
                 canvasRef={this.stageRef}
