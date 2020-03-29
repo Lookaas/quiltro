@@ -41,6 +41,7 @@ export interface IAdoptionForm {
   'pet-gender': string;
   'age-pet': string;
   'month-age-pet': string;
+  
 }
 
 class Home extends Component<any, IHomeState> {
