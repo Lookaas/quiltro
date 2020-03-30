@@ -87,10 +87,10 @@ export default class PhotoInformation extends React.Component<
             label='Formato*'
             onChange={this.onChangeDimensions}
             selectedValue={imageFormat} >
-              <Radio label='Cuadrada' value='cuadrada' />
-              <Radio label='Vertical' value='vertical' />
-              <Radio label='Horizontal' value='horizontal' />
-            </RadioGroup>
+            <Radio label='Cuadrada' value='cuadrada' />
+            <Radio label='Vertical' value='vertical' />
+            <Radio label='Horizontal' value='horizontal' />
+          </RadioGroup>
         </div>
       </Card>
     );
