@@ -31,11 +31,11 @@ export function getRegionNameByNum(num){
 export function getCitysByRegion(region){
     let citys = {
         0: [ "Santiago", "Lampa", "Peñaflor" ],
-        1: [ "Iquique", "Pozo Almonte" ],
-        2: [ "Antofagasta", "Mejillones", "Taltal" ],
-        3: [ "Copiapo", "Caldera", "Tierra Amarilla" ],
-        4: [ "la Serena", "Coquimbo", "Tongoy" ],
-        5: [ "Valparaiso", "Viña del Mar", "Con Con" ],
+        1: [ "Iquique","Alto Hospicio", "Camiña", "Colchane", "Huara", "Pica", "Pozo Almonte" ],
+        2: [ "Antofagasta","Sierra Gorda", "Mejillones", "Taltal", "Calama", "Ollague", "San Pedro de Atacama", "María Elena", "Tocopilla" ],
+        3: [ "Copiapo", "Caldera", "Tierra Amarilla", "Chañaral", "Diego de Almagro", "Vallenar", "Alto del Carmen", "Freirina", "Huasco" ],
+        4: [ "La Serena", "Coquimbo", "Andacollo", "La Higuera", "Paiguano", "Vicuña", "Illapel", "Canela", "Los Vilos", "Salamanca", "Ovalle", "Combarbalá", "Monte Patria", "Punitaqui", "Río Hurtado" ],
+        5: [ "Valparaíso", "Casablanca", "Concón", "Juan Fernández", "Puchuncaví", "Quintero", "Viña del Mar", "Isla de Pascua", "Los Andes", "Calle Larga", "Rinconada", "San Esteban", "La Ligua", "Cabildo", "Papudo", "Petorca", "Zapallar", "Quillota", "Calera", "Hijuelas", "La Cruz", "Nogales", "San Antonio", "Algarrobo", "Cartagena", "El Quisco", "El Tabo", "Santo Domingo", "San Felipe", "Catemu", "Llay llay", "Panquehue", "Putaendo", "Santa María", "Quilpué", "Limache", "Olmué", "Villa Alemana" ],
         6: [ "Rengo", "Pichilemu", "San Fernando" ],
         7: [ "Curico", "Talca", "Linares" ],
         8: [ "Concepción", "Talcahuano" ],
@@ -44,7 +44,7 @@ export function getCitysByRegion(region){
         11: [ "Coyhaique", "Puerto Aysén" ],
         12: [ "Punta Arenas", "Puerto Williams" ],
         14: [ "Valdivia", "Los Lagos", "La Union" ],
-        15: [ "Arica", "Putre" ],
+        15: [ "Arica", "Camarones", "Putre","General Lagos" ],
         16: [ "Chillan", "Bulnes", "Quillon" ],
         99: [ ]
     }
