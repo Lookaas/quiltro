@@ -76,12 +76,21 @@ class ContactLayer extends Component<IContactProps, any> {
               fontSize={11}
               />
             </Label>}
-              {formData['contact-city'] !== '' &&
+              {formData['comuna'] !== '' &&
+              <Label y={95} >
+              <Tag fill={color} />
+              <Text
+              fill={textColor}
+              text={formData['comuna']}
+              fontSize={11}
+              />
+            </Label>}
+            {formData['region'] !== '' &&
               <Label y={80} >
               <Tag fill={color} />
               <Text
               fill={textColor}
-              text={formData['contact-city']}
+              text={formData['region']}
               fontSize={11}
               />
             </Label>}
@@ -93,7 +102,7 @@ class ContactLayer extends Component<IContactProps, any> {
       if(formData['contact-name'] !== '' ) finalText += formData['contact-name'];
       if(formData['contact-phone'] !== '+56 ' ) finalText += ' | ' + formData['contact-phone'];
       if(formData['contact-email'] !== '' ) finalText += ' | ' + formData['contact-email'];
-      if(formData['contact-city'] !== '' ) finalText += ' | ' + formData['contact-city'];
+      if(formData['comuna'] !== '' ) finalText += ' | ' + formData['comuna'];
 
       return (
         <Group

@@ -7,6 +7,7 @@ import { positionLabel2 } from './style';
 import { REGRESSION_CHART } from '@blueprintjs/icons/lib/esm/generated/iconNames';
 import { normalizeKeyCombo } from '@blueprintjs/core/lib/esm/components/hotkeys/hotkeyParser';
 import { NODATA } from 'dns';
+import { getRegions, getCitysByRegion, getRegionNameByNum } from '../../../helpers/Inforegiones';
 
 export interface IContactInformationProps {
   onChange: (key: keyof IAdoptionForm, value: any) => void;
@@ -18,60 +19,47 @@ export default class ContactInformation extends React.Component<
   any
 
  >  {
-  constructor(props: any) {
-    super(props);
-    console.log(this.regiones);     
-    this.state={
-        region_seleccionada:0
-    }
-    this.onChangeHandler=this.onChangeHandler.bind(this);
-}
-   regiones = [
+  state = {
+    region: 0,
+    regions: getRegions(),
+    citys: getCitysByRegion(0)
+  };
+  
 
-    {
-    "nombre": "Arica y Parinacota",
-    "comunas": ["Arica", "Camarones", "Putre", "General Lagos"]
-    },
-    {
-    "nombre": "Tarapacá",
-    "comunas": ["Iquique", "Alto Hospicio", "Pozo Almonte", "Camiña", "Colchane", "Huara", "Pica"]
-    },
-    {
-    "nombre": "Antofagasta",
-    "comunas": ["Antofagasta", "Mejillones", "Sierra Gorda", "Taltal", "Calama", "Ollagüe", "San Pedro de Atacama", "Tocopilla", "María Elena"]
-    },
-    {
-    "nombre": "Atacama",
-    "comunas": ["Copiapó", "Caldera", "Tierra Amarilla", "Chañaral", "Diego de Almagro", "Vallenar", "Alto del Carmen", "Freirina", "Huasco"]
-    },
-    {
-    "nombre": "Coquimbo",
-    "comunas": ["La Serena", "Coquimbo", "Andacollo", "La Higuera", "Paiguano", "Vicuña", "Illapel", "Canela", "Los Vilos", "Salamanca", "Ovalle", "Combarbalá", "Monte Patria", "Punitaqui", "Río Hurtado"]
-    },
-    {
-    "nombre": "Valparaíso",
-    "comunas": ["Valparaíso", "Casablanca", "Concón", "Juan Fernández", "Puchuncaví", "Quintero", "Viña del Mar", "Isla de Pascua", "Los Andes", "Calle Larga", "Rinconada", "San Esteban", "La Ligua", "Cabildo", "Papudo", "Petorca", "Zapallar", "Quillota", "Calera", "Hijuelas", "La Cruz", "Nogales", "San Antonio", "Algarrobo", "Cartagena", "El Quisco", "El Tabo", "Santo Domingo", "San Felipe", "Catemu", "Llaillay", "Panquehue", "Putaendo", "Santa María", "Quilpué", "Limache", "Olmué", "Villa Alemana"]
-    }
-]
 
-onChangeHandler(e:any) {
+
+
+/* //onChangeHandler(e:any) {
   console.log('handler funcionando');
   
     const selection = e.target.value;
     this.setState({region_seleccionada:e.target.value})
-    //this.state.region_seleccionada = selection
     console.log('region seleccionada', this.state.region_seleccionada)
 
 
-}  
+}   */
 
 
   render() {
 
 
-    let i = -1 
-    let  listaComunas = this.regiones[this.state.region_seleccionada]["comunas"]
+   // let i = -1 
+   // let  listaComunas = this.regiones[this.state.region_seleccionada]["comunas"]
     const { onChange, formValues } = this.props;
+
+    const changeRegion = (e: any) => {
+      const region = parseInt(e.target.value);
+      console.log(region);
+      let citys = getCitysByRegion(region);
+      const nomreg = getRegionNameByNum(region);
+      this.setState({
+        region,
+        citys
+      });
+      onChange('region', nomreg);
+      setTimeout(() => { onChange('comuna', '') , 500})
+    }
+    
     return (
       <Card elevation={Elevation.ONE} className="mt-3">
         <H4>Datos de contacto</H4>
@@ -123,29 +111,40 @@ onChangeHandler(e:any) {
         <div>
          <FormGroup label="Región *">
          
-<select onChange={this.onChangeHandler} value={this.state.region_seleccionada}>
-<option selected value="Selecciona una region">Selecciona una region</option> 
-{this.regiones.map((region => {
-          i++
-           return(<option key={region.nombre} value={i}>{region.nombre} </option>
+         <select 
+            name="region" 
+            onChange={changeRegion}
+          >
+            <option key={99} value={99}>Región</option>
+            {
+              this.state.regions.map((reg: any) => (
+                <option 
+                  key={reg.nro} 
+                  value={reg.nro}
+                >{ reg.nombre }
+                </option>
+              ))
+            }
+          </select>
+          </FormGroup>    
 
-           )
-}))}
+<FormGroup label="Comuna *">       
+<select 
+            name="comuna"
+            onChange={(e: any) => {
+              onChange('comuna', e.currentTarget.value);
+            }}
+          >
+            <option key="No informada" value="">Ciudad</option>
+            {
+              this.state.citys.map((c: any) => (
+                <option key={c} value={c}>{ c }</option>
+              ))
+            }
+          </select>
 
-</select>      
-        
-<select onChange={this.onChangeHandler} value={this.state.region_seleccionada}>
-<option selected value="Selecciona una comuna">Selecciona una Comuna</option>
-{listaComunas.map(comuna => {
-           return(
-           <option>{comuna}</option>
-           )
-        })}
 
-</select>
-
-
-
+         
           </FormGroup>
         </div>
       </Card>

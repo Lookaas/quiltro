@@ -37,11 +37,11 @@ export interface IAdoptionForm {
   'informacion-extra-mascota'?: string;
   'pet-size': string;
   'caso-mascota': string;
-  'contact-city': string;
+  'comuna': string;
   'pet-gender': string;
   'age-pet': string;
   'month-age-pet': string;
-  
+  'region':string;
 }
 
 class Home extends Component<any, IHomeState> {
@@ -60,10 +60,11 @@ class Home extends Component<any, IHomeState> {
       vaccines: false,
       'whatsapp-contacto': '',
       'caso-mascota': '1',
-      'contact-city': '',
+      'comuna': '',
       'pet-gender': '',
       'age-pet': '',
-      'month-age-pet': ''
+      'month-age-pet': '',
+      'region': ''
     },
     characteristics: {},
     canvasHeight: 540,
