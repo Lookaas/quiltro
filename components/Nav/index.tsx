@@ -8,8 +8,8 @@ class Nav extends Component {
 
   render() {
     return (
-      <Navbar css={navContainerStyle}>
-        <Navbar.Group align={Alignment.LEFT}>
+      <Navbar css={navContainerStyle} fixedToTop>
+        <Navbar.Group>
           <Navbar.Heading>Quiltro</Navbar.Heading>
           <Navbar.Divider css={navContainerStyle} />
         </Navbar.Group>

@@ -5,6 +5,7 @@ export const navContainerStyle = css`
   color: white;
   border-color: white;
   font-family: 'Roboto', sans-serif;
+  padding-bottom: 30px;
 `;
 
 export const ulStyle = css`

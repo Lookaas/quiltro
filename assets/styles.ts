@@ -1,12 +1,10 @@
 import { css } from '@emotion/core';
 
 export const containerStyle = css`
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 1rem;
-  padding-bottom: 4rem;
-  width: 900px;
+  padding-top: 40px;
+  @media only screen and (max-width: 992px) {
+    padding-top: 0px;
+  }
 `;
 
 export const pageStyle = css`

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
+import { jsx, css } from '@emotion/core';
 import { Component, createRef } from 'react';
 import Canvas from '../components/canvas';
 import LeftSidebar from '../components/LeftSideBar';
@@ -18,6 +18,9 @@ interface IHomeState {
   color: string;
   secundaryColor: string;
   textColor: string;
+  canvasFormats: Array<ICanvasFormat>;
+  activeCanvasIndex: number;
+  canvasMaxHeight: number;
 }
 
 interface ICharacteristics {
@@ -41,6 +44,14 @@ export interface IAdoptionForm {
   'pet-gender': string;
   'age-pet': string;
   'month-age-pet': string;
+}
+
+export interface ICanvasFormat {
+  width: number;
+  height: number;
+  color: string;
+  marginTop: number;
+  marginLeft: number;
 }
 
 class Home extends Component<any, IHomeState> {
@@ -70,7 +81,13 @@ class Home extends Component<any, IHomeState> {
     imageFormat: 'cuadrada',
     color: '#62bfa2',
     secundaryColor: '#51947f',
-    textColor: '#ffffff'
+    textColor: '#ffffff',
+    canvasFormats: [
+      {width: 552, height: 552, color: '#000', marginTop: 0, marginLeft: 0},
+      {width: 552, height: 828, color: '#0ff', marginTop: 0, marginLeft: 0}
+    ],
+    activeCanvasIndex: 0,
+    canvasMaxHeight: 850
   };
 
   stageRef = createRef<any>();
@@ -99,6 +116,48 @@ class Home extends Component<any, IHomeState> {
         });
         break;
     }
+  }
+
+  componentDidMount() {
+    const width = screen.width - 40;
+    const height = screen.height / 2;
+    if ( width < 828) {
+      this.transformDimensions(width, height);
+    }
+  }
+
+  transformDimensions = (newWidth: number, newHeight: number) => {
+    debugger
+    const { canvasFormats } = this.state;
+    const transformHeight = (wNew: number, wOld: number, hOld: number) => {
+      return wNew*hOld/wOld;
+    };
+    const transformWidth = (hNew: number, wOld: number, hOld: number) => {
+      return hNew*wOld/hOld;
+    };
+    const newCanvasFormats: Array<ICanvasFormat> = canvasFormats.map((canvasFormat) => {
+      let w = transformWidth(newHeight, canvasFormat.width, canvasFormat.height);
+      let h = newHeight;
+      let marginTop = 0;
+      let marginLeft = (newWidth - w) / 2;
+      if (canvasFormat.width > canvasFormat.height) {
+        w = newWidth;
+        h = transformHeight(newWidth, canvasFormat.width, canvasFormat.height);
+        marginTop = (newHeight - h) / 2;
+        marginLeft = 0;
+      }
+      return {
+        width: w,
+        height: h,
+        color: canvasFormat.color,
+        marginLeft,
+        marginTop
+      }
+    });
+    this.setState({
+      canvasFormats: newCanvasFormats,
+      canvasMaxHeight: newHeight
+    });
   }
 
   setCanvasImage = (image: HTMLImageElement) => {
@@ -290,6 +349,22 @@ class Home extends Component<any, IHomeState> {
     }
   };
 
+  nextCanvas = () => {
+    const { activeCanvasIndex, canvasFormats } = this.state;
+    const nextIndex = activeCanvasIndex === canvasFormats.length - 1 ? 0 : activeCanvasIndex + 1;
+    this.setState({
+      activeCanvasIndex: nextIndex
+    })
+  }
+
+  previusCanvas = () => {
+    const { activeCanvasIndex, canvasFormats } = this.state;
+    const prevIndex = activeCanvasIndex === 0 ? canvasFormats.length - 1 : activeCanvasIndex - 1;
+    this.setState({
+      activeCanvasIndex: prevIndex
+    })
+  }
+
   render() {
     const {
       canvasImage,
@@ -300,14 +375,27 @@ class Home extends Component<any, IHomeState> {
       imageFormat,
       color,
       secundaryColor,
-      textColor
+      textColor,
+      canvasFormats,
+      activeCanvasIndex,
+      canvasMaxHeight
     } = this.state;
     return (
       <div css={pageStyle}>
         <Nav />
-        <section data-name="bodycontainer" className="container">
+        <section data-name="bodycontainer" className="container-fluid" css={containerStyle} >
           <div className="row pt-5">
-            <div className="col-md-6 order-first order-md-last">
+            <div className="col-md-6 order-first order-md-last"
+            css={css`
+            @media only screen and (max-width: 992px) {
+              position: fixed;
+              background: white;
+              z-index: 100;
+              padding-top: 30px;
+              padding-bottom: 20px;
+              height: ${canvasMaxHeight + 50}px;
+              box-shadow: 0px 10px 18px #888888;
+            }`} >
               <Canvas
                 canvasRef={this.stageRef}
                 image={canvasImage}
@@ -320,10 +408,19 @@ class Home extends Component<any, IHomeState> {
                 color={color}
                 secundaryColor={secundaryColor}
                 textColor={textColor}
+                formats={canvasFormats}
+                activeIndex={activeCanvasIndex}
+                nextCanvas={this.nextCanvas}
+                previusCanvas={this.previusCanvas}
+                maxHeight={canvasMaxHeight}
               />
             </div>
 
-            <div className="col-md-6 order-last order-md-first">
+            <div className="col-md-6 order-last order-md-first"
+            css={css`
+            @media only screen and (max-width: 992px) {
+              padding-top: ${canvasMaxHeight + 60}px;
+            }`} >
               <LeftSidebar
                 canvasRef={this.stageRef}
                 formValues={formValues}
