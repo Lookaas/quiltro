@@ -46,6 +46,7 @@ export default class PetInformation extends React.Component<
             />
           </FormGroup>
         </div>
+        {/*
         <div>
           <FormGroup label="Situación*">
             <Radio
@@ -72,6 +73,9 @@ export default class PetInformation extends React.Component<
             />
           </FormGroup>
         </div>
+
+        */}
+
         <div>
           <FormGroup label="Edad aproximada*">
             <div style={{display: 'flex', width: '100%'}}>
