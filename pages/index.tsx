@@ -84,7 +84,6 @@ class Home extends Component<any, IHomeState> {
     textColor: '#ffffff',
     canvasFormats: [
       {width: 552, height: 552, color: '#000', marginTop: 0, marginLeft: 0},
-      {width: 828, height: 552, color: '#0f0', marginTop: 0, marginLeft: 0},
       {width: 552, height: 828, color: '#0ff', marginTop: 0, marginLeft: 0}
     ],
     activeCanvasIndex: 0,
