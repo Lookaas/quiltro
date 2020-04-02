@@ -2,7 +2,7 @@
 
 import { Component } from 'react';
 import { jsx } from '@emotion/core';
-import { Text, Group, Label, Tag } from 'react-konva';
+import { Text, Group, Label, Tag, Rect } from 'react-konva';
 
 import {IAdoptionForm} from '../../../pages';
 import { normalCanvasWidth } from '../../../constants';
@@ -34,7 +34,7 @@ class ContactLayer extends Component<IContactProps, any> {
     const formatDimensions = dimensions[format];
     let layerWidth = formatDimensions.w;
     let layerHeight = formatDimensions.h;
-    let fontSize = 12;
+    let fontSize = 10;
     let fontSizeTitle = 14;
     if (canvasWidth < normalCanvasWidth) {
       layerWidth = transformDimension(canvasWidth, normalCanvasWidth, formatDimensions.w);
@@ -60,6 +60,7 @@ class ContactLayer extends Component<IContactProps, any> {
           height={layerHeight}
           visible={true}
           >
+            {/*<Rect width={layerWidth} height={layerHeight} fill={color} cornerRadius={5} stroke={'#000'} />*/}
             <Group
             width={layerWidth} >
               <Label>
@@ -73,7 +74,7 @@ class ContactLayer extends Component<IContactProps, any> {
                   align='center' />
               </Label>
               {formData['contact-name'] !== '' &&
-                <Label y={layerHeight*0.4} >
+                <Label y={layerHeight*0.2} >
                   <Tag fill={color} />
                   <Text
                   fill={textColor}
@@ -82,7 +83,7 @@ class ContactLayer extends Component<IContactProps, any> {
                   />
                 </Label>}
               {formData['contact-phone'] !== '+56 ' &&
-                <Label y={layerHeight*0.5}  >
+                <Label y={layerHeight*0.4}  >
                 <Tag fill={color} />
                 <Text
                 fill={textColor}
@@ -100,7 +101,7 @@ class ContactLayer extends Component<IContactProps, any> {
                 />
               </Label>}
                 {formData['contact-city'] !== '' &&
-                <Label y={layerHeight*0.7} >
+                <Label y={layerHeight*0.8} >
                 <Tag fill={color} />
                 <Text
                 fill={textColor}
@@ -151,7 +152,7 @@ class ContactLayer extends Component<IContactProps, any> {
               />
             </Label>}
               {formData['contact-email'] !== '' &&
-              <Label y={layerHeight*0.2} x={layerWidth*0.6} >
+              <Label y={layerHeight*0.2} x={layerWidth*0.4} >
               <Tag fill={color} />
               <Text
               fill={textColor}
@@ -160,7 +161,7 @@ class ContactLayer extends Component<IContactProps, any> {
               />
             </Label>}
               {formData['contact-city'] !== '' &&
-              <Label y={layerHeight*0.7} x={layerWidth*0.6} >
+              <Label y={layerHeight*0.7} x={layerWidth*0.4} >
               <Tag fill={color} />
               <Text
               fill={textColor}

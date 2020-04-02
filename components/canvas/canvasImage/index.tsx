@@ -1,13 +1,15 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
-import { Component,  RefObject } from 'react';
-import { Layer, Stage, Text, Label, Tag, Rect, Group } from 'react-konva';
+import { Component,  RefObject, createRef } from 'react';
+import { Layer, Stage, Text, Label, Tag, Rect, Group, Line } from 'react-konva';
+import {Rect as RectType} from 'konva/types/shapes/Rect';
 
 import BackgroundImage from '../BackgroundImage';
 import CharacteristicsLayer, { ICharacteristicElement } from '../CharacteristicsLayer';
 import ContactLayer from '../ContactLayer';
 import { IAdoptionForm, ICanvasFormat } from '../../../pages';
-import { imageFormatsLimits } from '../../../constants';
+import { imageFormatsLimits, normalCanvasWidth } from '../../../constants';
+import { transformDimension } from '../../../utils';
 
 interface ICanvasImageProps {
   onRef: RefObject<any>;
@@ -25,6 +27,12 @@ interface ICanvasImageProps {
 }
 
 class CanvasImage extends Component<ICanvasImageProps, any>{
+
+  testRef = createRef<RectType>();
+
+  componentDidMount() {
+    //this.testRef.current!.zIndex(0);
+  }
 
   render() {
     const {
@@ -68,6 +76,8 @@ class CanvasImage extends Component<ICanvasImageProps, any>{
     let characteristicsX = 0;
     let characteristicsY = 0;
     let footerWidth = canvasWidth;
+    let titleWidth = canvasWidth;
+    let titleY = 0;
     switch (canvasType+imageFormat) {
       case 'cc' :
         imageHeight = canvasHeight*(9/12);
@@ -78,6 +88,8 @@ class CanvasImage extends Component<ICanvasImageProps, any>{
         contactY = canvasHeight*(10/12);
         characteristicsFormat = '1x6';
         characteristicsY = canvasHeight*(2/12);
+        titleWidth = imageX;
+        titleY = canvasWidth*(0.5/12);
         break;
       case 'vc' :
         imageHeight = canvasWidth;
@@ -88,6 +100,7 @@ class CanvasImage extends Component<ICanvasImageProps, any>{
         characteristicsFormat = '3x2-large';
         characteristicsY = contactY;
         characteristicsX = canvasWidth*(0.5/12);
+        titleY = canvasHeight*(12.3/18);
         break;
       case 'cv' :
         imageHeight = canvasHeight;
@@ -99,6 +112,8 @@ class CanvasImage extends Component<ICanvasImageProps, any>{
         characteristicsY = canvasHeight*(2.5/12);
         characteristicsX = contactX;
         footerWidth = imageX;
+        titleWidth = imageX;
+        titleY = canvasWidth*(0.5/12);
         break;
       case 'vv' :
         imageHeight = canvasHeight*(12/18);
@@ -110,31 +125,51 @@ class CanvasImage extends Component<ICanvasImageProps, any>{
         characteristicsFormat = '1x6';
         characteristicsY = canvasHeight*(3.5/18);
         characteristicsX = canvasWidth*(1/12);
+        titleWidth = imageX;
+        titleY = canvasHeight*(1/18);
         break;
       case 'ch' :
-        imageHeight = canvasHeight*(9/12);
-        imageWidth = imageHeight;
-        imageX = canvasWidth*(3/12);
-        contactFormat = 'flatRectangle';
-        contactX = imageX;
-        contactY = imageHeight*(10/12);
-        characteristicsFormat = '1x6';
-        characteristicsY = canvasHeight*(2/12);
+        imageHeight = canvasHeight*(7/12);
+        imageWidth = canvasWidth;
+        contactFormat = 'rectangle';
+        contactX = canvasWidth*(7.5/12);
+        contactY = canvasHeight*(7.7/12);
+        characteristicsFormat = '3x2-large';
+        characteristicsY = contactY;
+        characteristicsX = canvasWidth*(0.5/12);
+        titleY = canvasHeight*(7.1/12);
         break;
       case 'vh' :
-        imageHeight = canvasHeight*(9/12);
-        imageWidth = imageHeight;
-        imageX = canvasWidth*(3/12);
-        contactFormat = 'flatRectangle';
-        contactX = imageX;
-        contactY = imageHeight*(10/12);
-        characteristicsFormat = '1x6';
-        characteristicsY = canvasHeight*(2/12);
+        imageHeight = canvasHeight*(7/18);
+        imageWidth = canvasWidth;
+        contactFormat = 'bigRectangle';
+        contactX = canvasWidth*(2.5/12);
+        contactY = canvasHeight*(13/18);
+        characteristicsFormat = '3x2-larger';
+        characteristicsY = canvasHeight*(8.5/18);
+        characteristicsX = contactX;
+        titleY = canvasHeight*(7.3/18);
         break;
       default:
         //do nothing~
     }
-    debugger
+
+    let titleSize = 18;
+    let footerSize = 12;
+    let footerOffset = 30;
+    if (formData['nombre-mascota'].length > 12) {
+      titleSize = 16;
+    }
+
+    if (canvasWidth < normalCanvasWidth) {
+      titleSize = transformDimension(canvasWidth, normalCanvasWidth, titleSize);
+      footerSize = transformDimension(canvasWidth, normalCanvasWidth, 12);
+      footerOffset = transformDimension(canvasWidth, normalCanvasWidth, 30);
+    }
+
+    const titleText = formData['nombre-mascota'] !== '' ? formData['nombre-mascota'] : 'Nombre';
+    const subtitleText = formData['caso-mascota'] !== '' ? (formData['caso-mascota'] === '1' ? "En adopción" : 'Perdido') : 'Caso mascota';
+
     return (
       <Stage
         ref={onRef}
@@ -142,9 +177,11 @@ class CanvasImage extends Component<ICanvasImageProps, any>{
         height={canvasHeight}
       >
         <Layer>
-          <Rect width={canvasWidth} height={canvasHeight} fill={color} />
-        </Layer>
-        {
+          <Line
+            points = {[0, 0, imageX, 0, imageX, imageHeight, canvasWidth, imageHeight, canvasWidth, canvasHeight, 0, canvasHeight, 0, 0]}
+            fill={color}
+            closed={true} />
+                    {
           backgroundImage !== null ?
           <BackgroundImage
           backgroundImage={backgroundImage}
@@ -154,46 +191,52 @@ class CanvasImage extends Component<ICanvasImageProps, any>{
           imageScale={imageScale}
           x={imageX} />
           :
-          <Layer>
             <Rect width={imageWidth} height={imageHeight} x={imageX} fill='#efefef' />
-          </Layer>
         }
+        </Layer>
 
         <Layer>
-        {/*
-          <Group y={yLabels}>
-          <Label
-          x={0}
-          y={canvasHeight*0.05}
-          >
+        {canvasType+imageFormat != "cv" && canvasType+imageFormat != "cc" && canvasType+imageFormat != "vv" ?
+          <Label y={titleY}>
           <Tag fill={color} />
           <Text
           fill={textColor}
-          padding={10}
-          fontSize={35}
-          text={formData['nombre-mascota'] !== '' ? formData['nombre-mascota'] : 'Nombre mascota'}
+          fontSize={titleSize}
+          text={titleText + ' ' + subtitleText}
           align={'center'}
-          width={textWidth}
+          width={titleWidth}
+          fontStyle={'bold'}
+          // _useStrictMode
+          />
+        </Label>
+        :
+          <Group y={titleY}>
+          <Label>
+          <Tag fill={color} />
+          <Text
+          fill={textColor}
+          fontSize={titleSize}
+          text={titleText}
+          align={'center'}
+          width={titleWidth}
           fontStyle={'bold'}
           // _useStrictMode
           />
         </Label>
         <Label
-          x={0}
-          y={canvasHeight*0.15}
+          y={titleSize + 5}
           >
           <Tag fill={color} />
           <Text
           fill={textColor}
-          padding={10}
-          fontSize={22}
-          text={formData['caso-mascota'] !== '' ? (formData['caso-mascota'] === '1' ? "En adopción" : 'Perdido') : 'Caso mascota'}
+          fontSize={titleSize}
+          text={subtitleText}
           align={'center'}
-          width={textWidth}
+          width={titleWidth}
           // _useStrictMode
           />
         </Label>
-          </Group>*/}
+          </Group>}
 
           <CharacteristicsLayer
             canvasWidth={canvasWidth}
@@ -217,14 +260,14 @@ class CanvasImage extends Component<ICanvasImageProps, any>{
           />
 
           <Label
-          y={canvasHeight} >
+          y={canvasHeight-footerOffset} >
             <Tag fill={'#51947f'} />
             <Text
             fill={textColor}
               padding={10}
               width={footerWidth}
               text='difunde.quiltroschile.cl'
-              fontSize={12}
+              fontSize={footerSize}
               align='center' />
           </Label>
         </Layer>
