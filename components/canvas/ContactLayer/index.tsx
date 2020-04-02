@@ -3,8 +3,10 @@
 import { Component } from 'react';
 import { jsx } from '@emotion/core';
 import { Text, Group, Label, Tag } from 'react-konva';
-import {IAdoptionForm} from '../../../pages'
 
+import {IAdoptionForm} from '../../../pages';
+import { normalCanvasWidth } from '../../../constants';
+import { transformDimension } from '../../../utils';
 
 interface IContactProps {
   canvasWidth: number;
@@ -12,82 +14,164 @@ interface IContactProps {
   formData: IAdoptionForm;
   color: string;
   textColor: string;
-  imageFormat: string;
-  textStyle: boolean
+  format: 'square' | 'rectangle' | 'bigRectangle' | 'flatRectangle';
+  textStyle: boolean;
+  x: number;
+  y: number;
+}
+
+const dimensions = {
+  'square': {w: 184.5, h: 151},
+  'rectangle': {w: 230, h: 151},
+  'bigRectangle': {w: 322, h: 151},
+  'flatRectangle': {w: 368, h: 50}
 }
 
 class ContactLayer extends Component<IContactProps, any> {
 
   render() {
-    const {canvasHeight, canvasWidth, formData, color, textColor, imageFormat, textStyle} = this.props;
-    let layerWidth = canvasWidth*0.2;
-    let xOffset = 0.75;
+    const {canvasHeight, canvasWidth, formData, color, textColor, format, textStyle, x, y} = this.props;
+    const formatDimensions = dimensions[format];
+    let layerWidth = formatDimensions.w;
+    let layerHeight = formatDimensions.h;
+    let fontSize = 12;
+    let fontSizeTitle = 14;
+    if (canvasWidth < normalCanvasWidth) {
+      layerWidth = transformDimension(canvasWidth, normalCanvasWidth, formatDimensions.w);
+      layerHeight = transformDimension(canvasWidth, normalCanvasWidth, formatDimensions.h);
+      fontSize = transformDimension(canvasWidth, normalCanvasWidth, 9);
+      fontSizeTitle = transformDimension(canvasWidth, normalCanvasWidth, 11);
+    }
+    /*let xOffset = 0.75;
     let yOffset = 0.75;
     if (imageFormat === 'horizontal') {
       layerWidth = canvasWidth*0.3;
       xOffset = 0.35;
       yOffset = 0.68;
-    }
+    }*/
     console.log('textStyle: ', textStyle);
-    if(!textStyle){
-      return (
-        <Group
-        x={canvasWidth * xOffset}
-        y={canvasHeight * yOffset}
+    if(!textStyle) {
+      if (format != 'flatRectangle') {
+        return (
+          <Group
+          x={x}
+          y={y}
+          width={layerWidth}
+          height={layerHeight}
+          visible={true}
+          >
+            <Group
+            width={layerWidth} >
+              <Label>
+                <Tag fill={color} />
+                <Text
+                  fill={textColor}
+                  text='Contacto'
+                  fontSize={fontSizeTitle}
+                  fontStyle='bold'
+                  width={layerWidth}
+                  align='center' />
+              </Label>
+              {formData['contact-name'] !== '' &&
+                <Label y={layerHeight*0.4} >
+                  <Tag fill={color} />
+                  <Text
+                  fill={textColor}
+                  text={formData['contact-name']}
+                  fontSize={fontSize}
+                  />
+                </Label>}
+              {formData['contact-phone'] !== '+56 ' &&
+                <Label y={layerHeight*0.5}  >
+                <Tag fill={color} />
+                <Text
+                fill={textColor}
+                text={formData['contact-phone']}
+                fontSize={fontSize}
+                />
+              </Label>}
+                {formData['contact-email'] !== '' &&
+                <Label y={layerHeight*0.6} >
+                <Tag fill={color} />
+                <Text
+                fill={textColor}
+                text={formData['contact-email']}
+                fontSize={fontSize}
+                />
+              </Label>}
+                {formData['contact-city'] !== '' &&
+                <Label y={layerHeight*0.7} >
+                <Tag fill={color} />
+                <Text
+                fill={textColor}
+                text={formData['contact-city']}
+                fontSize={fontSize}
+                />
+              </Label>}
+            </Group>
+          </Group>
+        )
+      }
+      else {
+        return (
+          <Group
+        x={x}
+        y={y}
         width={layerWidth}
+        height={layerHeight}
         visible={true}
         >
+          <Label y={layerHeight*0.4}>
+            <Tag fill={color} />
+            <Text
+              fill={textColor}
+              text='Contacto'
+              fontSize={fontSizeTitle}
+              fontStyle='bold' />
+          </Label>
           <Group
-          width={layerWidth} >
-            <Label>
-              <Tag fill={color} />
-              <Text
-                fill={textColor}
-                text='Contacto'
-                fontSize={14}
-                fontStyle='bold'
-                width={layerWidth}
-                align='center' />
-            </Label>
+          width={layerWidth*0.8}
+          x={layerWidth*0.2} >
             {formData['contact-name'] !== '' &&
-              <Label y={20} >
+              <Label y={layerHeight*0.2} >
                 <Tag fill={color} />
                 <Text
                 fill={textColor}
                 text={formData['contact-name']}
-                fontSize={11}
+                fontSize={fontSize}
                 />
               </Label>}
             {formData['contact-phone'] !== '+56 ' &&
-              <Label y={40}  >
+              <Label y={layerHeight*0.7}  >
               <Tag fill={color} />
               <Text
               fill={textColor}
               text={formData['contact-phone']}
-              fontSize={11}
+              fontSize={fontSize}
               />
             </Label>}
               {formData['contact-email'] !== '' &&
-              <Label y={60} >
+              <Label y={layerHeight*0.2} x={layerWidth*0.6} >
               <Tag fill={color} />
               <Text
               fill={textColor}
               text={formData['contact-email']}
-              fontSize={11}
+              fontSize={fontSize}
               />
             </Label>}
               {formData['contact-city'] !== '' &&
-              <Label y={80} >
+              <Label y={layerHeight*0.7} x={layerWidth*0.6} >
               <Tag fill={color} />
               <Text
               fill={textColor}
               text={formData['contact-city']}
-              fontSize={11}
+              fontSize={fontSize}
               />
             </Label>}
           </Group>
         </Group>
-      )
+        )
+      }
     } else {
       let finalText = "";
       if(formData['contact-name'] !== '' ) finalText += formData['contact-name'];

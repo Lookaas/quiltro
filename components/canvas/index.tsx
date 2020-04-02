@@ -6,14 +6,17 @@ import { Layer, Stage, Text, Label, Tag, Rect, Group } from 'react-konva';
 import {
   Carousel,
   CarouselItem,
-  CarouselIndicators
+  CarouselControl,
+  Container
 } from 'reactstrap';
 
 import { IAdoptionForm, ICanvasFormat } from '../../pages';
+import CanvasImage from './canvasImage';
 import BackgroundImage from './BackgroundImage';
 import CharacteristicsLayer, { ICharacteristicElement } from './CharacteristicsLayer';
 import ContactLayer from './ContactLayer';
 import CanvasCarousel from './CanvasCarousel';
+import { imageFormatsLimits, imageScales } from '../../constants';
 
 interface IAppProps {
   onRef: RefObject<any>;
@@ -137,12 +140,41 @@ class Canvas extends Component<IAppProps, IAppState> {
     }
     return (
       <div>
-        <CanvasCarousel
-          canvasFormats={formats}
-          activeIndex={activeIndex}
-          nextCanvas={nextCanvas}
-          previusCanvas={previusCanvas}
-          maxHeight={maxHeight}  />
+        <Carousel
+        activeIndex={activeIndex}
+        next={nextCanvas}
+        previous={previusCanvas}
+        interval={false}
+        css={css`
+                width: ${formats[activeIndex].width}px;
+                height: ${formats[activeIndex].height}px;
+                margin-top: ${formats[activeIndex].marginTop}px;
+                margin-left: ${formats[activeIndex].marginLeft}px;
+              `} >
+        {formats.map((canvasFormat: any, index) => (
+          <CarouselItem key={index}>
+            <Container css={css`
+                width: ${canvasFormat.width}px;
+                height: ${canvasFormat.height}px;
+              `}>
+              <CanvasImage
+              onRef={onRef}
+              canvasHeight={canvasFormat.height}
+              canvasWidth={canvasFormat.width}
+              characteristics={characteristics}
+              formData={formData}
+              color={color}
+              textColor={textColor}
+              image={image}
+              backgroundImage={backgroundImage}
+              canvasType={canvasFormat.id}
+              />
+            </Container>
+          </CarouselItem>
+        ))}
+        <CarouselControl direction="prev" directionText="Previous" onClickHandler={previusCanvas} />
+        <CarouselControl direction="next" directionText="Next" onClickHandler={nextCanvas} />
+      </Carousel>
         {/*process.browser && (
           <Stage
             ref={onRef}

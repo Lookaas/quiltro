@@ -7,6 +7,7 @@ import { ICharacteristicElement } from '../components/canvas/CharacteristicsLaye
 import Nav from '../components/Nav';
 import { containerStyle, pageStyle } from '../assets/styles';
 import * as icons from '../assets/icons';
+import { transformDimension } from '../utils';
 
 interface IHomeState {
   canvasImage: HTMLImageElement | null;
@@ -52,6 +53,7 @@ export interface ICanvasFormat {
   color: string;
   marginTop: number;
   marginLeft: number;
+  id: string;
 }
 
 class Home extends Component<any, IHomeState> {
@@ -83,8 +85,8 @@ class Home extends Component<any, IHomeState> {
     secundaryColor: '#51947f',
     textColor: '#ffffff',
     canvasFormats: [
-      {width: 552, height: 552, color: '#000', marginTop: 0, marginLeft: 0},
-      {width: 552, height: 828, color: '#0ff', marginTop: 0, marginLeft: 0}
+      {width: 552, height: 552, color: '#000', marginTop: 0, marginLeft: 0, id: "c"},
+      {width: 552, height: 828, color: '#0ff', marginTop: 0, marginLeft: 0, id: "v"}
     ],
     activeCanvasIndex: 0,
     canvasMaxHeight: 850
@@ -129,20 +131,14 @@ class Home extends Component<any, IHomeState> {
   transformDimensions = (newWidth: number, newHeight: number) => {
     debugger
     const { canvasFormats } = this.state;
-    const transformHeight = (wNew: number, wOld: number, hOld: number) => {
-      return wNew*hOld/wOld;
-    };
-    const transformWidth = (hNew: number, wOld: number, hOld: number) => {
-      return hNew*wOld/hOld;
-    };
     const newCanvasFormats: Array<ICanvasFormat> = canvasFormats.map((canvasFormat) => {
-      let w = transformWidth(newHeight, canvasFormat.width, canvasFormat.height);
+      let w = transformDimension(newHeight, canvasFormat.height, canvasFormat.width);
       let h = newHeight;
       let marginTop = 0;
       let marginLeft = (newWidth - w) / 2;
       if (canvasFormat.width > canvasFormat.height) {
         w = newWidth;
-        h = transformHeight(newWidth, canvasFormat.width, canvasFormat.height);
+        h = transformDimension(newWidth, canvasFormat.width, canvasFormat.height);
         marginTop = (newHeight - h) / 2;
         marginLeft = 0;
       }
@@ -151,7 +147,8 @@ class Home extends Component<any, IHomeState> {
         height: h,
         color: canvasFormat.color,
         marginLeft,
-        marginTop
+        marginTop,
+        id: canvasFormat.id
       }
     });
     this.setState({
@@ -235,7 +232,7 @@ class Home extends Component<any, IHomeState> {
             priority: '0',
             icon: icons.birthday_cake,
             text: ageString2,
-            scale: 0.08
+            scale: 0.05
           }
           validator = 'characteristic';
         }
@@ -245,7 +242,7 @@ class Home extends Component<any, IHomeState> {
           priority: '1',
           icon: value === '1' ? icons.mars : icons.venus,
           text: value === '1' ? 'Macho' : 'Hembra',
-          scale: 0.08
+          scale: 0.05
         }
         validator = 'characteristic';
         break;
@@ -257,7 +254,7 @@ class Home extends Component<any, IHomeState> {
           priority: '3',
           icon: icons.dog,
           text: size,
-          scale:  value === 's' ? 0.04 : value === 'm' ? 0.06 : 0.08
+          scale:  value === 's' ? 0.025 : value === 'm' ? 0.035 : 0.05
         }
         validator = 'characteristic';
         break;
@@ -267,7 +264,7 @@ class Home extends Component<any, IHomeState> {
             priority: '4',
             icon: icons.band_aid,
             text: 'Esterilizado',
-            scale: 0.08
+            scale: 0.05
           }
           validator = 'characteristic';
         }
@@ -282,7 +279,7 @@ class Home extends Component<any, IHomeState> {
             priority: '5',
             icon: icons.paw,
             text: 'Con chip',
-            scale: 0.08
+            scale: 0.05
           }
           validator = 'characteristic';
         }
@@ -297,7 +294,7 @@ class Home extends Component<any, IHomeState> {
             priority: '6',
             icon: icons.syringe,
             text: 'Al día',
-            scale: 0.08
+            scale: 0.05
           }
           validator = 'characteristic';
         }
@@ -383,7 +380,7 @@ class Home extends Component<any, IHomeState> {
     return (
       <div css={pageStyle}>
         <Nav />
-        <section data-name="bodycontainer" className="container-fluid" css={containerStyle} >
+        <section data-name="bodycontainer" className="container" css={containerStyle} >
           <div className="row pt-5">
             <div className="col-md-6 order-first order-md-last"
             css={css`

@@ -1,14 +1,20 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import React from 'react';
-
 import { Image as KonvaImage, Layer, Rect } from 'react-konva';
+
+import { imageFormatsLimits, imageScales } from '../../../constants';
+import { transformDimension } from '../../../utils';
 
 export interface IBackgroundImageProps {
   backgroundImage: HTMLImageElement | null;
-  canvasHeight: number;
-  canvasWidth: number;
+  //canvasHeight: number;
+  //canvasWidth: number;
   imageFormat: string;
+  x: number;
+  imageWidth: number;
+  imageHeight: number;
+  imageScale: number;
 }
 
 export default class BackgroundImage extends React.Component<
@@ -24,12 +30,54 @@ export default class BackgroundImage extends React.Component<
   }
 
   render() {
-    const { backgroundImage, canvasHeight, canvasWidth, imageFormat} = this.props;
+    const {
+      backgroundImage,
+      // canvasHeight,
+      // canvasWidth,
+      imageFormat,
+      imageHeight,
+      imageWidth,
+      x,
+      imageScale
+    } = this.props;
     if (!backgroundImage) {
       return null;
     }
+
+    let backgroundImageWidth = imageWidth;
+    let backgroundImageHeigth = imageHeight;
+    let backgroundImageX = x;
     const { height, width } = backgroundImage;
-    let x = 0;
+
+    if (imageFormat === 'v') { //imagen vertical
+      if (imageScale <= imageScales.vertical) {
+        backgroundImageWidth = transformDimension(imageHeight, height, width);
+        backgroundImageX = x + imageWidth - backgroundImageWidth;
+      }
+      else {
+        backgroundImageHeigth = transformDimension(imageWidth, width, height);
+      }
+    }
+    else if (imageFormat === 'h') { //imagen horizontal
+      if (imageScale >= imageScales.horizontal) {
+        backgroundImageHeigth = transformDimension(imageWidth, width, height);
+      }
+      else {
+        backgroundImageWidth = transformDimension(imageHeight, height, width);
+        backgroundImageX = x + (imageWidth - backgroundImageWidth)/2;
+      }
+    }
+    else {//imagen cuadrada
+      if (imageScale >= imageScales.square) {
+        backgroundImageHeigth = transformDimension(imageWidth, width, height);
+      }
+      else {
+        backgroundImageWidth = transformDimension(imageHeight, height, width);
+        backgroundImageX = x + (imageWidth - backgroundImageWidth)/2;
+      }
+    }
+
+    /*let x = 0;
     let y = 0;
     let imageWidth = width;
     let imageHeight = height;
@@ -47,17 +95,17 @@ export default class BackgroundImage extends React.Component<
       const imageProportion = 0.5;
       imageWidth = canvasWidth*imageProportion;
       imageHeight = canvasHeight;
-    }
+    }*/
 
     return (
       <Layer>
         {backgroundImage && (
           <KonvaImage
             image={backgroundImage}
-            x={x}
-            y={y}
-            width={imageWidth}
-            height={imageHeight}
+            x={backgroundImageX}
+            y={0}
+            width={backgroundImageWidth}
+            height={backgroundImageHeigth}
           />
         )}
       </Layer>
