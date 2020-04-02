@@ -21,10 +21,10 @@ export const containerStyle = css`
 
 export const positionLabel3 = css`
   right: .9rem;
-  top: 0;
+  top: -1px;
   background-color: #6666cc;
   padding: .5rem 1rem;
   color: white;
-  border-radius: 0 3px 0 1rem;
+  border-radius: 0 5px 0 1rem;
 `
 
