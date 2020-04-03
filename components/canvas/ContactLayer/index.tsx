@@ -78,6 +78,13 @@ class ContactLayer extends Component<IContactProps, any> {
                   <Tag fill={color} />
                   <Text
                   fill={textColor}
+                  text={"\uf007"}
+                  fontFamily="FontAwesome"
+                  fontSize={fontSize}
+                  />
+                  <Text
+                  x={fontSize+2}
+                  fill={textColor}
                   text={formData['contact-name']}
                   fontSize={fontSize}
                   />
@@ -86,6 +93,13 @@ class ContactLayer extends Component<IContactProps, any> {
                 <Label y={layerHeight*0.4}  >
                 <Tag fill={color} />
                 <Text
+                  fill={textColor}
+                  text={"\uf10b"}
+                  fontFamily="FontAwesome"
+                  fontSize={fontSize}
+                  />
+                <Text
+                x={fontSize+2}
                 fill={textColor}
                 text={formData['contact-phone']}
                 fontSize={fontSize}
@@ -95,6 +109,13 @@ class ContactLayer extends Component<IContactProps, any> {
                 <Label y={layerHeight*0.6} >
                 <Tag fill={color} />
                 <Text
+                  fill={textColor}
+                  text={"\uf0e0"}
+                  fontFamily="FontAwesome"
+                  fontSize={fontSize}
+                  />
+                <Text
+                x={fontSize+2}
                 fill={textColor}
                 text={formData['contact-email']}
                 fontSize={fontSize}
@@ -104,6 +125,13 @@ class ContactLayer extends Component<IContactProps, any> {
                 <Label y={layerHeight*0.8} >
                 <Tag fill={color} />
                 <Text
+                  fill={textColor}
+                  text={"\uf041"}
+                  fontFamily="FontAwesome"
+                  fontSize={fontSize}
+                  />
+                <Text
+                x={fontSize+2}
                 fill={textColor}
                 text={formData['contact-city']}
                 fontSize={fontSize}
@@ -137,6 +165,13 @@ class ContactLayer extends Component<IContactProps, any> {
               <Label y={layerHeight*0.2} >
                 <Tag fill={color} />
                 <Text
+                  fill={textColor}
+                  text={"\uf007"}
+                  fontFamily="FontAwesome"
+                  fontSize={fontSize}
+                  />
+                <Text
+                x={fontSize+2}
                 fill={textColor}
                 text={formData['contact-name']}
                 fontSize={fontSize}
@@ -146,6 +181,13 @@ class ContactLayer extends Component<IContactProps, any> {
               <Label y={layerHeight*0.7}  >
               <Tag fill={color} />
               <Text
+                  fill={textColor}
+                  text={"\uf10b"}
+                  fontFamily="FontAwesome"
+                  fontSize={fontSize}
+                  />
+              <Text
+              x={fontSize+2}
               fill={textColor}
               text={formData['contact-phone']}
               fontSize={fontSize}
@@ -155,6 +197,13 @@ class ContactLayer extends Component<IContactProps, any> {
               <Label y={layerHeight*0.2} x={layerWidth*0.4} >
               <Tag fill={color} />
               <Text
+                  fill={textColor}
+                  text={"\uf0e0"}
+                  fontFamily="FontAwesome"
+                  fontSize={fontSize}
+                  />
+              <Text
+              x={fontSize+2}
               fill={textColor}
               text={formData['contact-email']}
               fontSize={fontSize}
@@ -164,6 +213,13 @@ class ContactLayer extends Component<IContactProps, any> {
               <Label y={layerHeight*0.7} x={layerWidth*0.4} >
               <Tag fill={color} />
               <Text
+                  fill={textColor}
+                  text={"\uf041"}
+                  fontFamily="FontAwesome"
+                  fontSize={fontSize}
+                  />
+              <Text
+              x={fontSize+2}
               fill={textColor}
               text={formData['contact-city']}
               fontSize={fontSize}
