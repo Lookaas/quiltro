@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
-import { Component, createRef } from 'react';
+import { Component, createRef, RefObject } from 'react';
+import { Stage } from 'konva/types/Stage';
+
 import Canvas from '../components/canvas';
 import LeftSidebar from '../components/LeftSideBar';
 import { ICharacteristicElement } from '../components/canvas/CharacteristicsLayer';
@@ -53,11 +55,13 @@ export interface ICanvasFormat {
   color: string;
   marginTop: number;
   marginLeft: number;
-  id: string;
+  id: "c" | "v";
+  ref: RefObject<Stage>;
 }
 
 class Home extends Component<any, IHomeState> {
-  state = {
+
+  state : IHomeState = {
     canvasImage: null,
     formValues: {
       chip: false,
@@ -85,8 +89,8 @@ class Home extends Component<any, IHomeState> {
     secundaryColor: '#51947f',
     textColor: '#ffffff',
     canvasFormats: [
-      {width: 552, height: 552, color: '#000', marginTop: 0, marginLeft: 0, id: "c"},
-      {width: 552, height: 828, color: '#0ff', marginTop: 0, marginLeft: 0, id: "v"}
+      {width: 552, height: 552, color: '#000', marginTop: 0, marginLeft: 0, id: "c", ref: createRef<Stage>()},
+      {width: 552, height: 828, color: '#0ff', marginTop: 0, marginLeft: 0, id: "v", ref: createRef<Stage>()}
     ],
     activeCanvasIndex: 0,
     canvasMaxHeight: 850
@@ -148,7 +152,8 @@ class Home extends Component<any, IHomeState> {
         color: canvasFormat.color,
         marginLeft,
         marginTop,
-        id: canvasFormat.id
+        id: canvasFormat.id,
+        ref: canvasFormat.ref
       }
     });
     this.setState({
@@ -419,7 +424,7 @@ class Home extends Component<any, IHomeState> {
               padding-top: ${canvasMaxHeight + 60}px;
             }`} >
               <LeftSidebar
-                canvasRef={this.stageRef}
+                canvasformats={canvasFormats}
                 formValues={formValues}
                 onInputChanged={this.setAdoptionFormField}
                 onImageUploaded={this.setCanvasImage}

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { Component, FormEvent, RefObject } from 'react';
+import axios from 'axios';
 
 import { IAdoptionForm} from '../../pages';
 import ContactInformation from './ContactInformation';
@@ -9,10 +10,13 @@ import PetInformation from './PetInformation';
 import SubmitButton from './SubmitButton';
 import { containerStyle } from './styles'
 import { Stage } from 'konva/types/Stage';
-import axios from 'axios';
+import { ICanvasFormat } from '../../pages';
+import { normalCanvasWidth } from '../../constants';
+import { transformDimension } from '../../utils';
+
 
 export interface ILeftSidebarProps {
-  canvasRef: RefObject<Stage>;
+  canvasformats: Array<ICanvasFormat>;
   formValues: IAdoptionForm;
   onInputChanged: (key: keyof IAdoptionForm, value: any) => void;
   onImageUploaded: (prop1: HTMLImageElement) => void;
@@ -85,18 +89,25 @@ export default class LeftSidebar extends Component<
   }
 
   onSubmit = async (e: FormEvent) => {
-    const {formValues} = this.props;
+    const {formValues, canvasformats} = this.props;
     e.preventDefault();
 
-    const imgB64 = this.props.canvasRef.current!.getStage().toDataURL({ pixelRatio: 1, quality:1, mimeType: 'image/png'});
-    let link = document.createElement('a');
-    link.download = formValues['nombre-mascota'];
-    link.href = imgB64;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    const imageBlob = this.dataURItoBlob(imgB64);
-    //this.loadToS3(imageBlob, formValues['nombre-mascota']);
+    canvasformats.forEach((canvasFormat: ICanvasFormat) => {
+      let pixelRatio = 2;
+      if (canvasFormat.width < normalCanvasWidth) {
+        pixelRatio = transformDimension(canvasFormat.width, normalCanvasWidth, 2);
+      }
+      const canvasRef = canvasFormat.ref;
+      const imgB64 = canvasRef.current!.getStage().toDataURL({ pixelRatio: pixelRatio });
+      let link = document.createElement('a');
+      link.download = formValues['nombre-mascota']+"-"+canvasFormat.id;
+      link.href = imgB64;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      const imageBlob = this.dataURItoBlob(imgB64);
+      //this.loadToS3(imageBlob, formValues['nombre-mascota']);
+    })
   };
 
   onFormChange = (e: FormEvent<HTMLFormElement>) => {

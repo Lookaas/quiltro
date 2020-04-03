@@ -45,6 +45,7 @@ export default class PhotoInformation extends React.Component<
     const file : File = e.currentTarget.files![0];
     if (!file) {
       console.error('!file', file, e);
+      return
     }
     reader.readAsDataURL(e.currentTarget.files![0]);
   };

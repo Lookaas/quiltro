@@ -151,14 +151,14 @@ class Canvas extends Component<IAppProps, IAppState> {
                 margin-top: ${formats[activeIndex].marginTop}px;
                 margin-left: ${formats[activeIndex].marginLeft}px;
               `} >
-        {formats.map((canvasFormat: any, index) => (
+        {formats.map((canvasFormat: ICanvasFormat, index) => (
           <CarouselItem key={index}>
             <Container css={css`
                 width: ${canvasFormat.width}px;
                 height: ${canvasFormat.height}px;
               `}>
               <CanvasImage
-              onRef={onRef}
+              onRef={canvasFormat.ref}
               canvasHeight={canvasFormat.height}
               canvasWidth={canvasFormat.width}
               characteristics={characteristics}
